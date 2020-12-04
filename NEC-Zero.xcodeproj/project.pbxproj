@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9E66513F257AF85600EF2FAA /* NEC_ZeroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66513E257AF85600EF2FAA /* NEC_ZeroApp.swift */; };
+		9E665141257AF85600EF2FAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E665140257AF85600EF2FAA /* ContentView.swift */; };
+		9E665143257AF85700EF2FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E665142257AF85700EF2FAA /* Assets.xcassets */; };
+		9E665146257AF85700EF2FAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E665145257AF85700EF2FAA /* Preview Assets.xcassets */; };
+		9E665151257AF85700EF2FAA /* NEC_ZeroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E665150257AF85700EF2FAA /* NEC_ZeroTests.swift */; };
+		9E66515C257AF85800EF2FAA /* NEC_ZeroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66515B257AF85800EF2FAA /* NEC_ZeroUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9E66514D257AF85700EF2FAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E665133257AF85600EF2FAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9E66513A257AF85600EF2FAA;
+			remoteInfo = "NEC-Zero";
+		};
+		9E665158257AF85800EF2FAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E665133257AF85600EF2FAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9E66513A257AF85600EF2FAA;
+			remoteInfo = "NEC-Zero";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9E66513B257AF85600EF2FAA /* NEC-Zero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NEC-Zero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E66513E257AF85600EF2FAA /* NEC_ZeroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEC_ZeroApp.swift; sourceTree = "<group>"; };
+		9E665140257AF85600EF2FAA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9E665142257AF85700EF2FAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E665145257AF85700EF2FAA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9E665147257AF85700EF2FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E66514C257AF85700EF2FAA /* NEC-ZeroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NEC-ZeroTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E665150257AF85700EF2FAA /* NEC_ZeroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEC_ZeroTests.swift; sourceTree = "<group>"; };
+		9E665152257AF85800EF2FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E665157257AF85800EF2FAA /* NEC-ZeroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NEC-ZeroUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E66515B257AF85800EF2FAA /* NEC_ZeroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEC_ZeroUITests.swift; sourceTree = "<group>"; };
+		9E66515D257AF85800EF2FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9E665138257AF85600EF2FAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E665149257AF85700EF2FAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E665154257AF85800EF2FAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9E665132257AF85600EF2FAA = {
+			isa = PBXGroup;
+			children = (
+				9E66513D257AF85600EF2FAA /* NEC-Zero */,
+				9E66514F257AF85700EF2FAA /* NEC-ZeroTests */,
+				9E66515A257AF85800EF2FAA /* NEC-ZeroUITests */,
+				9E66513C257AF85600EF2FAA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9E66513C257AF85600EF2FAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E66513B257AF85600EF2FAA /* NEC-Zero.app */,
+				9E66514C257AF85700EF2FAA /* NEC-ZeroTests.xctest */,
+				9E665157257AF85800EF2FAA /* NEC-ZeroUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9E66513D257AF85600EF2FAA /* NEC-Zero */ = {
+			isa = PBXGroup;
+			children = (
+				9E66513E257AF85600EF2FAA /* NEC_ZeroApp.swift */,
+				9E665140257AF85600EF2FAA /* ContentView.swift */,
+				9E665142257AF85700EF2FAA /* Assets.xcassets */,
+				9E665147257AF85700EF2FAA /* Info.plist */,
+				9E665144257AF85700EF2FAA /* Preview Content */,
+			);
+			path = "NEC-Zero";
+			sourceTree = "<group>";
+		};
+		9E665144257AF85700EF2FAA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9E665145257AF85700EF2FAA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9E66514F257AF85700EF2FAA /* NEC-ZeroTests */ = {
+			isa = PBXGroup;
+			children = (
+				9E665150257AF85700EF2FAA /* NEC_ZeroTests.swift */,
+				9E665152257AF85800EF2FAA /* Info.plist */,
+			);
+			path = "NEC-ZeroTests";
+			sourceTree = "<group>";
+		};
+		9E66515A257AF85800EF2FAA /* NEC-ZeroUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9E66515B257AF85800EF2FAA /* NEC_ZeroUITests.swift */,
+				9E66515D257AF85800EF2FAA /* Info.plist */,
+			);
+			path = "NEC-ZeroUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9E66513A257AF85600EF2FAA /* NEC-Zero */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E665160257AF85800EF2FAA /* Build configuration list for PBXNativeTarget "NEC-Zero" */;
+			buildPhases = (
+				9E665137257AF85600EF2FAA /* Sources */,
+				9E665138257AF85600EF2FAA /* Frameworks */,
+				9E665139257AF85600EF2FAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NEC-Zero";
+			productName = "NEC-Zero";
+			productReference = 9E66513B257AF85600EF2FAA /* NEC-Zero.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9E66514B257AF85700EF2FAA /* NEC-ZeroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E665163257AF85800EF2FAA /* Build configuration list for PBXNativeTarget "NEC-ZeroTests" */;
+			buildPhases = (
+				9E665148257AF85700EF2FAA /* Sources */,
+				9E665149257AF85700EF2FAA /* Frameworks */,
+				9E66514A257AF85700EF2FAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9E66514E257AF85700EF2FAA /* PBXTargetDependency */,
+			);
+			name = "NEC-ZeroTests";
+			productName = "NEC-ZeroTests";
+			productReference = 9E66514C257AF85700EF2FAA /* NEC-ZeroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9E665156257AF85800EF2FAA /* NEC-ZeroUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E665166257AF85800EF2FAA /* Build configuration list for PBXNativeTarget "NEC-ZeroUITests" */;
+			buildPhases = (
+				9E665153257AF85800EF2FAA /* Sources */,
+				9E665154257AF85800EF2FAA /* Frameworks */,
+				9E665155257AF85800EF2FAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9E665159257AF85800EF2FAA /* PBXTargetDependency */,
+			);
+			name = "NEC-ZeroUITests";
+			productName = "NEC-ZeroUITests";
+			productReference = 9E665157257AF85800EF2FAA /* NEC-ZeroUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9E665133257AF85600EF2FAA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					9E66513A257AF85600EF2FAA = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					9E66514B257AF85700EF2FAA = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 9E66513A257AF85600EF2FAA;
+					};
+					9E665156257AF85800EF2FAA = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 9E66513A257AF85600EF2FAA;
+					};
+				};
+			};
+			buildConfigurationList = 9E665136257AF85600EF2FAA /* Build configuration list for PBXProject "NEC-Zero" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9E665132257AF85600EF2FAA;
+			productRefGroup = 9E66513C257AF85600EF2FAA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9E66513A257AF85600EF2FAA /* NEC-Zero */,
+				9E66514B257AF85700EF2FAA /* NEC-ZeroTests */,
+				9E665156257AF85800EF2FAA /* NEC-ZeroUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9E665139257AF85600EF2FAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E665146257AF85700EF2FAA /* Preview Assets.xcassets in Resources */,
+				9E665143257AF85700EF2FAA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E66514A257AF85700EF2FAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E665155257AF85800EF2FAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9E665137257AF85600EF2FAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E665141257AF85600EF2FAA /* ContentView.swift in Sources */,
+				9E66513F257AF85600EF2FAA /* NEC_ZeroApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E665148257AF85700EF2FAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E665151257AF85700EF2FAA /* NEC_ZeroTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E665153257AF85800EF2FAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E66515C257AF85800EF2FAA /* NEC_ZeroUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9E66514E257AF85700EF2FAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9E66513A257AF85600EF2FAA /* NEC-Zero */;
+			targetProxy = 9E66514D257AF85700EF2FAA /* PBXContainerItemProxy */;
+		};
+		9E665159257AF85800EF2FAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9E66513A257AF85600EF2FAA /* NEC-Zero */;
+			targetProxy = 9E665158257AF85800EF2FAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9E66515E257AF85800EF2FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9E66515F257AF85800EF2FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9E665161257AF85800EF2FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"NEC-Zero/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "NEC-Zero/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.arizona.neczero;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9E665162257AF85800EF2FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"NEC-Zero/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "NEC-Zero/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.arizona.neczero;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9E665164257AF85800EF2FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "NEC-ZeroTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.arizona.NEC-ZeroTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NEC-Zero.app/NEC-Zero";
+			};
+			name = Debug;
+		};
+		9E665165257AF85800EF2FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "NEC-ZeroTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.arizona.NEC-ZeroTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NEC-Zero.app/NEC-Zero";
+			};
+			name = Release;
+		};
+		9E665167257AF85800EF2FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "NEC-ZeroUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.arizona.NEC-ZeroUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "NEC-Zero";
+			};
+			name = Debug;
+		};
+		9E665168257AF85800EF2FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "NEC-ZeroUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.arizona.NEC-ZeroUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "NEC-Zero";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9E665136257AF85600EF2FAA /* Build configuration list for PBXProject "NEC-Zero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E66515E257AF85800EF2FAA /* Debug */,
+				9E66515F257AF85800EF2FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E665160257AF85800EF2FAA /* Build configuration list for PBXNativeTarget "NEC-Zero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E665161257AF85800EF2FAA /* Debug */,
+				9E665162257AF85800EF2FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E665163257AF85800EF2FAA /* Build configuration list for PBXNativeTarget "NEC-ZeroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E665164257AF85800EF2FAA /* Debug */,
+				9E665165257AF85800EF2FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E665166257AF85800EF2FAA /* Build configuration list for PBXNativeTarget "NEC-ZeroUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E665167257AF85800EF2FAA /* Debug */,
+				9E665168257AF85800EF2FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9E665133257AF85600EF2FAA /* Project object */;
+}
