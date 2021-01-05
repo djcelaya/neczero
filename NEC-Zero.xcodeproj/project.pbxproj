@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E11108425A4E66000905E4B /* GutCheckNEC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E11108325A4E66000905E4B /* GutCheckNEC.swift */; };
 		9E66513F257AF85600EF2FAA /* NEC_ZeroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66513E257AF85600EF2FAA /* NEC_ZeroApp.swift */; };
 		9E665141257AF85600EF2FAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E665140257AF85600EF2FAA /* ContentView.swift */; };
 		9E665143257AF85700EF2FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E665142257AF85700EF2FAA /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E11108325A4E66000905E4B /* GutCheckNEC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutCheckNEC.swift; sourceTree = "<group>"; };
 		9E66513B257AF85600EF2FAA /* NEC-Zero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NEC-Zero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E66513E257AF85600EF2FAA /* NEC_ZeroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEC_ZeroApp.swift; sourceTree = "<group>"; };
 		9E665140257AF85600EF2FAA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				9E66513E257AF85600EF2FAA /* NEC_ZeroApp.swift */,
 				9E665140257AF85600EF2FAA /* ContentView.swift */,
+				9E11108325A4E66000905E4B /* GutCheckNEC.swift */,
 				9E665142257AF85700EF2FAA /* Assets.xcassets */,
 				9E665147257AF85700EF2FAA /* Info.plist */,
 				9E665144257AF85700EF2FAA /* Preview Content */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E11108425A4E66000905E4B /* GutCheckNEC.swift in Sources */,
 				9E665141257AF85600EF2FAA /* ContentView.swift in Sources */,
 				9E66513F257AF85600EF2FAA /* NEC_ZeroApp.swift in Sources */,
 			);
@@ -419,6 +423,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NEC-Zero/Preview Content\"";
+				DEVELOPMENT_TEAM = R5GYX4G7F7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "NEC-Zero/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -440,6 +445,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NEC-Zero/Preview Content\"";
+				DEVELOPMENT_TEAM = R5GYX4G7F7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "NEC-Zero/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
