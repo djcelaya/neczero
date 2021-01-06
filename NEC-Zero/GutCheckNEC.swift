@@ -54,21 +54,35 @@ struct GutCheckNEC {
 		self.hypotension = hypotension
 		self.metabolicAcidosis = metabolicAcidosis
 
-		points += points(for: gestationAge)
-		points += points(for: race)
+		points += points(forGestationAge: gestationAge)
+		points += points(forRace: race)
 	}
 
-	private func points(for gestationAge: Double) -> Int {
-		if gestationAge < 28 {
+	init() {
+		gestationAge = 28
+		race = .hispanic
+		outborn = true
+		necRate = 6
+		humanMilkFeeding = false
+		probiotics = true
+		infections = 1
+		prbcTransfusion = true
+		hypotension = false
+		metabolicAcidosis = true
+		points = pointsForChoices()
+	}
+
+	private func points(forGestationAge weeks: Double) -> Int {
+		if weeks < 28 {
 			return 9
-		} else if gestationAge < 32 {
+		} else if weeks < 32 {
 			return 8
 		} else { // >= 32
 			return 0
 		}
 	}
 
-	private func points(for race: Race) -> Int {
+	private func points(forRace race: Race) -> Int {
 		switch race {
 			case .black:
 				return 2
@@ -88,6 +102,10 @@ struct GutCheckNEC {
 //			
 //		}
 //	}
+
+	private func pointsForChoices() -> Int {
+		return 24
+	}
 
 }
 

@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct NEC_ZeroApp: App {
+
+	let model: GutCheckNEC
+	let viewModel: GutCheckNECViewModel
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+			GutCheckNECView(with: viewModel)
         }
     }
+
+	init() {
+		model = GutCheckNEC()
+		viewModel = GutCheckNECViewModel(with: model)
+	}
 }
