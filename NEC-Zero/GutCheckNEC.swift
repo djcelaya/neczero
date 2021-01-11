@@ -13,7 +13,7 @@ struct GutCheckNEC {
 
 	var points = 0
 
-	let gestationAge: Double // weeks
+	var gestationAge: Double // weeks
 
 	let race: Race
 

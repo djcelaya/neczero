@@ -15,6 +15,7 @@
 		9E66515C257AF85800EF2FAA /* NEC_ZeroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66515B257AF85800EF2FAA /* NEC_ZeroUITests.swift */; };
 		9EBC5BA925A61885009854E4 /* GutCheckNECViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC5BA825A61885009854E4 /* GutCheckNECViewModel.swift */; };
 		9EBC5BAE25A619E1009854E4 /* GutCheckNECView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC5BAD25A619E1009854E4 /* GutCheckNECView.swift */; };
+		9EF64AD225ACA61F0080B074 /* GutCheckNECTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF64AD125ACA61F0080B074 /* GutCheckNECTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		9E66515D257AF85800EF2FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EBC5BA825A61885009854E4 /* GutCheckNECViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutCheckNECViewModel.swift; sourceTree = "<group>"; };
 		9EBC5BAD25A619E1009854E4 /* GutCheckNECView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutCheckNECView.swift; sourceTree = "<group>"; };
+		9EF64AD125ACA61F0080B074 /* GutCheckNECTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutCheckNECTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				9E665150257AF85700EF2FAA /* NEC_ZeroTests.swift */,
+				9EF64AD125ACA61F0080B074 /* GutCheckNECTests.swift */,
 				9E665152257AF85800EF2FAA /* Info.plist */,
 			);
 			path = "NEC-ZeroTests";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EF64AD225ACA61F0080B074 /* GutCheckNECTests.swift in Sources */,
 				9E665151257AF85700EF2FAA /* NEC_ZeroTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

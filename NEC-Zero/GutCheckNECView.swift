@@ -11,19 +11,33 @@ struct GutCheckNECView: View {
 
 	@ObservedObject var viewModel: GutCheckNECViewModel
 
-	@State private var gestationalAgeIndex = 0
-
     var body: some View {
 		NavigationView {
 			Form {
-				Picker(selection: $gestationalAgeIndex, label: Text("Gestational age (weeks)")) {
-					ForEach(0 ..< viewModel.gestationalAgeOptions.count) {
-						Text(viewModel.gestationalAgeOptions[$0])
+				Section {
+					Picker(selection: $viewModel.gestationalAgeIndex, label: Text("Gestational age (weeks)")) {
+						ForEach(0 ..< viewModel.gestationalAgeOptions.count) {
+							Text(viewModel.gestationalAgeOptions[$0])
+						}
+					}
+					Picker("Race", selection: $viewModel.raceIndex) {
+						ForEach(0 ..< viewModel.raceOptions.count) {
+							Text(viewModel.raceOptions[$0])
+						}
+					}
+					Button("Submit", action: viewModel.submit)
+				}
+				Section(header: Text("Results")) {
+					HStack {
+						Text("Points")
+						Spacer()
+						Text("\(viewModel.points)")
 					}
 				}
 			}
+			.navigationBarTitle("GutCheckNEC")
 		}
-		.navigationBarTitle("GutCheckNEC")
+
     }
 
 	init(with viewModel: GutCheckNECViewModel) {
