@@ -61,14 +61,14 @@ struct GutCheckNEC {
 	init() {
 		gestationAge = 28
 		race = .hispanic
-		outborn = true
+		outborn = false
 		necRate = 6
-		humanMilkFeeding = false
+		humanMilkFeeding = true
 		probiotics = true
 		infections = 1
-		prbcTransfusion = true
+		prbcTransfusion = false
 		hypotension = false
-		metabolicAcidosis = true
+		metabolicAcidosis = false
 		points = pointsForChoices()
 	}
 
@@ -93,29 +93,72 @@ struct GutCheckNEC {
 		}
 	}
 
-	private func points(for outborn: Bool) -> Int {
+	private func points(forOutborn outborn: Bool) -> Int {
 		return outborn ? 3 : 0
 	}
 
-//	private func points(for necRate: Double) -> Int {
-//		if necRate < 2 {
-//			
-//		}
-//	}
+	private func points(forNECRate necRate: Double) -> Int {
+		switch necRate {
+			case 0 ..< 5:
+				return 9
+			case 5 ..< 8:
+				return 16
+			case 8 ..< 12:
+				return 19
+			default:
+				return 23
+		}
+	}
+
+	private func points(forMilkFeeding milkFeeding: Bool) -> Int {
+		return milkFeeding ? -3 : 0
+	}
+
+	private func points(forProbiotics probiotics: Bool) -> Int {
+		return probiotics ? -5 : 0
+	}
+
+	private func points(forInfections infections: Int) -> Int {
+		switch infections {
+			case 1:
+				return 4
+			case 2:
+				return 6
+			default:
+				return 0
+		}
+	}
+
+	private func points(forPRBCTransfusion prbcTransfusion: Bool) -> Int {
+		return prbcTransfusion ? 9 : 0
+	}
+
+	private func points(forHypotension hypotension: Bool) -> Int {
+		return hypotension ? 4 : 0
+	}
+
+	private func points(forMetabolicAcidosis metabolicAcidosis: Bool) -> Int {
+		return metabolicAcidosis ? 3 : 0
+	}
 
 	private func pointsForChoices() -> Int {
-		return 24
+		var total = 0
+		total += points(forGestationAge: gestationAge)
+		total += points(forRace: race)
+		total += points(forOutborn: outborn)
+		total += points(forNECRate: necRate)
+		total += points(forMilkFeeding: humanMilkFeeding)
+		total += points(forProbiotics: probiotics)
+		total += points(forInfections: infections)
+		total += points(forPRBCTransfusion: prbcTransfusion)
+		total += points(forHypotension: hypotension)
+		total += points(forMetabolicAcidosis: metabolicAcidosis)
+		return total
 	}
 
 }
 
 extension GutCheckNEC {
-
-	enum GestationAge {
-		case ageRange1
-		case ageRange2
-		case ageRange3
-	}
 
 	enum Race {
 		case black
@@ -123,10 +166,4 @@ extension GutCheckNEC {
 		case other
 	}
 
-	enum NECRate {
-		case rateInterval1
-		case rateInterval2
-		case rateInterval3
-		case rateInterval4
-	}
 }
