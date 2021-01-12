@@ -53,9 +53,7 @@ struct GutCheckNEC {
 		self.prbcTransfusion = prbcTransfusion
 		self.hypotension = hypotension
 		self.metabolicAcidosis = metabolicAcidosis
-
-		points += points(forGestationAge: gestationAge)
-		points += points(forRace: race)
+		points = pointsForChoices()
 	}
 
 	init() {
@@ -130,7 +128,7 @@ struct GutCheckNEC {
 	}
 
 	private func points(forPRBCTransfusion prbcTransfusion: Bool) -> Int {
-		return prbcTransfusion ? 9 : 0
+		return prbcTransfusion ? 8 : 0
 	}
 
 	private func points(forHypotension hypotension: Bool) -> Int {
