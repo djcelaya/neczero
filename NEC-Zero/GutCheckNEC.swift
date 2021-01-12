@@ -2,7 +2,7 @@
 //  GutCheckNEC.swift
 //  NEC-Zero
 //
-//	Model for GutCheckNEC risk measurement tool
+//  Model for GutCheckNEC risk measurement tool
 //
 //  Created by David Celaya-Gonzalez on 1/5/21.
 //
