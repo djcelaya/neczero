@@ -11,27 +11,29 @@ import Foundation
 
 struct GutCheckNEC {
 
-	var points = 0
+	var points: Int {
+		pointsForChoices()
+	}
 
 	var gestationAge: Double // weeks
 
-	let race: Race
+	var race: Race
 
-	let outborn: Bool
+	var outborn: Bool
 
-	let necRate: Double // percentage
+	var necRate: Double // percentage
 
-	let humanMilkFeeding: Bool
+	var humanMilkFeeding: Bool
 
-	let probiotics: Bool
+	var probiotics: Bool
 
-	let infections: Int
+	var infections: Int
 
-	let prbcTransfusion: Bool
+	var prbcTransfusion: Bool
 
-	let hypotension: Bool
+	var hypotension: Bool
 
-	let metabolicAcidosis: Bool
+	var metabolicAcidosis: Bool
 
 	init(gestationAge: Double,
 		 race: Race,
@@ -53,7 +55,7 @@ struct GutCheckNEC {
 		self.prbcTransfusion = prbcTransfusion
 		self.hypotension = hypotension
 		self.metabolicAcidosis = metabolicAcidosis
-		points = pointsForChoices()
+//		points = pointsForChoices()
 	}
 
 	init() {
@@ -67,7 +69,7 @@ struct GutCheckNEC {
 		prbcTransfusion = false
 		hypotension = false
 		metabolicAcidosis = false
-		points = pointsForChoices()
+//		points = pointsForChoices()
 	}
 
 	private func points(forGestationAge weeks: Double) -> Int {
