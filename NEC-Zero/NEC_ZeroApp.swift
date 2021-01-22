@@ -13,9 +13,40 @@ struct NEC_ZeroApp: App {
 	let model: GutCheckNEC
 	let viewModel: GutCheckNECViewModel
 
+    @State private var selectedTab = "NEC"
+
     var body: some Scene {
         WindowGroup {
-			GutCheckNECView(with: viewModel)
+            TabView(selection: $selectedTab) {
+                Text("What is NEC?")
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "heart")
+                            Text("NEC")
+                        }
+                    }.tag("NEC")
+                Text("Parents")
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "person")
+                            Text("Parents")
+                        }
+                    }.tag("Parents")
+                Text("Professionals")
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "cross")
+                            Text("Professionals")
+                        }
+                    }.tag("Professionals")
+                GutCheckNECView(with: viewModel)
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "heart.text.square")
+                            Text("GutCheckNEC")
+                        }
+                    }.tag("GutCheckNEC")
+            }
         }
     }
 
