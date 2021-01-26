@@ -2,7 +2,7 @@
 //  NEC_ZeroApp.swift
 //  NEC-Zero
 //
-//  Created by David Celaya on 12/4/20.
+//  Created by David Celaya-Gonzalez on 12/4/20.
 //
 
 import SwiftUI
