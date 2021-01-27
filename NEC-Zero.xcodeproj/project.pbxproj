@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E11108425A4E66000905E4B /* GutCheckNEC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E11108325A4E66000905E4B /* GutCheckNEC.swift */; };
-		9E66513F257AF85600EF2FAA /* NEC_ZeroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66513E257AF85600EF2FAA /* NEC_ZeroApp.swift */; };
+		9E66513F257AF85600EF2FAA /* NECZeroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66513E257AF85600EF2FAA /* NECZeroApp.swift */; };
 		9E665143257AF85700EF2FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E665142257AF85700EF2FAA /* Assets.xcassets */; };
 		9E665146257AF85700EF2FAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E665145257AF85700EF2FAA /* Preview Assets.xcassets */; };
 		9E665151257AF85700EF2FAA /* NEC_ZeroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E665150257AF85700EF2FAA /* NEC_ZeroTests.swift */; };
@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		9E11108325A4E66000905E4B /* GutCheckNEC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutCheckNEC.swift; sourceTree = "<group>"; };
 		9E66513B257AF85600EF2FAA /* NEC-Zero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NEC-Zero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E66513E257AF85600EF2FAA /* NEC_ZeroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEC_ZeroApp.swift; sourceTree = "<group>"; };
+		9E66513E257AF85600EF2FAA /* NECZeroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NECZeroApp.swift; sourceTree = "<group>"; };
 		9E665142257AF85700EF2FAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E665145257AF85700EF2FAA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9E665147257AF85700EF2FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		9E66513D257AF85600EF2FAA /* NEC-Zero */ = {
 			isa = PBXGroup;
 			children = (
-				9E66513E257AF85600EF2FAA /* NEC_ZeroApp.swift */,
+				9E66513E257AF85600EF2FAA /* NECZeroApp.swift */,
 				9EF97A8325C06BAF009DD543 /* NECView.swift */,
 				9E11108325A4E66000905E4B /* GutCheckNEC.swift */,
 				9EBC5BA825A61885009854E4 /* GutCheckNECViewModel.swift */,
@@ -276,7 +276,7 @@
 			files = (
 				9E11108425A4E66000905E4B /* GutCheckNEC.swift in Sources */,
 				9EBC5BA925A61885009854E4 /* GutCheckNECViewModel.swift in Sources */,
-				9E66513F257AF85600EF2FAA /* NEC_ZeroApp.swift in Sources */,
+				9E66513F257AF85600EF2FAA /* NECZeroApp.swift in Sources */,
 				9EF97A8C25C06BE3009DD543 /* NECZeroView.swift in Sources */,
 				9EBC5BAE25A619E1009854E4 /* GutCheckNECView.swift in Sources */,
 				9EF97A8425C06BAF009DD543 /* NECView.swift in Sources */,

@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct NEC_ZeroApp: App {
+struct NECZeroApp: App {
 
 	let model: GutCheckNEC
 	let viewModel: GutCheckNECViewModel
@@ -18,7 +18,7 @@ struct NEC_ZeroApp: App {
     var body: some Scene {
         WindowGroup {
             TabView(selection: $selectedTab) {
-                Text("What is NEC?")
+                NECView()
                     .tabItem {
                         VStack {
                             Image(systemName: "heart")
