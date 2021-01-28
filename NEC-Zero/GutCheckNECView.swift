@@ -68,6 +68,13 @@ struct GutCheckNECView_Previews: PreviewProvider {
     static var previews: some View {
         let model = GutCheckNEC()
         let viewModel = GutCheckNECViewModel(with: model)
-        return GutCheckNECView(with: viewModel)
+        return TabView {
+            GutCheckNECView(with: viewModel).tabItem {
+                VStack {
+                    Image(systemName: "heart.text.square")
+                    Text("GutCheckNEC")
+                }
+            }
+        }
     }
 }

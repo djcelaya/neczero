@@ -48,7 +48,7 @@ struct NECView_Previews: PreviewProvider {
                         Image(systemName: "heart")
                         Text("NEC")
                     }
-                }.tag("NEC")
+                }
             }.environment(\.locale, .init(identifier: id))
         }
     }
