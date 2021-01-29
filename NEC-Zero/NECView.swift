@@ -9,32 +9,38 @@ import SwiftUI
 
 struct NECView: View {
     var body: some View {
-        VStack {
-            Image("NECZeroLogo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            VStack(alignment: .leading) {
-                Button(action: {
+        ScrollView {
+            VStack {
+                Image("NECZeroLogo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                VStack(alignment: .leading) {
+                    Button(action: {
 
-                }) {
-                    Text("what-is-nec-0")
-                        .padding([.leading])
+                    }) {
+                        Text("Read about the NEC-Zero project")
+                            .padding([.leading])
+                    }
+                    Text("What is NEC?")
+                        .font(.title)
+                        .padding([.leading, .trailing, .top])
+                    Text("Necrotizing enterocolitis (nek-roh-TIE-zing en-ter-oh-coh-LIE-tis)...")
+                        .padding(.top, 8)
+                        .padding([.leading, .trailing])
+                    Text("This infection can cause damage to the bowel over time...")
+                        .padding(.top, 8)
+                        .padding([.leading, .trailing])
+                    Text("Often NEC impacts babies who are born very early and very small...")
+                        .padding(.top, 8)
+                        .padding([.leading, .trailing])
+                    Text("The chance of your baby developing NEC is low...")
+                        .padding(.top, 8)
+                        .padding([.leading, .trailing])
+                    Text("Sometimes parents and family members...")
+                        .padding(.top, 8)
+                        .padding([.leading, .trailing, .bottom])
                 }
-                Text("what-is-nec-1")
-                    .font(.title)
-                    .padding([.leading, .trailing, .top])
-                Text("what-is-nec-2")
-                    .padding([.leading, .trailing, .top])
-                Text("what-is-nec-3")
-                    .padding([.leading, .trailing, .top])
-                Text("what-is-nec-4")
-                    .padding([.leading, .trailing, .top])
-                Text("what-is-nec-5")
-                    .padding([.leading, .trailing, .top])
-                Text("what-is-nec-6")
-                    .padding([.leading, .trailing, .top])
             }
-            Spacer()
         }
     }
 }
