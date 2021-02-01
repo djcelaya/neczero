@@ -46,6 +46,16 @@ struct NECZeroApp: App {
                             Text("GutCheckNEC")
                         }
                     }.tag("GutCheckNEC")
+                MoreView()
+                    .tabItem {
+                        VStack {
+//                            Image(systemName: "line.horizontal.3")
+//                            Spacer()
+//                            Image(systemName: "ellipsis")
+                            Image(systemName: "gearshape")
+                            Text("More")
+                        }
+                    }.tag("More")
             }
         }
     }
