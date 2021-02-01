@@ -29,10 +29,10 @@ class Articles: ObservableObject {
     }
 }
 
-enum ArticleTag {
-    case Parents
-    case Professionals
-    case Prevention
+enum ArticleTag: String {
+    case Parents = "Parents"
+    case Professionals = "Professionals"
+    case Prevention = "Prevention"
 }
 
 struct Article: Identifiable {

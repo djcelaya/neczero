@@ -10,21 +10,21 @@ import SwiftUI
 struct ArticleList: View {
 
     @ObservedObject var viewModel: Articles
-    let tags = ["Parents", "Professionals", "Prevention"]
-    @State var selectedTag = "Parents"
+    let filters = ["All", "Parents", "Professionals", "Prevention"]
+    @State var selectedFilter = "All"
 
     var body: some View {
         NavigationView() {
             VStack {
-                Picker("", selection: $selectedTag) {
-                    Text("Parents").tag("Parents")
-                    Text("Professionals").tag("Professionals")
-                    Text("Prevention").tag("Prevention")
+                Picker("", selection: $selectedFilter) {
+                    ForEach(filters, id: \.self) { filterValue in
+                        Text(filterValue).tag(filterValue)
+                    }
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
                 List {
-                    ForEach(viewModel.articles) { article in
+                    ForEach(viewModel.articles.filter { matchesSelectedFilter($0.tag.rawValue) }) { article in
                         NavigationLink(destination: view(for: article.id)) {
                             Text(LocalizedStringKey(article.title))
                         }
@@ -35,8 +35,7 @@ struct ArticleList: View {
         }
     }
 
-    @ViewBuilder
-    func view(for key: String) -> some View {
+    @ViewBuilder func view(for key: String) -> some View {
         switch key {
             case "Role of Parents":
                 ParentsRoleView()
@@ -64,6 +63,14 @@ struct ArticleList: View {
                 Text("Importance of Breastfeeding")
             default:
                 Text("Invalid String Key")
+        }
+    }
+
+    func matchesSelectedFilter(_ articleTag: String) -> Bool {
+        if selectedFilter == "All" {
+            return true
+        } else {
+            return articleTag == selectedFilter
         }
     }
 
