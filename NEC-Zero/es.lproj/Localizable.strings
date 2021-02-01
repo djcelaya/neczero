@@ -8,6 +8,7 @@
   
 */
 
+/* NECView */
 "Read about the NEC-Zero project" = "Read about the NEC-Zero project";
 "What is NEC?" = "¿Qué es NEC?";
 "Necrotizing enterocolitis (nek-roh-TIE-zing en-ter-oh-coh-LIE-tis)..." = "Enterocolitis necrotizante (entero-col-litis necro-ti-sante), también llamado NEC (pronunciado como “nek” ), es una infección que en muchos casos es seguida por enrojecimiento o hinchazón de los intestinos (colon).";
@@ -15,3 +16,12 @@
 "Often NEC impacts babies who are born very early and very small..." = "Muchas veces el NEC impacta a los bebés que nacen muy temprano y muy pequeños. El hecho de nacer temprano puede aumentar el riesgo de NEC porque muchos órganos todavía no han desarrollado completamente y sus sistemas inmunes son inmaduros. Los infantiles que desarrollan NEC son típicamente prematuros, lo que significa que nacen antes de 32 semanas de embarazo (gestación). Sin embargo, NEC puede también ocurrir en los bebés que nacen en 37 semanas (término completo) del embarazo.";
 "The chance of your baby developing NEC is low..." = "La probabilidad de que su bebé desarrollará NEC es baja. Sin embargo, NEC es grave y a veces causa la muerte.";
 "Sometimes parents and family members..." = "A veces los padres y los miembros de la familia son los más conscientes de los cambios en los hábitos normales de sus bebés. Como padre, es importante estar atento a algunos de los señales y síntomas que podrían significar que su bebé podría estar enfermo.";
+
+/* ForParentsList */
+"For Parents" = "Para Padres";
+"Role of Parents" = "Role of Parents";
+"How does NEC happen?" = "¿Cómo pasa NEC?";
+"What are the symptoms of NEC?" = "¿Cuáles son los síntomas de NEC?";
+"Treatment of NEC" = "El Tratamiento de NEC";
+"Recovery" = "La Recuperación";
+"Resources & Support Groups" = "Recursos y Grupos de Apoyo";

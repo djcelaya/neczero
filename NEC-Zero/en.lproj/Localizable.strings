@@ -8,6 +8,7 @@
   
 */
 
+/* NECView */
 "Read about the NEC-Zero project" = "Read about the NEC-Zero project";
 "What is NEC?" = "What is NEC?";
 "Necrotizing enterocolitis (nek-roh-TIE-zing en-ter-oh-coh-LIE-tis)..." = "Necrotizing enterocolitis (nek-roh-TIE-zing en-ter-oh-coh-LIE-tis), also called NEC (often pronounced as “neck”), is an infection that in many cases is followed by redness or swelling of the intestines (bowel).";
@@ -15,3 +16,12 @@
 "Often NEC impacts babies who are born very early and very small..." = "Often NEC impacts babies who are born very early and very small. Being born early can increase the risk of NEC because many organs have not yet fully developed and their immune systems are immature. Infants who develop NEC are typically preterm, which means they are born before 32 weeks of pregnancy (gestation). However, NEC can also occur in babies who are born at 37 weeks (full term) of pregnancy.";
 "The chance of your baby developing NEC is low..." = "The chance of your baby developing NEC is low. However, NEC is serious and sometimes causes death.";
 "Sometimes parents and family members..." = "Sometimes parents and family members are the most aware of changes in their babies’ normal habits. As a parent, it is important to be watchful for some of the signs and symptoms that could mean your baby might be ill.";
+
+/* ForParentsList */
+"For Parents" = "For Parents";
+"Role of Parents" = "Role of Parents";
+"How does NEC happen?" = "How does NEC happen?";
+"What are the symptoms of NEC?" = "What are the symptoms of NEC?";
+"Treatment of NEC" = "Treatment of NEC";
+"Recovery" = "Recovery";
+"Resources & Support Groups" = "Resources & Support Groups";
