@@ -25,17 +25,45 @@ struct ArticleList: View {
                 .padding()
                 List {
                     ForEach(viewModel.articles) { article in
-                        Text(LocalizedStringKey(article.title))
+                        NavigationLink(destination: view(for: article.id)) {
+                            Text(LocalizedStringKey(article.title))
+                        }
                     }
-//                    Text("Role of Parents")
-//                    Text("How does NEC happen?")
-//                    Text("What are the symptoms of NEC?")
-//                    Text("Treatment of NEC")
-//                    Text("Recovery")
-//                    Text("Resources & Support Groups")
                 }
                 .listStyle(PlainListStyle())
             }.navigationBarTitle(Text("Resources"))
+        }
+    }
+
+    @ViewBuilder
+    func view(for key: String) -> some View {
+        switch key {
+            case "Role of Parents":
+                ParentsRoleView()
+            case "How does NEC happen?":
+                Text("How does NEC happen?")
+            case "What are the symptoms of NEC?":
+                Text("What are the symptoms of NEC?")
+            case "Treatment of NEC":
+                Text("Treatment of NEC")
+            case "Recovery":
+                Text("Recovery")
+            case "Additional Resources & Support Groups for Parents":
+                Text("Additional Resources & Support Groups for Parents")
+            case "Timely Recognition":
+                RecognitionView()
+            case "Caring for Babies with NEC in the Hospital":
+                Text("Caring for Babies with NEC in the Hospital")
+            case "Breastfeeding":
+                Text("Breastfeeding")
+            case "Additional Resources for Health Professionals":
+                Text("Additional Resources for Health Professionals")
+            case "Prevention Strategies":
+                Text("Prevention Strategies")
+            case "Importance of Breastfeeding":
+                Text("Importance of Breastfeeding")
+            default:
+                Text("Invalid String Key")
         }
     }
 
