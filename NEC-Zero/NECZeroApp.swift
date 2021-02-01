@@ -32,7 +32,8 @@ struct NECZeroApp: App {
                             Text("Parents")
                         }
                     }.tag("Parents")
-                Text("Professionals")
+//                Text("Professionals")
+                ArticleList()
                     .tabItem {
                         VStack {
                             Image(systemName: "cross")
