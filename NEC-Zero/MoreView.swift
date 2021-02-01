@@ -25,7 +25,8 @@ struct MoreView_Previews: PreviewProvider {
         TabView {
             MoreView().tabItem {
                 VStack {
-                    Image(systemName: "gearshape")
+//                    Image(systemName: "gearshape")
+                    Image(systemName: "list.bullet")
                     Text("More")
                 }
             }

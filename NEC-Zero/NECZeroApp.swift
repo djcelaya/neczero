@@ -25,7 +25,7 @@ struct NECZeroApp: App {
                             Text("NEC")
                         }
                     }.tag("NEC")
-                Text("Parents")
+                ForParentsList()
                     .tabItem {
                         VStack {
                             Image(systemName: "person")
@@ -52,7 +52,8 @@ struct NECZeroApp: App {
 //                            Image(systemName: "line.horizontal.3")
 //                            Spacer()
 //                            Image(systemName: "ellipsis")
-                            Image(systemName: "gearshape")
+//                            Image(systemName: "gearshape")
+                            Image(systemName: "list.bullet")
                             Text("More")
                         }
                     }.tag("More")
