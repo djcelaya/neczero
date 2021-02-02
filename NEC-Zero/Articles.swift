@@ -14,6 +14,7 @@ class Articles: ObservableObject {
     init() {
         articles = [
             Article(title: "Role of Parents", tag: .Parents),
+            Article(title: "What is NEC?", tag: .Parents),
             Article(title: "How does NEC happen?", tag: .Parents),
             Article(title: "What are the symptoms of NEC?", tag: .Parents),
             Article(title: "Treatment of NEC", tag: .Parents),

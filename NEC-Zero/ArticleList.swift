@@ -39,6 +39,8 @@ struct ArticleList: View {
         switch key {
             case "Role of Parents":
                 ParentsRoleView()
+            case "What is NEC?":
+                NECView()
             case "How does NEC happen?":
                 Text("How does NEC happen?")
             case "What are the symptoms of NEC?":

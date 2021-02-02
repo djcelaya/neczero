@@ -121,11 +121,11 @@
 			isa = PBXGroup;
 			children = (
 				9E66513E257AF85600EF2FAA /* NECZeroApp.swift */,
-				9EF97A8325C06BAF009DD543 /* NECView.swift */,
 				9E21449C25C8638900C010FE /* ForParentsList.swift */,
 				9E2144AC25C88D4C00C010FE /* Articles.swift */,
 				9E2144A425C882C800C010FE /* ArticleList.swift */,
 				9E2144B425C8A42400C010FE /* ParentsRoleView.swift */,
+				9EF97A8325C06BAF009DD543 /* NECView.swift */,
 				9E2144BF25C8A48C00C010FE /* RecognitionView.swift */,
 				9E11108325A4E66000905E4B /* GutCheckNEC.swift */,
 				9EBC5BA825A61885009854E4 /* GutCheckNECViewModel.swift */,
