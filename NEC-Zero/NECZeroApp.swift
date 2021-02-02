@@ -25,21 +25,21 @@ struct NECZeroApp: App {
                             Text("NEC")
                         }
                     }.tag("NEC")
-                ForParentsList()
-                    .tabItem {
-                        VStack {
-                            Image(systemName: "person")
-                            Text("Parents")
-                        }
-                    }.tag("Parents")
+//                ForParentsList()
+//                    .tabItem {
+//                        VStack {
+//                            Image(systemName: "person")
+//                            Text("Parents")
+//                        }
+//                    }.tag("Parents")
 //                Text("Professionals")
                 ArticleList()
                     .tabItem {
                         VStack {
-                            Image(systemName: "cross")
-                            Text("Professionals")
+                            Image(systemName: "book")
+                            Text("Resources")
                         }
-                    }.tag("Professionals")
+                    }.tag("Resources")
                 GutCheckNECView(with: viewModel)
                     .tabItem {
                         VStack {
