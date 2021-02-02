@@ -8,8 +8,11 @@
   
 */
 
+/* HomeView */
+"NEC-Zero is an intervention..." = "NEC-Zero is an intervention that is delivered in the Neonatal Intensive Care Unit (NICU) to prevent and improve timely recognition of necrotizing enterocolitis, known as NEC. Its goal is to reduce NEC “to zero” incidence.";
+
 /* NECView */
-"Read about the NEC-Zero project" = "Read about the NEC-Zero project";
+"Read more about the NEC-Zero project" = "Read more about the NEC-Zero project";
 "What is NEC?" = "What is NEC?";
 "Necrotizing enterocolitis (nek-roh-TIE-zing en-ter-oh-coh-LIE-tis)..." = "Necrotizing enterocolitis (nek-roh-TIE-zing en-ter-oh-coh-LIE-tis), also called NEC (often pronounced as “neck”), is an infection that in many cases is followed by redness or swelling of the intestines (bowel).";
 "This infection can cause damage to the bowel over time..." = "This infection can cause damage to the bowel over time, which can lead to the death of portions of the bowel. In some cases, a hole can form in the bowel, known as a perforation. If the bowel breaks open, it can cause the infection to spread throughout the body.";
@@ -17,7 +20,7 @@
 "The chance of your baby developing NEC is low..." = "The chance of your baby developing NEC is low. However, NEC is serious and sometimes causes death.";
 "Sometimes parents and family members..." = "Sometimes parents and family members are the most aware of changes in their babies’ normal habits. As a parent, it is important to be watchful for some of the signs and symptoms that could mean your baby might be ill.";
 
-/* ForParentsList */
+/* ForParentsList, ArticleList */
 "For Parents" = "For Parents";
 "Role of Parents" = "Role of Parents";
 "How does NEC happen?" = "How does NEC happen?";

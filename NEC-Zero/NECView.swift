@@ -19,19 +19,7 @@ struct NECView: View {
     var body: some View {
         ScrollView {
             VStack {
-//                Image("NECZeroLogo")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
                 VStack(alignment: .leading) {
-//                    Button(action: {
-//
-//                    }) {
-//                        Text("Read about the NEC-Zero project")
-//                            .padding([.leading])
-//                    }
-//                    Text("What is NEC?")
-//                        .font(.title)
-//                        .padding([.leading, .trailing, .top])
                     Text("Necrotizing enterocolitis (nek-roh-TIE-zing en-ter-oh-coh-LIE-tis)...")
                         .padding(.top, 8)
                         .padding([.leading, .trailing])

@@ -8,8 +8,11 @@
   
 */
 
+/* HomeView */
+"NEC-Zero is an intervention..." = "NEC-Zero is an intervention that is delivered in the Neonatal Intensive Care Unit (NICU) to prevent and improve timely recognition of necrotizing enterocolitis, known as NEC. Its goal is to reduce NEC “to zero” incidence.";
+
 /* NECView */
-"Read about the NEC-Zero project" = "Read about the NEC-Zero project";
+"Read more about the NEC-Zero project" = "Read about the NEC-Zero project";
 "What is NEC?" = "¿Qué es NEC?";
 "Necrotizing enterocolitis (nek-roh-TIE-zing en-ter-oh-coh-LIE-tis)..." = "Enterocolitis necrotizante (entero-col-litis necro-ti-sante), también llamado NEC (pronunciado como “nek” ), es una infección que en muchos casos es seguida por enrojecimiento o hinchazón de los intestinos (colon).";
 "This infection can cause damage to the bowel over time..." = "Esta infección puede causar daño al colon con el tiempo, que puede provocar a la muerte de partes del intestino. En algunos casos, se puede formar un orificio en el intestino, conocido como una perforación. Si el intestino se rompe, puede causar que la infección se extienda por todo el cuerpo.";

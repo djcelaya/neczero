@@ -18,11 +18,11 @@ struct NECZeroApp: App {
     var body: some Scene {
         WindowGroup {
             TabView(selection: $selectedTab) {
-                NECView()
+                HomeView()
                     .tabItem {
                         VStack {
                             Image(systemName: "heart")
-                            Text("NEC")
+                            Text("NEC-Zero")
                         }
                     }.tag("NEC")
 //                ForParentsList()
