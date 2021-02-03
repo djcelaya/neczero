@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9E11108425A4E66000905E4B /* GutCheckNEC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E11108325A4E66000905E4B /* GutCheckNEC.swift */; };
 		9E21449525C8517100C010FE /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E21449425C8517100C010FE /* MoreView.swift */; };
-		9E21449D25C8638900C010FE /* ForParentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E21449C25C8638900C010FE /* ForParentsList.swift */; };
 		9E2144A525C882C800C010FE /* ArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2144A425C882C800C010FE /* ArticleList.swift */; };
 		9E2144AD25C88D4C00C010FE /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2144AC25C88D4C00C010FE /* Articles.swift */; };
 		9E2144B525C8A42400C010FE /* ParentsRoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2144B425C8A42400C010FE /* ParentsRoleView.swift */; };
@@ -48,7 +47,6 @@
 /* Begin PBXFileReference section */
 		9E11108325A4E66000905E4B /* GutCheckNEC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutCheckNEC.swift; sourceTree = "<group>"; };
 		9E21449425C8517100C010FE /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
-		9E21449C25C8638900C010FE /* ForParentsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForParentsList.swift; sourceTree = "<group>"; };
 		9E2144A425C882C800C010FE /* ArticleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleList.swift; sourceTree = "<group>"; };
 		9E2144AC25C88D4C00C010FE /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
 		9E2144B425C8A42400C010FE /* ParentsRoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsRoleView.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				9E66513E257AF85600EF2FAA /* NECZeroApp.swift */,
 				9E4A0CC825C9CAA2003B36F9 /* HomeView.swift */,
 				9EF97A8B25C06BE3009DD543 /* NECZeroView.swift */,
-				9E21449C25C8638900C010FE /* ForParentsList.swift */,
 				9E2144AC25C88D4C00C010FE /* Articles.swift */,
 				9E2144A425C882C800C010FE /* ArticleList.swift */,
 				9E2144B425C8A42400C010FE /* ParentsRoleView.swift */,
@@ -313,7 +310,6 @@
 				9E2144C025C8A48C00C010FE /* RecognitionView.swift in Sources */,
 				9EF97A8425C06BAF009DD543 /* NECView.swift in Sources */,
 				9E2144B525C8A42400C010FE /* ParentsRoleView.swift in Sources */,
-				9E21449D25C8638900C010FE /* ForParentsList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
