@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
+
+//    @ObservedObject var viewModel: HomeViewModel
+    @Binding var selectedTab: String
+    @Binding var selectedFilter: Articles.Filters
+
     var body: some View {
         NavigationView() {
             VStack {
@@ -32,7 +37,7 @@ struct HomeView: View {
                             .font(.title2)
                             .cornerRadius(15)
                         Button(action: {
-
+                            selectedTab = "GutCheckNEC"
                         }) {
                             Text("GutCheckNEC")
                                 .padding()
@@ -44,7 +49,9 @@ struct HomeView: View {
                     }
                     HStack(spacing: 20) {
                         Button(action: {
-
+//                            viewModel.goToParentResources?()
+                            selectedFilter = .Parents
+                            selectedTab = "Resources"
                         }) {
                             Text("Resources for Parents")
                                 .padding()
@@ -54,7 +61,9 @@ struct HomeView: View {
                                 .cornerRadius(15)
                         }
                         Button(action: {
-
+//                            viewModel.goToProfessionalResources?()
+                            selectedFilter = .Professionals
+                            selectedTab = "Resources"
                         }) {
                             Text("Resources for Professionals")
                                 .padding()
@@ -68,12 +77,16 @@ struct HomeView: View {
             }
         }
     }
+
+//    init(with viewModel: HomeViewModel) {
+//        self.viewModel = viewModel
+//    }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
-            HomeView()
+            HomeView(selectedTab: .constant("NEC"), selectedFilter: .constant(.All))
                 .tabItem {
                 Image(systemName: "house")
                 Text("NEC-Zero")

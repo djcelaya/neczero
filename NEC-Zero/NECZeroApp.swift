@@ -12,20 +12,22 @@ struct NECZeroApp: App {
 
 	let model: GutCheckNEC
 	let viewModel: GutCheckNECViewModel
+//    let articlesViewModel: Articles
 
     @State private var selectedTab = "NEC"
+    @State private var selectedFilter: Articles.Filters = .All
 
     var body: some Scene {
         WindowGroup {
             TabView(selection: $selectedTab) {
-                HomeView()
+                HomeView(selectedTab: $selectedTab, selectedFilter: $selectedFilter)
                     .tabItem {
                         VStack {
                             Image(systemName: "heart")
                             Text("NEC-Zero")
                         }
                     }.tag("NEC")
-                ArticleList()
+                ArticleList(selectedFilter: $selectedFilter)
                     .tabItem {
                         VStack {
                             Image(systemName: "book")
@@ -57,5 +59,6 @@ struct NECZeroApp: App {
 	init() {
 		model = GutCheckNEC()
 		viewModel = GutCheckNECViewModel(with: model)
+//        articlesViewModel = Articles()
 	}
 }

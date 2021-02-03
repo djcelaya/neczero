@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ArticleList: View {
 
-    @ObservedObject var viewModel: Articles
+    @ObservedObject var viewModel: Articles = Articles()
+    @Binding var selectedFilter: Articles.Filters
 
     var body: some View {
         NavigationView() {
             VStack {
-                Picker("", selection: $viewModel.selectedFilter) {
+                Picker("", selection: $selectedFilter) {
                     ForEach(Articles.Filters.allCases) { filter in
                         Text(filter.rawValue).tag(filter)
                     }
@@ -67,24 +68,29 @@ struct ArticleList: View {
     }
 
     func matchesSelectedFilter(_ articleTag: String) -> Bool {
-        if viewModel.selectedFilter == .All {
+        if selectedFilter == .All {
             return true
         } else {
-            return articleTag == viewModel.selectedFilter.rawValue
+            return articleTag == selectedFilter.rawValue
         }
     }
 
-    init(/*withFilter filter: String = "All"*/) {
-        viewModel = Articles()
-//        selectedFilter = filter
-    }
+//    init(withFilter filter: Articles.Filters = .All) {
+//        viewModel = Articles(withFilter: filter)
+//    }
+
+//    init(withViewModel viewModel: Articles = Articles(), selectedFilter filter: Binding<Articles.Filters>) {
+//        self.viewModel = viewModel
+//        $selectedFilter = filter
+//    }
 }
 
 struct ArticleList_Previews: PreviewProvider {
+//    @State var selectedFilter = Articles.Filters.All
     static var previews: some View {
         ForEach(["en", "es"], id: \.self) { id in
             TabView {
-                ArticleList().tabItem {
+                ArticleList(selectedFilter: .constant(.All)).tabItem { // TODO - need something better than constant binding for testing
                     VStack {
                         Image(systemName: "book")
                         Text("Resources")
