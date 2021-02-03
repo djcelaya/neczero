@@ -25,14 +25,6 @@ struct NECZeroApp: App {
                             Text("NEC-Zero")
                         }
                     }.tag("NEC")
-//                ForParentsList()
-//                    .tabItem {
-//                        VStack {
-//                            Image(systemName: "person")
-//                            Text("Parents")
-//                        }
-//                    }.tag("Parents")
-//                Text("Professionals")
                 ArticleList()
                     .tabItem {
                         VStack {
