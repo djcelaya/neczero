@@ -10,15 +10,13 @@ import SwiftUI
 struct ArticleList: View {
 
     @ObservedObject var viewModel: Articles
-    let filters = ["All", "Parents", "Professionals", "Prevention"]
-    @State var selectedFilter = "All"
 
     var body: some View {
         NavigationView() {
             VStack {
-                Picker("", selection: $selectedFilter) {
-                    ForEach(filters, id: \.self) { filterValue in
-                        Text(filterValue).tag(filterValue)
+                Picker("", selection: $viewModel.selectedFilter) {
+                    ForEach(Articles.Filters.allCases) { filter in
+                        Text(filter.rawValue).tag(filter)
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
@@ -69,15 +67,16 @@ struct ArticleList: View {
     }
 
     func matchesSelectedFilter(_ articleTag: String) -> Bool {
-        if selectedFilter == "All" {
+        if viewModel.selectedFilter == .All {
             return true
         } else {
-            return articleTag == selectedFilter
+            return articleTag == viewModel.selectedFilter.rawValue
         }
     }
 
-    init() {
+    init(/*withFilter filter: String = "All"*/) {
         viewModel = Articles()
+//        selectedFilter = filter
     }
 }
 

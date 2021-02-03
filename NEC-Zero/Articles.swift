@@ -8,8 +8,17 @@
 import Combine
 
 class Articles: ObservableObject {
+
+    enum Filters: String, Identifiable, CaseIterable {
+        case All = "All"
+        case Parents = "Parents"
+        case Professionals = "Professionals"
+        case Prevention = "Prevention"
+        var id: String { rawValue }
+    }
     
     @Published var articles: [Article]
+    @Published var selectedFilter: Filters
 
     init() {
         articles = [
@@ -27,18 +36,19 @@ class Articles: ObservableObject {
             Article(title: "Prevention Strategies", tag: .Prevention),
             Article(title: "Importance of Breastfeeding", tag: .Prevention)
         ]
+        selectedFilter = .All
     }
 }
 
-enum ArticleTag: String {
-    case Parents = "Parents"
-    case Professionals = "Professionals"
-    case Prevention = "Prevention"
-}
-
 struct Article: Identifiable {
-//    let id = UUID()
+
+    enum Tag: String {
+        case Parents = "Parents"
+        case Professionals = "Professionals"
+        case Prevention = "Prevention"
+    }
+
     let title: String
-    let tag: ArticleTag
+    let tag: Tag
     var id: String { title }
 }
