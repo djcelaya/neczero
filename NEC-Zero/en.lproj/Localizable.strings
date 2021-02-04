@@ -11,6 +11,21 @@
 /* HomeView */
 "NEC-Zero is an intervention..." = "NEC-Zero is an intervention that is delivered in the Neonatal Intensive Care Unit (NICU) to prevent and improve timely recognition of necrotizing enterocolitis, known as NEC. Its goal is to reduce NEC “to zero” incidence.";
 
+/* NECZeroView */
+"About NEC-Zero" = "About NEC-Zero";
+"What is NEC-Zero?" = "What is NEC-Zero?";
+"NEC-Zero is an intervention that..." = "NEC-Zero is an intervention that is delivered in the Neonatal Intensive Care Unit to prevent and improve timely recognition of necrotizing enterocolitis, known as NEC. The intervention “NEC-Zero” is being tested and reflects a common goal to reduce NEC “to zero” incidence. Technology will support the intervention.";
+"Who is funding the project?" = "Who is funding the project?";
+"The Agency for Healthcare Research and Quality and..." = "The Agency for Healthcare Research and Quality and the Robert Wood Johnson Foundation are funding the study. Banner Health is a key collaborator and Banner Health NICUs will be study sites.";
+"Who is the target population?" = "Who is the target population?";
+"Babies targeted to receive NEC-Zero are..." = "Babies targeted to receive NEC-Zero are those born weighing under 1500 grams (or < 3.3 pounds).";
+"What clinical practices are included?" = "What clinical practices are included?";
+"The intervention integrates..." = "The intervention integrates parent engagement and includes five practices:";
+"Strategies to promote babies being fed human milk..." = "1. Strategies to promote babies being fed human milk, especially their mom’s milk";
+"Using a tool to support timely recognition..." = "2. Using a tool to support timely recognition called GutCheckNEC with a structured communication tool when clinical worsening is suspected";
+"Limiting the length of time antibiotics..." = "3. Limiting the length of time antibiotics are given right after a baby is born";
+"Promoting adherence..." = "4. Promoting adherence to a unit-agreed on standardized feeding protocol";
+
 /* NECView */
 "Read more about the NEC-Zero project" = "Read more about the NEC-Zero project";
 "What is NEC?" = "What is NEC?";
@@ -20,7 +35,7 @@
 "The chance of your baby developing NEC is low..." = "The chance of your baby developing NEC is low. However, NEC is serious and sometimes causes death.";
 "Sometimes parents and family members..." = "Sometimes parents and family members are the most aware of changes in their babies’ normal habits. As a parent, it is important to be watchful for some of the signs and symptoms that could mean your baby might be ill.";
 
-/* ForParentsList, ArticleList */
+/* ArticleList */
 "For Parents" = "For Parents";
 "Role of Parents" = "Role of Parents";
 "How does NEC happen?" = "How does NEC happen?";

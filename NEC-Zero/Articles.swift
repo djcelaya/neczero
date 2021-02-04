@@ -18,7 +18,7 @@ class Articles: ObservableObject {
     }
     
     @Published var articles: [Article]
-    @Published var selectedFilter: Filters
+//    @Published var selectedFilter: Filters
 
     init(withFilter filter: Filters = .All) {
         articles = [
@@ -36,7 +36,7 @@ class Articles: ObservableObject {
             Article(title: "Prevention Strategies", tag: .Prevention),
             Article(title: "Importance of Breastfeeding", tag: .Prevention)
         ]
-        selectedFilter = filter
+//        selectedFilter = filter
     }
 }
 

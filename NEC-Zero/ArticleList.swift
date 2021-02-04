@@ -90,7 +90,7 @@ struct ArticleList_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(["en", "es"], id: \.self) { id in
             TabView {
-                ArticleList(selectedFilter: .constant(.All)).tabItem { // TODO - need something better than constant binding for testing
+                PreviewWrapper().tabItem {
                     VStack {
                         Image(systemName: "book")
                         Text("Resources")
@@ -99,4 +99,12 @@ struct ArticleList_Previews: PreviewProvider {
             }.environment(\.locale, .init(identifier: id))
         }
     }
+
+    struct PreviewWrapper: View {
+        @State var selectedFilter = Articles.Filters.All
+
+        var body: some View {
+          ArticleList(selectedFilter: $selectedFilter)
+        }
+      }
 }

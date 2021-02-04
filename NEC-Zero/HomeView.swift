@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
 
-//    @ObservedObject var viewModel: HomeViewModel
     @Binding var selectedTab: String
     @Binding var selectedFilter: Articles.Filters
 
@@ -28,8 +27,8 @@ struct HomeView: View {
                             .padding([.leading, .trailing, .bottom])
                     }
                 }
-                VStack(spacing: 20) {
-                    HStack(spacing: 20) {
+                VStack(spacing: 15) {
+                    HStack(spacing: 15) {
                         NavigationLink("What is NEC?", destination: NECView())
                             .padding()
                             .background(Color("PrimaryColor"))
@@ -77,10 +76,6 @@ struct HomeView: View {
             }
         }
     }
-
-//    init(with viewModel: HomeViewModel) {
-//        self.viewModel = viewModel
-//    }
 }
 
 struct HomeView_Previews: PreviewProvider {

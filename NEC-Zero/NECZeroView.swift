@@ -2,49 +2,76 @@
 //  NECZeroView.swift
 //  NEC-Zero
 //
-//  Created by David Celaya on 1/26/21.
+//  Corresponding webpage: https://neczero.nursing.arizona.edu/about
+//  Video: https://vimeo.com/210346353/7d5ccff668
+//
+//  Created by David Celaya-Gonzalez on 1/26/21.
 //
 
 import SwiftUI
+import AVKit
 
 struct NECZeroView: View {
+
+    let videoURL = URL(string: "https://player.vimeo.com/external/210346353.hd.mp4" +
+                        "?s=6e2019548e85bb6d7ca324476e70037975c0f52b&profile_id=119")
+    let player: AVPlayer
+
     var body: some View {
-        VStack {
-            Image("NECZeroLogo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            VStack(alignment: .leading) {
-                Text("What is NEC-Zero?")
-                    .font(.title2)
+        ScrollView {
+            LazyVStack(alignment: .leading) {
+                Text("NEC-Zero is an intervention that...")
                     .padding([.leading, .trailing, .top])
-                Text("NEC-Zero is an intervention that is delivered in the Neonatal Intensive Care Unit to prevent and improve timely recognition of necrotizing enterocolitis, known as NEC. The intervention “NEC-Zero” is being tested and reflects a common goal to reduce NEC “to zero” incidence. Technology will support the intervention.")
-                    .padding([.leading, .trailing, .top])
-                Text("VIDEO HERE")
-                    .background(Color.yellow)
-                    .padding([.leading, .trailing, .top])
+                VideoPlayer(player: player)
+                    .aspectRatio(16.0 / 9.0, contentMode: .fit)
+                    .onDisappear() {
+                        player.pause()
+                    }
                 Text("Who is funding the project?")
                     .font(.title2)
                     .padding([.leading, .trailing, .top])
-                Text("The Agency for Healthcare Research and Quality and the Robert Wood Johnson Foundation are funding the study. Banner Health is a key collaborator and Banner Health NICUs will be study sites.")
-                    .padding([.leading, .trailing, .top])
-                Text("Who is the target population for NEC-Zero?")
+                Text("The Agency for Healthcare Research and Quality and...")
+                    .padding(.top, 4)
+                    .padding([.leading, .trailing])
+                Text("Who is the target population?")
                     .font(.title2)
                     .padding([.leading, .trailing, .top])
-                Text("Babies targeted to receive NEC-Zero are those born weighing under 1500 grams (or < 3.3 pounds).")
-                    .padding([.leading, .trailing, .top])
-                Text("What clinical practices are included in NEC-Zero?")
+                Text("Babies targeted to receive NEC-Zero are...")
+                    .padding(.top, 4)
+                    .padding([.leading, .trailing])
+                Text("What clinical practices are included?")
                     .font(.title2)
                     .padding([.leading, .trailing, .top])
-                Text("The chance of your baby developing NEC is low. However, NEC is serious and sometimes causes death.")
-                    .padding([.leading, .trailing, .top])
+                Text("The intervention integrates...")
+                    .padding(.top, 4)
+                    .padding([.leading, .trailing])
+                VStack(alignment: .leading) { // accomplish this numbered list with a grid?
+                    Text("Strategies to promote babies being fed human milk...")
+                        .padding([.leading, .trailing])
+                    Text("Using a tool to support timely recognition...")
+                        .padding([.leading, .trailing])
+                    Text("Limiting the length of time antibiotics...")
+                        .padding([.leading, .trailing])
+                    Text("Promoting adherence...")
+                        .padding([.leading, .trailing, .bottom])
+                }
             }
-            Spacer()
-        }
+        }.navigationTitle("What is NEC-Zero?")
+    }
+
+    init() {
+        player = AVPlayer(url: videoURL!)
     }
 }
 
 struct NECZeroView_Previews: PreviewProvider {
     static var previews: some View {
-        NECZeroView()
+        ForEach(["en", "es"], id: \.self) { id in
+            TabView {
+                NavigationView() {
+                    NECZeroView()
+                }
+            }.environment(\.locale, .init(identifier: id))
+        }
     }
 }
