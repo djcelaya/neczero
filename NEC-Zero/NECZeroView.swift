@@ -17,6 +17,11 @@ struct NECZeroView: View {
                         "?s=6e2019548e85bb6d7ca324476e70037975c0f52b&profile_id=119")
     let player: AVPlayer
 
+    let columns = [
+        GridItem(.fixed(20), alignment: .topLeading),
+        GridItem(.flexible(), alignment: .topLeading)
+    ]
+
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading) {
@@ -45,16 +50,16 @@ struct NECZeroView: View {
                 Text("The intervention integrates...")
                     .padding(.top, 4)
                     .padding([.leading, .trailing])
-                VStack(alignment: .leading) { // accomplish this numbered list with a grid?
+                LazyVGrid(columns: columns) {
+                    Text("1.")
                     Text("Strategies to promote babies being fed human milk...")
-                        .padding([.leading, .trailing])
+                    Text("2.")
                     Text("Using a tool to support timely recognition...")
-                        .padding([.leading, .trailing])
+                    Text("3.")
                     Text("Limiting the length of time antibiotics...")
-                        .padding([.leading, .trailing])
+                    Text("4.")
                     Text("Promoting adherence...")
-                        .padding([.leading, .trailing, .bottom])
-                }
+                }.padding([.leading, .trailing, .bottom])
             }
         }.navigationTitle("What is NEC-Zero?")
     }
