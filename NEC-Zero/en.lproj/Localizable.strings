@@ -47,3 +47,19 @@
 /* ParentsRoleView */
 "Parents you have an important role..." = "Parents you have an important role in your baby's care needs. As you learn more about NEC you most likely will have questions and will be scared. Please know there are resources and services available to offer support, answer questions, and help lessen your burden.";
 "Tip: Write your questions down..." = "Tip: Write your questions down. If after you receive information and you realize you need additional explanations do not hesitate to ask. You are an important member of your baby's health team.";
+
+/* RecognitionView */
+"Timely Recognition" = "Timely Recognition";
+"It is important that healthcare providers caring for neonates..." = "It is important that healthcare providers caring for neonates know how to recognize signs and symptoms of NEC. Timely recognition of NEC can lead to earlier diagnosis and treatment, and potential prevention of serious complications such as surgical intervention and death.";
+"Risk Awareness" = "Risk Awareness";
+"Awareness of a particular neonate’s risk..." = "Awareness of a particular neonate’s risk factors for NEC are important when interpreting clinical signs and determining guidelines for early feedings. Please see the section on (GutCheckNEC) for some of the most important risk factors to keep in mind.";
+"Clinical Assessment and Monitoring" = "Clinical Assessment and Monitoring";
+"Vigilant assessment and monitoring..." = "Vigilant assessment and monitoring is critical in recognizing early signs of NEC. Many early signs are similar to signs of other problems such as sepsis and feeding intolerance that is not associated with NEC.  A comprehensive understanding of vital sign trends and abdominal/gastrointestinal assessment findings associated with NEC may help to distinguish NEC from other clinical problems.";
+"Abdominal/gastrointestinal signs of NEC include..." = "Abdominal/gastrointestinal signs of NEC include: abdominal distention, abdominal duskiness, abdominal rigidity, repeated emesis, and bloody stool or gastric residual.";
+"Non-abdominal signs of NEC include..." = "Non-abdominal signs of NEC include: temperature instability, increased agitation, tachycardia, increased number and severity of apnea/bradycardic episodes, and increased need for respiratory support.";
+"Effective Communication" = "Effective Communication";
+"Communication between care providers..." = "Communication between care providers must be timely and effective when a clinician recognizes early signs of NEC.  Most signs of NEC are first recognized by the neonate’s bedside nurse who must then communicate with a provider who can determine a plan for diagnostic testing and treatment. This communication process sometimes involves multiple care providers and is sometimes complicated by institutional and social factors with potential for information to be miscommunicated or lost. Using a standard communication tool such as SBAR may increase effectiveness.";
+"Sources" = "Sources";
+"Christensen, R. D., Wiedmeier, S. E.,..." = "Christensen, R. D., Wiedmeier, S. E., Baer, V. L., Henry, E., Gerday, E., Lambert, D. K., . . . Besner, G. E. (2010). Antecedents of Bell stage III necrotizing enterocolitis. J Perinatol, 30(1), 54-57. doi:10.1038/jp.2009.93";
+"Gephart, S. M., Wetzel, C.,..." = "Gephart, S. M., Wetzel, C., & Krisman, B. (2014). Prevention and early recognition of necrotizing enterocolitis: a tale of 2 tools--eNEC and GutCheckNEC. Adv Neonatal Care, 14(3), 201-210; quiz 211-202. doi:10.1097/anc.0000000000000063";
+"Gregory, K. E., Deforge, C. E.,..." = "Gregory, K. E., Deforge, C. E., Natale, K. M., Phillips, M., & Van Marter, L. J. (2011). Necrotizing enterocolitis in the premature infant: neonatal nursing assessment, disease pathogenesis, and clinical presentation. Adv Neonatal Care, 11(3), 155-164; quiz 165-156. doi:10.1097/ANC.0b013e31821baaf4";

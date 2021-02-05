@@ -48,7 +48,6 @@ struct HomeView: View {
                     }
                     HStack(spacing: 20) {
                         Button(action: {
-//                            viewModel.goToParentResources?()
                             selectedFilter = .Parents
                             selectedTab = "Resources"
                         }) {
@@ -60,7 +59,6 @@ struct HomeView: View {
                                 .cornerRadius(15)
                         }
                         Button(action: {
-//                            viewModel.goToProfessionalResources?()
                             selectedFilter = .Professionals
                             selectedTab = "Resources"
                         }) {
