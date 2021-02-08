@@ -11,30 +11,37 @@ import SwiftUI
 
 struct RecognitionView: View {
     var body: some View {
-        ScrollView {
             VStack(alignment: .leading, spacing: 10) {
                 Text("It is important that healthcare providers caring for neonates...")
                 Text("Key Components of Timely Recognition:")
                     .font(.title2)
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("Risk Awareness")
-                        .font(.title3)
-                    Text("Awareness of a particular neonate’s risk...")
+                ScrollView(.horizontal) {
+                    LazyHStack {
+                        CardView(with: "Risk Awareness", and: "Awareness of a particular neonate’s risk...")
+                            .background(Color.red)
+                        CardView(with: "Clinical Assessment and Monitoring", and: "Vigilant assessment and monitoring...")
+                        CardView(with: "Effective Communication", and: "Communication between care providers...")
+                    }.background(Color.blue)
                 }
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("Clinical Assessment and Monitoring")
-                        .font(.title3)
-                    Text("Vigilant assessment and monitoring...")
-                        .padding(.bottom, 5)
-                    Text("Abdominal/gastrointestinal signs of NEC include...")
-                        .padding(.bottom, 5)
-                    Text("Non-abdominal signs of NEC include...")
-                }
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("Effective Communication")
-                        .font(.title3)
-                    Text("Communication between care providers...")
-                }
+//                    VStack(alignment: .leading, spacing: 5) {
+//                        Text("Risk Awareness")
+//                            .font(.title3)
+//                        Text("Awareness of a particular neonate’s risk...")
+//                    }
+//                    VStack(alignment: .leading, spacing: 5) {
+//                        Text("Clinical Assessment and Monitoring")
+//                            .font(.title3)
+//                        Text("Vigilant assessment and monitoring...")
+//                            .padding(.bottom, 5)
+//                        Text("Abdominal/gastrointestinal signs of NEC include...")
+//                            .padding(.bottom, 5)
+//                        Text("Non-abdominal signs of NEC include...")
+//                    }
+//                    VStack(alignment: .leading, spacing: 5) {
+//                        Text("Effective Communication")
+//                            .font(.title3)
+//                        Text("Communication between care providers...")
+//                    }
                 VStack(alignment: .leading, spacing: 5) {
                     Text("Sources")
                         .font(.title3)
@@ -45,8 +52,32 @@ struct RecognitionView: View {
                     Text("Gregory, K. E., Deforge, C. E.,...")
                         .padding(.bottom, 5)
                 }
-            }.padding([.leading, .trailing, .bottom])
-        }.navigationBarTitle("Timely Recognition")
+            }
+            .padding([.leading, .trailing, .bottom])
+            .navigationBarTitle("Timely Recognition")
+    }
+}
+
+struct CardView: View {
+    let title: String
+    let text: LocalizedStringKey
+    var body: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text(title)
+                .font(.title3)
+                .fontWeight(.semibold)
+            Text(text)
+
+            Spacer()
+        }
+        .frame(width: 300)
+        .padding()
+        .background(Color.gray)
+        .cornerRadius(20)
+    }
+    init(with title: String, and text: LocalizedStringKey) {
+        self.title = title
+        self.text = text
     }
 }
 
