@@ -10,19 +10,32 @@
 import SwiftUI
 
 struct RecognitionView: View {
+
+    @State var keyComponentsIndex = 0
+
     var body: some View {
             VStack(alignment: .leading, spacing: 10) {
                 Text("It is important that healthcare providers caring for neonates...")
                 Text("Key Components of Timely Recognition:")
                     .font(.title2)
-                ScrollView(.horizontal) {
-                    LazyHStack {
-                        CardView(with: "Risk Awareness", and: "Awareness of a particular neonate’s risk...")
-                            .background(Color.red)
-                        CardView(with: "Clinical Assessment and Monitoring", and: "Vigilant assessment and monitoring...")
-                        CardView(with: "Effective Communication", and: "Communication between care providers...")
-                    }.background(Color.blue)
+//                ScrollView(.horizontal) {
+//                    LazyHStack {
+//                        CardView(with: "Risk Awareness", and: "Awareness of a particular neonate’s risk...")
+//                            //.background(Color.red)
+//                        CardView(with: "Clinical Assessment and Monitoring", and: "Vigilant assessment and monitoring...")
+//                        CardView(with: "Effective Communication", and: "Communication between care providers...")
+//                    }//.background(Color.blue)
+//                }
+                TabView(selection: $keyComponentsIndex) {
+                    CardView(with: "Risk Awareness", and: "Awareness of a particular neonate’s risk...")
+                        .tag(0)
+                    CardView(with: "Clinical Assessment and Monitoring", and: "Vigilant assessment and monitoring...")
+                        .tag(1)
+                    CardView(with: "Effective Communication", and: "Communication between care providers...")
+                        .tag(2)
                 }
+                .tabViewStyle(PageTabViewStyle())
+                .animation(.easeOut)
 //                    VStack(alignment: .leading, spacing: 5) {
 //                        Text("Risk Awareness")
 //                            .font(.title3)
@@ -66,13 +79,14 @@ struct CardView: View {
             Text(title)
                 .font(.title3)
                 .fontWeight(.semibold)
+                .foregroundColor(.white)
             Text(text)
-
+                .foregroundColor(.white)
             Spacer()
         }
-        .frame(width: 300)
+//        .frame(width: 300)
         .padding()
-        .background(Color.gray)
+        .background(Color("AccentColor"))
         .cornerRadius(20)
     }
     init(with title: String, and text: LocalizedStringKey) {
