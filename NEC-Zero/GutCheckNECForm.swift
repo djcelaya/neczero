@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GutCheckNECView: View {
+struct GutCheckNECForm: View {
 
     @ObservedObject var viewModel: GutCheckNECViewModel
 
@@ -69,7 +69,7 @@ struct GutCheckNECView_Previews: PreviewProvider {
         let model = GutCheckNEC()
         let viewModel = GutCheckNECViewModel(with: model)
         return TabView {
-            GutCheckNECView(with: viewModel).tabItem {
+            GutCheckNECForm(with: viewModel).tabItem {
                 VStack {
                     Image(systemName: "heart.text.square")
                     Text("GutCheckNEC")

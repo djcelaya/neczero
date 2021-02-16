@@ -34,7 +34,7 @@ struct NECZeroApp: App {
                             Text("Resources")
                         }
                     }.tag("Resources")
-                GutCheckNECView(with: viewModel)
+                GutCheckNECForm(with: viewModel)
                     .tabItem {
                         VStack {
                             Image(systemName: "heart.text.square")
