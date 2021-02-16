@@ -59,7 +59,7 @@ struct GutCheckNECForm: View {
 
     }
 
-    init(with viewModel: GutCheckNECViewModel) {
+    init(with viewModel: GutCheckNECViewModel = GutCheckNECViewModel(with: GutCheckNEC())) {
         self.viewModel = viewModel
     }
 }
