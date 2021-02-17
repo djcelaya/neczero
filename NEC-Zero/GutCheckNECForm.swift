@@ -46,17 +46,22 @@ struct GutCheckNECForm: View {
     }
 
     func QuestionCard() -> some View {
-        VStack {
+        VStack(alignment: .center, spacing: 16) {
             Text("Gestational age (weeks)")
+                .font(.title2)
+                .padding(.top)
+                .padding(.horizontal)
             Text("Calculate GA in weeks at birth based preferably on due date determined by 1st trimester ultrasound. If that is unavailable, use the gestational age assessment at delivery (Ballard or Dubowitz)")
-            Button("<28") {
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+            VStack {
+                QuestionResponseButton("<28")
+                Button("28-31 6/7") {
 
-            }
-            Button("28-31 6/7") {
+                }
+                Button(">= 32") {
 
-            }
-            Button(">= 32") {
-
+                }
             }
         }
         .background(Color.white)
@@ -110,6 +115,27 @@ struct GutCheckNECForm: View {
 
     init(with viewModel: GutCheckNECViewModel = GutCheckNECViewModel(with: GutCheckNEC())) {
         self.viewModel = viewModel
+    }
+}
+
+struct QuestionResponseButton: View {
+
+    private let responseText: LocalizedStringKey
+
+    var body: some View {
+        Button(responseText) {
+
+        }
+        .padding()
+        .background(Color("AccentColor"))
+        .font(.title3)
+        .foregroundColor(.white)
+        .cornerRadius(24)
+        .shadow(radius: 8)
+    }
+
+    init(_ responseText: LocalizedStringKey) {
+        self.responseText = responseText
     }
 }
 
