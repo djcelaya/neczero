@@ -101,6 +101,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E0D8B0A25DEF49F00B5DA44 /* GutCheckNEC */ = {
+			isa = PBXGroup;
+			children = (
+				9EB3795325DC1D4B00393C91 /* GutCheckNECLanding.swift */,
+				9E11108325A4E66000905E4B /* GutCheckNEC.swift */,
+				9EBC5BA825A61885009854E4 /* GutCheckNECViewModel.swift */,
+				9EBC5BAD25A619E1009854E4 /* GutCheckNECForm.swift */,
+			);
+			name = GutCheckNEC;
+			sourceTree = "<group>";
+		};
+		9E0D8B0E25DEF99B00B5DA44 /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				9E2144A425C882C800C010FE /* ArticleList.swift */,
+				9E2144AC25C88D4C00C010FE /* Articles.swift */,
+				9E2144B425C8A42400C010FE /* ParentsRoleView.swift */,
+				9EF97A8325C06BAF009DD543 /* NECView.swift */,
+				9E2144BF25C8A48C00C010FE /* RecognitionView.swift */,
+				9EC7152925D1C409008E2138 /* PamphletView.swift */,
+			);
+			name = Articles;
+			sourceTree = "<group>";
+		};
 		9E665132257AF85600EF2FAA = {
 			isa = PBXGroup;
 			children = (
@@ -126,22 +150,14 @@
 			children = (
 				9E66513E257AF85600EF2FAA /* NECZeroApp.swift */,
 				9E4A0CC825C9CAA2003B36F9 /* HomeView.swift */,
+				9E0D8B0E25DEF99B00B5DA44 /* Articles */,
+				9E0D8B0A25DEF49F00B5DA44 /* GutCheckNEC */,
 				9EF97A8B25C06BE3009DD543 /* NECZeroView.swift */,
-				9E2144AC25C88D4C00C010FE /* Articles.swift */,
-				9E2144A425C882C800C010FE /* ArticleList.swift */,
-				9E2144B425C8A42400C010FE /* ParentsRoleView.swift */,
-				9EF97A8325C06BAF009DD543 /* NECView.swift */,
-				9E2144BF25C8A48C00C010FE /* RecognitionView.swift */,
-				9EB3795325DC1D4B00393C91 /* GutCheckNECLanding.swift */,
-				9E11108325A4E66000905E4B /* GutCheckNEC.swift */,
-				9EBC5BA825A61885009854E4 /* GutCheckNECViewModel.swift */,
-				9EBC5BAD25A619E1009854E4 /* GutCheckNECForm.swift */,
 				9E21449425C8517100C010FE /* MoreView.swift */,
 				9EB759FF25C2FECE00153E15 /* Localizable.strings */,
 				9E665142257AF85700EF2FAA /* Assets.xcassets */,
 				9E665147257AF85700EF2FAA /* Info.plist */,
 				9E665144257AF85700EF2FAA /* Preview Content */,
-				9EC7152925D1C409008E2138 /* PamphletView.swift */,
 			);
 			path = "NEC-Zero";
 			sourceTree = "<group>";
