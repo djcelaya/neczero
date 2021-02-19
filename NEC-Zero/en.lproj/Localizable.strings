@@ -63,3 +63,6 @@
 "Christensen, R. D., Wiedmeier, S. E.,..." = "Christensen, R. D., Wiedmeier, S. E., Baer, V. L., Henry, E., Gerday, E., Lambert, D. K., . . . Besner, G. E. (2010). Antecedents of Bell stage III necrotizing enterocolitis. J Perinatol, 30(1), 54-57. doi:10.1038/jp.2009.93";
 "Gephart, S. M., Wetzel, C.,..." = "Gephart, S. M., Wetzel, C., & Krisman, B. (2014). Prevention and early recognition of necrotizing enterocolitis: a tale of 2 tools--eNEC and GutCheckNEC. Adv Neonatal Care, 14(3), 201-210; quiz 211-202. doi:10.1097/anc.0000000000000063";
 "Gregory, K. E., Deforge, C. E.,..." = "Gregory, K. E., Deforge, C. E., Natale, K. M., Phillips, M., & Van Marter, L. J. (2011). Necrotizing enterocolitis in the premature infant: neonatal nursing assessment, disease pathogenesis, and clinical presentation. Adv Neonatal Care, 11(3), 155-164; quiz 165-156. doi:10.1097/ANC.0b013e31821baaf4";
+
+/* GutCheckNECLanding */
+"GutCheckNEC is a risk measurement tool..." = "GutCheckNEC is a risk measurement tool for infants at risk for necrotizing enterocolitis. Two versions are available:";

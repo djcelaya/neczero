@@ -15,53 +15,61 @@ struct GutCheckNECLanding: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding()
-                Text("GutCheckNEC is a risk measurement tool for infants at risk for necrotizing enterocolitis. Two versions are available:")
+                Text("GutCheckNEC is a risk measurement tool...")
                     .padding(.horizontal)
+                    .padding(.bottom)
                 HStack {
-                    NavigationLink(destination: NECView()) {
-                        VStack {
-                            Text("Broad Risk Assessment")
-                            Text("< 2500 grams")
+                    VStack {
+                        NavigationLink(destination: NECView()) {
+                            VStack {
+                                Text("Broad Risk Assessment")
+                                Text("< 2500 grams")
+                            }
                         }
-                    }
-                        .padding()
-                        .background(Color("PrimaryColor"))
+                        .padding() // TODO - convert these modifiers into a single view modifier?
+                        .background(Color("GutCheck Medium"))
                         .foregroundColor(.white)
                         .font(.title2)
                         .cornerRadius(15)
-                    NavigationLink(destination: GutCheckNECForm()) {
-                        VStack {
-                            Text("Focused Risk Assessment")
-                            Text("< 1500 grams")
-                        }
                     }
+                    VStack {
+                        NavigationLink(destination: GutCheckNECForm()) {
+                            VStack {
+                                Text("Focused Risk Assessment")
+                                Text("< 1500 grams")
+                            }
+                        }
                         .padding()
-                        .background(Color("PrimaryColor"))
+                        .background(Color("GutCheck Medium"))
                         .foregroundColor(.white)
                         .font(.title2)
                         .cornerRadius(15)
+                    }
                 }
-//            HStack(alignment: .center, spacing: 0) {
-//                Spacer()
-//                HStack(spacing: 0) {
-//                    Text("GutCheck")
-//                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-//                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//                        .foregroundColor(.white)
-//                    Text("NEC")
-//                        .font(.title2)
-//                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//                        .foregroundColor(.white)
-//                        .baselineOffset(15.0)
-//                }
-//                Spacer()
-//            }
-//            .padding()
                 Spacer()
-            }
+            }.navigationBarHidden(true)
         }
     }
 }
+
+//struct GutCheckButton: View {
+//
+//    let destination: NavigationLink.Destination
+//
+//    var body: some View {
+//        NavigationLink(destination: NECView()) {
+//            VStack {
+//                Text("Broad Risk Assessment")
+//                Text("< 2500 grams")
+//            }
+//        }
+//            .padding()
+//            .background(Color("GutCheck Medium"))
+//            .foregroundColor(.white)
+//            .font(.title2)
+//            .cornerRadius(15)
+//    }
+//}
 
 struct GutCheckNECLanding_Previews: PreviewProvider {
     static var previews: some View {
@@ -69,7 +77,9 @@ struct GutCheckNECLanding_Previews: PreviewProvider {
             GutCheckNECLanding().tabItem {
                 VStack {
                     Image(systemName: "heart.text.square")
-                    Text("GutCheckNEC")
+                    HStack(alignment: .center, spacing: 0) {
+                        Text("GutCheck") + Text("NEC").baselineOffset(-10)
+                    }
                 }
             }
         }
