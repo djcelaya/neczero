@@ -38,17 +38,34 @@ struct GutCheckNECLanding: View {
                                 Text("Focused Risk Assessment")
                                 Text("< 1500 grams")
                             }
-                        }
-                        .padding()
-                        .background(Color("GutCheck Medium"))
-                        .foregroundColor(.white)
-                        .font(.title2)
-                        .cornerRadius(15)
+                        }.actionButton()
+//                        .padding()
+//                        .background(Color("GutCheck Medium"))
+//                        .foregroundColor(.white)
+//                        .font(.title2)
+//                        .cornerRadius(15)
                     }
                 }
                 Spacer()
             }.navigationBarHidden(true)
         }
+    }
+}
+
+struct ActionButton: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .background(Color("GutCheck Medium"))
+            .foregroundColor(.white)
+            .font(.title2)
+            .cornerRadius(15)
+    }
+}
+
+extension View {
+    func actionButton() -> some View {
+        return self.modifier(ActionButton())
     }
 }
 
