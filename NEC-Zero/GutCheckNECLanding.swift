@@ -69,25 +69,6 @@ extension View {
     }
 }
 
-//struct GutCheckButton: View {
-//
-//    let destination: NavigationLink.Destination
-//
-//    var body: some View {
-//        NavigationLink(destination: NECView()) {
-//            VStack {
-//                Text("Broad Risk Assessment")
-//                Text("< 2500 grams")
-//            }
-//        }
-//            .padding()
-//            .background(Color("GutCheck Medium"))
-//            .foregroundColor(.white)
-//            .font(.title2)
-//            .cornerRadius(15)
-//    }
-//}
-
 struct GutCheckNECLanding_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
