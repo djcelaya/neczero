@@ -39,11 +39,6 @@ struct GutCheckNECLanding: View {
                                 Text("< 1500 grams")
                             }
                         }.actionButton()
-//                        .padding()
-//                        .background(Color("GutCheck Medium"))
-//                        .foregroundColor(.white)
-//                        .font(.title2)
-//                        .cornerRadius(15)
                     }
                 }
                 Spacer()
