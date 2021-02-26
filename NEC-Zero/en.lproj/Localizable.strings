@@ -66,3 +66,7 @@
 
 /* GutCheckNECLanding */
 "GutCheckNEC is a risk measurement tool..." = "GutCheckNEC is a risk measurement tool for infants at risk for necrotizing enterocolitis. Two versions are available:";
+
+/* GutCheckNECForm */
+"Gestational age (weeks)" = "Gestational age (weeks)";
+"Calculate GA in weeks at birth..." = "Calculate GA in weeks at birth based preferably on due date determined by 1st trimester ultrasound. If that is unavailable, use the gestational age assessment at delivery (Ballard or Dubowitz)";

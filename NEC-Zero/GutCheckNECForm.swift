@@ -104,7 +104,7 @@ struct QuestionCard: View {
                 .font(.title2)
                 .padding(.top)
                 .padding(.horizontal)
-            Text("Calculate GA in weeks at birth based preferably on due date determined by 1st trimester ultrasound. If that is unavailable, use the gestational age assessment at delivery (Ballard or Dubowitz)")
+            Text("Calculate GA in weeks at birth...")
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
             VStack(spacing: 10) {
