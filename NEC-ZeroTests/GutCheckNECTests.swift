@@ -23,7 +23,7 @@ class GutCheckNECTests: XCTestCase {
     // metabolicAcidosis = NO   +0
     // total                    22
     func testGutCheckNecDefaults() {
-        let gutCheckNEC = GutCheckNEC()
+        let gutCheckNEC = FocusedGutCheckNEC()
         let expectedPoints = 22
         let actualPoints = gutCheckNEC.points
         XCTAssertEqual(expectedPoints, actualPoints)
@@ -42,9 +42,9 @@ class GutCheckNECTests: XCTestCase {
     // metabolicAcidosis = NO   +0
     // total                    1
     func testGutCheckNECMinimumPoints() {
-        let gutCheckNEC = GutCheckNEC(
+        let gutCheckNEC = FocusedGutCheckNEC(
             gestationAge: 32,
-            race: GutCheckNEC.Race.other,
+            race: FocusedGutCheckNEC.Race.other,
             outborn: false,
             necRate: 2,
             humanMilkFeeding: true,
@@ -71,9 +71,9 @@ class GutCheckNECTests: XCTestCase {
     // metabolicAcidosis = YES  +3
     // total                    58
     func testGutCheckNECMaximumPoints() {
-        let gutCheckNEC = GutCheckNEC(
+        let gutCheckNEC = FocusedGutCheckNEC(
             gestationAge: 27,
-            race: GutCheckNEC.Race.black,
+            race: FocusedGutCheckNEC.Race.black,
             outborn: true,
             necRate: 13,
             humanMilkFeeding: false,

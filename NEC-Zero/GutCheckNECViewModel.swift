@@ -9,7 +9,7 @@ import Combine
 
 class GutCheckNECViewModel: ObservableObject {
 
-    private var gutCheckNEC: GutCheckNEC
+    private var gutCheckNEC: FocusedGutCheckNEC
 
     let gestationalAgeOptions = [
         "<28",
@@ -39,11 +39,11 @@ class GutCheckNECViewModel: ObservableObject {
     @Published var raceIndex = 1 {
         didSet {
             if raceIndex == 0 {
-                gutCheckNEC.race = GutCheckNEC.Race.black
+                gutCheckNEC.race = FocusedGutCheckNEC.Race.black
             } else if raceIndex == 1 {
-                gutCheckNEC.race = GutCheckNEC.Race.hispanic
+                gutCheckNEC.race = FocusedGutCheckNEC.Race.hispanic
             } else {
-                gutCheckNEC.race = GutCheckNEC.Race.other
+                gutCheckNEC.race = FocusedGutCheckNEC.Race.other
             }
         }
     }
@@ -130,7 +130,7 @@ class GutCheckNECViewModel: ObservableObject {
     }
 
 
-    init(with model: GutCheckNEC) {
+    init(with model: FocusedGutCheckNEC) {
         gutCheckNEC = model
     }
 }

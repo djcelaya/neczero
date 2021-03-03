@@ -1,15 +1,15 @@
 //
-//  GutCheckNEC.swift
+//  FocusedGutCheckNEC.swift
 //  NEC-Zero
 //
-//  Model for GutCheckNEC risk measurement tool
+//  Model for focused GutCheckNEC risk measurement tool
 //
 //  Created by David Celaya-Gonzalez on 1/5/21.
 //
 
 import Foundation
 
-struct GutCheckNEC {
+struct FocusedGutCheckNEC {
 
     var points: Int {
         pointsForChoices()
@@ -158,7 +158,7 @@ struct GutCheckNEC {
 
 }
 
-extension GutCheckNEC {
+extension FocusedGutCheckNEC {
 
     enum Race {
         case black

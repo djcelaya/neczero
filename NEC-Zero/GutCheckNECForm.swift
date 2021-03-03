@@ -89,7 +89,7 @@ struct GutCheckNECForm: View {
         }
     }
 
-    init(with viewModel: GutCheckNECViewModel = GutCheckNECViewModel(with: GutCheckNEC())) {
+    init(with viewModel: GutCheckNECViewModel = GutCheckNECViewModel(with: FocusedGutCheckNEC())) {
         self.viewModel = viewModel
     }
 }
@@ -151,7 +151,7 @@ struct QuestionResponseButton: View {
 
 struct GutCheckNECView_Previews: PreviewProvider {
     static var previews: some View {
-        let model = GutCheckNEC()
+        let model = FocusedGutCheckNEC()
         let viewModel = GutCheckNECViewModel(with: model)
         return TabView {
             NavigationView {
