@@ -21,8 +21,8 @@
 		9E66515C257AF85800EF2FAA /* NEC_ZeroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66515B257AF85800EF2FAA /* NEC_ZeroUITests.swift */; };
 		9EB3795425DC1D4B00393C91 /* GutCheckNECLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB3795325DC1D4B00393C91 /* GutCheckNECLanding.swift */; };
 		9EB759FD25C2FECE00153E15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EB759FF25C2FECE00153E15 /* Localizable.strings */; };
-		9EBC5BA925A61885009854E4 /* GutCheckNECViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC5BA825A61885009854E4 /* GutCheckNECViewModel.swift */; };
-		9EBC5BAE25A619E1009854E4 /* GutCheckNECForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC5BAD25A619E1009854E4 /* GutCheckNECForm.swift */; };
+		9EBC5BA925A61885009854E4 /* FocusedGutCheckNECViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC5BA825A61885009854E4 /* FocusedGutCheckNECViewModel.swift */; };
+		9EBC5BAE25A619E1009854E4 /* FocusedGutCheckNECForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC5BAD25A619E1009854E4 /* FocusedGutCheckNECForm.swift */; };
 		9EC7152A25D1C409008E2138 /* PamphletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC7152925D1C409008E2138 /* PamphletView.swift */; };
 		9EF64AD225ACA61F0080B074 /* GutCheckNECTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF64AD125ACA61F0080B074 /* GutCheckNECTests.swift */; };
 		9EF97A8425C06BAF009DD543 /* NECView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF97A8325C06BAF009DD543 /* NECView.swift */; };
@@ -68,8 +68,8 @@
 		9EB3795325DC1D4B00393C91 /* GutCheckNECLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutCheckNECLanding.swift; sourceTree = "<group>"; };
 		9EB759FE25C2FECE00153E15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EB75A0025C2FED800153E15 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9EBC5BA825A61885009854E4 /* GutCheckNECViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutCheckNECViewModel.swift; sourceTree = "<group>"; };
-		9EBC5BAD25A619E1009854E4 /* GutCheckNECForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutCheckNECForm.swift; sourceTree = "<group>"; };
+		9EBC5BA825A61885009854E4 /* FocusedGutCheckNECViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedGutCheckNECViewModel.swift; sourceTree = "<group>"; };
+		9EBC5BAD25A619E1009854E4 /* FocusedGutCheckNECForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedGutCheckNECForm.swift; sourceTree = "<group>"; };
 		9EC7152925D1C409008E2138 /* PamphletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PamphletView.swift; sourceTree = "<group>"; };
 		9EF64AD125ACA61F0080B074 /* GutCheckNECTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutCheckNECTests.swift; sourceTree = "<group>"; };
 		9EF97A8325C06BAF009DD543 /* NECView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NECView.swift; sourceTree = "<group>"; };
@@ -106,8 +106,8 @@
 			children = (
 				9EB3795325DC1D4B00393C91 /* GutCheckNECLanding.swift */,
 				9E11108325A4E66000905E4B /* FocusedGutCheckNEC.swift */,
-				9EBC5BA825A61885009854E4 /* GutCheckNECViewModel.swift */,
-				9EBC5BAD25A619E1009854E4 /* GutCheckNECForm.swift */,
+				9EBC5BA825A61885009854E4 /* FocusedGutCheckNECViewModel.swift */,
+				9EBC5BAD25A619E1009854E4 /* FocusedGutCheckNECForm.swift */,
 			);
 			name = GutCheckNEC;
 			sourceTree = "<group>";
@@ -325,12 +325,12 @@
 				9E11108425A4E66000905E4B /* FocusedGutCheckNEC.swift in Sources */,
 				9E4A0CC925C9CAA2003B36F9 /* HomeView.swift in Sources */,
 				9E2144A525C882C800C010FE /* ArticleList.swift in Sources */,
-				9EBC5BA925A61885009854E4 /* GutCheckNECViewModel.swift in Sources */,
+				9EBC5BA925A61885009854E4 /* FocusedGutCheckNECViewModel.swift in Sources */,
 				9E66513F257AF85600EF2FAA /* NECZeroApp.swift in Sources */,
 				9EF97A8C25C06BE3009DD543 /* NECZeroView.swift in Sources */,
 				9E2144AD25C88D4C00C010FE /* Articles.swift in Sources */,
 				9EC7152A25D1C409008E2138 /* PamphletView.swift in Sources */,
-				9EBC5BAE25A619E1009854E4 /* GutCheckNECForm.swift in Sources */,
+				9EBC5BAE25A619E1009854E4 /* FocusedGutCheckNECForm.swift in Sources */,
 				9E2144C025C8A48C00C010FE /* RecognitionView.swift in Sources */,
 				9EF97A8425C06BAF009DD543 /* NECView.swift in Sources */,
 				9E2144B525C8A42400C010FE /* ParentsRoleView.swift in Sources */,

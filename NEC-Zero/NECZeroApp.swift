@@ -11,7 +11,7 @@ import SwiftUI
 struct NECZeroApp: App {
 
 	let model: FocusedGutCheckNEC
-	let viewModel: GutCheckNECViewModel
+	let viewModel: FocusedGutCheckNECViewModel
 //    let articlesViewModel: Articles
 
     @State private var selectedTab = "NEC"
@@ -58,7 +58,7 @@ struct NECZeroApp: App {
 
 	init() {
 		model = FocusedGutCheckNEC()
-		viewModel = GutCheckNECViewModel(with: model)
+		viewModel = FocusedGutCheckNECViewModel(with: model)
 //        articlesViewModel = Articles()
 	}
 }

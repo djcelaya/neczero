@@ -1,5 +1,5 @@
 //
-//  GutCheckNECView.swift
+//  FocusedGutCheckNECForm.swift
 //  NEC-Zero
 //
 //  Created by David Celaya-Gonzalez on 1/6/21.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct GutCheckNECForm: View {
+struct FocusedGutCheckNECForm: View {
 
-    @ObservedObject var viewModel: GutCheckNECViewModel
+    @ObservedObject var viewModel: FocusedGutCheckNECViewModel
     @State private var displayQuickForm = false
     @State private var questionIndex = 0
     private let backgroundGradient = Color("PrimaryColor")
@@ -89,7 +89,7 @@ struct GutCheckNECForm: View {
         }
     }
 
-    init(with viewModel: GutCheckNECViewModel = GutCheckNECViewModel(with: FocusedGutCheckNEC())) {
+    init(with viewModel: FocusedGutCheckNECViewModel = FocusedGutCheckNECViewModel(with: FocusedGutCheckNEC())) {
         self.viewModel = viewModel
     }
 }
@@ -152,10 +152,10 @@ struct QuestionResponseButton: View {
 struct GutCheckNECView_Previews: PreviewProvider {
     static var previews: some View {
         let model = FocusedGutCheckNEC()
-        let viewModel = GutCheckNECViewModel(with: model)
+        let viewModel = FocusedGutCheckNECViewModel(with: model)
         return TabView {
             NavigationView {
-                GutCheckNECForm(with: viewModel)
+                FocusedGutCheckNECForm(with: viewModel)
             }.tabItem {
                 VStack {
                     Image(systemName: "heart.text.square")

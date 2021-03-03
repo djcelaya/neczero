@@ -1,5 +1,5 @@
 //
-//  GutCheckNECViewModel.swift
+//  FocusedGutCheckNECViewModel.swift
 //  NEC-Zero
 //
 //  Created by David Celaya-Gonzalez on 1/6/21.
@@ -7,7 +7,7 @@
 
 import Combine
 
-class GutCheckNECViewModel: ObservableObject {
+class FocusedGutCheckNECViewModel: ObservableObject {
 
     private var gutCheckNEC: FocusedGutCheckNEC
 
