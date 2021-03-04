@@ -1,15 +1,18 @@
 //
-//  FocusedGutCheckNECViewModel.swift
+//  FocusedGCNViewModel.swift
 //  NEC-Zero
+//
+//  View model for focused GutCheckNEC (GCN) risk assessment model.
 //
 //  Created by David Celaya-Gonzalez on 1/6/21.
 //
 
 import Combine
 
-class FocusedGutCheckNECViewModel: ObservableObject {
+class FocusedGCNViewModel: ObservableObject {
 
     private var gutCheckNEC: FocusedGutCheckNEC
+    private(set) var questions: [Question]
 
     let gestationalAgeOptions = [
         "<28",
@@ -130,7 +133,57 @@ class FocusedGutCheckNECViewModel: ObservableObject {
     }
 
 
-    init(with model: FocusedGutCheckNEC) {
+    init(with model: FocusedGutCheckNEC = FocusedGutCheckNEC()) {
         gutCheckNEC = model
+        questions = [
+            Question(
+                title: "Gestational age (weeks)",
+                description: "Calculate GA in weeks at birth...",
+                responses: [
+                    Question.Response(
+                        displayValue: "<28",
+                        points: 9
+                    ),
+                    Question.Response(
+                        displayValue: "28-31 6/7",
+                        points: 8
+                    ),
+                    Question.Response(
+                        displayValue: "≥ 32",
+                        points: 0
+                    )
+                ]
+            ),
+            Question(
+                title: "Race",
+                responses: [
+                    Question.Response(displayValue: "Black", points: 2),
+                    Question.Response(displayValue: "Hispanic", points: 2),
+                    Question.Response(displayValue: "Other races", points: 0)
+                ]
+            ),
+            Question(
+                title: "Outborn",
+                description: "Yes if the infant is transferred into this center...",
+                responses: [
+                    Question.Response(displayValue: "Yes", points: 3),
+                    Question.Response(displayValue: "No", points: 0)
+                ]
+            )
+        ]
     }
+
+    struct Question: Identifiable {
+        let title: String
+        private(set) var description: String?
+        let responses: [Response]
+        var selectedResponseIndex: Int?
+        var id: String { title }
+
+        struct Response {
+            let displayValue: String
+            let points: Int
+        }
+    }
+
 }
