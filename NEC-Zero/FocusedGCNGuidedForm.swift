@@ -12,19 +12,13 @@ import SwiftUI
 struct FocusedGCNGuidedForm: View {
 
     @ObservedObject var viewModel: FocusedGCNViewModel
-    @State private var questionIndex = 0
+    @State private var questionIndex: String
     private let backgroundGradient = Color("PrimaryColor")
 
     var body: some View {
         TabView(selection: $questionIndex) {
-//            QuestionCard()
-//                .tag(0)
-//            Text("Race")
-//                .tag(1)
-//            Text("Outborn")
-//                .tag(2)
             ForEach(viewModel.questions) { question in
-                QuestionCard(for: question)
+                QuestionCard(for: question).tag(question.id)
             }
         }
         .background(backgroundGradient)
@@ -34,12 +28,15 @@ struct FocusedGCNGuidedForm: View {
 
     init(with viewModel: FocusedGCNViewModel = FocusedGCNViewModel()) {
         self.viewModel = viewModel
+        let firstQuestion = viewModel.questions.first
+        _questionIndex = State(initialValue: firstQuestion!.id)
     }
 }
 
 struct QuestionCard: View {
     let title: LocalizedStringKey
     private(set) var description: LocalizedStringKey?
+    let responses: [FocusedGCNViewModel.Question.Response]
 
     @State var option1Selected = false
     @State var option2Selected = false
@@ -54,9 +51,12 @@ struct QuestionCard: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
             VStack(spacing: 10) {
-                QuestionResponseButton("<28", selected: $option1Selected)
-                QuestionResponseButton("28-31 6/7", selected: $option2Selected)
-                QuestionResponseButton(">= 32", selected: $option3Selected)
+//                QuestionResponseButton("<28", selected: $option1Selected)
+//                QuestionResponseButton("28-31 6/7", selected: $option2Selected)
+//                QuestionResponseButton(">= 32", selected: $option3Selected)
+                ForEach(responses) { response in
+                    QuestionResponseButton(response.displayValue)
+                }
             }
             .padding(.bottom)
         }
@@ -70,6 +70,7 @@ struct QuestionCard: View {
         if let description = question.description {
             self.description = LocalizedStringKey(stringLiteral: description)
         }
+        responses = question.responses
     }
 }
 
@@ -99,6 +100,11 @@ struct QuestionResponseButton: View {
     init(_ responseText: LocalizedStringKey, selected: Binding<Bool>) {
         self.responseText = responseText
         self._isSelected = selected
+    }
+
+    init(_ responseText: String) {
+        self.responseText = LocalizedStringKey(stringLiteral: responseText)
+        _isSelected = .constant(false)
     }
 }
 

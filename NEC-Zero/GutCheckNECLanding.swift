@@ -20,9 +20,10 @@ struct GutCheckNECLanding: View {
                     .padding(.bottom)
                 HStack {
                     VStack {
-                        NavigationLink(destination: NECView()) {
+                        NavigationLink(destination: BroadGCNFormContainer()) {
                             VStack {
                                 Text("Broad Risk Assessment")
+                                Text("GUIDED")
                                 Text("< 2500 grams")
                             }
                         }
@@ -31,14 +32,29 @@ struct GutCheckNECLanding: View {
                         .foregroundColor(.white)
                         .font(.title2)
                         .cornerRadius(15)
+                        NavigationLink(destination: BroadGCNFormContainer()) {
+                            VStack {
+                                Text("Focused Risk Assessment")
+                                Text("GUIDED")
+                                Text("< 1500 grams")
+                            }
+                        }.actionButtonStyle()
                     }
                     VStack {
+                        NavigationLink(destination: FocusedGCNFormContainer(displayingCondensedForm: false)) {
+                            VStack {
+                                Text("Focused Risk Assessment")
+                                Text("GUIDED")
+                                Text("< 1500 grams")
+                            }
+                        }.actionButtonStyle()
                         NavigationLink(destination: FocusedGCNFormContainer(displayingCondensedForm: true)) {
                             VStack {
                                 Text("Focused Risk Assessment")
+                                Text("CONDENSED")
                                 Text("< 1500 grams")
                             }
-                        }.actionButton()
+                        }.actionButtonStyle()
                     }
                 }
                 Spacer()
@@ -47,7 +63,7 @@ struct GutCheckNECLanding: View {
     }
 }
 
-struct ActionButton: ViewModifier {
+struct ActionButtonStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding()
@@ -59,8 +75,8 @@ struct ActionButton: ViewModifier {
 }
 
 extension View {
-    func actionButton() -> some View {
-        return self.modifier(ActionButton())
+    func actionButtonStyle() -> some View {
+        return self.modifier(ActionButtonStyle())
     }
 }
 

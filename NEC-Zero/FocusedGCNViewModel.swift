@@ -180,9 +180,10 @@ class FocusedGCNViewModel: ObservableObject {
         var selectedResponseIndex: Int?
         var id: String { title }
 
-        struct Response {
+        struct Response: Identifiable {
             let displayValue: String
             let points: Int
+            var id: String { displayValue }
         }
     }
 
