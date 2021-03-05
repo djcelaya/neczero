@@ -12,7 +12,7 @@ import SwiftUI
 struct FocusedGCNFormContainer: View {
 
     @ObservedObject var viewModel: FocusedGCNViewModel
-    @State private var displayCondensedForm = false
+    @State private var displayCondensedForm: Bool
 
     var body: some View {
         Group {
@@ -31,8 +31,9 @@ struct FocusedGCNFormContainer: View {
         )
     }
 
-    init(with viewModel: FocusedGCNViewModel = FocusedGCNViewModel()) {
+    init(displayingCondensedForm: Bool = false, with viewModel: FocusedGCNViewModel = FocusedGCNViewModel()) {
         self.viewModel = viewModel
+        _displayCondensedForm = State(initialValue: displayingCondensedForm)
     }
 }
 

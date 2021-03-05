@@ -24,7 +24,7 @@ struct FocusedGCNGuidedForm: View {
 //            Text("Outborn")
 //                .tag(2)
             ForEach(viewModel.questions) { question in
-                QuestionCard()
+                QuestionCard(for: question)
             }
         }
         .background(backgroundGradient)
@@ -38,16 +38,19 @@ struct FocusedGCNGuidedForm: View {
 }
 
 struct QuestionCard: View {
+    let title: LocalizedStringKey
+    private(set) var description: LocalizedStringKey?
+
     @State var option1Selected = false
     @State var option2Selected = false
     @State var option3Selected = false
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
-            Text("Gestational age (weeks)")
+            Text(title)
                 .font(.title2)
                 .padding(.top)
                 .padding(.horizontal)
-            Text("Calculate GA in weeks at birth...")
+            Text(description ?? "")
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
             VStack(spacing: 10) {
@@ -60,6 +63,13 @@ struct QuestionCard: View {
         .background(Color.white)
         .cornerRadius(20)
         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+    }
+
+    init(for question: FocusedGCNViewModel.Question) {
+        title = LocalizedStringKey(stringLiteral: question.title)
+        if let description = question.description {
+            self.description = LocalizedStringKey(stringLiteral: description)
+        }
     }
 }
 

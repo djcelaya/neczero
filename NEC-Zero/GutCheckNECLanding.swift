@@ -33,7 +33,7 @@ struct GutCheckNECLanding: View {
                         .cornerRadius(15)
                     }
                     VStack {
-                        NavigationLink(destination: FocusedGCNCondensedForm()) {
+                        NavigationLink(destination: FocusedGCNFormContainer(displayingCondensedForm: true)) {
                             VStack {
                                 Text("Focused Risk Assessment")
                                 Text("< 1500 grams")
