@@ -12,7 +12,7 @@ import Combine
 class FocusedGCNViewModel: ObservableObject {
 
     private var gutCheckNEC: FocusedGutCheckNEC
-    private(set) var questions: [Question]
+    @Published private(set) var questions: [Question]
 
     let gestationalAgeOptions = [
         "<28",
@@ -173,16 +173,18 @@ class FocusedGCNViewModel: ObservableObject {
         ]
     }
 
+    // what if you didn't do it with structs...how about a dictionary? or some key-val lookup?
     struct Question: Identifiable {
         let title: String
         private(set) var description: String?
         let responses: [Response]
-        var selectedResponseIndex: Int?
+//        var selectedResponseIndex: Int?
         var id: String { title }
 
         struct Response: Identifiable {
             let displayValue: String
             let points: Int
+//            var isSelected: Bool = false
             var id: String { displayValue }
         }
     }
