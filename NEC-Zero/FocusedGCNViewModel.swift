@@ -132,6 +132,64 @@ class FocusedGCNViewModel: ObservableObject {
         points = gutCheckNEC.points
     }
 
+    // NEED TO ACTUALLY UPDATE MODEL RATHER THAN LOCAL PROPERTIES
+    func select(_ targetResponse: Question.Response, to targetQuestion: Question) {
+        if let questionIndex = indexOf(targetQuestion) {
+            if let responseIndex = indexOf(targetResponse, in: targetQuestion) {
+                switch questionIndex {
+                    case 0:
+                        switch responseIndex {
+                            case 0:
+                                gutCheckNEC.gestationAge = 27
+                            case 1:
+                                gutCheckNEC.gestationAge = 29
+                            case 2:
+                                gutCheckNEC.gestationAge = 33
+                        }
+                }
+            }
+        }
+//        if let questionIndex = indexOf(question) {
+//            var formQuestion = questions[questionIndex]
+//            formQuestion.reset()
+//            questions[questionIndex] = formQuestion
+//            if let responseIndex = indexOf(response, in: formQuestion) {
+//                var questionResponse = formQuestion.responses[responseIndex]
+//                questionResponse.isSelected = true
+//                questions[questionIndex].responses[responseIndex] = questionResponse
+//            }
+//        }
+    }
+
+    func indexOf(_ targetQuestion: Question) -> Int? {
+        for (index, question) in questions.enumerated() {
+            if targetQuestion.id == question.id {
+                return index
+            }
+        }
+        return nil
+    }
+
+    func indexOf(_ targetResponse: Question.Response, in targetQuestion: Question) -> Int? {
+        for (index, response) in targetQuestion.responses.enumerated() {
+            if targetResponse.id == response.id {
+                return index
+            }
+        }
+        return nil
+    }
+
+    func clearResponse(to question: Question) {
+        if let questionIndex = indexOf(question) {
+            var formQuestion = questions[questionIndex]
+            formQuestion.reset()
+            questions[questionIndex] = formQuestion
+//            for response in formQuestion.responses {
+//                response.deselect()
+//            }
+        }
+
+    }
 
     init(with model: FocusedGutCheckNEC = FocusedGutCheckNEC()) {
         gutCheckNEC = model
@@ -141,11 +199,11 @@ class FocusedGCNViewModel: ObservableObject {
                 description: "Calculate GA in weeks at birth...",
                 responses: [
                     Question.Response(
-                        displayValue: "<28",
+                        displayValue: "< 28",
                         points: 9
                     ),
                     Question.Response(
-                        displayValue: "28-31 6/7",
+                        displayValue: "28 - 31 6/7",
                         points: 8
                     ),
                     Question.Response(
@@ -177,15 +235,25 @@ class FocusedGCNViewModel: ObservableObject {
     struct Question: Identifiable {
         let title: String
         private(set) var description: String?
-        let responses: [Response]
+        var responses: [Response]
 //        var selectedResponseIndex: Int?
         var id: String { title }
+
+        mutating func reset() {
+            for var response in responses {
+                response.deselect()
+            }
+        }
 
         struct Response: Identifiable {
             let displayValue: String
             let points: Int
-//            var isSelected: Bool = false
+            var isSelected: Bool = false
             var id: String { displayValue }
+
+            mutating func deselect() {
+                self.isSelected = false
+            }
         }
     }
 

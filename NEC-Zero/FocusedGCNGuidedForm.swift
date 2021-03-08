@@ -2,7 +2,7 @@
 //  FocusedGCNGuidedForm.swift
 //  NEC-Zero
 //
-//  View that displays the focused GutCheckNEC (GCN) risk assessment in either the guided format.
+//  View that displays the focused GutCheckNEC (GCN) risk assessment in the guided format.
 //
 //  Created by David Celaya-Gonzalez on 3/3/21.
 //
@@ -39,11 +39,12 @@ struct FocusedGCNGuidedForm: View {
             VStack(spacing: 10) {
                 ForEach(question.responses) { response in
                     HStack {
-//                        if response.isSelected {
-//                            Image(systemName: "checkmark")
-//                        }
+                        if response.isSelected {
+                            Image(systemName: "checkmark")
+                        }
                         Button(response.displayValue) {
 //                            response.isSelected = true
+                            viewModel.select(response, to: question)
                         }
                         .padding()
                         .background(Color("AccentColor"))
