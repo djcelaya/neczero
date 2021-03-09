@@ -11,7 +11,7 @@ import Combine
 
 class FocusedGCNViewModel: ObservableObject {
 
-    private var gutCheckNEC: FocusedGutCheckNEC
+    @Published private var gutCheckNEC: FocusedGutCheckNEC
     @Published private(set) var questions: [Question]
 
     let gestationalAgeOptions = [
@@ -145,20 +145,24 @@ class FocusedGCNViewModel: ObservableObject {
                                 gutCheckNEC.gestationAge = 29
                             case 2:
                                 gutCheckNEC.gestationAge = 33
+                            default:
+                                gutCheckNEC.gestationAge = 0
                         }
+                    default:
+                        print("nothing")
                 }
             }
         }
-//        if let questionIndex = indexOf(question) {
-//            var formQuestion = questions[questionIndex]
-//            formQuestion.reset()
-//            questions[questionIndex] = formQuestion
-//            if let responseIndex = indexOf(response, in: formQuestion) {
-//                var questionResponse = formQuestion.responses[responseIndex]
-//                questionResponse.isSelected = true
-//                questions[questionIndex].responses[responseIndex] = questionResponse
-//            }
-//        }
+        if let questionIndex = indexOf(targetQuestion) {
+            var formQuestion = questions[questionIndex]
+            formQuestion.reset()
+            questions[questionIndex] = formQuestion
+            if let responseIndex = indexOf(targetResponse, in: formQuestion) {
+                var questionResponse = formQuestion.responses[responseIndex]
+                questionResponse.isSelected = true
+                questions[questionIndex].responses[responseIndex] = questionResponse
+            }
+        }
     }
 
     func indexOf(_ targetQuestion: Question) -> Int? {
