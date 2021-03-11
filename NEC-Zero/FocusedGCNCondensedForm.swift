@@ -18,7 +18,13 @@ struct FocusedGCNCondensedForm: View {
         Form {
             Section(header: Text("GutChecNEC (< 1500 grams)")) {
                 Group {
-                    Picker(selection: $viewModel.gestationalAgeIndex, label: Text("Gestational age (weeks)")) {
+//                    Picker(selection: $viewModel.gestationalAgeIndex, label: Text("Gestational age (weeks)")) {
+//                        ForEach(0 ..< viewModel.gestationalAgeOptions.count) {
+//                            Text(viewModel.gestationalAgeOptions[$0])
+//                        }
+//                    }
+                    // TODO iterate through enumeration
+                    Picker(selection: $viewModel.selectedGestationAgeResponse, label: Text("Gestational age (weeks) 2")) {
                         ForEach(0 ..< viewModel.gestationalAgeOptions.count) {
                             Text(viewModel.gestationalAgeOptions[$0])
                         }

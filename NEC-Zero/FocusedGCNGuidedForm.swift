@@ -18,7 +18,6 @@ struct FocusedGCNGuidedForm: View {
     var body: some View {
         TabView(selection: $questionIndex) {
             ForEach(viewModel.questions) { question in
-//                QuestionCard(for: question).tag(question.id)
                 Card(for: question).tag(question.id)
             }
         }

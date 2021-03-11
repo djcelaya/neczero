@@ -12,26 +12,63 @@ import Combine
 class FocusedGCNViewModel: ObservableObject {
 
     @Published private var gutCheckNEC: FocusedGutCheckNEC
-    @Published private(set) var questions: [Question]
+    private(set) var questions: [Question]
 
-    let gestationalAgeOptions = [
-        "<28",
-        "28-31 6/7",
-        ">= 32"
-    ]
+    enum GestationalAgeResponseOptions: String {
+        case option1 = "< 28"
+        case option2 = "28-31 6/7"
+        case option3 = ">= 32"
+    }
 
-    @Published var gestationalAgeIndex = 1 {
-        didSet {
-            if gestationalAgeIndex == 0 {
-                gutCheckNEC.gestationAge = 27
-            } else if gestationalAgeIndex == 1 {
-                gutCheckNEC.gestationAge = 28
-            } else {
-                gutCheckNEC.gestationAge = 32
+    var selectedGestationAgeResponse: GestationalAgeResponseOptions {
+        get {
+            switch gutCheckNEC.gestationAge2 {
+                case .lowerRange:
+                    return .option1
+                case .midRange:
+                    return .option2
+                case .upperRange:
+                    return .option3
+                default:
+                    return .option2
             }
-
+        }
+        set {
+            switch newValue {
+                case .option1:
+                    gutCheckNEC.gestationAge2 = .lowerRange
+                case .option2:
+                    gutCheckNEC.gestationAge2 = .midRange
+                case .option3:
+                    gutCheckNEC.gestationAge2 = .upperRange
+                default:
+                    gutCheckNEC.gestationAge2 = nil
+            }
         }
     }
+
+//    var gestationAgeQuestion: Question
+
+
+
+//    let gestationalAgeOptions = [
+//        "<28",
+//        "28-31 6/7",
+//        ">= 32"
+//    ]
+
+//    @Published var gestationalAgeIndex = 1 {
+//        didSet {
+//            if gestationalAgeIndex == 0 {
+//                gutCheckNEC.gestationAge = 27
+//            } else if gestationalAgeIndex == 1 {
+//                gutCheckNEC.gestationAge = 28
+//            } else {
+//                gutCheckNEC.gestationAge = 32
+//            }
+//
+//        }
+//    }
 
     let raceOptions = [
         "Black",
@@ -138,6 +175,9 @@ class FocusedGCNViewModel: ObservableObject {
             if let responseIndex = indexOf(targetResponse, in: targetQuestion) {
                 switch questionIndex {
                     case 0:
+//                        var formQuestion = questions[questionIndex]
+//                        formQuestion.reset()
+//                        questions[questionIndex] = formQuestion
                         switch responseIndex {
                             case 0:
                                 gutCheckNEC.gestationAge = 27
@@ -153,16 +193,16 @@ class FocusedGCNViewModel: ObservableObject {
                 }
             }
         }
-        if let questionIndex = indexOf(targetQuestion) {
-            var formQuestion = questions[questionIndex]
-            formQuestion.reset()
-            questions[questionIndex] = formQuestion
-            if let responseIndex = indexOf(targetResponse, in: formQuestion) {
-                var questionResponse = formQuestion.responses[responseIndex]
-                questionResponse.isSelected = true
-                questions[questionIndex].responses[responseIndex] = questionResponse
-            }
-        }
+//        if let questionIndex = indexOf(targetQuestion) {
+//            var formQuestion = questions[questionIndex]
+//            formQuestion.reset()
+//            questions[questionIndex] = formQuestion
+//            if let responseIndex = indexOf(targetResponse, in: formQuestion) {
+//                var questionResponse = formQuestion.responses[responseIndex]
+//                questionResponse.isSelected = true
+//                questions[questionIndex].responses[responseIndex] = questionResponse
+//            }
+//        }
     }
 
     func indexOf(_ targetQuestion: Question) -> Int? {
@@ -240,7 +280,7 @@ class FocusedGCNViewModel: ObservableObject {
         let title: String
         private(set) var description: String?
         var responses: [Response]
-//        var selectedResponseIndex: Int?
+        var selectedResponseIndex: Int?
         var id: String { title }
 
         mutating func reset() {
@@ -258,6 +298,10 @@ class FocusedGCNViewModel: ObservableObject {
             mutating func deselect() {
                 self.isSelected = false
             }
+
+//            static func == (lhs: Response, rhs: Response) -> Bool {
+//                return lhs.id == rhs.id
+//            }
         }
     }
 
