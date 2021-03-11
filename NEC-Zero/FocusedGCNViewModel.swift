@@ -14,6 +14,8 @@ class FocusedGCNViewModel: ObservableObject {
     @Published private var gutCheckNEC: FocusedGutCheckNEC
     private(set) var questions: [Question]
 
+    // MARK: - Gestational age
+
     let gestationAgeTitle = "Gestational age (weeks)"
     let gestationAgeDescription = "Calculate GA in weeks at birth..."
 
@@ -49,50 +51,51 @@ class FocusedGCNViewModel: ObservableObject {
         }
     }
 
-//    var gestationAgeQuestion: Question
+    // MARK: - Race
 
+    let raceTitle = "Race"
 
+    enum RaceOptions: String, CaseIterable, Identifiable {
+        case black = "Black"
+        case hispanic = "Hispanic"
+        case other = "Other races"
+        var id: String { rawValue }
+    }
 
-//    let gestationalAgeOptions = [
-//        "<28",
-//        "28-31 6/7",
-//        ">= 32"
-//    ]
-
-//    @Published var gestationalAgeIndex = 1 {
-//        didSet {
-//            if gestationalAgeIndex == 0 {
-//                gutCheckNEC.gestationAge = 27
-//            } else if gestationalAgeIndex == 1 {
-//                gutCheckNEC.gestationAge = 28
-//            } else {
-//                gutCheckNEC.gestationAge = 32
-//            }
-//
-//        }
-//    }
-
-    let raceOptions = [
-        "Black",
-        "Hispanic",
-        "Other races"
-    ]
-
-    @Published var raceIndex = 1 {
-        didSet {
-            if raceIndex == 0 {
-                gutCheckNEC.race = FocusedGutCheckNEC.Race.black
-            } else if raceIndex == 1 {
-                gutCheckNEC.race = FocusedGutCheckNEC.Race.hispanic
-            } else {
-                gutCheckNEC.race = FocusedGutCheckNEC.Race.other
+    var race: RaceOptions {
+        get {
+            switch gutCheckNEC.race {
+                case .black:
+                    return .black
+                case .hispanic:
+                    return .hispanic
+                case .other:
+                    return .other
+            }
+        }
+        set {
+            switch newValue {
+                case .black:
+                    gutCheckNEC.race = .black
+                case .hispanic:
+                    gutCheckNEC.race = .hispanic
+                case .other:
+                    gutCheckNEC.race = .other
             }
         }
     }
 
-    @Published var outborn = false {
-        didSet {
-            gutCheckNEC.outborn = outborn
+    // MARK: - Outborn
+
+    let outbornTitle = "Outborn"
+    let outbornDescription = "Yes if the infant is transferred into this center..."
+
+    var outborn: Bool {
+        get {
+            return gutCheckNEC.outborn
+        }
+        set {
+            gutCheckNEC.outborn = newValue
         }
     }
 

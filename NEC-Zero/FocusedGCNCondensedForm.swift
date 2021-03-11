@@ -12,26 +12,20 @@ import SwiftUI
 struct FocusedGCNCondensedForm: View {
 
     @ObservedObject var viewModel: FocusedGCNViewModel
-//    @State private var displayQuickForm = false
 
     var body: some View {
         Form {
             Section(header: Text("GutChecNEC (< 1500 grams)")) {
                 Group {
-//                    Picker(selection: $viewModel.gestationalAgeIndex, label: Text("Gestational age (weeks)")) {
-//                        ForEach(0 ..< viewModel.gestationalAgeOptions.count) {
-//                            Text(viewModel.gestationalAgeOptions[$0])
-//                        }
-//                    }
-                    // TODO iterate through enumeration
-                    Picker(selection: $viewModel.selectedGestationAgeResponse, label: Text("Gestational age (weeks) 2")) {
+                    Picker(selection: $viewModel.selectedGestationAgeResponse,
+                        label: Text(viewModel.gestationAgeTitle)) {
                         ForEach(FocusedGCNViewModel.GestationalAgeResponseOptions.allCases) { option in
                             Text(option.rawValue).tag(option)
                         }
                     }
-                    Picker("Race", selection: $viewModel.raceIndex) {
-                        ForEach(0 ..< viewModel.raceOptions.count) {
-                            Text(viewModel.raceOptions[$0])
+                    Picker(viewModel.raceTitle, selection: $viewModel.race) {
+                        ForEach(FocusedGCNViewModel.RaceOptions.allCases) { option in
+                            Text(option.rawValue).tag(option)
                         }
                     }
                     Toggle("Outborn", isOn: $viewModel.outborn)
