@@ -25,8 +25,8 @@ struct FocusedGCNCondensedForm: View {
 //                    }
                     // TODO iterate through enumeration
                     Picker(selection: $viewModel.selectedGestationAgeResponse, label: Text("Gestational age (weeks) 2")) {
-                        ForEach(0 ..< viewModel.gestationalAgeOptions.count) {
-                            Text(viewModel.gestationalAgeOptions[$0])
+                        ForEach(FocusedGCNViewModel.GestationalAgeResponseOptions.allCases) { option in
+                            Text(option.rawValue).tag(option)
                         }
                     }
                     Picker("Race", selection: $viewModel.raceIndex) {

@@ -17,42 +17,107 @@ struct FocusedGCNGuidedForm: View {
 
     var body: some View {
         TabView(selection: $questionIndex) {
-            ForEach(viewModel.questions) { question in
-                Card(for: question).tag(question.id)
+//            ForEach(viewModel.questions) { question in
+//                Card(for: question).tag(question.id)
+//            }
+            Card2(selection: $viewModel.selectedGestationAgeResponse,
+                  title: viewModel.gestationAgeTitle,
+                  description: viewModel.gestationAgeDescription) {
+                ForEach(FocusedGCNViewModel.GestationalAgeResponseOptions.allCases) { option in
+                    HStack {
+                        if viewModel.selectedGestationAgeResponse == option {
+                            Image(systemName: "checkmark")
+                        }
+                        Button(option.rawValue) {
+                            viewModel.selectedGestationAgeResponse = option
+                        }.optionButtonStyle()
+                    }
+                }
             }
+//            Card2(selection: $viewModel.selectedGestationAgeResponse,
+//                  title: viewModel.gestationAgeTitle,
+//                  description: viewModel.gestationAgeDescription) {
+//                ForEach(FocusedGCNViewModel.GestationalAgeResponseOptions.allCases) { option in
+//                    HStack {
+//                        if viewModel.selectedGestationAgeResponse == option {
+//                            Image(systemName: "checkmark")
+//                        }
+//                        Button(option.rawValue) {
+//                            viewModel.selectedGestationAgeResponse = option
+//                        }.optionButtonStyle()
+//                    }
+//                }
+//            }
         }
         .background(backgroundGradient)
         .tabViewStyle(PageTabViewStyle())
         .animation(.easeInOut)
     }
 
-    @ViewBuilder func Card(for question: FocusedGCNViewModel.Question) -> some View {
+//    @ViewBuilder func Card(for question: FocusedGCNViewModel.Question) -> some View {
+//        VStack(alignment: .center, spacing: 16) {
+//            Text(question.title)
+//                .font(.title2)
+//                .padding(.top)
+//                .padding(.horizontal)
+//            Text(LocalizedStringKey(stringLiteral: question.description ?? ""))
+//                .multilineTextAlignment(.center)
+//                .padding(.horizontal)
+//            VStack(spacing: 10) {
+//                ForEach(question.responses) { response in
+//                    HStack {
+//                        if response.isSelected {
+//                            Image(systemName: "checkmark")
+//                        }
+//                        Button(response.displayValue) {
+////                            response.isSelected = true
+//                            viewModel.select(response, to: question)
+//                        }
+//                        .padding()
+//                        .background(Color("AccentColor"))
+//                        .font(.title3)
+//                        .foregroundColor(.white)
+//                        .cornerRadius(24)
+//                        .shadow(radius: 8)
+//                    }
+//                }
+//            }
+//            .padding(.bottom)
+//        }
+//        .background(Color.white)
+//        .cornerRadius(20)
+//        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+//    }
+
+    @ViewBuilder func Card2<SelectionType, Options>(selection: Binding<SelectionType>, title: String,
+        description: String?, options: () -> Options) -> some View where Options: View {
         VStack(alignment: .center, spacing: 16) {
-            Text(question.title)
+            Text(title)
                 .font(.title2)
                 .padding(.top)
                 .padding(.horizontal)
-            Text(LocalizedStringKey(stringLiteral: question.description ?? ""))
+            Text(LocalizedStringKey(stringLiteral: description ?? ""))
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
             VStack(spacing: 10) {
-                ForEach(question.responses) { response in
-                    HStack {
-                        if response.isSelected {
-                            Image(systemName: "checkmark")
-                        }
-                        Button(response.displayValue) {
-//                            response.isSelected = true
-                            viewModel.select(response, to: question)
-                        }
-                        .padding()
-                        .background(Color("AccentColor"))
-                        .font(.title3)
-                        .foregroundColor(.white)
-                        .cornerRadius(24)
-                        .shadow(radius: 8)
-                    }
-                }
+                options()
+//                ForEach(question.responses) { response in
+//                    HStack {
+//                        if response.isSelected {
+//                            Image(systemName: "checkmark")
+//                        }
+//                        Button(response.displayValue) {
+////                            response.isSelected = true
+//                            viewModel.select(response, to: question)
+//                        }
+//                        .padding()
+//                        .background(Color("AccentColor"))
+//                        .font(.title3)
+//                        .foregroundColor(.white)
+//                        .cornerRadius(24)
+//                        .shadow(radius: 8)
+//                    }
+//                }
             }
             .padding(.bottom)
         }
@@ -65,6 +130,24 @@ struct FocusedGCNGuidedForm: View {
         self.viewModel = viewModel
         let firstQuestion = viewModel.questions.first
         _questionIndex = State(initialValue: firstQuestion!.id)
+    }
+}
+
+struct OptionButtonStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .background(Color("AccentColor"))
+            .font(.title3)
+            .foregroundColor(.white)
+            .cornerRadius(24)
+            .shadow(radius: 8)
+    }
+}
+
+extension View {
+    func optionButtonStyle() -> some View {
+        return self.modifier(OptionButtonStyle())
     }
 }
 

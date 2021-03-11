@@ -15,6 +15,7 @@
 		9E2144AD25C88D4C00C010FE /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2144AC25C88D4C00C010FE /* Articles.swift */; };
 		9E2144B525C8A42400C010FE /* ParentsRoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2144B425C8A42400C010FE /* ParentsRoleView.swift */; };
 		9E2144C025C8A48C00C010FE /* RecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2144BF25C8A48C00C010FE /* RecognitionView.swift */; };
+		9E2FBAAA25F9B21A007BDFF1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2FBAA925F9B21A007BDFF1 /* Card.swift */; };
 		9E4A0CC925C9CAA2003B36F9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4A0CC825C9CAA2003B36F9 /* HomeView.swift */; };
 		9E63690625F27B8500FDCD40 /* BroadGCNFormContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63690525F27B8500FDCD40 /* BroadGCNFormContainer.swift */; };
 		9E66513F257AF85600EF2FAA /* NECZeroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66513E257AF85600EF2FAA /* NECZeroApp.swift */; };
@@ -58,6 +59,7 @@
 		9E2144AC25C88D4C00C010FE /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
 		9E2144B425C8A42400C010FE /* ParentsRoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsRoleView.swift; sourceTree = "<group>"; };
 		9E2144BF25C8A48C00C010FE /* RecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionView.swift; sourceTree = "<group>"; };
+		9E2FBAA925F9B21A007BDFF1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		9E4A0CC825C9CAA2003B36F9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9E63690525F27B8500FDCD40 /* BroadGCNFormContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadGCNFormContainer.swift; sourceTree = "<group>"; };
 		9E66513B257AF85600EF2FAA /* NEC-Zero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NEC-Zero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 				9E206E0725F044680020812C /* FocusedGCNFormContainer.swift */,
 				9E206E0225F043CF0020812C /* FocusedGCNGuidedForm.swift */,
 				9EBC5BAD25A619E1009854E4 /* FocusedGCNCondensedForm.swift */,
+				9E2FBAA925F9B21A007BDFF1 /* Card.swift */,
 			);
 			name = GutCheckNEC;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E206E0825F044680020812C /* FocusedGCNFormContainer.swift in Sources */,
+				9E2FBAAA25F9B21A007BDFF1 /* Card.swift in Sources */,
 				9EB3795425DC1D4B00393C91 /* GutCheckNECLanding.swift in Sources */,
 				9E21449525C8517100C010FE /* MoreView.swift in Sources */,
 				9E11108425A4E66000905E4B /* FocusedGutCheckNEC.swift in Sources */,

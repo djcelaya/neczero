@@ -14,10 +14,14 @@ class FocusedGCNViewModel: ObservableObject {
     @Published private var gutCheckNEC: FocusedGutCheckNEC
     private(set) var questions: [Question]
 
-    enum GestationalAgeResponseOptions: String {
+    let gestationAgeTitle = "Gestational age (weeks)"
+    let gestationAgeDescription = "Calculate GA in weeks at birth..."
+
+    enum GestationalAgeResponseOptions: String, CaseIterable, Identifiable {
         case option1 = "< 28"
         case option2 = "28-31 6/7"
-        case option3 = ">= 32"
+        case option3 = "≥ 32"
+        var id: String { rawValue }
     }
 
     var selectedGestationAgeResponse: GestationalAgeResponseOptions {
@@ -41,8 +45,6 @@ class FocusedGCNViewModel: ObservableObject {
                     gutCheckNEC.gestationAge2 = .midRange
                 case .option3:
                     gutCheckNEC.gestationAge2 = .upperRange
-                default:
-                    gutCheckNEC.gestationAge2 = nil
             }
         }
     }
@@ -178,16 +180,17 @@ class FocusedGCNViewModel: ObservableObject {
 //                        var formQuestion = questions[questionIndex]
 //                        formQuestion.reset()
 //                        questions[questionIndex] = formQuestion
-                        switch responseIndex {
-                            case 0:
-                                gutCheckNEC.gestationAge = 27
-                            case 1:
-                                gutCheckNEC.gestationAge = 29
-                            case 2:
-                                gutCheckNEC.gestationAge = 33
-                            default:
-                                gutCheckNEC.gestationAge = 0
-                        }
+//                        switch responseIndex {
+//                            case 0:
+//                                gutCheckNEC.gestationAge = 27
+//                            case 1:
+//                                gutCheckNEC.gestationAge = 29
+//                            case 2:
+//                                gutCheckNEC.gestationAge = 33
+//                            default:
+//                                gutCheckNEC.gestationAge = 0
+//                        }
+                    print("nothing")
                     default:
                         print("nothing")
                 }
