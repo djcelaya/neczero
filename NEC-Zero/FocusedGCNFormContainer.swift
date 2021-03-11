@@ -11,15 +11,15 @@ import SwiftUI
 
 struct FocusedGCNFormContainer: View {
 
-    @ObservedObject var viewModel: FocusedGCNViewModel
+    @StateObject var viewModel: FocusedGCNViewModel = FocusedGCNViewModel()
     @State private var displayCondensedForm: Bool
 
     var body: some View {
         Group {
             if displayCondensedForm {
-                FocusedGCNCondensedForm()
+                FocusedGCNCondensedForm(with: viewModel)
             } else {
-                FocusedGCNGuidedForm()
+                FocusedGCNGuidedForm(with: viewModel)
             }
         }
         .navigationBarTitle("GutCheckNEC")
@@ -31,8 +31,7 @@ struct FocusedGCNFormContainer: View {
         )
     }
 
-    init(displayingCondensedForm: Bool = false, with viewModel: FocusedGCNViewModel = FocusedGCNViewModel()) {
-        self.viewModel = viewModel
+    init(displayingCondensedForm: Bool = false) {
         _displayCondensedForm = State(initialValue: displayingCondensedForm)
     }
 }
