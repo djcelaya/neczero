@@ -12,7 +12,7 @@ import SwiftUI
 struct FocusedGCNGuidedForm: View {
 
     @ObservedObject var viewModel: FocusedGCNViewModel
-    @State private var questionIndex: String
+    @State private var questionIndex: Int
     private let backgroundGradient = Color("PrimaryColor")
 
     var body: some View {
@@ -21,26 +21,29 @@ struct FocusedGCNGuidedForm: View {
                 ForEach(FocusedGCNViewModel.GestationalAgeResponseOptions.allCases) { option in
                     Button(option.rawValue) {
                         viewModel.selectedGestationAgeResponse = option
+                        advance()
                     }.optionButtonStyle(selected: viewModel.selectedGestationAgeResponse == option)
                 }
-            }.tag(viewModel.gestationAgeTitle)
+            }.tag(0)
             Card(title: viewModel.raceTitle) {
                 ForEach(FocusedGCNViewModel.RaceOptions.allCases) { option in
                     Button(option.rawValue) {
                         viewModel.race = option
+                        advance()
                     }.optionButtonStyle(selected: viewModel.race == option)
                 }
-            }.tag(viewModel.raceTitle)
+            }.tag(1)
             Card(title: viewModel.outbornTitle, description: viewModel.outbornDescription) {
                 VStack {
                     Button("Yes") {
                         viewModel.outborn = true
+                        //advance()
                     }.optionButtonStyle(selected: viewModel.outborn)
                     Button("No") {
                         viewModel.outborn = false
-                    }.optionButtonStyle(selected: viewModel.outborn)
+                    }.optionButtonStyle(selected: !viewModel.outborn)
                 }
-            }.tag(viewModel.outbornTitle)
+            }.tag(2)
         }
         .background(backgroundGradient)
         .tabViewStyle(PageTabViewStyle())
@@ -67,9 +70,19 @@ struct FocusedGCNGuidedForm: View {
         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
     }
 
+    func advance() {
+        questionIndex += 1
+    }
+
     init(with viewModel: FocusedGCNViewModel = FocusedGCNViewModel()) {
         self.viewModel = viewModel
-        _questionIndex = State(initialValue: viewModel.gestationAgeTitle)
+//        questionIndices = [
+//            viewModel.gestationAgeTitle,
+//            viewModel.raceTitle,
+//            viewModel.outbornTitle
+//        ]
+//        _questionIndex = State(initialValue: viewModel.gestationAgeTitle)
+        _questionIndex = State(initialValue: 0)
     }
 }
 

@@ -26,7 +26,7 @@ class FocusedGCNViewModel: ObservableObject {
         var id: String { rawValue }
     }
 
-    var selectedGestationAgeResponse: GestationalAgeResponseOptions {
+    var selectedGestationAgeResponse: GestationalAgeResponseOptions? {
         get {
             switch gutCheckNEC.gestationAge2 {
                 case .lowerRange:
@@ -36,7 +36,7 @@ class FocusedGCNViewModel: ObservableObject {
                 case .upperRange:
                     return .option3
                 default:
-                    return .option2
+                    return nil
             }
         }
         set {
@@ -47,6 +47,8 @@ class FocusedGCNViewModel: ObservableObject {
                     gutCheckNEC.gestationAge2 = .midRange
                 case .option3:
                     gutCheckNEC.gestationAge2 = .upperRange
+                default:
+                    gutCheckNEC.gestationAge2 = nil
             }
         }
     }
@@ -173,6 +175,8 @@ class FocusedGCNViewModel: ObservableObject {
     func submit() {
         points = gutCheckNEC.points
     }
+
+    
 
     // NEED TO ACTUALLY UPDATE MODEL RATHER THAN LOCAL PROPERTIES
     func select(_ targetResponse: Question.Response, to targetQuestion: Question) {
