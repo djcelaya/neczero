@@ -96,9 +96,12 @@ class FocusedGCNViewModel: ObservableObject {
     let outbornTitle = "Outborn"
     let outbornDescription = "If the infant is transferred into this center..."
 
-    var outborn: Bool {
+    var outborn: Bool? {
         get {
-            return gutCheckNEC.outborn
+            if let outborn = gutCheckNEC.outborn {
+                return outborn
+            }
+            return nil
         }
         set {
             gutCheckNEC.outborn = newValue

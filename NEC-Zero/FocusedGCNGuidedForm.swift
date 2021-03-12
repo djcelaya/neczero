@@ -38,11 +38,11 @@ struct FocusedGCNGuidedForm: View {
                     Button("Yes") {
                         viewModel.outborn = true
                         advance()
-                    }.optionButtonStyle(selected: viewModel.outborn)
+                    }.optionButtonStyle(selected: viewModel.outborn ?? false)
                     Button("No") {
                         viewModel.outborn = false
                         advance()
-                    }.optionButtonStyle(selected: !viewModel.outborn)
+                    }.optionButtonStyle(selected: viewModel.outborn != nil ? !(viewModel.outborn!) : false )
                 }
             }.tag(2)
             Card(title: viewModel.necRateTitle, description: viewModel.necRateDescription) {

@@ -28,7 +28,7 @@ struct FocusedGCNCondensedForm: View {
                             Text(option.rawValue).tag(option)
                         }
                     }
-                    Toggle("Outborn", isOn: $viewModel.outborn)
+//                    Toggle("Outborn", isOn: $viewModel.outborn)
                     Picker("NICU NEC Rate", selection: $viewModel.necRateIndex) {
                         ForEach(0 ..< viewModel.necRateOptions.count) {
                             Text(viewModel.necRateOptions[$0])
