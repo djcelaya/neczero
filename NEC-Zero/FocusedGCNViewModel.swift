@@ -16,8 +16,8 @@ class FocusedGCNViewModel: ObservableObject {
 
     // MARK: - Gestational age
 
-    let gestationAgeTitle = "Gestational age (weeks)"
-    let gestationAgeDescription = "Calculate GA in weeks at birth..."
+    let gestationalAgeTitle = "Gestational age (weeks)"
+    let gestationalAgeDescription = "Calculate GA in weeks at birth..."
 
     enum GestationalAgeResponseOptions: String, CaseIterable, Identifiable {
         case option1 = "< 28"
@@ -26,9 +26,9 @@ class FocusedGCNViewModel: ObservableObject {
         var id: String { rawValue }
     }
 
-    var selectedGestationAgeResponse: GestationalAgeResponseOptions? {
+    var gestationalAge: GestationalAgeResponseOptions? {
         get {
-            switch gutCheckNEC.gestationAge2 {
+            switch gutCheckNEC.gestationalAge {
                 case .lowerRange:
                     return .option1
                 case .midRange:
@@ -42,13 +42,13 @@ class FocusedGCNViewModel: ObservableObject {
         set {
             switch newValue {
                 case .option1:
-                    gutCheckNEC.gestationAge2 = .lowerRange
+                    gutCheckNEC.gestationalAge = .lowerRange
                 case .option2:
-                    gutCheckNEC.gestationAge2 = .midRange
+                    gutCheckNEC.gestationalAge = .midRange
                 case .option3:
-                    gutCheckNEC.gestationAge2 = .upperRange
+                    gutCheckNEC.gestationalAge = .upperRange
                 default:
-                    gutCheckNEC.gestationAge2 = nil
+                    gutCheckNEC.gestationalAge = nil
             }
         }
     }
@@ -64,7 +64,7 @@ class FocusedGCNViewModel: ObservableObject {
         var id: String { rawValue }
     }
 
-    var race: RaceOptions {
+    var race: RaceOptions? {
         get {
             switch gutCheckNEC.race {
                 case .black:
@@ -73,6 +73,8 @@ class FocusedGCNViewModel: ObservableObject {
                     return .hispanic
                 case .other:
                     return .other
+                default:
+                    return nil
             }
         }
         set {
@@ -83,6 +85,8 @@ class FocusedGCNViewModel: ObservableObject {
                     gutCheckNEC.race = .hispanic
                 case .other:
                     gutCheckNEC.race = .other
+                default:
+                    gutCheckNEC.race = nil
             }
         }
     }
@@ -90,7 +94,7 @@ class FocusedGCNViewModel: ObservableObject {
     // MARK: - Outborn
 
     let outbornTitle = "Outborn"
-    let outbornDescription = "Yes if the infant is transferred into this center..."
+    let outbornDescription = "If the infant is transferred into this center..."
 
     var outborn: Bool {
         get {
@@ -100,6 +104,58 @@ class FocusedGCNViewModel: ObservableObject {
             gutCheckNEC.outborn = newValue
         }
     }
+
+    // MARK: - NICU NEC rate
+    let necRateTitle = "NICU NEC rate"
+    let necRateDescription = "This is the annual calculated NEC rate..."
+
+    enum NecRateOptions: String, CaseIterable, Identifiable {
+        case option1 = "< 2%"
+        case option2 = "2-4.99%"
+        case option3 = "5-7.99%"
+        case option4 = "8-11.99%"
+        case option5 = "> 12%"
+        var id: String { rawValue }
+    }
+
+    var necRate: NecRateOptions? {
+        get {
+            if let necRate = gutCheckNEC.necRate {
+                switch necRate {
+                    case 0 ..< 2:
+                        return .option1
+                    case 2 ..< 5:
+                        return .option2
+                    case 5 ..< 8:
+                        return .option3
+                    case 8 ..< 12:
+                        return .option4
+                    case 12 ..< 99:
+                        return .option5
+                    default:
+                        return nil
+                }
+            }
+            return nil
+        }
+        set {
+            switch newValue {
+                case .option1:
+                    gutCheckNEC.necRate = 1
+                case .option2:
+                    gutCheckNEC.necRate = 3
+                case .option3:
+                    gutCheckNEC.necRate = 6
+                case .option4:
+                    gutCheckNEC.necRate = 9
+                case .option5:
+                    gutCheckNEC.necRate = 13
+                default:
+                    gutCheckNEC.necRate = nil
+            }
+        }
+    }
+
 
     let necRateOptions = [
         "2-4.99%",

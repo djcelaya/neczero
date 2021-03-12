@@ -17,8 +17,8 @@ struct FocusedGCNCondensedForm: View {
         Form {
             Section(header: Text("GutChecNEC (< 1500 grams)")) {
                 Group {
-                    Picker(selection: $viewModel.selectedGestationAgeResponse,
-                        label: Text(viewModel.gestationAgeTitle)) {
+                    Picker(selection: $viewModel.gestationalAge,
+                        label: Text(viewModel.gestationalAgeTitle)) {
                         ForEach(FocusedGCNViewModel.GestationalAgeResponseOptions.allCases) { option in
                             Text(option.rawValue).tag(option)
                         }

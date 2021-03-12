@@ -72,7 +72,7 @@
 "Calculate GA in weeks at birth..." = "Calculate GA in weeks at birth based preferably on due date determined by 1st trimester ultrasound. If that is unavailable, use the gestational age assessment at delivery (Ballard or Dubowitz)";
 "Race" = "Race";
 "Outborn" = "Outborn";
-"Yes, if the infant is transferred into this center..." = "Yes, if the infant is transferred into this center from another hospital at any time after birth.";
+"If the infant is transferred into this center..." = "If the infant is transferred into this center from another hospital at any time after birth, answer Yes.";
 "NICU NEC rate" = "NICU NEC rate";
 "This is the annual calculated NEC rate..." = "This is the annual calculated NEC rate for infants weighing less than 1500 grams at delivery. If you do not know your rate, assume the 5-7.99% range.";
 "Exclusive human milk feeding" = "Exclusive human milk feeding";

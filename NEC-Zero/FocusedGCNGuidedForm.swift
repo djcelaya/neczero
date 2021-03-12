@@ -17,12 +17,12 @@ struct FocusedGCNGuidedForm: View {
 
     var body: some View {
         TabView(selection: $questionIndex) {
-            Card(title: viewModel.gestationAgeTitle, description: viewModel.gestationAgeDescription) {
+            Card(title: viewModel.gestationalAgeTitle, description: viewModel.gestationalAgeDescription) {
                 ForEach(FocusedGCNViewModel.GestationalAgeResponseOptions.allCases) { option in
                     Button(option.rawValue) {
-                        viewModel.selectedGestationAgeResponse = option
+                        viewModel.gestationalAge = option
                         advance()
-                    }.optionButtonStyle(selected: viewModel.selectedGestationAgeResponse == option)
+                    }.optionButtonStyle(selected: viewModel.gestationalAge == option)
                 }
             }.tag(0)
             Card(title: viewModel.raceTitle) {
@@ -37,13 +37,22 @@ struct FocusedGCNGuidedForm: View {
                 VStack {
                     Button("Yes") {
                         viewModel.outborn = true
-                        //advance()
+                        advance()
                     }.optionButtonStyle(selected: viewModel.outborn)
                     Button("No") {
                         viewModel.outborn = false
+                        advance()
                     }.optionButtonStyle(selected: !viewModel.outborn)
                 }
             }.tag(2)
+            Card(title: viewModel.necRateTitle, description: viewModel.necRateDescription) {
+                ForEach(FocusedGCNViewModel.NecRateOptions.allCases) { option in
+                    Button(option.rawValue) {
+                        viewModel.necRate = option
+//                        advance()
+                    }.optionButtonStyle(selected: viewModel.necRate == option)
+                }
+            }.tag(3)
         }
         .background(backgroundGradient)
         .tabViewStyle(PageTabViewStyle())
@@ -65,6 +74,7 @@ struct FocusedGCNGuidedForm: View {
             }
             .padding(.bottom)
         }
+        .frame(maxWidth: .infinity)
         .background(Color.white)
         .cornerRadius(20)
         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)

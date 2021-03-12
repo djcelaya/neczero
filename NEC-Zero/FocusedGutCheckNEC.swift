@@ -21,9 +21,7 @@ struct FocusedGutCheckNEC {
         case upperRange
     }
 
-    var gestationAge2: AgeRange?
-
-//    var gestationAge: Double // weeks
+    var gestationalAge: AgeRange?
 
     enum Race {
         case black
@@ -31,11 +29,11 @@ struct FocusedGutCheckNEC {
         case other
     }
 
-    var race: Race
+    var race: Race?
 
-    var outborn: Bool
+    var outborn: Bool?
 
-    var necRate: Double // percentage
+    var necRate: Double? // percentage
 
     var humanMilkFeeding: Bool
 
@@ -60,9 +58,9 @@ struct FocusedGutCheckNEC {
          hypotension: Bool,
          metabolicAcidosis: Bool) {
 //        self.gestationAge = gestationAge
-        self.race = race
-        self.outborn = outborn
-        self.necRate = necRate
+//        self.race = race
+//        self.outborn = outborn
+//        self.necRate = necRate
         self.humanMilkFeeding = humanMilkFeeding
         self.probiotics = probiotics
         self.infections = infections
@@ -74,9 +72,9 @@ struct FocusedGutCheckNEC {
 
     init() {
 //        gestationAge = 28
-        race = .hispanic
-        outborn = false
-        necRate = 6
+//        race = .hispanic
+//        outborn = false
+//        necRate = 6
         humanMilkFeeding = true
         probiotics = true
         infections = 1
@@ -158,9 +156,9 @@ struct FocusedGutCheckNEC {
     private func pointsForChoices() -> Int {
         var total = 0
 //        total += points(forGestationAge: gestationAge)
-        total += points(forRace: race)
-        total += points(forOutborn: outborn)
-        total += points(forNECRate: necRate)
+//        total += points(forRace: race)
+//        total += points(forOutborn: outborn)
+//        total += points(forNECRate: necRate)
         total += points(forMilkFeeding: humanMilkFeeding)
         total += points(forProbiotics: probiotics)
         total += points(forInfections: infections)
