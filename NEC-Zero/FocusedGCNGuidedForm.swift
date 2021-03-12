@@ -17,60 +17,38 @@ struct FocusedGCNGuidedForm: View {
 
     var body: some View {
         TabView(selection: $questionIndex) {
-            Card(selection: $viewModel.selectedGestationAgeResponse, title: viewModel.gestationAgeTitle,
-                description: viewModel.gestationAgeDescription) {
+            Card(title: viewModel.gestationAgeTitle, description: viewModel.gestationAgeDescription) {
                 ForEach(FocusedGCNViewModel.GestationalAgeResponseOptions.allCases) { option in
-                    HStack {
-                        if viewModel.selectedGestationAgeResponse == option {
-                            Image(systemName: "checkmark")
-                        }
-                        Button(option.rawValue) {
-                            viewModel.selectedGestationAgeResponse = option
-                        }.optionButtonStyle()
-                    }
+                    Button(option.rawValue) {
+                        viewModel.selectedGestationAgeResponse = option
+                    }.optionButtonStyle(selected: viewModel.selectedGestationAgeResponse == option)
                 }
-            }
-            Card(selection: $viewModel.race, title: viewModel.raceTitle) {
+            }.tag(viewModel.gestationAgeTitle)
+            Card(title: viewModel.raceTitle) {
                 ForEach(FocusedGCNViewModel.RaceOptions.allCases) { option in
-                    HStack {
-                        if viewModel.race == option {
-                            Image(systemName: "checkmark")
-                        }
-                        Button(option.rawValue) {
-                            viewModel.race = option
-                        }.optionButtonStyle()
-                    }
+                    Button(option.rawValue) {
+                        viewModel.race = option
+                    }.optionButtonStyle(selected: viewModel.race == option)
                 }
-            }
-            Card(selection: $viewModel.outborn, title: viewModel.outbornTitle,
-                description: viewModel.outbornDescription) {
+            }.tag(viewModel.raceTitle)
+            Card(title: viewModel.outbornTitle, description: viewModel.outbornDescription) {
                 VStack {
-                    HStack {
-                        if viewModel.outborn == true {
-                            Image(systemName: "checkmark")
-                        }
-                        Button("Yes") {
-                            viewModel.outborn = true
-                        }.optionButtonStyle()
-                    }
-                    HStack {
-                        if viewModel.outborn == false {
-                            Image(systemName: "checkmark")
-                        }
-                        Button("No") {
-                            viewModel.outborn = false
-                        }.optionButtonStyle()
-                    }
+                    Button("Yes") {
+                        viewModel.outborn = true
+                    }.optionButtonStyle(selected: viewModel.outborn)
+                    Button("No") {
+                        viewModel.outborn = false
+                    }.optionButtonStyle(selected: viewModel.outborn)
                 }
-            }
+            }.tag(viewModel.outbornTitle)
         }
         .background(backgroundGradient)
         .tabViewStyle(PageTabViewStyle())
         .animation(.easeInOut)
     }
 
-    @ViewBuilder func Card<SelectionType, Options>(selection: Binding<SelectionType>, title: String,
-        description: String = "", options: () -> Options) -> some View where Options: View {
+    @ViewBuilder func Card<Options>(title: String, description: String = "", options: () -> Options) ->
+        some View where Options: View {
         VStack(alignment: .center, spacing: 16) {
             Text(title)
                 .font(.title2)
@@ -91,26 +69,34 @@ struct FocusedGCNGuidedForm: View {
 
     init(with viewModel: FocusedGCNViewModel = FocusedGCNViewModel()) {
         self.viewModel = viewModel
-        let firstQuestion = viewModel.questions.first
-        _questionIndex = State(initialValue: firstQuestion!.id)
+        _questionIndex = State(initialValue: viewModel.gestationAgeTitle)
     }
 }
 
 struct OptionButtonStyle: ViewModifier {
+    var isSelected: Bool
     func body(content: Content) -> some View {
-        content
-            .padding()
-            .background(Color("AccentColor"))
-            .font(.title3)
-            .foregroundColor(.white)
-            .cornerRadius(24)
-            .shadow(radius: 8)
+        HStack {
+            if isSelected {
+                Image(systemName: "checkmark")
+            }
+            content
+        }
+        .padding()
+        .background(Color("AccentColor"))
+        .font(.title3)
+        .foregroundColor(.white)
+        .cornerRadius(24)
+        .shadow(radius: 8)
+    }
+    init(selected: Bool) {
+        isSelected = selected
     }
 }
 
 extension View {
-    func optionButtonStyle() -> some View {
-        return self.modifier(OptionButtonStyle())
+    func optionButtonStyle(selected: Bool = false) -> some View {
+        return self.modifier(OptionButtonStyle(selected: selected))
     }
 }
 
