@@ -12,7 +12,7 @@ import Combine
 class FocusedGCNViewModel: ObservableObject {
 
     @Published private var gutCheckNEC: FocusedGutCheckNEC
-    private(set) var questions: [Question]
+//    private(set) var questions: [Question]
 
     // MARK: - Gestational age
 
@@ -181,17 +181,49 @@ class FocusedGCNViewModel: ObservableObject {
         }
     }
 
+    // MARK: - Exclusive human milk feeding
+
+    let milkTitle = "Exclusive human milk feeding"
+    let milkDescription = "Defined as human milk fed..."
+
+    var milk: Bool? {
+        get {
+            if let milkFeeding = gutCheckNEC.humanMilkFeeding {
+                return milkFeeding
+            }
+            return nil
+        }
+        set {
+            gutCheckNEC.humanMilkFeeding = newValue
+        }
+    }
+
     @Published var milkFeeding = true {
         didSet {
             gutCheckNEC.humanMilkFeeding = milkFeeding
         }
     }
 
-    @Published var probiotics = true {
-        didSet {
-            gutCheckNEC.probiotics = probiotics
+    // MARK: - Probiotics
+
+    let probioticsTitle = "Probiotics"
+    let probioticsDescription = "If any probiotic preparation..."
+
+    var probiotics: Bool? {
+        get {
+            if let probiotics = gutCheckNEC.probiotics {
+                return probiotics
+            }
+            return nil
+        }
+        set {
+            gutCheckNEC.probiotics = newValue
         }
     }
+
+    // MARK: - Culture-proven infections
+
+    let infectionsTitle = "How many culture-proven infections..."
 
     let infectionsOptions = [
         "One",
@@ -235,113 +267,74 @@ class FocusedGCNViewModel: ObservableObject {
         points = gutCheckNEC.points
     }
 
-    
+//    func indexOf(_ targetQuestion: Question) -> Int? {
+//        for (index, question) in questions.enumerated() {
+//            if targetQuestion.id == question.id {
+//                return index
+//            }
+//        }
+//        return nil
+//    }
 
-    // NEED TO ACTUALLY UPDATE MODEL RATHER THAN LOCAL PROPERTIES
-    func select(_ targetResponse: Question.Response, to targetQuestion: Question) {
-        if let questionIndex = indexOf(targetQuestion) {
-            if let responseIndex = indexOf(targetResponse, in: targetQuestion) {
-                switch questionIndex {
-                    case 0:
-//                        var formQuestion = questions[questionIndex]
-//                        formQuestion.reset()
-//                        questions[questionIndex] = formQuestion
-//                        switch responseIndex {
-//                            case 0:
-//                                gutCheckNEC.gestationAge = 27
-//                            case 1:
-//                                gutCheckNEC.gestationAge = 29
-//                            case 2:
-//                                gutCheckNEC.gestationAge = 33
-//                            default:
-//                                gutCheckNEC.gestationAge = 0
-//                        }
-                    print("nothing")
-                    default:
-                        print("nothing")
-                }
-            }
-        }
-//        if let questionIndex = indexOf(targetQuestion) {
+//    func indexOf(_ targetResponse: Question.Response, in targetQuestion: Question) -> Int? {
+//        for (index, response) in targetQuestion.responses.enumerated() {
+//            if targetResponse.id == response.id {
+//                return index
+//            }
+//        }
+//        return nil
+//    }
+
+//    func clearResponse(to question: Question) {
+//        if let questionIndex = indexOf(question) {
 //            var formQuestion = questions[questionIndex]
 //            formQuestion.reset()
 //            questions[questionIndex] = formQuestion
-//            if let responseIndex = indexOf(targetResponse, in: formQuestion) {
-//                var questionResponse = formQuestion.responses[responseIndex]
-//                questionResponse.isSelected = true
-//                questions[questionIndex].responses[responseIndex] = questionResponse
-//            }
-//        }
-    }
-
-    func indexOf(_ targetQuestion: Question) -> Int? {
-        for (index, question) in questions.enumerated() {
-            if targetQuestion.id == question.id {
-                return index
-            }
-        }
-        return nil
-    }
-
-    func indexOf(_ targetResponse: Question.Response, in targetQuestion: Question) -> Int? {
-        for (index, response) in targetQuestion.responses.enumerated() {
-            if targetResponse.id == response.id {
-                return index
-            }
-        }
-        return nil
-    }
-
-    func clearResponse(to question: Question) {
-        if let questionIndex = indexOf(question) {
-            var formQuestion = questions[questionIndex]
-            formQuestion.reset()
-            questions[questionIndex] = formQuestion
 //            for response in formQuestion.responses {
 //                response.deselect()
 //            }
-        }
-
-    }
+//        }
+//
+//    }
 
     init(with model: FocusedGutCheckNEC = FocusedGutCheckNEC()) {
         gutCheckNEC = model
-        questions = [
-            Question(
-                title: "Gestational age (weeks)",
-                description: "Calculate GA in weeks at birth...",
-                responses: [
-                    Question.Response(
-                        displayValue: "< 28",
-                        points: 9
-                    ),
-                    Question.Response(
-                        displayValue: "28 - 31 6/7",
-                        points: 8
-                    ),
-                    Question.Response(
-                        displayValue: "≥ 32",
-                        points: 0
-                    )
-                ]
-            ),
-            Question(
-                title: "Race",
-                responses: [
-                    Question.Response(displayValue: "Black", points: 2),
-                    Question.Response(displayValue: "Hispanic", points: 2),
-                    Question.Response(displayValue: "Other races", points: 0)
-                ]
-            ),
-            Question(
-                title: "Outborn",
-                description: "Yes if the infant is transferred into this center...",
-                responses: [
-                    Question.Response(displayValue: "Yes", points: 3),
-                    Question.Response(displayValue: "No", points: 0)
-                ]
-            )
-        ]
+//        questions = [
+//            Question(
+//                title: "Gestational age (weeks)",
+//                description: "Calculate GA in weeks at birth...",
+//                responses: [
+//                    Question.Response(
+//                        displayValue: "< 28",
+//                        points: 9
+//                    ),
+//                    Question.Response(
+//                        displayValue: "28 - 31 6/7",
+//                        points: 8
+//                    ),
+//                    Question.Response(
+//                        displayValue: "≥ 32",
+//                        points: 0
+//                    )
+//                ]
+//            ),
+//            Question(
+//                title: "Race",
+//                responses: [
+//                    Question.Response(displayValue: "Black", points: 2),
+//                    Question.Response(displayValue: "Hispanic", points: 2),
+//                    Question.Response(displayValue: "Other races", points: 0)
+//                ]
+//            ),
+//            Question(
+//                title: "Outborn",
+//                description: "Yes if the infant is transferred into this center...",
+//                responses: [
+//                    Question.Response(displayValue: "Yes", points: 3),
+//                    Question.Response(displayValue: "No", points: 0)
+//                ]
+//            )
+//        ]
     }
 
     // what if you didn't do it with structs...how about a dictionary? or some key-val lookup?

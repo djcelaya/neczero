@@ -35,9 +35,9 @@ struct FocusedGutCheckNEC {
 
     var necRate: Double? // percentage
 
-    var humanMilkFeeding: Bool
+    var humanMilkFeeding: Bool?
 
-    var probiotics: Bool
+    var probiotics: Bool?
 
     var infections: Int
 
@@ -61,8 +61,8 @@ struct FocusedGutCheckNEC {
 //        self.race = race
 //        self.outborn = outborn
 //        self.necRate = necRate
-        self.humanMilkFeeding = humanMilkFeeding
-        self.probiotics = probiotics
+//        self.humanMilkFeeding = humanMilkFeeding
+//        self.probiotics = probiotics
         self.infections = infections
         self.prbcTransfusion = prbcTransfusion
         self.hypotension = hypotension
@@ -75,8 +75,8 @@ struct FocusedGutCheckNEC {
 //        race = .hispanic
 //        outborn = false
 //        necRate = 6
-        humanMilkFeeding = true
-        probiotics = true
+//        humanMilkFeeding = true
+//        probiotics = true
         infections = 1
         prbcTransfusion = false
         hypotension = false
@@ -159,8 +159,8 @@ struct FocusedGutCheckNEC {
 //        total += points(forRace: race)
 //        total += points(forOutborn: outborn)
 //        total += points(forNECRate: necRate)
-        total += points(forMilkFeeding: humanMilkFeeding)
-        total += points(forProbiotics: probiotics)
+//        total += points(forMilkFeeding: humanMilkFeeding)
+//        total += points(forProbiotics: probiotics)
         total += points(forInfections: infections)
         total += points(forPRBCTransfusion: prbcTransfusion)
         total += points(forHypotension: hypotension)

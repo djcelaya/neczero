@@ -42,17 +42,41 @@ struct FocusedGCNGuidedForm: View {
                     Button("No") {
                         viewModel.outborn = false
                         advance()
-                    }.optionButtonStyle(selected: viewModel.outborn != nil ? !(viewModel.outborn!) : false )
+                    }.optionButtonStyle(selected: viewModel.outborn != nil ? !(viewModel.outborn!) : false)
                 }
             }.tag(2)
             Card(title: viewModel.necRateTitle, description: viewModel.necRateDescription) {
                 ForEach(FocusedGCNViewModel.NecRateOptions.allCases) { option in
                     Button(option.rawValue) {
                         viewModel.necRate = option
-//                        advance()
+                        advance()
                     }.optionButtonStyle(selected: viewModel.necRate == option)
                 }
             }.tag(3)
+            Card(title: viewModel.milkTitle, description: viewModel.milkDescription) {
+                VStack {
+                    Button("Yes") {
+                        viewModel.milk = true
+                        advance()
+                    }.optionButtonStyle(selected: viewModel.milk ?? false)
+                    Button("No") {
+                        viewModel.milk = false
+                        advance()
+                    }.optionButtonStyle(selected: viewModel.milk != nil ? !(viewModel.milk!) : false)
+                }
+            }.tag(4)
+            Card(title: viewModel.probioticsTitle, description: viewModel.probioticsDescription) {
+                VStack {
+                    Button("Yes") {
+                        viewModel.probiotics = true
+                        advance()
+                    }.optionButtonStyle(selected: viewModel.probiotics ?? false)
+                    Button("No") {
+                        viewModel.probiotics = false
+                        advance()
+                    }.optionButtonStyle(selected: viewModel.probiotics != nil ? !(viewModel.probiotics!) : false)
+                }
+            }.tag(5)
         }
         .background(backgroundGradient)
         .tabViewStyle(PageTabViewStyle())

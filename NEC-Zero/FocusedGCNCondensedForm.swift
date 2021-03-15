@@ -35,7 +35,7 @@ struct FocusedGCNCondensedForm: View {
                         }
                     }
                     Toggle("Exclusive human milk feeding", isOn: $viewModel.milkFeeding)
-                    Toggle("Probiotics", isOn: $viewModel.probiotics)
+//                    Toggle("Probiotics", isOn: $viewModel.probiotics)
                     Picker(selection: $viewModel.infectionsIndex, label:
                             Text("How many culture-proven infections has the infant had since day 3 of life?")) {
                         ForEach(0 ..< viewModel.infectionsOptions.count) {
