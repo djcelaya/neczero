@@ -77,6 +77,26 @@ struct FocusedGCNGuidedForm: View {
                     }.optionButtonStyle(selected: viewModel.probiotics != nil ? !(viewModel.probiotics!) : false)
                 }
             }.tag(5)
+            Card(title: viewModel.infectionsTitle) {
+                ForEach(FocusedGCNViewModel.InfectionOptions.allCases) { option in
+                    Button(option.rawValue) {
+                        viewModel.infections = option
+                        advance()
+                    }.optionButtonStyle(selected: viewModel.infections == option)
+                }
+            }.tag(6)
+            Card(title: viewModel.transfusionTitle, description: viewModel.transfusionDescription) {
+                VStack {
+                    Button("Yes") {
+                        viewModel.transfusion = true
+                        advance()
+                    }.optionButtonStyle(selected: viewModel.transfusion ?? false)
+                    Button("No") {
+                        viewModel.transfusion = false
+                        advance()
+                    }.optionButtonStyle(selected: viewModel.transfusion != nil ? !(viewModel.transfusion!) : false)
+                }
+            }.tag(7)
         }
         .background(backgroundGradient)
         .tabViewStyle(PageTabViewStyle())
@@ -86,9 +106,10 @@ struct FocusedGCNGuidedForm: View {
     @ViewBuilder func Card<Options>(title: String, description: String = "", options: () -> Options) ->
         some View where Options: View {
         VStack(alignment: .center, spacing: 16) {
-            Text(title)
+            Text(LocalizedStringKey(stringLiteral: title))
                 .font(.title2)
                 .padding(.top)
+                .multilineTextAlignment(.center)
                 .padding(.horizontal)
             Text(LocalizedStringKey(stringLiteral: description))
                 .multilineTextAlignment(.center)

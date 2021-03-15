@@ -225,6 +225,43 @@ class FocusedGCNViewModel: ObservableObject {
 
     let infectionsTitle = "How many culture-proven infections..."
 
+    enum InfectionOptions: String, CaseIterable, Identifiable {
+        case none = "None"
+        case one = "One"
+        case two = "Two"
+        var id: String { rawValue }
+    }
+
+    var infections: InfectionOptions? {
+        get {
+            if let infections = gutCheckNEC.infections {
+                switch infections {
+                    case 0:
+                        return FocusedGCNViewModel.InfectionOptions.none
+                    case 1:
+                        return .one
+                    case 2:
+                        return .two
+                    default:
+                        return nil
+                }
+            }
+            return nil
+        }
+        set {
+            switch newValue {
+                case .none?:
+                    gutCheckNEC.infections = 0
+                case .one:
+                    gutCheckNEC.infections = 1
+                case .two:
+                    gutCheckNEC.infections = 2
+                default:
+                    gutCheckNEC.infections = nil
+            }
+        }
+    }
+
     let infectionsOptions = [
         "One",
         "Two",
@@ -243,11 +280,30 @@ class FocusedGCNViewModel: ObservableObject {
         }
     }
 
+    // MARK: - Packed Red Blood Cell transfusion
+
+    let transfusionTitle = "Packed Red Blood Cell transfusion history"
+    let transfusionDescription = "If any PRBC transfusion has been given..."
+
+    var transfusion: Bool? {
+        get {
+            if let transfusion = gutCheckNEC.prbcTransfusion {
+                return transfusion
+            }
+            return nil
+        }
+        set {
+            gutCheckNEC.prbcTransfusion = newValue
+        }
+    }
+
     @Published var prbcTransfusion = false {
         didSet {
             gutCheckNEC.prbcTransfusion = prbcTransfusion
         }
     }
+
+    // MARK: - Hypotension
 
     @Published var hypotension = false {
         didSet {

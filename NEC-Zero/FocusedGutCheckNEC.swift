@@ -39,9 +39,9 @@ struct FocusedGutCheckNEC {
 
     var probiotics: Bool?
 
-    var infections: Int
+    var infections: Int?
 
-    var prbcTransfusion: Bool
+    var prbcTransfusion: Bool?
 
     var hypotension: Bool
 
@@ -63,8 +63,8 @@ struct FocusedGutCheckNEC {
 //        self.necRate = necRate
 //        self.humanMilkFeeding = humanMilkFeeding
 //        self.probiotics = probiotics
-        self.infections = infections
-        self.prbcTransfusion = prbcTransfusion
+//        self.infections = infections
+//        self.prbcTransfusion = prbcTransfusion
         self.hypotension = hypotension
         self.metabolicAcidosis = metabolicAcidosis
         //		points = pointsForChoices()
@@ -77,8 +77,8 @@ struct FocusedGutCheckNEC {
 //        necRate = 6
 //        humanMilkFeeding = true
 //        probiotics = true
-        infections = 1
-        prbcTransfusion = false
+//        infections = 1
+//        prbcTransfusion = false
         hypotension = false
         metabolicAcidosis = false
         //		points = pointsForChoices()
@@ -161,17 +161,11 @@ struct FocusedGutCheckNEC {
 //        total += points(forNECRate: necRate)
 //        total += points(forMilkFeeding: humanMilkFeeding)
 //        total += points(forProbiotics: probiotics)
-        total += points(forInfections: infections)
-        total += points(forPRBCTransfusion: prbcTransfusion)
+//        total += points(forInfections: infections)
+//        total += points(forPRBCTransfusion: prbcTransfusion)
         total += points(forHypotension: hypotension)
         total += points(forMetabolicAcidosis: metabolicAcidosis)
         return total
     }
-
-}
-
-extension FocusedGutCheckNEC {
-
-
 
 }

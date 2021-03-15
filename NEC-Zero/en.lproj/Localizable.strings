@@ -81,7 +81,7 @@
 "If any probiotic preparation..." = "If any probiotic preparation has been given at any dose or any volume, answer Yes.";
 "How many culture-proven infections..." = "How many culture-proven infections has the infant had since day 3 of life?";
 "Packed Red Blood Cell transfusion history" = "Packed Red Blood Cell transfusion history";
-"If any PRBC transfusion has been given" = "If any PRBC transfusion has been given, regardless of feeding status or volume given. Once the infant receives a transfusion, from that time on it is scored “yes.” Highest risk for NEC is associated within 48 hours of the transfusion. Be especially aware if HgB < 8.";
+"If any PRBC transfusion has been given..." = "If any PRBC transfusion has been given, regardless of feeding status or volume given. Once the infant receives a transfusion, from that time on it is scored “yes.” Highest risk for NEC is associated within 48 hours of the transfusion. Be especially aware if HgB < 8.";
 "Hypotension" = "Hypotension treated with Inotropic Medication";
 "If hypotension is severe..." = "If hypotension is severe and medications such as dopamine, dobutamine or milrinone are given to treat it, regardless of dose, frequency or duration of treatment. Once this is “yes” it stays “yes”.";
 "Metabolic Acidosis" = "Metabolic Acidosis";
