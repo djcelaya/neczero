@@ -97,6 +97,18 @@ struct FocusedGCNGuidedForm: View {
                     }.optionButtonStyle(selected: viewModel.transfusion != nil ? !(viewModel.transfusion!) : false)
                 }
             }.tag(7)
+            Card(title: viewModel.hypotensionTitle, description: viewModel.hypotensionDescription) {
+                VStack {
+                    Button("Yes") {
+                        viewModel.hypotension = true
+                        advance()
+                    }.optionButtonStyle(selected: viewModel.hypotension ?? false)
+                    Button("No") {
+                        viewModel.hypotension = false
+                        advance()
+                    }.optionButtonStyle(selected: viewModel.hypotension != nil ? !(viewModel.hypotension!) : false)
+                }
+            }.tag(8)
         }
         .background(backgroundGradient)
         .tabViewStyle(PageTabViewStyle())

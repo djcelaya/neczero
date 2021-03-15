@@ -43,7 +43,7 @@ struct FocusedGCNCondensedForm: View {
                         }
                     }
                     Toggle("Packed Red Blood Cell transfusion history", isOn: $viewModel.prbcTransfusion)
-                    Toggle("Hypotension treated with Inotropic Medication", isOn: $viewModel.hypotension)
+//                    Toggle("Hypotension treated with Inotropic Medication", isOn: $viewModel.hypotension)
                     Toggle("Metabolic Acidosis", isOn: $viewModel.metabolicAcidosis)
                 }
                 Button("Submit", action: viewModel.submit)

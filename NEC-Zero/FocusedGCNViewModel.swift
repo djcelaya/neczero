@@ -11,8 +11,7 @@ import Combine
 
 class FocusedGCNViewModel: ObservableObject {
 
-    @Published private var gutCheckNEC: FocusedGutCheckNEC
-//    private(set) var questions: [Question]
+    @Published private var model: FocusedGutCheckNEC
 
     // MARK: - Gestational age
 
@@ -28,7 +27,7 @@ class FocusedGCNViewModel: ObservableObject {
 
     var gestationalAge: GestationalAgeResponseOptions? {
         get {
-            switch gutCheckNEC.gestationalAge {
+            switch model.gestationalAge {
                 case .lowerRange:
                     return .option1
                 case .midRange:
@@ -42,13 +41,13 @@ class FocusedGCNViewModel: ObservableObject {
         set {
             switch newValue {
                 case .option1:
-                    gutCheckNEC.gestationalAge = .lowerRange
+                    model.gestationalAge = .lowerRange
                 case .option2:
-                    gutCheckNEC.gestationalAge = .midRange
+                    model.gestationalAge = .midRange
                 case .option3:
-                    gutCheckNEC.gestationalAge = .upperRange
+                    model.gestationalAge = .upperRange
                 default:
-                    gutCheckNEC.gestationalAge = nil
+                    model.gestationalAge = nil
             }
         }
     }
@@ -66,7 +65,7 @@ class FocusedGCNViewModel: ObservableObject {
 
     var race: RaceOptions? {
         get {
-            switch gutCheckNEC.race {
+            switch model.race {
                 case .black:
                     return .black
                 case .hispanic:
@@ -80,13 +79,13 @@ class FocusedGCNViewModel: ObservableObject {
         set {
             switch newValue {
                 case .black:
-                    gutCheckNEC.race = .black
+                    model.race = .black
                 case .hispanic:
-                    gutCheckNEC.race = .hispanic
+                    model.race = .hispanic
                 case .other:
-                    gutCheckNEC.race = .other
+                    model.race = .other
                 default:
-                    gutCheckNEC.race = nil
+                    model.race = nil
             }
         }
     }
@@ -98,13 +97,13 @@ class FocusedGCNViewModel: ObservableObject {
 
     var outborn: Bool? {
         get {
-            if let outborn = gutCheckNEC.outborn {
+            if let outborn = model.outborn {
                 return outborn
             }
             return nil
         }
         set {
-            gutCheckNEC.outborn = newValue
+            model.outborn = newValue
         }
     }
 
@@ -123,7 +122,7 @@ class FocusedGCNViewModel: ObservableObject {
 
     var necRate: NecRateOptions? {
         get {
-            if let necRate = gutCheckNEC.necRate {
+            if let necRate = model.necRate {
                 switch necRate {
                     case 0 ..< 2:
                         return .option1
@@ -144,17 +143,17 @@ class FocusedGCNViewModel: ObservableObject {
         set {
             switch newValue {
                 case .option1:
-                    gutCheckNEC.necRate = 1
+                    model.necRate = 1
                 case .option2:
-                    gutCheckNEC.necRate = 3
+                    model.necRate = 3
                 case .option3:
-                    gutCheckNEC.necRate = 6
+                    model.necRate = 6
                 case .option4:
-                    gutCheckNEC.necRate = 9
+                    model.necRate = 9
                 case .option5:
-                    gutCheckNEC.necRate = 13
+                    model.necRate = 13
                 default:
-                    gutCheckNEC.necRate = nil
+                    model.necRate = nil
             }
         }
     }
@@ -170,13 +169,13 @@ class FocusedGCNViewModel: ObservableObject {
     @Published var necRateIndex = 1 {
         didSet {
             if necRateIndex == 0 {
-                gutCheckNEC.necRate = 2
+                model.necRate = 2
             } else if necRateIndex == 1 {
-                gutCheckNEC.necRate = 6
+                model.necRate = 6
             } else if necRateIndex == 2 {
-                gutCheckNEC.necRate = 10
+                model.necRate = 10
             } else { // necRateIndex = 3
-                gutCheckNEC.necRate = 13
+                model.necRate = 13
             }
         }
     }
@@ -188,19 +187,19 @@ class FocusedGCNViewModel: ObservableObject {
 
     var milk: Bool? {
         get {
-            if let milkFeeding = gutCheckNEC.humanMilkFeeding {
+            if let milkFeeding = model.humanMilkFeeding {
                 return milkFeeding
             }
             return nil
         }
         set {
-            gutCheckNEC.humanMilkFeeding = newValue
+            model.humanMilkFeeding = newValue
         }
     }
 
     @Published var milkFeeding = true {
         didSet {
-            gutCheckNEC.humanMilkFeeding = milkFeeding
+            model.humanMilkFeeding = milkFeeding
         }
     }
 
@@ -211,13 +210,13 @@ class FocusedGCNViewModel: ObservableObject {
 
     var probiotics: Bool? {
         get {
-            if let probiotics = gutCheckNEC.probiotics {
+            if let probiotics = model.probiotics {
                 return probiotics
             }
             return nil
         }
         set {
-            gutCheckNEC.probiotics = newValue
+            model.probiotics = newValue
         }
     }
 
@@ -234,7 +233,7 @@ class FocusedGCNViewModel: ObservableObject {
 
     var infections: InfectionOptions? {
         get {
-            if let infections = gutCheckNEC.infections {
+            if let infections = model.infections {
                 switch infections {
                     case 0:
                         return FocusedGCNViewModel.InfectionOptions.none
@@ -251,13 +250,13 @@ class FocusedGCNViewModel: ObservableObject {
         set {
             switch newValue {
                 case .none?:
-                    gutCheckNEC.infections = 0
+                    model.infections = 0
                 case .one:
-                    gutCheckNEC.infections = 1
+                    model.infections = 1
                 case .two:
-                    gutCheckNEC.infections = 2
+                    model.infections = 2
                 default:
-                    gutCheckNEC.infections = nil
+                    model.infections = nil
             }
         }
     }
@@ -271,11 +270,11 @@ class FocusedGCNViewModel: ObservableObject {
     @Published var infectionsIndex = 0 {
         didSet {
             if infectionsIndex == 0 {
-                gutCheckNEC.infections = 1
+                model.infections = 1
             } else if infectionsIndex == 1 {
-                gutCheckNEC.infections = 2
+                model.infections = 2
             } else {
-                gutCheckNEC.infections = 0
+                model.infections = 0
             }
         }
     }
@@ -287,140 +286,60 @@ class FocusedGCNViewModel: ObservableObject {
 
     var transfusion: Bool? {
         get {
-            if let transfusion = gutCheckNEC.prbcTransfusion {
+            if let transfusion = model.prbcTransfusion {
                 return transfusion
             }
             return nil
         }
         set {
-            gutCheckNEC.prbcTransfusion = newValue
+            model.prbcTransfusion = newValue
         }
     }
 
     @Published var prbcTransfusion = false {
         didSet {
-            gutCheckNEC.prbcTransfusion = prbcTransfusion
+            model.prbcTransfusion = prbcTransfusion
         }
     }
 
     // MARK: - Hypotension
 
-    @Published var hypotension = false {
-        didSet {
-            gutCheckNEC.hypotension = hypotension
+    let hypotensionTitle = "Hypotension"
+    let hypotensionDescription = "If hypotension is severe..."
+
+    var hypotension: Bool? {
+        get {
+            if let hypotension = model.hypotension {
+                return hypotension
+            }
+            return nil
+        }
+        set {
+            model.hypotension = newValue
         }
     }
 
+//    @Published var hypotension = false {
+//        didSet {
+//            model.hypotension = hypotension
+//        }
+//    }
+
+    // MARK: - Metabolic Acidosis
+
     @Published var metabolicAcidosis = false {
         didSet {
-            gutCheckNEC.metabolicAcidosis = metabolicAcidosis
+            model.metabolicAcidosis = metabolicAcidosis
         }
     }
 
     @Published var points = 0
 
     func submit() {
-        points = gutCheckNEC.points
+        points = model.points
     }
-
-//    func indexOf(_ targetQuestion: Question) -> Int? {
-//        for (index, question) in questions.enumerated() {
-//            if targetQuestion.id == question.id {
-//                return index
-//            }
-//        }
-//        return nil
-//    }
-
-//    func indexOf(_ targetResponse: Question.Response, in targetQuestion: Question) -> Int? {
-//        for (index, response) in targetQuestion.responses.enumerated() {
-//            if targetResponse.id == response.id {
-//                return index
-//            }
-//        }
-//        return nil
-//    }
-
-//    func clearResponse(to question: Question) {
-//        if let questionIndex = indexOf(question) {
-//            var formQuestion = questions[questionIndex]
-//            formQuestion.reset()
-//            questions[questionIndex] = formQuestion
-//            for response in formQuestion.responses {
-//                response.deselect()
-//            }
-//        }
-//
-//    }
 
     init(with model: FocusedGutCheckNEC = FocusedGutCheckNEC()) {
-        gutCheckNEC = model
-//        questions = [
-//            Question(
-//                title: "Gestational age (weeks)",
-//                description: "Calculate GA in weeks at birth...",
-//                responses: [
-//                    Question.Response(
-//                        displayValue: "< 28",
-//                        points: 9
-//                    ),
-//                    Question.Response(
-//                        displayValue: "28 - 31 6/7",
-//                        points: 8
-//                    ),
-//                    Question.Response(
-//                        displayValue: "≥ 32",
-//                        points: 0
-//                    )
-//                ]
-//            ),
-//            Question(
-//                title: "Race",
-//                responses: [
-//                    Question.Response(displayValue: "Black", points: 2),
-//                    Question.Response(displayValue: "Hispanic", points: 2),
-//                    Question.Response(displayValue: "Other races", points: 0)
-//                ]
-//            ),
-//            Question(
-//                title: "Outborn",
-//                description: "Yes if the infant is transferred into this center...",
-//                responses: [
-//                    Question.Response(displayValue: "Yes", points: 3),
-//                    Question.Response(displayValue: "No", points: 0)
-//                ]
-//            )
-//        ]
+        self.model = model
     }
-
-    // what if you didn't do it with structs...how about a dictionary? or some key-val lookup?
-    struct Question: Identifiable {
-        let title: String
-        private(set) var description: String?
-        var responses: [Response]
-        var selectedResponseIndex: Int?
-        var id: String { title }
-
-        mutating func reset() {
-            for var response in responses {
-                response.deselect()
-            }
-        }
-
-        struct Response: Identifiable {
-            let displayValue: String
-            let points: Int
-            var isSelected: Bool = false
-            var id: String { displayValue }
-
-            mutating func deselect() {
-                self.isSelected = false
-            }
-
-//            static func == (lhs: Response, rhs: Response) -> Bool {
-//                return lhs.id == rhs.id
-//            }
-        }
-    }
-
 }
