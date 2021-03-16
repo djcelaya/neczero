@@ -18,7 +18,10 @@ struct FocusedGCNGuidedForm: View {
     var body: some View {
         TabView(selection: $questionIndex) {
             QuestionCards()
-            ResultsCard().tag(10)
+//            if viewModel.points != nil {
+            FocusedGCNResultsCard(with: viewModel).tag(10)
+//                FocusedGCNResultsCard().tag(10)
+//            }
         }
         .background(backgroundGradient)
         .tabViewStyle(PageTabViewStyle())
@@ -161,8 +164,8 @@ struct FocusedGCNGuidedForm: View {
         questionIndex += 1
     }
 
-    @ViewBuilder func ResultsCard() -> some View {
-        VStack(alignment: .center, spacing: 16) {
+//    @ViewBuilder func ResultsCard() -> some View {
+//        VStack(alignment: .center, spacing: 16) {
 //            Text(LocalizedStringKey(stringLiteral: title))
 //                .font(.title2)
 //                .padding(.top)
@@ -171,20 +174,20 @@ struct FocusedGCNGuidedForm: View {
 //            Text(LocalizedStringKey(stringLiteral: description))
 //                .multilineTextAlignment(.center)
 //                .padding(.horizontal)
-            VStack(spacing: 10) {
-                if viewModel.points != nil {
-                    Text("points: \(viewModel.points!)")
-
-                }
-            }
-            .padding(.bottom)
-        }
-        .frame(maxWidth: .infinity)
-        .background(Color.white)
-        .cornerRadius(20)
-        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-        .padding()
-    }
+//            VStack(spacing: 10) {
+//                if viewModel.points != nil {
+//                    Text("points: \(viewModel.points!)")
+//
+//                }
+//            }
+//            .padding(.bottom)
+//        }
+//        .frame(maxWidth: .infinity)
+//        .background(Color.white)
+//        .cornerRadius(20)
+//        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+//        .padding()
+//    }
 
     init(with viewModel: FocusedGCNViewModel = FocusedGCNViewModel()) {
         self.viewModel = viewModel

@@ -349,6 +349,33 @@ class FocusedGCNViewModel: ObservableObject {
         return model.points
     }
 
+    enum RiskLevels: String {
+        case none = "No Risk"
+        case low = "Low Risk"
+        case moderate = "Moderate Risk"
+        case high = "High Risk"
+        case veryHigh = "Very High Risk"
+    }
+
+    var risk: RiskLevels {
+        if let points = self.points {
+            switch points {
+                case ..<20:
+                    return .low
+                case 20...32:
+                    return .moderate
+                case 33...36:
+                    return .high
+                case 37...:
+                    return .veryHigh
+                default:
+                    return .none
+            }
+        }
+        return .none
+    }
+    
+
     func submit() {
 //        points = model.points
     }
