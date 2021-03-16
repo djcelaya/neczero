@@ -17,6 +17,16 @@ struct FocusedGCNGuidedForm: View {
 
     var body: some View {
         TabView(selection: $questionIndex) {
+            QuestionCards()
+            ResultsCard().tag(10)
+        }
+        .background(backgroundGradient)
+        .tabViewStyle(PageTabViewStyle())
+        .animation(.easeInOut)
+    }
+
+    @ViewBuilder func QuestionCards() -> some View {
+        Group {
             Card(title: viewModel.gestationalAgeTitle, description: viewModel.gestationalAgeDescription) {
                 ForEach(FocusedGCNViewModel.GestationalAgeResponseOptions.allCases) { option in
                     Button(option.rawValue) {
@@ -109,10 +119,19 @@ struct FocusedGCNGuidedForm: View {
                     }.optionButtonStyle(selected: viewModel.hypotension != nil ? !(viewModel.hypotension!) : false)
                 }
             }.tag(8)
+            Card(title: viewModel.acidosisTitle, description: viewModel.acidosisDescription) {
+                VStack {
+                    Button("Yes") {
+                        viewModel.acidosis = true
+                        advance()
+                    }.optionButtonStyle(selected: viewModel.acidosis ?? false)
+                    Button("No") {
+                        viewModel.acidosis = false
+                        advance()
+                    }.optionButtonStyle(selected: viewModel.acidosis != nil ? !(viewModel.acidosis!) : false)
+                }
+            }.tag(9)
         }
-        .background(backgroundGradient)
-        .tabViewStyle(PageTabViewStyle())
-        .animation(.easeInOut)
     }
 
     @ViewBuilder func Card<Options>(title: String, description: String = "", options: () -> Options) ->
@@ -140,6 +159,28 @@ struct FocusedGCNGuidedForm: View {
 
     func advance() {
         questionIndex += 1
+    }
+
+    @ViewBuilder func ResultsCard() -> some View {
+        VStack(alignment: .center, spacing: 16) {
+//            Text(LocalizedStringKey(stringLiteral: title))
+//                .font(.title2)
+//                .padding(.top)
+//                .multilineTextAlignment(.center)
+//                .padding(.horizontal)
+//            Text(LocalizedStringKey(stringLiteral: description))
+//                .multilineTextAlignment(.center)
+//                .padding(.horizontal)
+            VStack(spacing: 10) {
+                Text("points: \(viewModel.points)")
+            }
+            .padding(.bottom)
+        }
+        .frame(maxWidth: .infinity)
+        .background(Color.white)
+        .cornerRadius(20)
+        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+        .padding()
     }
 
     init(with viewModel: FocusedGCNViewModel = FocusedGCNViewModel()) {

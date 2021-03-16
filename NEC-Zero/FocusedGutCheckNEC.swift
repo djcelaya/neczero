@@ -45,18 +45,18 @@ struct FocusedGutCheckNEC {
 
     var hypotension: Bool?
 
-    var metabolicAcidosis: Bool
+    var metabolicAcidosis: Bool?
 
-    init(gestationAge: Double,
-         race: Race,
-         outborn: Bool,
-         necRate: Double,
-         humanMilkFeeding: Bool,
-         probiotics: Bool,
-         infections: Int,
-         prbcTransfusion: Bool,
-         hypotension: Bool,
-         metabolicAcidosis: Bool) {
+//    init(gestationAge: Double,
+//         race: Race,
+//         outborn: Bool,
+//         necRate: Double,
+//         humanMilkFeeding: Bool,
+//         probiotics: Bool,
+//         infections: Int,
+//         prbcTransfusion: Bool,
+//         hypotension: Bool,
+//         metabolicAcidosis: Bool) {
 //        self.gestationAge = gestationAge
 //        self.race = race
 //        self.outborn = outborn
@@ -66,23 +66,9 @@ struct FocusedGutCheckNEC {
 //        self.infections = infections
 //        self.prbcTransfusion = prbcTransfusion
 //        self.hypotension = hypotension
-        self.metabolicAcidosis = metabolicAcidosis
+//        self.metabolicAcidosis = metabolicAcidosis
         //		points = pointsForChoices()
-    }
-
-    init() {
-//        gestationAge = 28
-//        race = .hispanic
-//        outborn = false
-//        necRate = 6
-//        humanMilkFeeding = true
-//        probiotics = true
-//        infections = 1
-//        prbcTransfusion = false
-//        hypotension = false
-        metabolicAcidosis = false
-        //		points = pointsForChoices()
-    }
+//    }
 
     private func points(forGestationAge weeks: Double) -> Int {
         if weeks < 28 {
@@ -164,7 +150,7 @@ struct FocusedGutCheckNEC {
 //        total += points(forInfections: infections)
 //        total += points(forPRBCTransfusion: prbcTransfusion)
 //        total += points(forHypotension: hypotension)
-        total += points(forMetabolicAcidosis: metabolicAcidosis)
+//        total += points(forMetabolicAcidosis: metabolicAcidosis)
         return total
     }
 

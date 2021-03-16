@@ -319,13 +319,22 @@ class FocusedGCNViewModel: ObservableObject {
         }
     }
 
-//    @Published var hypotension = false {
-//        didSet {
-//            model.hypotension = hypotension
-//        }
-//    }
-
     // MARK: - Metabolic Acidosis
+
+    let acidosisTitle = "Metabolic Acidosis"
+    let acidosisDescription = "After the 1st 12 hours of life..."
+
+    var acidosis: Bool? {
+        get {
+            if let acidosis = model.metabolicAcidosis {
+                return acidosis
+            }
+            return nil
+        }
+        set {
+            model.metabolicAcidosis = newValue
+        }
+    }
 
     @Published var metabolicAcidosis = false {
         didSet {
@@ -333,10 +342,12 @@ class FocusedGCNViewModel: ObservableObject {
         }
     }
 
-    @Published var points = 0
+    var points: Int {
+        return model.points
+    }
 
     func submit() {
-        points = model.points
+//        points = model.points
     }
 
     init(with model: FocusedGutCheckNEC = FocusedGutCheckNEC()) {
