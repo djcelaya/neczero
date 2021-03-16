@@ -11,17 +11,7 @@ import Foundation
 
 struct FocusedGutCheckNEC {
 
-    var points: Int {
-        pointsForChoices()
-    }
-
-    enum AgeRange {
-        case lowerRange
-        case midRange
-        case upperRange
-    }
-
-    var gestationalAge: AgeRange?
+    var age: Double? // weeks
 
     enum Race {
         case black
@@ -46,6 +36,10 @@ struct FocusedGutCheckNEC {
     var hypotension: Bool?
 
     var metabolicAcidosis: Bool?
+
+    var points: Int? {
+        pointsForChoices()
+    }
 
 //    init(gestationAge: Double,
 //         race: Race,
@@ -139,18 +133,31 @@ struct FocusedGutCheckNEC {
         return metabolicAcidosis ? 3 : 0
     }
 
-    private func pointsForChoices() -> Int {
+    private func pointsForChoices() -> Int? {
+        guard let age = self.age,
+              let race = self.race,
+              let outborn = self.outborn,
+              let necRate = self.necRate,
+              let milk = self.humanMilkFeeding,
+              let probiotics = self.probiotics,
+              let infections = self.infections,
+              let transfusion = self.prbcTransfusion,
+              let hypotension = self.hypotension,
+              let acidosis = self.metabolicAcidosis else {
+            return nil
+        }
+
         var total = 0
-//        total += points(forGestationAge: gestationAge)
-//        total += points(forRace: race)
-//        total += points(forOutborn: outborn)
-//        total += points(forNECRate: necRate)
-//        total += points(forMilkFeeding: humanMilkFeeding)
-//        total += points(forProbiotics: probiotics)
-//        total += points(forInfections: infections)
-//        total += points(forPRBCTransfusion: prbcTransfusion)
-//        total += points(forHypotension: hypotension)
-//        total += points(forMetabolicAcidosis: metabolicAcidosis)
+        total += points(forGestationAge: age)
+        total += points(forRace: race)
+        total += points(forOutborn: outborn)
+        total += points(forNECRate: necRate)
+        total += points(forMilkFeeding: milk)
+        total += points(forProbiotics: probiotics)
+        total += points(forInfections: infections)
+        total += points(forPRBCTransfusion: transfusion)
+        total += points(forHypotension: hypotension)
+        total += points(forMetabolicAcidosis: acidosis)
         return total
     }
 

@@ -172,7 +172,10 @@ struct FocusedGCNGuidedForm: View {
 //                .multilineTextAlignment(.center)
 //                .padding(.horizontal)
             VStack(spacing: 10) {
-                Text("points: \(viewModel.points)")
+                if viewModel.points != nil {
+                    Text("points: \(viewModel.points!)")
+
+                }
             }
             .padding(.bottom)
         }
@@ -215,6 +218,7 @@ extension View {
         return self.modifier(OptionButtonStyle(selected: selected))
     }
 }
+
 struct FocusedGCNGuidedForm_Previews: PreviewProvider {
     static var previews: some View {
         TabView {

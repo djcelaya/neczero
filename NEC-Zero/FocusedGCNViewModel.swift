@@ -27,27 +27,30 @@ class FocusedGCNViewModel: ObservableObject {
 
     var gestationalAge: GestationalAgeResponseOptions? {
         get {
-            switch model.gestationalAge {
-                case .lowerRange:
-                    return .option1
-                case .midRange:
-                    return .option2
-                case .upperRange:
-                    return .option3
-                default:
-                    return nil
+            if let age = model.age {
+                switch age {
+                    case ...28:
+                        return .option1
+                    case 28 ..< 32:
+                        return .option2
+                    case 32... :
+                        return .option3
+                    default:
+                        return nil
+                }
             }
+            return nil
         }
         set {
             switch newValue {
                 case .option1:
-                    model.gestationalAge = .lowerRange
+                    model.age = 27
                 case .option2:
-                    model.gestationalAge = .midRange
+                    model.age = 30
                 case .option3:
-                    model.gestationalAge = .upperRange
+                    model.age = 33
                 default:
-                    model.gestationalAge = nil
+                    model.age = nil
             }
         }
     }
@@ -342,7 +345,7 @@ class FocusedGCNViewModel: ObservableObject {
         }
     }
 
-    var points: Int {
+    var points: Int? {
         return model.points
     }
 

@@ -52,7 +52,9 @@ struct FocusedGCNCondensedForm: View {
                 HStack {
                     Text("Points")
                     Spacer()
-                    Text("\(viewModel.points)")
+                    if viewModel.points != nil {
+                        Text("\(viewModel.points!)")
+                    }
                 }
             }
         }
