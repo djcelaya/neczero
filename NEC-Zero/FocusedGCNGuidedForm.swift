@@ -216,7 +216,7 @@ struct OptionButtonStyle: ViewModifier {
     }
 }
 
-extension View {
+private extension View {
     func optionButtonStyle(selected: Bool = false) -> some View {
         return self.modifier(OptionButtonStyle(selected: selected))
     }
