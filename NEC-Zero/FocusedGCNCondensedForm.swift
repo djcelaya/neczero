@@ -14,60 +14,103 @@ struct FocusedGCNCondensedForm: View {
     @ObservedObject var viewModel: FocusedGCNViewModel
 
     var body: some View {
-        VStack(alignment: .leading) {
-            MiniCard(title: viewModel.gestationalAgeTitle) {
+        ScrollView {
+            Questions()
+        }
+        .background(Color("GutCheck Light"))
+    }
+
+    @ViewBuilder func Questions() -> some View {
+        Group {
+            MiniCard(title: viewModel.gestationalAgeTitle, description: viewModel.gestationalAgeDescription) {
                 ForEach(FocusedGCNViewModel.GestationalAgeResponseOptions.allCases) { option in
                     Button(option.rawValue) {
                         viewModel.gestationalAge = option
                     }.miniButtonStyle(selected: viewModel.gestationalAge == option)
                 }
             }
-            Form {
-                Section(header: Text("GutChecNEC (< 1500 grams)")) {
-                    Group {
-                        Picker(selection: $viewModel.gestationalAge,
-                            label: Text(viewModel.gestationalAgeTitle)) {
-                            ForEach(FocusedGCNViewModel.GestationalAgeResponseOptions.allCases) { option in
-                                Text(option.rawValue).tag(option)
-                            }
-                        }
-                        Picker(viewModel.raceTitle, selection: $viewModel.race) {
-                            ForEach(FocusedGCNViewModel.RaceOptions.allCases) { option in
-                                Text(option.rawValue).tag(option)
-                            }
-                        }
-    //                    Toggle("Outborn", isOn: $viewModel.outborn)
-                        Picker("NICU NEC Rate", selection: $viewModel.necRateIndex) {
-                            ForEach(0 ..< viewModel.necRateOptions.count) {
-                                Text(viewModel.necRateOptions[$0])
-                            }
-                        }
-                        Toggle("Exclusive human milk feeding", isOn: $viewModel.milkFeeding)
-    //                    Toggle("Probiotics", isOn: $viewModel.probiotics)
-                        Picker(selection: $viewModel.infectionsIndex, label:
-                                Text("How many culture-proven infections has the infant had since day 3 of life?")) {
-                            ForEach(0 ..< viewModel.infectionsOptions.count) {
-                                Text(viewModel.infectionsOptions[$0])
-                            }
-                        }
-                        Toggle("Packed Red Blood Cell transfusion history", isOn: $viewModel.prbcTransfusion)
-    //                    Toggle("Hypotension treated with Inotropic Medication", isOn: $viewModel.hypotension)
-                        Toggle("Metabolic Acidosis", isOn: $viewModel.metabolicAcidosis)
-                    }
-                    Button("Submit", action: viewModel.submit)
+            MiniCard(title: viewModel.raceTitle) {
+                ForEach(FocusedGCNViewModel.RaceOptions.allCases) { option in
+                    Button(option.rawValue) {
+                        viewModel.race = option
+                    }.miniButtonStyle(selected: viewModel.race == option)
                 }
-                Section(header: Text("Results")) {
-                    HStack {
-                        Text("Points")
-                        Spacer()
-                        if viewModel.points != nil {
-                            Text("\(viewModel.points!)")
-                        }
-                    }
+            }
+            MiniCard(title: viewModel.outbornTitle, description: viewModel.outbornDescription) {
+                VStack {
+                    Button("Yes") {
+                        viewModel.outborn = true
+                    }.miniButtonStyle(selected: viewModel.outborn ?? false)
+                    Button("No") {
+                        viewModel.outborn = false
+                    }.miniButtonStyle(selected: viewModel.outborn != nil ? !(viewModel.outborn!) : false)
+                }
+            }
+            MiniCard(title: viewModel.necRateTitle, description: viewModel.necRateDescription) {
+                ForEach(FocusedGCNViewModel.NecRateOptions.allCases) { option in
+                    Button(option.rawValue) {
+                        viewModel.necRate = option
+                    }.miniButtonStyle(selected: viewModel.necRate == option)
+                }
+            }
+            MiniCard(title: viewModel.milkTitle, description: viewModel.milkDescription) {
+                VStack {
+                    Button("Yes") {
+                        viewModel.milk = true
+                    }.miniButtonStyle(selected: viewModel.milk ?? false)
+                    Button("No") {
+                        viewModel.milk = false
+                    }.miniButtonStyle(selected: viewModel.milk != nil ? !(viewModel.milk!) : false)
+                }
+            }
+            MiniCard(title: viewModel.probioticsTitle, description: viewModel.probioticsDescription) {
+                VStack {
+                    Button("Yes") {
+                        viewModel.probiotics = true
+                    }.miniButtonStyle(selected: viewModel.probiotics ?? false)
+                    Button("No") {
+                        viewModel.probiotics = false
+                    }.miniButtonStyle(selected: viewModel.probiotics != nil ? !(viewModel.probiotics!) : false)
+                }
+            }
+            MiniCard(title: viewModel.infectionsTitle) {
+                ForEach(FocusedGCNViewModel.InfectionOptions.allCases) { option in
+                    Button(option.rawValue) {
+                        viewModel.infections = option
+                    }.miniButtonStyle(selected: viewModel.infections == option)
+                }
+            }
+            MiniCard(title: viewModel.transfusionTitle, description: viewModel.transfusionDescription) {
+                VStack {
+                    Button("Yes") {
+                        viewModel.transfusion = true
+                    }.miniButtonStyle(selected: viewModel.transfusion ?? false)
+                    Button("No") {
+                        viewModel.transfusion = false
+                    }.miniButtonStyle(selected: viewModel.transfusion != nil ? !(viewModel.transfusion!) : false)
+                }
+            }
+            MiniCard(title: viewModel.hypotensionTitle, description: viewModel.hypotensionDescription) {
+                VStack {
+                    Button("Yes") {
+                        viewModel.hypotension = true
+                    }.miniButtonStyle(selected: viewModel.hypotension ?? false)
+                    Button("No") {
+                        viewModel.hypotension = false
+                    }.miniButtonStyle(selected: viewModel.hypotension != nil ? !(viewModel.hypotension!) : false)
+                }
+            }
+            MiniCard(title: viewModel.acidosisTitle, description: viewModel.acidosisDescription) {
+                VStack {
+                    Button("Yes") {
+                        viewModel.acidosis = true
+                    }.miniButtonStyle(selected: viewModel.acidosis ?? false)
+                    Button("No") {
+                        viewModel.acidosis = false
+                    }.miniButtonStyle(selected: viewModel.acidosis != nil ? !(viewModel.acidosis!) : false)
                 }
             }
         }
-        .background(Color("GutCheck Light"))
     }
 
     @ViewBuilder func MiniCard<Options>(title: String, description: String = "", options: () -> Options) ->
