@@ -9,13 +9,26 @@
 
 import SwiftUI
 
+struct QuestionDescription: Identifiable {
+    let title: String
+    let description: String
+    var id: String { title }
+}
+
 struct FocusedGCNCondensedForm: View {
 
     @ObservedObject var viewModel: FocusedGCNViewModel
+    @State private var selectedDescription: QuestionDescription?
 
     var body: some View {
         ScrollView {
             Questions()
+                .alert(item: $selectedDescription) { question in
+                    Alert(
+                        title: Text(LocalizedStringKey(stringLiteral: question.title)),
+                        message: Text(LocalizedStringKey(stringLiteral: question.description))
+                    )
+                }
 //            Results()
             FocusedGCNResultsCard(with: viewModel)
                 .padding(.top, 0)
@@ -24,7 +37,7 @@ struct FocusedGCNCondensedForm: View {
     }
 
     @ViewBuilder func Questions() -> some View {
-        Group {
+        LazyVStack {
             MiniCard(title: viewModel.gestationalAgeTitle, description: viewModel.gestationalAgeDescription) {
                 ForEach(FocusedGCNViewModel.GestationalAgeResponseOptions.allCases) { option in
                     Button(option.rawValue) {
@@ -123,9 +136,18 @@ struct FocusedGCNCondensedForm: View {
     @ViewBuilder func MiniCard<Options>(title: String, description: String = "", options: () -> Options) ->
         some View where Options: View {
         VStack(alignment: .leading) {
-            Text(LocalizedStringKey(stringLiteral: title))
-                .font(.title3)
-                .padding([.top, .leading, .trailing], 8)
+            HStack {
+                Text(LocalizedStringKey(stringLiteral: title))
+                    .font(.title3)
+                    .padding([.top, .leading, .trailing], 8)
+                if !description.isEmpty {
+                    Button(action: {
+                        selectedDescription = QuestionDescription(title: title, description: description)
+                    }, label: {
+                        Image(systemName: "info.circle")
+                    })
+                }
+            }
             HStack {
                 options()
                 Spacer()
