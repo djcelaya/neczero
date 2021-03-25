@@ -16,6 +16,8 @@ struct FocusedGCNCondensedForm: View {
     var body: some View {
         ScrollView {
             Questions()
+                .padding(.bottom)
+
         }
         .background(Color("GutCheck Light"))
     }
@@ -37,7 +39,7 @@ struct FocusedGCNCondensedForm: View {
                 }
             }
             MiniCard(title: viewModel.outbornTitle, description: viewModel.outbornDescription) {
-                VStack {
+                HStack {
                     Button("Yes") {
                         viewModel.outborn = true
                     }.miniButtonStyle(selected: viewModel.outborn ?? false)
@@ -50,11 +52,15 @@ struct FocusedGCNCondensedForm: View {
                 ForEach(FocusedGCNViewModel.NecRateOptions.allCases) { option in
                     Button(option.rawValue) {
                         viewModel.necRate = option
-                    }.miniButtonStyle(selected: viewModel.necRate == option)
+                    }
+                    .fixedSize(horizontal: true, vertical: false)
+                    .font(.system(size: 14))
+                    .miniButtonStyle(selected: viewModel.necRate == option)
+
                 }
             }
             MiniCard(title: viewModel.milkTitle, description: viewModel.milkDescription) {
-                VStack {
+                HStack {
                     Button("Yes") {
                         viewModel.milk = true
                     }.miniButtonStyle(selected: viewModel.milk ?? false)
@@ -64,7 +70,7 @@ struct FocusedGCNCondensedForm: View {
                 }
             }
             MiniCard(title: viewModel.probioticsTitle, description: viewModel.probioticsDescription) {
-                VStack {
+                HStack {
                     Button("Yes") {
                         viewModel.probiotics = true
                     }.miniButtonStyle(selected: viewModel.probiotics ?? false)
@@ -81,7 +87,7 @@ struct FocusedGCNCondensedForm: View {
                 }
             }
             MiniCard(title: viewModel.transfusionTitle, description: viewModel.transfusionDescription) {
-                VStack {
+                HStack {
                     Button("Yes") {
                         viewModel.transfusion = true
                     }.miniButtonStyle(selected: viewModel.transfusion ?? false)
@@ -91,7 +97,7 @@ struct FocusedGCNCondensedForm: View {
                 }
             }
             MiniCard(title: viewModel.hypotensionTitle, description: viewModel.hypotensionDescription) {
-                VStack {
+                HStack {
                     Button("Yes") {
                         viewModel.hypotension = true
                     }.miniButtonStyle(selected: viewModel.hypotension ?? false)
@@ -101,7 +107,7 @@ struct FocusedGCNCondensedForm: View {
                 }
             }
             MiniCard(title: viewModel.acidosisTitle, description: viewModel.acidosisDescription) {
-                VStack {
+                HStack {
                     Button("Yes") {
                         viewModel.acidosis = true
                     }.miniButtonStyle(selected: viewModel.acidosis ?? false)
@@ -121,6 +127,7 @@ struct FocusedGCNCondensedForm: View {
                 .padding([.top, .leading, .trailing], 8)
             HStack {
                 options()
+                Spacer()
             }
             .padding([.leading, .bottom, .trailing], 8)
         }
@@ -128,7 +135,11 @@ struct FocusedGCNCondensedForm: View {
         .background(Color.white)
         .cornerRadius(10)
         .shadow(radius: 10)
-        .padding()
+        .padding([.top, .leading, .trailing])
+    }
+
+    @ViewBuilder func Results() -> some View {
+        
     }
 
     init(with viewModel: FocusedGCNViewModel = FocusedGCNViewModel(with: FocusedGutCheckNEC())) {
@@ -146,7 +157,7 @@ struct OptionMiniButtonStyle: ViewModifier {
             content
         }
         .padding(6)
-        .background(Color("GutCheck Medium"))
+        .background(isSelected ? Color("GutCheck Dark") : Color("GutCheck Medium"))
         .font(.body)
         .foregroundColor(.white)
         .cornerRadius(8)
