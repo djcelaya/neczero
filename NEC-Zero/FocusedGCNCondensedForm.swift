@@ -16,8 +16,9 @@ struct FocusedGCNCondensedForm: View {
     var body: some View {
         ScrollView {
             Questions()
-                .padding(.bottom)
-
+//            Results()
+            FocusedGCNResultsCard(with: viewModel)
+                .padding(.top, 0)
         }
         .background(Color("GutCheck Light"))
     }
@@ -115,7 +116,7 @@ struct FocusedGCNCondensedForm: View {
                         viewModel.acidosis = false
                     }.miniButtonStyle(selected: viewModel.acidosis != nil ? !(viewModel.acidosis!) : false)
                 }
-            }
+            }.padding(.bottom)
         }
     }
 
@@ -139,7 +140,19 @@ struct FocusedGCNCondensedForm: View {
     }
 
     @ViewBuilder func Results() -> some View {
-        
+        VStack {
+            if let points = viewModel.points {
+                HStack {
+                    Text("\(points)")
+                        .padding(.top)
+                        .font(.system(size: 52, weight: .bold, design: .rounded))
+                    Text("Points Scored")
+                        .font(.headline)
+                }
+            } else {
+                Text("Form has not been completed.")
+            }
+        }
     }
 
     init(with viewModel: FocusedGCNViewModel = FocusedGCNViewModel(with: FocusedGutCheckNEC())) {
