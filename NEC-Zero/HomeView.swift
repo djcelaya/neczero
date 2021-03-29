@@ -11,6 +11,7 @@ struct HomeView: View {
 
     @Binding var selectedTab: String
     @Binding var selectedFilter: Articles.Filters
+    var buttonSpacing: CGFloat = 15
 
     var body: some View {
         NavigationView() {
@@ -28,50 +29,55 @@ struct HomeView: View {
                             .padding([.leading, .trailing, .bottom])
                     }
                 }
-                VStack(spacing: 15) {
-                    HStack(spacing: 15) {
-                        NavigationLink("What is NEC?", destination: NECView())
-                            .padding()
-                            .background(Color("PrimaryColor"))
-                            .foregroundColor(.white)
-                            .font(.title2)
-                            .cornerRadius(15)
-                        Button(action: {
-                            selectedTab = "GutCheckNEC"
-                        }) {
-                            Text("GutCheckNEC")
-                                .padding()
+                GeometryReader { geometry in
+                    let buttonSize = geometry.size.width/2 - buttonSpacing/2
+                    VStack(spacing: buttonSpacing) {
+                        HStack(spacing: buttonSpacing) {
+                            NavigationLink("What is NEC?", destination: NECView())
+                                .frame(width: buttonSize, height: buttonSize, alignment: .center)
                                 .background(Color("PrimaryColor"))
                                 .foregroundColor(.white)
                                 .font(.title2)
                                 .cornerRadius(15)
+                            Button(action: {
+                                selectedTab = "GutCheckNEC"
+                            }) {
+                                Text("GutCheckNEC")
+                                    .frame(width: buttonSize, height: buttonSize, alignment: .center)
+                                    .background(Color("PrimaryColor"))
+                                    .foregroundColor(.white)
+                                    .font(.title2)
+                                    .cornerRadius(15)
+                            }
                         }
-                    }
-                    HStack(spacing: 20) {
-                        Button(action: {
-                            selectedFilter = .Parents
-                            selectedTab = "Resources"
-                        }) {
-                            Text("Resources for Parents")
-                                .padding()
-                                .background(Color("PrimaryColor"))
-                                .foregroundColor(.white)
-                                .font(.title2)
-                                .cornerRadius(15)
-                        }
-                        Button(action: {
-                            selectedFilter = .Professionals
-                            selectedTab = "Resources"
-                        }) {
-                            Text("Resources for Professionals")
-                                .padding()
-                                .background(Color("PrimaryColor"))
-                                .foregroundColor(.white)
-                                .font(.title2)
-                                .cornerRadius(15)
+                        HStack(spacing: buttonSpacing) {
+                            Button(action: {
+                                selectedFilter = .Parents
+                                selectedTab = "Resources"
+                            }) {
+                                Text("Resources for Parents")
+                                    .frame(width: buttonSize, height: buttonSize, alignment: .center)
+                                    .background(Color("PrimaryColor"))
+                                    .foregroundColor(.white)
+                                    .font(.title2)
+                                    .cornerRadius(15)
+                            }
+                            Button(action: {
+                                selectedFilter = .Professionals
+                                selectedTab = "Resources"
+                            }) {
+                                Text("Resources for Professionals")
+                                    .frame(width: buttonSize, height: buttonSize, alignment: .center)
+                                    .background(Color("PrimaryColor"))
+                                    .foregroundColor(.white)
+                                    .font(.title2)
+                                    .cornerRadius(15)
+                            }
                         }
                     }
                 }
+                .background(Color(.green))
+                .padding()
                 Spacer()
             }.navigationBarHidden(true)
         }
