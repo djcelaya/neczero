@@ -13,7 +13,7 @@ class Articles: ObservableObject {
         case All = "All"
         case Parents = "Parents"
         case Professionals = "Professionals"
-        case Prevention = "Prevention"
+//        case Prevention = "Prevention"
         var id: String { rawValue }
     }
     
@@ -33,8 +33,8 @@ class Articles: ObservableObject {
             Article(title: "Caring for Babies with NEC in the Hospital", tag: .Professionals),
             Article(title: "Breastfeeding", tag: .Professionals),
             Article(title: "Additional Resources for Health Professionals", tag: .Professionals),
-            Article(title: "Prevention Strategies", tag: .Prevention),
-            Article(title: "Importance of Breastfeeding", tag: .Prevention)
+            Article(title: "Prevention Strategies", tag: .Professionals),
+            Article(title: "Importance of Breastfeeding", tag: .Professionals)
         ]
 //        selectedFilter = filter
     }
