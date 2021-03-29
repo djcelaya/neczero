@@ -19,6 +19,7 @@ struct HomeView: View {
                     Image("NECZeroLogo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
+                        .padding([.leading, .bottom, .trailing])
                     VStack(alignment: .leading) {
                         Text("NEC-Zero is an intervention...")
                             .padding([.leading, .trailing])
