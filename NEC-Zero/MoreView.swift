@@ -14,8 +14,10 @@ struct MoreView: View {
                 NavigationLink(destination: NECZeroView()) {
                     Text("NEC-Zero Study")
                 }
-                Text("Disclaimer")
-            }.navigationBarTitle("More")
+                NavigationLink(destination: DisclaimerView()) {
+                    Text("Disclaimer")
+                }
+            }.navigationBarTitle(Text("More"))
         }
     }
 }

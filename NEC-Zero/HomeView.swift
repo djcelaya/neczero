@@ -33,12 +33,17 @@ struct HomeView: View {
                     let buttonSize = geometry.size.width/2 - buttonSpacing/2
                     VStack(spacing: buttonSpacing) {
                         HStack(spacing: buttonSpacing) {
-                            NavigationLink("What is NEC?", destination: NECView())
-                                .frame(width: buttonSize, height: buttonSize, alignment: .center)
-                                .background(Color("PrimaryColor"))
-                                .foregroundColor(.white)
-                                .font(.title2)
-                                .cornerRadius(15)
+                            NavigationLink(destination: NECView()) {
+                                VStack {
+                                    Text("What is")
+                                    Text("NEC?")
+                                }
+                            }
+                            .frame(width: buttonSize, height: buttonSize, alignment: .center)
+                            .background(Color("PrimaryColor"))
+                            .foregroundColor(.white)
+                            .font(.title2)
+                            .cornerRadius(15)
                             Button(action: {
                                 selectedTab = "GutCheckNEC"
                             }) {
@@ -55,32 +60,54 @@ struct HomeView: View {
                                 selectedFilter = .Parents
                                 selectedTab = "Resources"
                             }) {
-                                Text("Resources for Parents")
-                                    .frame(width: buttonSize, height: buttonSize, alignment: .center)
-                                    .background(Color("PrimaryColor"))
-                                    .foregroundColor(.white)
-                                    .font(.title2)
-                                    .cornerRadius(15)
+                                VStack {
+                                    Text("Resources")
+                                    Text("for")
+                                    Text("Parents")
+                                }
+                                .frame(width: buttonSize, height: buttonSize, alignment: .center)
+                                .background(Color("PrimaryColor"))
+                                .foregroundColor(.white)
+                                .font(.title2)
+                                .cornerRadius(15)
                             }
                             Button(action: {
                                 selectedFilter = .Professionals
                                 selectedTab = "Resources"
                             }) {
-                                Text("Resources for Professionals")
-                                    .frame(width: buttonSize, height: buttonSize, alignment: .center)
-                                    .background(Color("PrimaryColor"))
-                                    .foregroundColor(.white)
-                                    .font(.title2)
-                                    .cornerRadius(15)
+                                VStack {
+                                    Text("Resources")
+                                    Text("for")
+                                    Text("Professionals")
+                                }
+                                .frame(width: buttonSize, height: buttonSize, alignment: .center)
+                                .homeButtonStyle()
                             }
                         }
                     }
                 }
-                .background(Color(.green))
+//                .background(Color(.green))
                 .padding()
                 Spacer()
             }.navigationBarHidden(true)
         }
+    }
+}
+
+struct HomeButtonStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .background(Color("PrimaryColor"))
+            .foregroundColor(.white)
+            .font(.title2)
+            .cornerRadius(15)
+            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+    }
+}
+
+extension View {
+    func homeButtonStyle() -> some View {
+        return self.modifier(HomeButtonStyle())
     }
 }
 
