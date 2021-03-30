@@ -13,6 +13,9 @@ struct HomeView: View {
     @Binding var selectedFilter: Articles.Filters
     var buttonSpacing: CGFloat = 15
 
+    var disclaimerAccepted = false
+    @State var isPresentingDisclaimer = false
+
     var body: some View {
         NavigationView() {
             VStack {
@@ -45,7 +48,11 @@ struct HomeView: View {
                             .font(.title2)
                             .cornerRadius(15)
                             Button(action: {
-                                selectedTab = "GutCheckNEC"
+                                if disclaimerAccepted {
+                                    selectedTab = "GutCheckNEC"
+                                } else {
+                                    isPresentingDisclaimer = true
+                                }
                             }) {
                                 Text("GutCheckNEC")
                                     .frame(width: buttonSize, height: buttonSize, alignment: .center)
@@ -89,7 +96,13 @@ struct HomeView: View {
 //                .background(Color(.green))
                 .padding()
                 Spacer()
-            }.navigationBarHidden(true)
+            }
+            .navigationBarHidden(true)
+            .sheet(isPresented: $isPresentingDisclaimer, content: {
+//                Text("The material provided in this mobile application is for...")
+//                    .padding()
+                DisclaimerView()
+            })
         }
     }
 }
