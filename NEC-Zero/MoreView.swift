@@ -14,7 +14,7 @@ struct MoreView: View {
                 NavigationLink(destination: NECZeroView()) {
                     Text("NEC-Zero Study")
                 }
-                NavigationLink(destination: DisclaimerView()) {
+                NavigationLink(destination: DisclaimerView(.constant(false))) {
                     Text("Disclaimer")
                 }
             }.navigationBarTitle(Text("More"))

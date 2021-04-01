@@ -13,7 +13,9 @@ struct HomeView: View {
     @Binding var selectedFilter: Articles.Filters
     var buttonSpacing: CGFloat = 15
 
-    var disclaimerAccepted = false
+    var hasAcceptedDisclaimer: Bool {
+        UserDefaults.standard.bool(forKey: "Disclaimer")
+    }
     @State var isPresentingDisclaimer = false
 
     var body: some View {
@@ -48,7 +50,7 @@ struct HomeView: View {
                             .font(.title2)
                             .cornerRadius(15)
                             Button(action: {
-                                if disclaimerAccepted {
+                                if hasAcceptedDisclaimer {
                                     selectedTab = "GutCheckNEC"
                                 } else {
                                     isPresentingDisclaimer = true
@@ -99,9 +101,7 @@ struct HomeView: View {
             }
             .navigationBarHidden(true)
             .sheet(isPresented: $isPresentingDisclaimer, content: {
-//                Text("The material provided in this mobile application is for...")
-//                    .padding()
-                DisclaimerView()
+                DisclaimerView($isPresentingDisclaimer)
             })
         }
     }

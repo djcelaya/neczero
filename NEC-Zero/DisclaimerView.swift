@@ -11,6 +11,7 @@ struct DisclaimerView: View {
 
     @State private var hasAcceptedDisclaimer = UserDefaults.standard.bool(forKey: "Disclaimer")
     @State private var dateAccepted: Date?
+    @Binding var isPresented: Bool
 
     var body: some View {
         ScrollView {
@@ -22,6 +23,7 @@ struct DisclaimerView: View {
                     UserDefaults.standard.setValue(hasAcceptedDisclaimer, forKey: "Disclaimer")
                     dateAccepted = Date()
                     UserDefaults.standard.setValue(dateAccepted, forKey: "DisclaimerDate")
+                    isPresented = false
                 }, label: {
                     VStack(alignment: .leading) {
                         Text("I have read and accept the disclaimer above.")
@@ -39,10 +41,18 @@ struct DisclaimerView: View {
         }.navigationTitle("Disclaimer")
     }
 
-    init() {
+//    init() {
+//        if let date = UserDefaults.standard.object(forKey: "DisclaimerDate") as! Date? {
+//            _dateAccepted = State(initialValue: date)
+//        }
+//        _isPresented.wrappedValue = false
+//    }
+
+    init(_ isPresenting: Binding<Bool>) {
         if let date = UserDefaults.standard.object(forKey: "DisclaimerDate") as! Date? {
             _dateAccepted = State(initialValue: date)
         }
+        _isPresented = isPresenting
     }
 }
 
@@ -58,7 +68,7 @@ struct DisclaimerView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
             NavigationView() {
-                DisclaimerView()
+                DisclaimerView(.constant(false))
             }.tabItem {
                 VStack {
                     Image(systemName: "list.bullet")
