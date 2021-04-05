@@ -12,10 +12,7 @@ struct HomeView: View {
     @Binding var selectedTab: String
     @Binding var selectedFilter: Articles.Filters
     var buttonSpacing: CGFloat = 15
-
-    var hasAcceptedDisclaimer: Bool {
-        UserDefaults.standard.bool(forKey: "Disclaimer")
-    }
+    var hasAcceptedDisclaimer: Bool { UserDefaults.standard.bool(forKey: "Disclaimer") }
     @State var isPresentingDisclaimer = false
 
     var body: some View {

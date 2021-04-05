@@ -1,6 +1,8 @@
 //
-//  GutCheckNECTests.swift
+//  FocusedGutCheckNECTests.swift
 //  NEC-ZeroTests
+//
+//  Unit tests for the FocusedGutCheckNEC model.
 //
 //  Created by David Celaya-Gonzalez on 1/11/21.
 //
@@ -8,7 +10,18 @@
 import XCTest
 @testable import NEC_Zero
 
-class GutCheckNECTests: XCTestCase {
+class FocusedGutCheckNECTests: XCTestCase {
+
+//    var gutCheckNEC: FocusedGutCheckNEC!
+
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+//        gutCheckNEC = FocusedGutCheckNEC()
+    }
+
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
 
     // A test to check point tabulation for some "default" values.
     // gestationAge = 28        +8
@@ -23,7 +36,17 @@ class GutCheckNECTests: XCTestCase {
     // metabolicAcidosis = NO   +0
     // total                    22
     func testGutCheckNecDefaults() {
-        let gutCheckNEC = FocusedGutCheckNEC()
+        var gutCheckNEC = FocusedGutCheckNEC()
+        gutCheckNEC.age = 29
+        gutCheckNEC.race = .hispanic
+        gutCheckNEC.outborn = false
+        gutCheckNEC.necRate = 6
+        gutCheckNEC.humanMilkFeeding = true
+        gutCheckNEC.probiotics = true
+        gutCheckNEC.infections = 1
+        gutCheckNEC.prbcTransfusion = false
+        gutCheckNEC.hypotension = false
+        gutCheckNEC.metabolicAcidosis = false
         let expectedPoints = 22
         let actualPoints = gutCheckNEC.points
         XCTAssertEqual(expectedPoints, actualPoints)
@@ -43,7 +66,7 @@ class GutCheckNECTests: XCTestCase {
     // total                    1
     func testGutCheckNECMinimumPoints() {
         let gutCheckNEC = FocusedGutCheckNEC(
-            gestationAge: 32,
+            age: 32,
             race: FocusedGutCheckNEC.Race.other,
             outborn: false,
             necRate: 2,
@@ -72,7 +95,7 @@ class GutCheckNECTests: XCTestCase {
     // total                    58
     func testGutCheckNECMaximumPoints() {
         let gutCheckNEC = FocusedGutCheckNEC(
-            gestationAge: 27,
+            age: 27,
             race: FocusedGutCheckNEC.Race.black,
             outborn: true,
             necRate: 13,
@@ -88,13 +111,37 @@ class GutCheckNECTests: XCTestCase {
     }
 
     // A test to check point tabulation while aiming for a total in the "low risk" category.
+    // gestationAge = 34        +0
+    // race = black             +2
+    // outborn = NO             +0
+    // necRate = 7              +16
+    // milkFeeding = NO         +0
+    // probiotics = NO          +0
+    // infections = 0           +0
+    // prbcTransfusion = NO     +0
+    // hypotension = NO         +0
+    // metabolicAcidosis = NO   +0
+    // total                    18
     func testGutCheckNECLowRisk() {
-
+        var gutCheckNEC = FocusedGutCheckNEC()
+        gutCheckNEC.age = 34
+        gutCheckNEC.race = .black
+        gutCheckNEC.outborn = false
+        gutCheckNEC.necRate = 7
+        gutCheckNEC.humanMilkFeeding = false
+        gutCheckNEC.probiotics = false
+        gutCheckNEC.infections = 0
+        gutCheckNEC.prbcTransfusion = false
+        gutCheckNEC.hypotension = false
+        gutCheckNEC.metabolicAcidosis = false
+        let expectedPoints = 18
+        let actualPoints = gutCheckNEC.points
+        XCTAssertEqual(expectedPoints, actualPoints)
     }
 
     // A test to check point tabulation while aiming for a total in the "moderate risk" category.
     func testGutCheckNECModerateRisk() {
-
+        
     }
 
     // A test to check point tabulation while aiming for a total in the "high risk" category.

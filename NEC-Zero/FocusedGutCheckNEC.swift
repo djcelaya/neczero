@@ -41,29 +41,6 @@ struct FocusedGutCheckNEC {
         pointsForChoices()
     }
 
-//    init(gestationAge: Double,
-//         race: Race,
-//         outborn: Bool,
-//         necRate: Double,
-//         humanMilkFeeding: Bool,
-//         probiotics: Bool,
-//         infections: Int,
-//         prbcTransfusion: Bool,
-//         hypotension: Bool,
-//         metabolicAcidosis: Bool) {
-//        self.gestationAge = gestationAge
-//        self.race = race
-//        self.outborn = outborn
-//        self.necRate = necRate
-//        self.humanMilkFeeding = humanMilkFeeding
-//        self.probiotics = probiotics
-//        self.infections = infections
-//        self.prbcTransfusion = prbcTransfusion
-//        self.hypotension = hypotension
-//        self.metabolicAcidosis = metabolicAcidosis
-        //		points = pointsForChoices()
-//    }
-
     private func points(forGestationAge weeks: Double) -> Int {
         if weeks < 28 {
             return 9
