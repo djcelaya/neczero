@@ -140,17 +140,118 @@ class FocusedGutCheckNECTests: XCTestCase {
     }
 
     // A test to check point tabulation while aiming for a total in the "moderate risk" category.
+    // gestationAge = 30        +8
+    // race = black             +2
+    // outborn = NO             +0
+    // necRate = 7              +16
+    // milkFeeding = NO         +0
+    // probiotics = NO          +0
+    // infections = 0           +0
+    // prbcTransfusion = NO     +0
+    // hypotension = YES        +4
+    // metabolicAcidosis = NO   +0
+    // total                    30
     func testGutCheckNECModerateRisk() {
-        
+        var gutCheckNEC = FocusedGutCheckNEC()
+        gutCheckNEC.age = 30
+        gutCheckNEC.race = .black
+        gutCheckNEC.outborn = false
+        gutCheckNEC.necRate = 7
+        gutCheckNEC.humanMilkFeeding = false
+        gutCheckNEC.probiotics = false
+        gutCheckNEC.infections = 0
+        gutCheckNEC.prbcTransfusion = false
+        gutCheckNEC.hypotension = true
+        gutCheckNEC.metabolicAcidosis = false
+        let expectedPoints = 30
+        let actualPoints = gutCheckNEC.points
+        XCTAssertEqual(expectedPoints, actualPoints)
     }
 
     // A test to check point tabulation while aiming for a total in the "high risk" category.
+    // gestationAge = 30        +8
+    // race = hispanic          +2
+    // outborn = NO             +0
+    // necRate = 7              +16
+    // milkFeeding = YES        -3
+    // probiotics = NO          +0
+    // infections = 0           +0
+    // prbcTransfusion = YES    +8
+    // hypotension = YES        +4
+    // metabolicAcidosis = NO   +0
+    // total                    35
     func testGutCheckNECHighRisk() {
-
+        var gutCheckNEC = FocusedGutCheckNEC()
+        gutCheckNEC.age = 30
+        gutCheckNEC.race = .hispanic
+        gutCheckNEC.outborn = false
+        gutCheckNEC.necRate = 7
+        gutCheckNEC.humanMilkFeeding = true
+        gutCheckNEC.probiotics = false
+        gutCheckNEC.infections = 0
+        gutCheckNEC.prbcTransfusion = true
+        gutCheckNEC.hypotension = true
+        gutCheckNEC.metabolicAcidosis = false
+        let expectedPoints = 35
+        let actualPoints = gutCheckNEC.points
+        XCTAssertEqual(expectedPoints, actualPoints)
     }
 
     // A test to check point tabulation while aiming for a total in the "very high risk" category.
+    // gestationAge = 24        +9
+    // race = hispanic          +2
+    // outborn = NO             +0
+    // necRate = 11.5           +19
+    // milkFeeding = YES        -3
+    // probiotics = NO          +0
+    // infections = 2           +6
+    // prbcTransfusion = YES    +8
+    // hypotension = NO         +0
+    // metabolicAcidosis = YES  +3
+    // total                    44
     func testGutCheckNECVeryHighRisk() {
+        var gutCheckNEC = FocusedGutCheckNEC()
+        gutCheckNEC.age = 24
+        gutCheckNEC.race = .hispanic
+        gutCheckNEC.outborn = false
+        gutCheckNEC.necRate = 11.5
+        gutCheckNEC.humanMilkFeeding = true
+        gutCheckNEC.probiotics = false
+        gutCheckNEC.infections = 2
+        gutCheckNEC.prbcTransfusion = true
+        gutCheckNEC.hypotension = false
+        gutCheckNEC.metabolicAcidosis = true
+        let expectedPoints = 44
+        let actualPoints = gutCheckNEC.points
+        XCTAssertEqual(expectedPoints, actualPoints)
+    }
 
+    // A test to check that points is nil if the model is incomplete (i.e. a stored property is unset). This is
+    // important because an incomplete that returns a score is invalid and should not be used to determine the risk
+    // factor.
+    // gestationAge = 24        +9
+    // race = hispanic          +2
+    // outborn = NO             +0
+    // necRate = nil
+    // milkFeeding = YES        -3
+    // probiotics = NO          +0
+    // infections = 2           +6
+    // prbcTransfusion = YES    +8
+    // hypotension = NO         +0
+    // metabolicAcidosis = YES  +3
+    // total                    nil
+    func testGutCheckNECIncomplete() {
+        var gutCheckNEC = FocusedGutCheckNEC()
+        gutCheckNEC.age = 24
+        gutCheckNEC.race = .hispanic
+        gutCheckNEC.outborn = false
+        gutCheckNEC.humanMilkFeeding = true
+        gutCheckNEC.probiotics = false
+        gutCheckNEC.infections = 2
+        gutCheckNEC.prbcTransfusion = true
+        gutCheckNEC.hypotension = false
+        gutCheckNEC.metabolicAcidosis = true
+        let actualPoints = gutCheckNEC.points
+        XCTAssertNil(actualPoints)
     }
 }
