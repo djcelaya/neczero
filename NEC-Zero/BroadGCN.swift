@@ -5,6 +5,7 @@
 //  Model for broad GutCheckNEC (GCN) risk assessment tool
 //
 //  Created by David Celaya-Gonzalez on 4/5/21.
+//  Copyright © 2021 The Arizona Board of Regents on behalf of The University of Arizona.
 //
 
 import Foundation
