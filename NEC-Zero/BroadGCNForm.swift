@@ -18,7 +18,18 @@ struct BroadGCNForm: View {
 
     var body: some View {
         TabView(selection: $sectionIndex) {
-            Text("G").tag(0)
+            ZStack {
+                VStack {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "g.circle.fill")
+                            .foregroundColor(Color("GutCheck Medium"))
+                            .font(.system(size: 300))
+                            
+                    }
+                    Spacer()
+                }
+            }.tag(0)
             Text("U").tag(1)
             Text("T").tag(2)
             Text("C").tag(3)
