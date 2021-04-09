@@ -46,9 +46,8 @@ struct FocusedGutCheckNEC {
             return 9
         } else if weeks < 32 {
             return 8
-        } else { // >= 32
-            return 0
         }
+        return 0 // >= 32
     }
 
     private func points(forRace race: Race) -> Int {
