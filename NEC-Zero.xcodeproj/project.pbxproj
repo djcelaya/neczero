@@ -18,7 +18,6 @@
 		9E2144C025C8A48C00C010FE /* RecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2144BF25C8A48C00C010FE /* RecognitionView.swift */; };
 		9E339D4B261B5CE20062F8EB /* FocusedGCNViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E339D4A261B5CE20062F8EB /* FocusedGCNViewModelTests.swift */; };
 		9E4A0CC925C9CAA2003B36F9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4A0CC825C9CAA2003B36F9 /* HomeView.swift */; };
-		9E63690625F27B8500FDCD40 /* BroadGCNFormContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63690525F27B8500FDCD40 /* BroadGCNFormContainer.swift */; };
 		9E66513F257AF85600EF2FAA /* NECZeroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66513E257AF85600EF2FAA /* NECZeroApp.swift */; };
 		9E665143257AF85700EF2FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E665142257AF85700EF2FAA /* Assets.xcassets */; };
 		9E665146257AF85700EF2FAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E665145257AF85700EF2FAA /* Preview Assets.xcassets */; };
@@ -67,7 +66,6 @@
 		9E2144BF25C8A48C00C010FE /* RecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionView.swift; sourceTree = "<group>"; };
 		9E339D4A261B5CE20062F8EB /* FocusedGCNViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedGCNViewModelTests.swift; sourceTree = "<group>"; };
 		9E4A0CC825C9CAA2003B36F9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		9E63690525F27B8500FDCD40 /* BroadGCNFormContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadGCNFormContainer.swift; sourceTree = "<group>"; };
 		9E66513B257AF85600EF2FAA /* NEC-Zero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NEC-Zero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E66513E257AF85600EF2FAA /* NECZeroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NECZeroApp.swift; sourceTree = "<group>"; };
 		9E665142257AF85700EF2FAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				9EB3795325DC1D4B00393C91 /* GutCheckNECLanding.swift */,
-				9E63690525F27B8500FDCD40 /* BroadGCNFormContainer.swift */,
 				9EEF8FF7261BD7D100DE175E /* BroadGCN.swift */,
 				9EEF8FFF261CDF6300DE175E /* BroadGCNViewModel.swift */,
 				9EEF9007261CE21700DE175E /* BroadGCNForm.swift */,
@@ -368,7 +365,6 @@
 				9E66513F257AF85600EF2FAA /* NECZeroApp.swift in Sources */,
 				9E206E0325F043CF0020812C /* FocusedGCNGuidedForm.swift in Sources */,
 				9EF97A8C25C06BE3009DD543 /* NECZeroView.swift in Sources */,
-				9E63690625F27B8500FDCD40 /* BroadGCNFormContainer.swift in Sources */,
 				9E2144AD25C88D4C00C010FE /* Articles.swift in Sources */,
 				9EEF8FF8261BD7D100DE175E /* BroadGCN.swift in Sources */,
 				9EC7152A25D1C409008E2138 /* PamphletView.swift in Sources */,

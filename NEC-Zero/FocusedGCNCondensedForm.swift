@@ -133,33 +133,33 @@ struct FocusedGCNCondensedForm: View {
         }
     }
 
-    @ViewBuilder func MiniCard<Options>(title: String, description: String = "", options: () -> Options) ->
-        some View where Options: View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text(LocalizedStringKey(stringLiteral: title))
-                    .font(.title3)
-                    .padding([.top, .leading, .trailing], 8)
-                if !description.isEmpty {
-                    Button(action: {
-                        selectedDescription = QuestionDescription(title: title, description: description)
-                    }, label: {
-                        Image(systemName: "info.circle")
-                    })
-                }
-            }
-            HStack {
-                options()
-                Spacer()
-            }
-            .padding([.leading, .bottom, .trailing], 8)
-        }
-        .frame(maxWidth: .infinity)
-        .background(Color.white)
-        .cornerRadius(10)
-        .shadow(radius: 10)
-        .padding([.top, .leading, .trailing])
-    }
+//    @ViewBuilder func MiniCard<Options>(title: String, description: String = "", options: () -> Options) ->
+//        some View where Options: View {
+//        VStack(alignment: .leading) {
+//            HStack {
+//                Text(LocalizedStringKey(stringLiteral: title))
+//                    .font(.title3)
+//                    .padding([.top, .leading, .trailing], 8)
+//                if !description.isEmpty {
+//                    Button(action: {
+//                        selectedDescription = QuestionDescription(title: title, description: description)
+//                    }, label: {
+//                        Image(systemName: "info.circle")
+//                    })
+//                }
+//            }
+//            HStack {
+//                options()
+//                Spacer()
+//            }
+//            .padding([.leading, .bottom, .trailing], 8)
+//        }
+//        .frame(maxWidth: .infinity)
+//        .background(Color.white)
+//        .cornerRadius(10)
+//        .shadow(radius: 10)
+//        .padding([.top, .leading, .trailing])
+//    }
 
     @ViewBuilder func Results() -> some View {
         VStack {
@@ -179,6 +179,44 @@ struct FocusedGCNCondensedForm: View {
 
     init(with viewModel: FocusedGCNViewModel = FocusedGCNViewModel(with: FocusedGutCheckNEC())) {
         self.viewModel = viewModel
+    }
+}
+
+struct MiniCard<Options>: View where Options: View {
+    let title: String
+    let description: String
+    let options: () -> Options
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Text(LocalizedStringKey(stringLiteral: title))
+                    .font(.title3)
+                    .padding([.top, .leading, .trailing], 8)
+                if !description.isEmpty {
+                    Button(action: {
+//                        selectedDescription = QuestionDescription(title: title, description: description)
+                    }, label: {
+                        Image(systemName: "info.circle")
+                    })
+                }
+            }
+            HStack {
+                options()
+                Spacer()
+            }
+            .padding([.leading, .bottom, .trailing], 8)
+        }
+        .frame(maxWidth: .infinity)
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(radius: 10)
+        .padding([.top, .leading, .trailing])
+    }
+
+    init(title: String, description: String = "", options: @escaping () -> Options) {
+        self.title = title
+        self.description = description
+        self.options = options
     }
 }
 

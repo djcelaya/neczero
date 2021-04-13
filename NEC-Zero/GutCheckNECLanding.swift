@@ -20,25 +20,20 @@ struct GutCheckNECLanding: View {
                     .padding(.bottom)
                 HStack {
                     VStack {
-                        NavigationLink(destination: BroadGCNFormContainer()) {
+                        NavigationLink(destination: BroadGCNForm()) {
                             VStack {
                                 Text("Broad Risk Assessment")
-                                Text("GUIDED")
+//                                Text("GUIDED")
                                 Text("< 2500 grams")
                             }
-                        }
-                        .padding() // TODO - convert these modifiers into a single view modifier?
-                        .background(Color("GutCheck Medium"))
-                        .foregroundColor(.white)
-                        .font(.title2)
-                        .cornerRadius(15)
-                        NavigationLink(destination: BroadGCNFormContainer()) {
-                            VStack {
-                                Text("Focused Risk Assessment")
-                                Text("GUIDED")
-                                Text("< 1500 grams")
-                            }
                         }.actionButtonStyle()
+//                        NavigationLink(destination: BroadGCNFormContainer()) {
+//                            VStack {
+//                                Text("Focused Risk Assessment")
+//                                Text("GUIDED")
+//                                Text("< 1500 grams")
+//                            }
+//                        }.actionButtonStyle()
                     }
                     VStack {
                         NavigationLink(destination: FocusedGCNFormContainer(displayingCondensedForm: false)) {
