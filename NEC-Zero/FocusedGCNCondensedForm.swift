@@ -38,7 +38,8 @@ struct FocusedGCNCondensedForm: View {
 
     @ViewBuilder func Questions() -> some View {
         LazyVStack {
-            MiniCard(title: viewModel.gestationalAgeTitle, description: viewModel.gestationalAgeDescription) {
+            MiniCard(title: viewModel.gestationalAgeTitle, description: viewModel.gestationalAgeDescription,
+                selectedDescription: $selectedDescription) {
                 ForEach(FocusedGCNViewModel.GestationalAgeResponseOptions.allCases) { option in
                     Button(option.rawValue) {
                         viewModel.gestationalAge = option
@@ -52,7 +53,8 @@ struct FocusedGCNCondensedForm: View {
                     }.miniButtonStyle(selected: viewModel.race == option)
                 }
             }
-            MiniCard(title: viewModel.outbornTitle, description: viewModel.outbornDescription) {
+            MiniCard(title: viewModel.outbornTitle, description: viewModel.outbornDescription,
+                selectedDescription: $selectedDescription) {
                 HStack {
                     Button("Yes") {
                         viewModel.outborn = true
@@ -62,7 +64,8 @@ struct FocusedGCNCondensedForm: View {
                     }.miniButtonStyle(selected: viewModel.outborn != nil ? !(viewModel.outborn!) : false)
                 }
             }
-            MiniCard(title: viewModel.necRateTitle, description: viewModel.necRateDescription) {
+            MiniCard(title: viewModel.necRateTitle, description: viewModel.necRateDescription,
+                selectedDescription: $selectedDescription) {
                 ForEach(FocusedGCNViewModel.NecRateOptions.allCases) { option in
                     Button(option.rawValue) {
                         viewModel.necRate = option
@@ -73,7 +76,8 @@ struct FocusedGCNCondensedForm: View {
 
                 }
             }
-            MiniCard(title: viewModel.milkTitle, description: viewModel.milkDescription) {
+            MiniCard(title: viewModel.milkTitle, description: viewModel.milkDescription,
+                selectedDescription: $selectedDescription) {
                 HStack {
                     Button("Yes") {
                         viewModel.milk = true
@@ -83,7 +87,8 @@ struct FocusedGCNCondensedForm: View {
                     }.miniButtonStyle(selected: viewModel.milk != nil ? !(viewModel.milk!) : false)
                 }
             }
-            MiniCard(title: viewModel.probioticsTitle, description: viewModel.probioticsDescription) {
+            MiniCard(title: viewModel.probioticsTitle, description: viewModel.probioticsDescription,
+                selectedDescription: $selectedDescription) {
                 HStack {
                     Button("Yes") {
                         viewModel.probiotics = true
@@ -100,7 +105,8 @@ struct FocusedGCNCondensedForm: View {
                     }.miniButtonStyle(selected: viewModel.infections == option)
                 }
             }
-            MiniCard(title: viewModel.transfusionTitle, description: viewModel.transfusionDescription) {
+            MiniCard(title: viewModel.transfusionTitle, description: viewModel.transfusionDescription,
+                selectedDescription: $selectedDescription) {
                 HStack {
                     Button("Yes") {
                         viewModel.transfusion = true
@@ -110,7 +116,8 @@ struct FocusedGCNCondensedForm: View {
                     }.miniButtonStyle(selected: viewModel.transfusion != nil ? !(viewModel.transfusion!) : false)
                 }
             }
-            MiniCard(title: viewModel.hypotensionTitle, description: viewModel.hypotensionDescription) {
+            MiniCard(title: viewModel.hypotensionTitle, description: viewModel.hypotensionDescription,
+                selectedDescription: $selectedDescription) {
                 HStack {
                     Button("Yes") {
                         viewModel.hypotension = true
@@ -120,7 +127,8 @@ struct FocusedGCNCondensedForm: View {
                     }.miniButtonStyle(selected: viewModel.hypotension != nil ? !(viewModel.hypotension!) : false)
                 }
             }
-            MiniCard(title: viewModel.acidosisTitle, description: viewModel.acidosisDescription) {
+            MiniCard(title: viewModel.acidosisTitle, description: viewModel.acidosisDescription,
+                selectedDescription: $selectedDescription) {
                 HStack {
                     Button("Yes") {
                         viewModel.acidosis = true
@@ -132,34 +140,6 @@ struct FocusedGCNCondensedForm: View {
             }.padding(.bottom)
         }
     }
-
-//    @ViewBuilder func MiniCard<Options>(title: String, description: String = "", options: () -> Options) ->
-//        some View where Options: View {
-//        VStack(alignment: .leading) {
-//            HStack {
-//                Text(LocalizedStringKey(stringLiteral: title))
-//                    .font(.title3)
-//                    .padding([.top, .leading, .trailing], 8)
-//                if !description.isEmpty {
-//                    Button(action: {
-//                        selectedDescription = QuestionDescription(title: title, description: description)
-//                    }, label: {
-//                        Image(systemName: "info.circle")
-//                    })
-//                }
-//            }
-//            HStack {
-//                options()
-//                Spacer()
-//            }
-//            .padding([.leading, .bottom, .trailing], 8)
-//        }
-//        .frame(maxWidth: .infinity)
-//        .background(Color.white)
-//        .cornerRadius(10)
-//        .shadow(radius: 10)
-//        .padding([.top, .leading, .trailing])
-//    }
 
     @ViewBuilder func Results() -> some View {
         VStack {
@@ -186,6 +166,7 @@ struct MiniCard<Options>: View where Options: View {
     let title: String
     let description: String
     let options: () -> Options
+    @Binding var selectedDescription: QuestionDescription?
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -194,7 +175,7 @@ struct MiniCard<Options>: View where Options: View {
                     .padding([.top, .leading, .trailing], 8)
                 if !description.isEmpty {
                     Button(action: {
-//                        selectedDescription = QuestionDescription(title: title, description: description)
+                        selectedDescription = QuestionDescription(title: title, description: description)
                     }, label: {
                         Image(systemName: "info.circle")
                     })
@@ -214,9 +195,16 @@ struct MiniCard<Options>: View where Options: View {
     }
 
     init(title: String, description: String = "", options: @escaping () -> Options) {
+        let selectedDescription: Binding<QuestionDescription?> = Binding.constant(nil)
+        self.init(title: title, description: description, selectedDescription: selectedDescription, options: options)
+    }
+
+    init(title: String, description: String = "", selectedDescription: Binding<QuestionDescription?>,
+        options: @escaping () -> Options) {
         self.title = title
         self.description = description
         self.options = options
+        self._selectedDescription = selectedDescription
     }
 }
 
