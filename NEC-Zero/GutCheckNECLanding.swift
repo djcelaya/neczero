@@ -53,7 +53,8 @@ struct GutCheckNECLanding: View {
                     }
                 }
                 Spacer()
-            }.navigationBarHidden(true)
+            }
+            .navigationBarHidden(true)
         }
     }
 }
@@ -86,6 +87,7 @@ struct GutCheckNECLanding_Previews: PreviewProvider {
                     }
                 }
             }
+            .preferredColorScheme(.dark)
         }
     }
 }
