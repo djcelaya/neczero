@@ -18,19 +18,12 @@ struct BroadGCNForm: View {
 
     var body: some View {
         TabView(selection: $sectionIndex) {
-            ZStack {
-                VStack {
-                    HStack {
-                        Spacer()
-                        Image(systemName: "g.circle.fill")
-                            .foregroundColor(Color("GutCheck Medium"))
-                            .font(.system(size: 300))
-                            
-                    }
-                    Spacer()
-                }
+            LetterSection(letter: "G") {
+                Text("Hello World")
             }.tag(0)
-            Text("U").tag(1)
+            LetterSection(letter: "U") {
+                Text("Hello World")
+            }.tag(1)
             Text("T").tag(2)
             Text("C").tag(3)
             Text("H").tag(4)
@@ -45,6 +38,25 @@ struct BroadGCNForm: View {
 
     init(with viewModel: BroadGCNViewModel = BroadGCNViewModel()) {
         self.viewModel = viewModel
+    }
+}
+
+struct LetterSection<Content>: View where Content: View {
+    let letter: String
+    let content: () -> Content
+    var body: some View {
+        ZStack {
+            VStack {
+                HStack {
+                    Spacer()
+                    Image(systemName: "\(letter.lowercased()).circle.fill")
+                        .foregroundColor(Color("GutCheck Medium"))
+                        .font(.system(size: 300))
+                }
+                Spacer()
+            }
+            content()
+        }
     }
 }
 
