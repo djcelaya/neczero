@@ -70,25 +70,29 @@ struct BroadGCN {
     var chorioamnionitis: Bool?
 
     // K
-    var points: Int? { pointsForChoices() }
+//    var points: Int? { pointsForChoices() }
+//
+//    func pointsForChoices() -> Int? {
+//        guard let growthRestricted = self.growthRestricted,
+//              let weight = self.weight,
+//              let age = self.age,
+//              let glucocorticoids = self.glucocorticoids,
+//              let umbilicalAcidic = self.umbilicalAcidic,
+//              let umbilicalProlapse = self.umbilicalProlapse,
+//              let tranfusion = self.transfusion,
+//              let nicuCharacteristics = self.nicuCharacteristics,
+//              let antenatalSteroids = self.antenatalSteroids,
+//              let standardizedFeeding = self.standardizedFeeding,
+//              let milk = self.milk,
+//              let probiotics = self.probiotics else {
+//            return nil
+//        }
+//
+//        var total = 0
+//        return total
+//    }
 
-    func pointsForChoices() -> Int? {
-        guard let growthRestricted = self.growthRestricted,
-              let weight = self.weight,
-              let age = self.age,
-              let glucocorticoids = self.glucocorticoids,
-              let umbilicalAcidic = self.umbilicalAcidic,
-              let umbilicalProlapse = self.umbilicalProlapse,
-              let tranfusion = self.transfusion,
-              let nicuCharacteristics = self.nicuCharacteristics,
-              let antenatalSteroids = self.antenatalSteroids,
-              let standardizedFeeding = self.standardizedFeeding,
-              let milk = self.milk,
-              let probiotics = self.probiotics else {
-            return nil
-        }
-
-        var total = 0
-        return total
+    struct BroadGCNResponse<Value> {
+        
     }
 }
