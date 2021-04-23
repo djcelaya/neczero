@@ -229,7 +229,7 @@ struct OptionMiniButtonStyle: ViewModifier {
     }
 }
 
-private extension View {
+extension View {
     func miniButtonStyle(selected: Bool = false) -> some View {
         return self.modifier(OptionMiniButtonStyle(selected: selected))
     }

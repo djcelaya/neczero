@@ -34,7 +34,7 @@ struct BroadGCNForm: View {
         ScrollView {
             LazyVStack {
                 LetterSection(letter: "G") {
-                    Text("Hello World")
+                    GQuestions()
                 }.tag(0)
                 LetterSection(letter: "U") {
                     Text("Hello World")
@@ -52,10 +52,32 @@ struct BroadGCNForm: View {
         .animation(.easeInOut)
     }
 
+    @ViewBuilder func GQuestions() -> some View {
+        LazyVStack {
+            MiniCard(title: (viewModel.growthQuestion.emphasizedText ?? "") + viewModel.growthQuestion.text) {
+                HStack {
+                    Button(viewModel.growthQuestion.responses[0].display) {
+                        viewModel.growthResponse = viewModel.growthQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.growthResponse ?? false)
+                    Button(viewModel.growthQuestion.responses[1].display) {
+                        viewModel.growthResponse = viewModel.growthQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.growthResponse != nil ? !(viewModel.growthResponse!) : false)
+                }
+    //            ForEach(viewModel.growthQuestion.responses, id: \.display) { response in
+    //                Button(response.display) {
+    //                    viewModel.growthResponse = response.value
+    //                }.miniButtonStyle(selected: viewModel.growthResponse != nil ? !(viewModel.growthResponse!) : false)
+    //            }
+            }
+        }
+    }
+
     init(with viewModel: BroadGCNViewModel = BroadGCNViewModel()) {
         self.viewModel = viewModel
     }
 }
+
+
 
 struct LetterSection<Content>: View where Content: View {
     let letter: String

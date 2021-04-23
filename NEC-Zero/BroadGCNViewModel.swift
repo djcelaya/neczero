@@ -14,9 +14,13 @@ class BroadGCNViewModel: ObservableObject {
 
     @Published private var model = BroadGCN()
 
+//    struct BroadGCNResponse: Identifiable {
+//        
+//    }
+
     // G
     let growthQuestion = BroadGCNQuestion(
-        emphasizedText: "Growth",
+        emphasizedText: "Growth ",
         text: "restricted (<10% size for gestation)",
         responses: [
             ("Yes", true),
