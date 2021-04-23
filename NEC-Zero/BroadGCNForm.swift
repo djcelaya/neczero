@@ -69,6 +69,18 @@ struct BroadGCNForm: View {
     //                }.miniButtonStyle(selected: viewModel.growthResponse != nil ? !(viewModel.growthResponse!) : false)
     //            }
             }
+            MiniCard(title: (viewModel.glucocorticoidsQuestion.emphasizedText ?? "") + viewModel.growthQuestion.text) {
+                HStack {
+                    Button(viewModel.glucocorticoidsQuestion.responses[0].display) {
+                        viewModel.glucocorticoidsResponse = viewModel.glucocorticoidsQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.glucocorticoidsResponse ?? false)
+                    Button(viewModel.glucocorticoidsQuestion.responses[1].display) {
+                        viewModel.glucocorticoidsResponse = viewModel.glucocorticoidsQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.glucocorticoidsResponse != nil ?
+                        !(viewModel.glucocorticoidsResponse!) : false)
+                }
+            }
+
         }
     }
 
@@ -76,8 +88,6 @@ struct BroadGCNForm: View {
         self.viewModel = viewModel
     }
 }
-
-
 
 struct LetterSection<Content>: View where Content: View {
     let letter: String
