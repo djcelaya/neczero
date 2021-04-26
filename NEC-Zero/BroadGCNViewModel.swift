@@ -14,11 +14,9 @@ class BroadGCNViewModel: ObservableObject {
 
     @Published private var model = BroadGCN()
 
-//    struct BroadGCNResponse: Identifiable {
-//        
-//    }
-
     // G
+
+    // MARK: - Growth
     let growthQuestion = BroadGCNQuestion(
         emphasizedText: "Growth",
         text: "restricted (<10% size for gestation)",
@@ -33,25 +31,74 @@ class BroadGCNViewModel: ObservableObject {
         set { model.growthRestricted = newValue }
     }
 
-    let weightEmphasizedText = "Gram"
-    let weightText = "weight at birth"
-    var weight: Int? {
+    // MARK: - Gram
+    enum WeightResponseOptions: String, CaseIterable, Identifiable {
+        case weightOption1 = "<1000"
+        case weightOption2 = "1000-1500"
+        case weightOption3 = "1501-2000"
+        case weightOption4 = "2001-2500"
+        var id: String { rawValue}
+    }
+
+    let weightQuestion = BroadGCNQuestion(
+        emphasizedText: "Gram",
+        text: "weight at birth",
+        responses: [
+            (WeightResponseOptions.weightOption1.rawValue, WeightResponseOptions.weightOption1),
+            (WeightResponseOptions.weightOption2.rawValue, WeightResponseOptions.weightOption2),
+            (WeightResponseOptions.weightOption3.rawValue, WeightResponseOptions.weightOption3),
+            (WeightResponseOptions.weightOption4.rawValue, WeightResponseOptions.weightOption4)
+        ]
+    )
+
+//    let weightEmphasizedText = "Gram"
+//    let weightText =
+//    var weight: Int? {
+//        get {
+//            return model.weight
+//        }
+//        set {
+//            model.weight = newValue
+//        }
+//    }
+    var weightResponse: WeightResponseOptions? {
         get {
-            return model.weight
+            if let _weight = model.weight {
+                switch _weight {
+                    case ...1000:
+                        return .weightOption1
+                    case 1000 ..< 1501:
+                        return .weightOption2
+                    case 1501 ..< 2001:
+                        return .weightOption3
+                    case 2001...:
+                        return .weightOption4
+                    default:
+                        return nil
+                }
+            }
+            return nil
         }
         set {
-            model.weight = newValue
+            switch newValue {
+                case .weightOption1:
+                    model.weight = 999
+                case .weightOption2:
+                    model.weight = 1250
+                case .weightOption3:
+                    model.weight = 1750
+                case .weightOption4:
+                    model.weight = 3000
+                default:
+                    model.weight = nil
+            }
         }
     }
 
-//    var age: BroadGCNQuestion<Bool> = BroadGCNQuestion(
-//        emphasizedText: "Gestational",
-//        text: "Age at Birth in weeks",
-//        responses: [
-//            (
-//        ]
-//    )
+    // MARK: - Gestational Age
 
+
+    // MARK: - Glucocorticoids
     let glucocorticoidsQuestion = BroadGCNQuestion(
         emphasizedText: "Glucocorticoids",
         text: "given concurrently with Indomethacin",

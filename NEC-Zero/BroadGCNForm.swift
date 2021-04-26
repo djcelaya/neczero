@@ -63,11 +63,13 @@ struct BroadGCNForm: View {
                         viewModel.growthResponse = viewModel.growthQuestion.responses[1].value
                     }.miniButtonStyle(selected: viewModel.growthResponse != nil ? !(viewModel.growthResponse!) : false)
                 }
-    //            ForEach(viewModel.growthQuestion.responses, id: \.display) { response in
-    //                Button(response.display) {
-    //                    viewModel.growthResponse = response.value
-    //                }.miniButtonStyle(selected: viewModel.growthResponse != nil ? !(viewModel.growthResponse!) : false)
-    //            }
+            }
+            MiniCard(emphasized: viewModel.weightQuestion.emphasizedText, title: viewModel.weightQuestion.text) {
+                ForEach(viewModel.weightQuestion.responses, id: \.value) { response in
+                    Button(response.display) {
+                        viewModel.weightResponse = response.value
+                    }.miniButtonStyle(selected: viewModel.weightResponse == response.value)
+                }
             }
             MiniCard(emphasized: viewModel.glucocorticoidsQuestion.emphasizedText, title: viewModel.glucocorticoidsQuestion.text) {
                 HStack {
