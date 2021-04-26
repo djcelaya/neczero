@@ -54,7 +54,7 @@ struct BroadGCNForm: View {
 
     @ViewBuilder func GQuestions() -> some View {
         LazyVStack {
-            MiniCard(title: (viewModel.growthQuestion.emphasizedText ?? "") + viewModel.growthQuestion.text) {
+            MiniCard(emphasized: viewModel.growthQuestion.emphasizedText, title: viewModel.growthQuestion.text) {
                 HStack {
                     Button(viewModel.growthQuestion.responses[0].display) {
                         viewModel.growthResponse = viewModel.growthQuestion.responses[0].value
@@ -69,7 +69,7 @@ struct BroadGCNForm: View {
     //                }.miniButtonStyle(selected: viewModel.growthResponse != nil ? !(viewModel.growthResponse!) : false)
     //            }
             }
-            MiniCard(title: (viewModel.glucocorticoidsQuestion.emphasizedText ?? "") + viewModel.growthQuestion.text) {
+            MiniCard(emphasized: viewModel.glucocorticoidsQuestion.emphasizedText, title: viewModel.glucocorticoidsQuestion.text) {
                 HStack {
                     Button(viewModel.glucocorticoidsQuestion.responses[0].display) {
                         viewModel.glucocorticoidsResponse = viewModel.glucocorticoidsQuestion.responses[0].value

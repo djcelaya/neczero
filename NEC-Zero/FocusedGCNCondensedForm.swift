@@ -163,19 +163,36 @@ struct FocusedGCNCondensedForm: View {
 }
 
 struct MiniCard<Options>: View where Options: View {
+    var emphasized: String?
     let title: String
-    let description: String
+    let description: String?
     let options: () -> Options
     @Binding var selectedDescription: QuestionDescription?
+    var emphasizedText: Text? {
+        if let _emphasized = emphasized, !_emphasized.isEmpty {
+            return Text(_emphasized).bold()
+        } else {
+            return nil
+        }
+    }
+    var text: Text {
+        return Text(title)
+    }
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(LocalizedStringKey(stringLiteral: title))
-                    .font(.title3)
-                    .padding([.top, .leading, .trailing], 8)
-                if !description.isEmpty {
+                if let _emphasizedText = emphasizedText {
+                    (_emphasizedText + Text(" ") + text)
+                        .padding([.top, .leading, .trailing], 8)
+                } else {
+                    text.padding([.top, .leading, .trailing], 8)
+                }
+//                Text(LocalizedStringKey(stringLiteral: title))
+//                    .font(.title3)
+//                    .padding([.top, .leading, .trailing], 8)
+                if let _description = description, !_description.isEmpty {
                     Button(action: {
-                        selectedDescription = QuestionDescription(title: title, description: description)
+                        selectedDescription = QuestionDescription(title: title, description: _description)
                     }, label: {
                         Image(systemName: "info.circle")
                     })
@@ -205,6 +222,14 @@ struct MiniCard<Options>: View where Options: View {
         self.description = description
         self.options = options
         self._selectedDescription = selectedDescription
+    }
+
+    init(emphasized: String?, title: String, options: @escaping () -> Options) {
+        self.emphasized = emphasized
+        self.title = title
+        self.options = options
+        self.description = nil
+        self._selectedDescription = Binding.constant(nil)
     }
 }
 

@@ -20,7 +20,7 @@ class BroadGCNViewModel: ObservableObject {
 
     // G
     let growthQuestion = BroadGCNQuestion(
-        emphasizedText: "Growth ",
+        emphasizedText: "Growth",
         text: "restricted (<10% size for gestation)",
         responses: [
             ("Yes", true),
