@@ -45,7 +45,7 @@ struct FocusedGCNCondensedForm: View {
                         viewModel.gestationalAge = option
                     }.miniButtonStyle(selected: viewModel.gestationalAge == option)
                 }
-            }
+            }.padding(.top, 12)
             MiniCard(title: viewModel.raceTitle) {
                 ForEach(FocusedGCNViewModel.RaceOptions.allCases) { option in
                     Button(option.rawValue) {
@@ -71,7 +71,7 @@ struct FocusedGCNCondensedForm: View {
                         viewModel.necRate = option
                     }
                     .fixedSize(horizontal: true, vertical: false)
-                    .font(.system(size: 14))
+                    .font(.system(size: 12))
                     .miniButtonStyle(selected: viewModel.necRate == option)
 
                 }
@@ -208,7 +208,8 @@ struct MiniCard<Options>: View where Options: View {
         .background(Color.white)
         .cornerRadius(10)
         .shadow(radius: 10)
-        .padding([.top, .leading, .trailing])
+        .padding(.top, 4)
+        .padding([.leading, .trailing])
     }
 
     init(title: String, description: String = "", options: @escaping () -> Options) {

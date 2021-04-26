@@ -35,21 +35,22 @@ struct BroadGCNForm: View {
             LazyVStack {
                 LetterSection(letter: "G") {
                     GQuestions()
-                }.tag(0)
+                }
                 LetterSection(letter: "U") {
-                    Text("Hello World")
-                }.tag(1)
-                Text("T").tag(2)
-                Text("C").tag(3)
-                Text("H").tag(4)
-                Text("E").tag(5)
-                Text("C").tag(6)
-                Text("K").tag(7)
+                    UQuestions()
+                }
+                Text("T")
+                Text("C")
+                Text("H")
+                Text("E")
+                Text("C")
+                Text("K")
             }
         }
         .background(backgroundColor)
         .tabViewStyle(PageTabViewStyle())
         .animation(.easeInOut)
+        .navigationBarTitle("GutCheckNEC")
     }
 
     @ViewBuilder func GQuestions() -> some View {
@@ -63,12 +64,21 @@ struct BroadGCNForm: View {
                         viewModel.growthResponse = viewModel.growthQuestion.responses[1].value
                     }.miniButtonStyle(selected: viewModel.growthResponse != nil ? !(viewModel.growthResponse!) : false)
                 }
-            }
+            }.padding(.top, 12)
             MiniCard(emphasized: viewModel.weightQuestion.emphasizedText, title: viewModel.weightQuestion.text) {
                 ForEach(viewModel.weightQuestion.responses, id: \.value) { response in
                     Button(response.display) {
                         viewModel.weightResponse = response.value
-                    }.miniButtonStyle(selected: viewModel.weightResponse == response.value)
+                    }
+                    .font(.system(size: 13))
+                    .miniButtonStyle(selected: viewModel.weightResponse == response.value)
+                }
+            }
+            MiniCard(emphasized: viewModel.ageQuestion.emphasizedText, title: viewModel.ageQuestion.text) {
+                ForEach(viewModel.ageQuestion.responses, id: \.value) { response in
+                    Button(response.display) {
+                        viewModel.ageResponse = response.value
+                    }.miniButtonStyle(selected: viewModel.ageResponse == response.value)
                 }
             }
             MiniCard(emphasized: viewModel.glucocorticoidsQuestion.emphasizedText, title: viewModel.glucocorticoidsQuestion.text) {
@@ -83,6 +93,12 @@ struct BroadGCNForm: View {
                 }
             }
 
+        }
+    }
+
+    @ViewBuilder func UQuestions() -> some View {
+        LazyVStack {
+            Text("Hello World")
         }
     }
 

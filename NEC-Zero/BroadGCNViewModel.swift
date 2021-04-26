@@ -51,16 +51,6 @@ class BroadGCNViewModel: ObservableObject {
         ]
     )
 
-//    let weightEmphasizedText = "Gram"
-//    let weightText =
-//    var weight: Int? {
-//        get {
-//            return model.weight
-//        }
-//        set {
-//            model.weight = newValue
-//        }
-//    }
     var weightResponse: WeightResponseOptions? {
         get {
             if let _weight = model.weight {
@@ -96,6 +86,58 @@ class BroadGCNViewModel: ObservableObject {
     }
 
     // MARK: - Gestational Age
+    enum AgeResponseOptions: String, CaseIterable, Identifiable {
+        case ageOption1 = "<28"
+        case ageOption2 = "28-31 6/7"
+        case ageOption3 = "32-33 6/7"
+        case ageOption4 = "> 34"
+        var id: String { rawValue }
+    }
+
+    let ageQuestion = BroadGCNQuestion(
+        emphasizedText: "Gestational",
+        text: "Age at Birth in weeks",
+        responses: [
+            (AgeResponseOptions.ageOption1.rawValue, AgeResponseOptions.ageOption1),
+            (AgeResponseOptions.ageOption2.rawValue, AgeResponseOptions.ageOption2),
+            (AgeResponseOptions.ageOption3.rawValue, AgeResponseOptions.ageOption3),
+            (AgeResponseOptions.ageOption4.rawValue, AgeResponseOptions.ageOption4)
+        ]
+    )
+
+    var ageResponse: AgeResponseOptions? {
+        get {
+            if let _age = model.age {
+                switch _age {
+                    case ...28:
+                        return .ageOption1
+                    case 28 ..< 32:
+                        return .ageOption2
+                    case 32 ..< 34:
+                        return .ageOption3
+                    case 34...:
+                        return .ageOption4
+                    default:
+                        return nil
+                }
+            }
+            return nil
+        }
+        set {
+            switch newValue {
+                case .ageOption1:
+                    model.age = 25
+                case .ageOption2:
+                    model.age = 29
+                case .ageOption3:
+                    model.age = 33
+                case .ageOption4:
+                    model.age = 35
+                default:
+                    model.age = nil
+            }
+        }
+    }
 
 
     // MARK: - Glucocorticoids
