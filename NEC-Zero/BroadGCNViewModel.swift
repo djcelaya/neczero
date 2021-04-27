@@ -155,22 +155,42 @@ class BroadGCNViewModel: ObservableObject {
         set { model.glucocorticoids = newValue }
     }
 
-//    var G_questions<Response>: [(BroadGCNQuestion, Response)] = [
-//
-//    ]
+    // U
+
+    // MARK: - Umbilical acidic
+    let umbilicalAcidicQuestion = BroadGCNQuestion(
+        emphasizedText: "Umbilical",
+        text: "arterial cord pH < 7.1 from perinatal asphyxia",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var umbilicalAcidicResponse: Bool? {
+        get { model.umbilicalAcidic }
+        set { model.umbilicalAcidic = newValue }
+    }
+
+    // MARK: - Umbilical prolapse
+    let umbilicalProlapseQuestion = BroadGCNQuestion(
+        emphasizedText: "Umbilical",
+        text: "cord prolapse with perinatal asphyxia",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var umbilicalProlapseResponse: Bool? {
+        get { model.umbilicalProlapse }
+        set { model.umbilicalProlapse = newValue }
+    }
 
     struct BroadGCNQuestion<Value> {
         var emphasizedText: String?
         let text: String
 //        var response: Value?
         let responses: [(display: String, value: Value)]
-
-//        init(emphasizedText: String?, text: String, response: Value?, responses: [(String, Value)]) {
-//            self.emphasizedText = emphasizedText
-//            self.text = text
-//            self.response = response
-//            self.responses = responses
-//        }
     }
-
 }
