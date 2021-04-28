@@ -17,20 +17,6 @@ struct BroadGCNForm: View {
     private let backgroundColor = Color("GutCheck Light")
 
     var body: some View {
-//        TabView(selection: $sectionIndex) {
-//            LetterSection(letter: "G") {
-//                Text("Hello World")
-//            }.tag(0)
-//            LetterSection(letter: "U") {
-//                Text("Hello World")
-//            }.tag(1)
-//            Text("T").tag(2)
-//            Text("C").tag(3)
-//            Text("H").tag(4)
-//            Text("E").tag(5)
-//            Text("C").tag(6)
-//            Text("K").tag(7)
-//        }
         ScrollView {
             LazyVStack {
                 LetterSection(letter: "G") {
@@ -39,17 +25,27 @@ struct BroadGCNForm: View {
                 LetterSection(letter: "U") {
                     UQuestions()
                 }
-                Text("T")
-                Text("C")
-                Text("H")
-                Text("E")
-                Text("C")
-                Text("K")
+                LetterSection(letter: "T") {
+                    TQuestions()
+                }
+                LetterSection(letter: "C") {
+                    C1Questions()
+                }
+                LetterSection(letter: "H") {
+                    HQuestions()
+                }
+                LetterSection(letter: "E") {
+                    EQuestions()
+                }
+                LetterSection(letter: "C") {
+                    C2Questions()
+                }
+                LetterSection(letter: "K") {
+                    KSection()
+                }
             }
         }
         .background(backgroundColor)
-//        .tabViewStyle(PageTabViewStyle())
-//        .animation(.easeInOut)
         .navigationBarTitle("GutCheckNEC")
     }
 
@@ -121,6 +117,40 @@ struct BroadGCNForm: View {
         }
     }
 
+    @ViewBuilder func TQuestions() -> some View {
+        LazyVStack {
+            Text("T")
+        }
+    }
+
+    @ViewBuilder func C1Questions() -> some View {
+        LazyVStack {
+            Text("C")
+        }
+    }
+
+    @ViewBuilder func HQuestions() -> some View {
+        LazyVStack {
+            Text("H")
+        }
+    }
+
+    @ViewBuilder func EQuestions() -> some View {
+        LazyVStack {
+            Text("E")
+        }
+    }
+
+    @ViewBuilder func C2Questions() -> some View {
+        LazyVStack {
+            Text("C")
+        }
+    }
+
+    @ViewBuilder func KSection() -> some View {
+        Text("K")
+    }
+
     init(with viewModel: BroadGCNViewModel = BroadGCNViewModel()) {
         self.viewModel = viewModel
     }
@@ -136,7 +166,8 @@ struct LetterSection<Content>: View where Content: View {
                     Spacer()
                     Image(systemName: "\(letter.lowercased()).circle.fill")
                         .foregroundColor(Color("GutCheck Medium"))
-                        .font(.system(size: 300))
+//                        .font(.system(size: 300))
+                        .font(.system(size: 150))
                 }
                 Spacer()
             }
