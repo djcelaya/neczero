@@ -187,6 +187,47 @@ class BroadGCNViewModel: ObservableObject {
         set { model.umbilicalProlapse = newValue }
     }
 
+    // T
+
+    // MARK: - Transfusion history
+    let transfusionQuestion = BroadGCNQuestion(
+        emphasizedText: "Transfusion",
+        text: "history, not NPO",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var transfusionResponse: Bool? {
+        get { model.transfusion }
+        set { model.transfusion = newValue }
+    }
+
+    // MARK: - NICU characteristics
+    let nicuQuestion = BroadGCNQuestion(
+        emphasizedText: "The",
+        text: "characteristics of the NICU (volume and acuity)",
+        responses: [
+            ("High acuity or volume", BroadGCN.NICUCharacteristics.highAcuityVolume),
+            ("Medium acuity or volume", BroadGCN.NICUCharacteristics.mediumAcuityVolume),
+            ("Low acuity or volume", BroadGCN.NICUCharacteristics.lowAcuityVolume)
+        ]
+    )
+
+    var nicuResponse: BroadGCN.NICUCharacteristics? {
+        get { model.nicuCharacteristics }
+        set { model.nicuCharacteristics = newValue }
+    }
+
+    // MARK: - Antenatal steroids
+
+    // MARK: - Standardized feeding guideline
+
+    // MARK: - Human milk feeding
+
+    // MARK: - Probiotics
+
     struct BroadGCNQuestion<Value> {
         var emphasizedText: String?
         let text: String

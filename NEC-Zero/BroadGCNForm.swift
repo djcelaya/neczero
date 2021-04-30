@@ -119,7 +119,24 @@ struct BroadGCNForm: View {
 
     @ViewBuilder func TQuestions() -> some View {
         LazyVStack {
-            Text("T")
+            MiniCard(emphasized: viewModel.transfusionQuestion.emphasizedText, title: viewModel.transfusionQuestion.text) {
+                HStack {
+                    Button(viewModel.transfusionQuestion.responses[0].display) {
+                        viewModel.transfusionResponse = viewModel.transfusionQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.transfusionResponse ?? false)
+                    Button(viewModel.transfusionQuestion.responses[1].display) {
+                        viewModel.transfusionResponse = viewModel.transfusionQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.transfusionResponse != nil ? !(viewModel.transfusionResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.nicuQuestion.emphasizedText, title: viewModel.nicuQuestion.text) {
+                ForEach(viewModel.nicuQuestion.responses, id: \.value) { response in
+                    Button(response.display) {
+                        viewModel.nicuResponse = response.value
+                    }.miniButtonStyle(selected: viewModel.nicuResponse == response.value)
+                }
+            }
+            
         }
     }
 
