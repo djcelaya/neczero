@@ -221,12 +221,65 @@ class BroadGCNViewModel: ObservableObject {
     }
 
     // MARK: - Antenatal steroids
+    let steroidsQuestion = BroadGCNQuestion(
+        emphasizedText: "Treatments",
+        text: "that REDUCE risk: Antenatal steroids",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var steroidsResponse: Bool? {
+        get { model.antenatalSteroids }
+        set { model.antenatalSteroids = newValue }
+    }
 
     // MARK: - Standardized feeding guideline
+    let feedingQuestion = BroadGCNQuestion(
+        emphasizedText: "Treatments",
+        text: "that REDUCE risk: Unit the infant is cared for in has adopted a standardized feeding guideline " +
+            "(REDUCES risk)",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var feedingResponse: Bool? {
+        get { model.standardizedFeeding }
+        set { model.standardizedFeeding = newValue }
+    }
 
     // MARK: - Human milk feeding
+    let milkQuestion = BroadGCNQuestion(
+        emphasizedText: "Treatments",
+        text: "that REDUCE risk: Exclusive human milk feeding (REDUCES risk)",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var milkResponse: Bool? {
+        get { model.milk }
+        set { model.milk = newValue }
+    }
 
     // MARK: - Probiotics
+    let probioticsQuestion = BroadGCNQuestion(
+        emphasizedText: "Treatments",
+        text: "that REDUCE risk: Probiotics with Bifidobacterium (May REDUCE risk)",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var probioticsResponse: Bool? {
+        get { model.probiotics }
+        set { model.probiotics = newValue }
+    }
 
     struct BroadGCNQuestion<Value> {
         var emphasizedText: String?

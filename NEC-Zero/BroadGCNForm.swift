@@ -119,14 +119,16 @@ struct BroadGCNForm: View {
 
     @ViewBuilder func TQuestions() -> some View {
         LazyVStack {
-            MiniCard(emphasized: viewModel.transfusionQuestion.emphasizedText, title: viewModel.transfusionQuestion.text) {
+            MiniCard(emphasized: viewModel.transfusionQuestion.emphasizedText,
+                title: viewModel.transfusionQuestion.text) {
                 HStack {
                     Button(viewModel.transfusionQuestion.responses[0].display) {
                         viewModel.transfusionResponse = viewModel.transfusionQuestion.responses[0].value
                     }.miniButtonStyle(selected: viewModel.transfusionResponse ?? false)
                     Button(viewModel.transfusionQuestion.responses[1].display) {
                         viewModel.transfusionResponse = viewModel.transfusionQuestion.responses[1].value
-                    }.miniButtonStyle(selected: viewModel.transfusionResponse != nil ? !(viewModel.transfusionResponse!) : false)
+                    }.miniButtonStyle(selected: viewModel.transfusionResponse != nil ?
+                        !(viewModel.transfusionResponse!) : false)
                 }
             }
             MiniCard(emphasized: viewModel.nicuQuestion.emphasizedText, title: viewModel.nicuQuestion.text) {
@@ -136,7 +138,51 @@ struct BroadGCNForm: View {
                     }.miniButtonStyle(selected: viewModel.nicuResponse == response.value)
                 }
             }
-            
+            MiniCard(emphasized: viewModel.steroidsQuestion.emphasizedText, title: viewModel.steroidsQuestion.text) {
+                HStack {
+                    Button(viewModel.steroidsQuestion.responses[0].display) {
+                        viewModel.steroidsResponse = viewModel.steroidsQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.steroidsResponse ?? false)
+                    Button(viewModel.steroidsQuestion.responses[1].display) {
+                        viewModel.steroidsResponse = viewModel.steroidsQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.steroidsResponse != nil ?
+                        !(viewModel.steroidsResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.feedingQuestion.emphasizedText, title: viewModel.feedingQuestion.text) {
+                HStack {
+                    Button(viewModel.feedingQuestion.responses[0].display) {
+                        viewModel.feedingResponse = viewModel.feedingQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.feedingResponse ?? false)
+                    Button(viewModel.feedingQuestion.responses[1].display) {
+                        viewModel.feedingResponse = viewModel.feedingQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.feedingResponse != nil ?
+                        !(viewModel.feedingResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.milkQuestion.emphasizedText, title: viewModel.milkQuestion.text) {
+                HStack {
+                    Button(viewModel.milkQuestion.responses[0].display) {
+                        viewModel.milkResponse = viewModel.milkQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.milkResponse ?? false)
+                    Button(viewModel.milkQuestion.responses[1].display) {
+                        viewModel.milkResponse = viewModel.milkQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.milkResponse != nil ?
+                        !(viewModel.milkResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.probioticsQuestion.emphasizedText,
+                title: viewModel.probioticsQuestion.text) {
+                HStack {
+                    Button(viewModel.probioticsQuestion.responses[0].display) {
+                        viewModel.probioticsResponse = viewModel.probioticsQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.probioticsResponse ?? false)
+                    Button(viewModel.probioticsQuestion.responses[1].display) {
+                        viewModel.probioticsResponse = viewModel.probioticsQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.probioticsResponse != nil ?
+                        !(viewModel.probioticsResponse!) : false)
+                }
+            }
         }
     }
 
