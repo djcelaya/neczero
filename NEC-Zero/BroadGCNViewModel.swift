@@ -281,6 +281,148 @@ class BroadGCNViewModel: ObservableObject {
         set { model.probiotics = newValue }
     }
 
+    // C1
+
+    // MARK: - Cold stress
+    let cold = BroadGCNQuestion(
+        emphasizedText: "Cold",
+        text: "Stress",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var coldResponse: Bool? {
+        get { model.coldStress }
+        set { model.coldStress = newValue }
+    }
+
+    // MARK: - Cocaine
+    let cocaine = BroadGCNQuestion(
+        emphasizedText: "Cocaine",
+        text: "in pregnancy",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var cocaineResponse: Bool? {
+        get { model.cocaine }
+        set { model.cocaine = newValue }
+    }
+
+    // MARK: - Placental abruption
+    let abruption = BroadGCNQuestion(
+        emphasizedText: "Critical",
+        text: "Start: Placental abruption",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var abruptionResponse: Bool? {
+        get { model.placentalAbruption }
+        set { model.placentalAbruption = newValue }
+    }
+
+    // MARK: - Apgar
+    let apgar = BroadGCNQuestion(
+        emphasizedText: "Critical",
+        text: "Start: Five-minute Apgar < 6",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var apgarResponse: Bool? {
+        get { model.apgar }
+        set { model.apgar = newValue }
+    }
+
+    // MARK: - Chest compressions
+    let compressions = BroadGCNQuestion(
+        emphasizedText: "Critical",
+        text: "Start: Chest compressions at delivery",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var compressionsResponse: Bool? {
+        get { model.chestCompressions }
+        set { model.chestCompressions = newValue }
+    }
+
+    // MARK: - Epinephrine
+    let epinephrine = BroadGCNQuestion(
+        emphasizedText: "Critical",
+        text: "Start: Epinephrine in delivery room",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var epinephrineResponse: Bool? {
+        get { model.epinephrine }
+        set { model.epinephrine = newValue }
+    }
+
+    // MARK: - NEC rate
+    enum NECRateOptions: String, CaseIterable, Identifiable {
+        case rate1 = "< 3%"
+        case rate2 = "3-7.99%"
+        case rate3 = "> 8%"
+        var id: String { rawValue }
+    }
+
+    let necRateQuestion = BroadGCNQuestion(
+        emphasizedText: "Center's annual",
+        text: "NEC rate (<1500 grams)",
+        responses: [
+            (NECRateOptions.rate1.rawValue, NECRateOptions.rate1),
+            (NECRateOptions.rate2.rawValue, NECRateOptions.rate2),
+            (NECRateOptions.rate3.rawValue, NECRateOptions.rate3)
+        ]
+    )
+
+    var necRateResponse: NECRateOptions? {
+        get {
+            if let _necRate = model.necRate {
+                switch _necRate {
+                    case ...3:
+                        return .rate1
+                    case 3 ..< 8:
+                        return .rate2
+                    case 8...:
+                        return .rate3
+                    default:
+                        return nil
+                }
+            }
+            return nil
+        }
+        set {
+            switch newValue {
+                case .rate1:
+                    model.necRate = 2
+                case .rate2:
+                    model.necRate = 5
+                case .rate3:
+                    model.necRate = 10
+                default:
+                    model.necRate = nil
+            }
+        }
+    }
+
+
+
     struct BroadGCNQuestion<Value> {
         var emphasizedText: String?
         let text: String
