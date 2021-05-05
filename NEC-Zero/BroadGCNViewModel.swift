@@ -284,7 +284,7 @@ class BroadGCNViewModel: ObservableObject {
     // C1
 
     // MARK: - Cold stress
-    let cold = BroadGCNQuestion(
+    let coldQuestion = BroadGCNQuestion(
         emphasizedText: "Cold",
         text: "Stress",
         responses: [
@@ -299,7 +299,7 @@ class BroadGCNViewModel: ObservableObject {
     }
 
     // MARK: - Cocaine
-    let cocaine = BroadGCNQuestion(
+    let cocaineQuestion = BroadGCNQuestion(
         emphasizedText: "Cocaine",
         text: "in pregnancy",
         responses: [
@@ -314,7 +314,7 @@ class BroadGCNViewModel: ObservableObject {
     }
 
     // MARK: - Placental abruption
-    let abruption = BroadGCNQuestion(
+    let abruptionQuestion = BroadGCNQuestion(
         emphasizedText: "Critical",
         text: "Start: Placental abruption",
         responses: [
@@ -329,7 +329,7 @@ class BroadGCNViewModel: ObservableObject {
     }
 
     // MARK: - Apgar
-    let apgar = BroadGCNQuestion(
+    let apgarQuestion = BroadGCNQuestion(
         emphasizedText: "Critical",
         text: "Start: Five-minute Apgar < 6",
         responses: [
@@ -344,7 +344,7 @@ class BroadGCNViewModel: ObservableObject {
     }
 
     // MARK: - Chest compressions
-    let compressions = BroadGCNQuestion(
+    let compressionsQuestion = BroadGCNQuestion(
         emphasizedText: "Critical",
         text: "Start: Chest compressions at delivery",
         responses: [
@@ -359,7 +359,7 @@ class BroadGCNViewModel: ObservableObject {
     }
 
     // MARK: - Epinephrine
-    let epinephrine = BroadGCNQuestion(
+    let epinephrineQuestion = BroadGCNQuestion(
         emphasizedText: "Critical",
         text: "Start: Epinephrine in delivery room",
         responses: [

@@ -188,7 +188,78 @@ struct BroadGCNForm: View {
 
     @ViewBuilder func C1Questions() -> some View {
         LazyVStack {
-            Text("C")
+            MiniCard(emphasized: viewModel.coldQuestion.emphasizedText, title: viewModel.coldQuestion.text) {
+                HStack {
+                    Button(viewModel.coldQuestion.responses[0].display) {
+                        viewModel.coldResponse = viewModel.coldQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.coldResponse ?? false)
+                    Button(viewModel.coldQuestion.responses[1].display) {
+                        viewModel.coldResponse = viewModel.coldQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.coldResponse != nil ? !(viewModel.coldResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.cocaineQuestion.emphasizedText, title: viewModel.cocaineQuestion.text) {
+                HStack {
+                    Button(viewModel.cocaineQuestion.responses[0].display) {
+                        viewModel.cocaineResponse = viewModel.cocaineQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.cocaineResponse ?? false)
+                    Button(viewModel.cocaineQuestion.responses[1].display) {
+                        viewModel.cocaineResponse = viewModel.cocaineQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.cocaineResponse != nil ?
+                        !(viewModel.cocaineResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.abruptionQuestion.emphasizedText, title: viewModel.abruptionQuestion.text) {
+                HStack {
+                    Button(viewModel.abruptionQuestion.responses[0].display) {
+                        viewModel.abruptionResponse = viewModel.abruptionQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.abruptionResponse ?? false)
+                    Button(viewModel.abruptionQuestion.responses[1].display) {
+                        viewModel.abruptionResponse = viewModel.abruptionQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.abruptionResponse != nil ?
+                        !(viewModel.abruptionResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.apgarQuestion.emphasizedText, title: viewModel.apgarQuestion.text) {
+                HStack {
+                    Button(viewModel.apgarQuestion.responses[0].display) {
+                        viewModel.apgarResponse = viewModel.apgarQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.apgarResponse ?? false)
+                    Button(viewModel.apgarQuestion.responses[1].display) {
+                        viewModel.apgarResponse = viewModel.apgarQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.apgarResponse != nil ? !(viewModel.apgarResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.compressionsQuestion.emphasizedText,
+                title: viewModel.compressionsQuestion.text) {
+                HStack {
+                    Button(viewModel.compressionsQuestion.responses[0].display) {
+                        viewModel.compressionsResponse = viewModel.compressionsQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.compressionsResponse ?? false)
+                    Button(viewModel.compressionsQuestion.responses[1].display) {
+                        viewModel.compressionsResponse = viewModel.compressionsQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.compressionsResponse != nil ? !(viewModel.compressionsResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.epinephrineQuestion.emphasizedText,
+                title: viewModel.epinephrineQuestion.text) {
+                HStack {
+                    Button(viewModel.epinephrineQuestion.responses[0].display) {
+                        viewModel.epinephrineResponse = viewModel.epinephrineQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.epinephrineResponse ?? false)
+                    Button(viewModel.epinephrineQuestion.responses[1].display) {
+                        viewModel.epinephrineResponse = viewModel.epinephrineQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.epinephrineResponse != nil ?
+                        !(viewModel.epinephrineResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.necRateQuestion.emphasizedText, title: viewModel.necRateQuestion.text) {
+                ForEach(viewModel.necRateQuestion.responses, id: \.value) { response in
+                    Button(response.display) {
+                        viewModel.necRateResponse = response.value
+                    }.miniButtonStyle(selected: viewModel.necRateResponse == response.value)
+                }
+            }
         }
     }
 
