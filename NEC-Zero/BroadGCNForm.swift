@@ -77,7 +77,8 @@ struct BroadGCNForm: View {
                     }.miniButtonStyle(selected: viewModel.ageResponse == response.value)
                 }
             }
-            MiniCard(emphasized: viewModel.glucocorticoidsQuestion.emphasizedText, title: viewModel.glucocorticoidsQuestion.text) {
+            MiniCard(emphasized: viewModel.glucocorticoidsQuestion.emphasizedText,
+                title: viewModel.glucocorticoidsQuestion.text) {
                 HStack {
                     Button(viewModel.glucocorticoidsQuestion.responses[0].display) {
                         viewModel.glucocorticoidsResponse = viewModel.glucocorticoidsQuestion.responses[0].value
@@ -94,7 +95,8 @@ struct BroadGCNForm: View {
 
     @ViewBuilder func UQuestions() -> some View {
         LazyVStack {
-            MiniCard(emphasized: viewModel.umbilicalAcidicQuestion.emphasizedText, title: viewModel.umbilicalAcidicQuestion.text) {
+            MiniCard(emphasized: viewModel.umbilicalAcidicQuestion.emphasizedText,
+                title: viewModel.umbilicalAcidicQuestion.text) {
                 HStack {
                     Button(viewModel.umbilicalAcidicQuestion.responses[0].display) {
                         viewModel.umbilicalAcidicResponse = viewModel.umbilicalAcidicQuestion.responses[0].value
@@ -104,14 +106,15 @@ struct BroadGCNForm: View {
                     }.miniButtonStyle(selected: viewModel.umbilicalAcidicResponse != nil ? !(viewModel.umbilicalAcidicResponse!) : false)
                 }
             }
-            MiniCard(emphasized: viewModel.umbilicalProlapseQuestion.emphasizedText, title: viewModel.umbilicalProlapseQuestion.text) {
+            MiniCard(emphasized: viewModel.umbilicalProlapseQuestion.emphasizedText,
+                title: viewModel.umbilicalProlapseQuestion.text) {
                 HStack {
                     Button(viewModel.umbilicalProlapseQuestion.responses[0].display) {
                         viewModel.umbilicalProlapseResponse = viewModel.umbilicalProlapseQuestion.responses[0].value
                     }.miniButtonStyle(selected: viewModel.umbilicalProlapseResponse ?? false)
                     Button(viewModel.umbilicalProlapseQuestion.responses[1].display) {
                         viewModel.umbilicalProlapseResponse = viewModel.umbilicalProlapseQuestion.responses[1].value
-                    }.miniButtonStyle(selected: viewModel.umbilicalProlapseResponse != nil ? !(viewModel.umbilicalProlapseResponse!) : false)
+                    }.miniButtonStyle(selected: viewModel.umbilicalProlapseResponse != nil ?            !(viewModel.umbilicalProlapseResponse!) : false)
                 }
             }
         }
@@ -238,7 +241,8 @@ struct BroadGCNForm: View {
                     }.miniButtonStyle(selected: viewModel.compressionsResponse ?? false)
                     Button(viewModel.compressionsQuestion.responses[1].display) {
                         viewModel.compressionsResponse = viewModel.compressionsQuestion.responses[1].value
-                    }.miniButtonStyle(selected: viewModel.compressionsResponse != nil ? !(viewModel.compressionsResponse!) : false)
+                    }.miniButtonStyle(selected: viewModel.compressionsResponse != nil ?
+                        !(viewModel.compressionsResponse!) : false)
                 }
             }
             MiniCard(emphasized: viewModel.epinephrineQuestion.emphasizedText,

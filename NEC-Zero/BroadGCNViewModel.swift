@@ -421,7 +421,61 @@ class BroadGCNViewModel: ObservableObject {
         }
     }
 
+    // H
 
+    // MARK: - Histamine-2
+    let histamineQueestion = BroadGCNQuestion(
+        emphasizedText: "Histamine-2",
+        text: "Receptor Blockers",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var histamineResponse: Bool? {
+        get { model.histamine2 }
+        set { model.histamine2 = newValue }
+    }
+
+    // MARK: - Hemodynamic resuscitation
+    let resuscitationQuestion = BroadGCNQuestion(
+        emphasizedText: "Hemodynamic resuscitation in 1'st week of life",
+        text: "(Dopamine, Dobutamine, Epinephrine with hypotension)",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var resuscitationResponse: Bool? {
+        get { model.resusication }
+        set { model.resusication = newValue }
+    }
+
+    // MARK: - Hypertensive disease
+    let hypertensiveQuestion = BroadGCNQuestion(
+        emphasizedText: "Hypertensive disease",
+        text: "in mom (pregnancy-induced or chronic)",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var hypertensiveResponse: Bool? {
+        get { model.hypertensive }
+        set { model.hypertensive = newValue }
+    }
+
+    // E
+
+    // MARK: - Enteral feeding
+    
+
+    // C2
+
+    // K
 
     struct BroadGCNQuestion<Value> {
         var emphasizedText: String?
