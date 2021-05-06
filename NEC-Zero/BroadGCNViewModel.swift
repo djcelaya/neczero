@@ -471,11 +471,55 @@ class BroadGCNViewModel: ObservableObject {
     // E
 
     // MARK: - Enteral feeding
-    
+    let enteralFeedingQuestion = BroadGCNQuestion(
+        emphasizedText: "Enteral Feeding",
+        text: "",
+        responses: [
+            ("All Formula", BroadGCN.EnteralFeeding.allFormula),
+            ("Formula + human milk", BroadGCN.EnteralFeeding.formulaHuman),
+            ("Bovine-fortified", BroadGCN.EnteralFeeding.bovineFortified)
+        ]
+    )
+
+    var enteralFeedingResponse: BroadGCN.EnteralFeeding? {
+        get { model.enteralFeeding }
+        set { model.enteralFeeding = newValue }
+    }
 
     // C2
 
-    // K
+    // MARK: - Heart Disease
+    let heartDiseaseQuestion = BroadGCNQuestion(
+        emphasizedText: "Cyanotic Congenital Heart Disease",
+        text: "",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var heartDiseaseResponse: Bool? {
+        get { model.heartDisease }
+        set { model.heartDisease = newValue }
+    }
+
+    // MARK: - PDA surgical
+
+    // MARK: - PDA hemodynamically significant
+
+    // MARK: - PDA treated with Indomethacin
+
+    // MARK: - Multiple infections
+
+    // MARK: - Triple antibiotic therapy
+
+    // MARK: - Initial antibiotic course > 4 days
+
+    // MARK: - Sepsis - Early
+
+    // MARK: - Sepsis - Late
+
+    // MARK: - Chorioamnionitis
 
     struct BroadGCNQuestion<Value> {
         var emphasizedText: String?

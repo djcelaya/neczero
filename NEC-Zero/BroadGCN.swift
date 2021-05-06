@@ -35,7 +35,7 @@ struct BroadGCN {
     var milk: Bool?
     var probiotics: Bool?
 
-    // C
+    // C1
     var coldStress: Bool?
     var cocaine: Bool?
     var placentalAbruption: Bool?
@@ -57,7 +57,7 @@ struct BroadGCN {
     }
     var enteralFeeding: EnteralFeeding?
 
-    // C
+    // C2
     var heartDisease: Bool?
     var pdaSurgical: Bool?
     var pdaHemodynamic: Bool?
