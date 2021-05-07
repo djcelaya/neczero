@@ -504,22 +504,126 @@ class BroadGCNViewModel: ObservableObject {
     }
 
     // MARK: - PDA surgical
+    let pdaSurgicalQuestion = BroadGCNQuestion(
+        text: "Patent Ductus Arteriosus (PDA) surgical + Indemethacin",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var pdaSurgicalResponse: Bool? {
+        get { model.pdaSurgical }
+        set { model.pdaSurgical = newValue }
+    }
 
     // MARK: - PDA hemodynamically significant
+    let pdaHemodynamicQuestion = BroadGCNQuestion(
+        text: "Patent Ductus Arteriosus - hemodynamically significant",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var pdaHemodynamicResponse: Bool? {
+        get { model.pdaHemodynamic }
+        set { model.pdaHemodynamic = newValue }
+    }
 
     // MARK: - PDA treated with Indomethacin
+    let pdaIndomethacinQuestion = BroadGCNQuestion(
+        text: "PDA treated with Indomethacin",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var pdaIndomethacinResponse: Bool? {
+        get { model.pdaIndomethacin }
+        set { model.pdaIndomethacin = newValue }
+    }
 
     // MARK: - Multiple infections
+    let multipleInfectionsQuestion = BroadGCNQuestion(
+        emphasizedText: "Colonization of Bacteria influenced by Antibiotics and Infection",
+        text: "Multiple infections (>2) in first 4 weeks of life before NEC",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var multipleInfectionsResponse: Bool? {
+        get { model.multipleInfections }
+        set { model.multipleInfections = newValue }
+    }
 
     // MARK: - Triple antibiotic therapy
+    let tripleAntibioticQuestion = BroadGCNQuestion(
+        text: "Triple antibiotic therapy",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var tripleAntibioticResponse: Bool? {
+        get { model.tripleAntibiotic }
+        set { model.tripleAntibiotic = newValue }
+    }
 
     // MARK: - Initial antibiotic course > 4 days
+    let antibioticCourseQuestion = BroadGCNQuestion(
+        text: "Initial antibiotic course > 4 days",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var antibioticCourseResponse: Bool? {
+        get { model.antibioticCourse }
+        set { model.antibioticCourse = newValue }
+    }
 
     // MARK: - Sepsis - Early
+    let sepsisEarlyQuestion = BroadGCNQuestion(
+        text: "Sepsis – Early",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var sepsisEarlyResponse: Bool? {
+        get { model.sepsisEarly }
+        set { model.sepsisEarly = newValue }
+    }
 
     // MARK: - Sepsis - Late
+    let sepsisLateQuestion = BroadGCNQuestion(
+        text: "Sepsis – Late",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
+
+    var sepsisLateResponse: Bool? {
+        get { model.sepsisLate }
+        set { model.sepsisLate = newValue }
+    }
 
     // MARK: - Chorioamnionitis
+    let chorioamnionitisQuestion = BroadGCNQuestion(
+        text: "Chorioamnionitis",
+        responses: [
+            ("Yes", true),
+            ("No", false)
+        ]
+    )
 
     struct BroadGCNQuestion<Value> {
         var emphasizedText: String?
