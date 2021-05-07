@@ -310,7 +310,14 @@ struct BroadGCNForm: View {
 
     @ViewBuilder func EQuestions() -> some View {
         LazyVStack {
-            Text("E")
+            MiniCard(emphasized: viewModel.enteralFeedingQuestion.emphasizedText,
+                title: viewModel.enteralFeedingQuestion.text) {
+                ForEach(viewModel.enteralFeedingQuestion.responses, id: \.value) { response in
+                    Button(response.display) {
+                        viewModel.enteralFeedingResponse = response.value
+                    }.miniButtonStyle(selected: viewModel.enteralFeedingResponse == response.value)
+                }
+            }
         }
     }
 
