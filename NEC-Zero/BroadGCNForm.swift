@@ -323,7 +323,126 @@ struct BroadGCNForm: View {
 
     @ViewBuilder func C2Questions() -> some View {
         LazyVStack {
-            Text("C")
+            MiniCard(emphasized: viewModel.heartDiseaseQuestion.emphasizedText,
+                title: viewModel.heartDiseaseQuestion.text) {
+                HStack {
+                    Button(viewModel.heartDiseaseQuestion.responses[0].display) {
+                        viewModel.heartDiseaseResponse = viewModel.heartDiseaseQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.heartDiseaseResponse ?? false)
+                    Button(viewModel.heartDiseaseQuestion.responses[1].display) {
+                        viewModel.heartDiseaseResponse = viewModel.heartDiseaseQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.heartDiseaseResponse != nil ?
+                        !(viewModel.heartDiseaseResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.pdaSurgicalQuestion.emphasizedText,
+                title: viewModel.pdaSurgicalQuestion.text) {
+                HStack {
+                    Button(viewModel.pdaSurgicalQuestion.responses[0].display) {
+                        viewModel.pdaSurgicalResponse = viewModel.pdaSurgicalQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.pdaSurgicalResponse ?? false)
+                    Button(viewModel.pdaSurgicalQuestion.responses[1].display) {
+                        viewModel.pdaSurgicalResponse = viewModel.pdaSurgicalQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.pdaSurgicalResponse != nil ?
+                        !(viewModel.pdaSurgicalResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.pdaHemodynamicQuestion.emphasizedText,
+                title: viewModel.pdaHemodynamicQuestion.text) {
+                HStack {
+                    Button(viewModel.pdaHemodynamicQuestion.responses[0].display) {
+                        viewModel.pdaHemodynamicResponse = viewModel.pdaHemodynamicQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.pdaHemodynamicResponse ?? false)
+                    Button(viewModel.pdaHemodynamicQuestion.responses[1].display) {
+                        viewModel.pdaHemodynamicResponse = viewModel.pdaHemodynamicQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.pdaHemodynamicResponse != nil ?
+                        !(viewModel.pdaHemodynamicResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.pdaIndomethacinQuestion.emphasizedText,
+                title: viewModel.pdaIndomethacinQuestion.text) {
+                HStack {
+                    Button(viewModel.pdaIndomethacinQuestion.responses[0].display) {
+                        viewModel.pdaIndomethacinResponse = viewModel.pdaIndomethacinQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.pdaIndomethacinResponse ?? false)
+                    Button(viewModel.pdaIndomethacinQuestion.responses[1].display) {
+                        viewModel.pdaIndomethacinResponse = viewModel.pdaIndomethacinQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.pdaIndomethacinResponse != nil ?
+                        !(viewModel.pdaIndomethacinResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.multipleInfectionsQuestion.emphasizedText,
+                title: viewModel.multipleInfectionsQuestion.text) {
+                HStack {
+                    Button(viewModel.multipleInfectionsQuestion.responses[0].display) {
+                        viewModel.multipleInfectionsResponse = viewModel.multipleInfectionsQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.multipleInfectionsResponse ?? false)
+                    Button(viewModel.multipleInfectionsQuestion.responses[1].display) {
+                        viewModel.multipleInfectionsResponse = viewModel.multipleInfectionsQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.multipleInfectionsResponse != nil ?
+                        !(viewModel.multipleInfectionsResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.tripleAntibioticQuestion.emphasizedText,
+                title: viewModel.tripleAntibioticQuestion.text) {
+                HStack {
+                    Button(viewModel.tripleAntibioticQuestion.responses[0].display) {
+                        viewModel.tripleAntibioticResponse = viewModel.tripleAntibioticQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.tripleAntibioticResponse ?? false)
+                    Button(viewModel.tripleAntibioticQuestion.responses[1].display) {
+                        viewModel.tripleAntibioticResponse = viewModel.tripleAntibioticQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.tripleAntibioticResponse != nil ?
+                        !(viewModel.tripleAntibioticResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.antibioticCourseQuestion.emphasizedText,
+                title: viewModel.antibioticCourseQuestion.text) {
+                HStack {
+                    Button(viewModel.antibioticCourseQuestion.responses[0].display) {
+                        viewModel.antibioticCourseResponse = viewModel.antibioticCourseQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.antibioticCourseResponse ?? false)
+                    Button(viewModel.antibioticCourseQuestion.responses[1].display) {
+                        viewModel.antibioticCourseResponse = viewModel.antibioticCourseQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.antibioticCourseResponse != nil ?
+                        !(viewModel.antibioticCourseResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.sepsisEarlyQuestion.emphasizedText,
+                title: viewModel.sepsisEarlyQuestion.text) {
+                HStack {
+                    Button(viewModel.sepsisEarlyQuestion.responses[0].display) {
+                        viewModel.sepsisEarlyResponse = viewModel.sepsisEarlyQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.sepsisEarlyResponse ?? false)
+                    Button(viewModel.sepsisEarlyQuestion.responses[1].display) {
+                        viewModel.sepsisEarlyResponse = viewModel.sepsisEarlyQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.sepsisEarlyResponse != nil ?
+                        !(viewModel.sepsisEarlyResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.sepsisLateQuestion.emphasizedText,
+                title: viewModel.sepsisLateQuestion.text) {
+                HStack {
+                    Button(viewModel.sepsisLateQuestion.responses[0].display) {
+                        viewModel.sepsisLateResponse = viewModel.sepsisLateQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.sepsisLateResponse ?? false)
+                    Button(viewModel.sepsisLateQuestion.responses[1].display) {
+                        viewModel.sepsisLateResponse = viewModel.sepsisLateQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.sepsisLateResponse != nil ?
+                        !(viewModel.sepsisLateResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.chorioamnionitisQuestion.emphasizedText,
+                title: viewModel.chorioamnionitisQuestion.text) {
+                HStack {
+                    Button(viewModel.chorioamnionitisQuestion.responses[0].display) {
+                        viewModel.chorioamnionitisResponse = viewModel.chorioamnionitisQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.chorioamnionitisResponse ?? false)
+                    Button(viewModel.chorioamnionitisQuestion.responses[1].display) {
+                        viewModel.chorioamnionitisResponse = viewModel.chorioamnionitisQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.chorioamnionitisResponse != nil ?
+                        !(viewModel.chorioamnionitisResponse!) : false)
+                }
+            }
         }
     }
 

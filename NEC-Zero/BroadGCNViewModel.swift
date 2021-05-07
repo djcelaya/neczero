@@ -625,6 +625,11 @@ class BroadGCNViewModel: ObservableObject {
         ]
     )
 
+    var chorioamnionitisResponse: Bool? {
+        get { model.chorioamnionitis }
+        set { model.chorioamnionitis = newValue }
+    }
+
     struct BroadGCNQuestion<Value> {
         var emphasizedText: String?
         let text: String
