@@ -424,7 +424,7 @@ class BroadGCNViewModel: ObservableObject {
     // H
 
     // MARK: - Histamine-2
-    let histamineQueestion = BroadGCNQuestion(
+    let histamineQuestion = BroadGCNQuestion(
         emphasizedText: "Histamine-2",
         text: "Receptor Blockers",
         responses: [

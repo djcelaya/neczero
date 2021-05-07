@@ -269,7 +269,42 @@ struct BroadGCNForm: View {
 
     @ViewBuilder func HQuestions() -> some View {
         LazyVStack {
-            Text("H")
+            MiniCard(emphasized: viewModel.histamineQuestion.emphasizedText,
+                title: viewModel.histamineQuestion.text) {
+                HStack {
+                    Button(viewModel.histamineQuestion.responses[0].display) {
+                        viewModel.histamineResponse = viewModel.histamineQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.histamineResponse ?? false)
+                    Button(viewModel.histamineQuestion.responses[1].display) {
+                        viewModel.histamineResponse = viewModel.histamineQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.histamineResponse != nil ?
+                        !(viewModel.histamineResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.resuscitationQuestion.emphasizedText,
+                title: viewModel.resuscitationQuestion.text) {
+                HStack {
+                    Button(viewModel.resuscitationQuestion.responses[0].display) {
+                        viewModel.resuscitationResponse = viewModel.resuscitationQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.resuscitationResponse ?? false)
+                    Button(viewModel.resuscitationQuestion.responses[1].display) {
+                        viewModel.resuscitationResponse = viewModel.resuscitationQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.resuscitationResponse != nil ?
+                        !(viewModel.resuscitationResponse!) : false)
+                }
+            }
+            MiniCard(emphasized: viewModel.hypertensiveQuestion.emphasizedText,
+                title: viewModel.hypertensiveQuestion.text) {
+                HStack {
+                    Button(viewModel.hypertensiveQuestion.responses[0].display) {
+                        viewModel.hypertensiveResponse = viewModel.hypertensiveQuestion.responses[0].value
+                    }.miniButtonStyle(selected: viewModel.hypertensiveResponse ?? false)
+                    Button(viewModel.hypertensiveQuestion.responses[1].display) {
+                        viewModel.hypertensiveResponse = viewModel.hypertensiveQuestion.responses[1].value
+                    }.miniButtonStyle(selected: viewModel.hypertensiveResponse != nil ?
+                        !(viewModel.hypertensiveResponse!) : false)
+                }
+            }
         }
     }
 
