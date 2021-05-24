@@ -48,6 +48,9 @@
 "Parents you have an important role..." = "Parents you have an important role in your baby's care needs. As you learn more about NEC you most likely will have questions and will be scared. Please know there are resources and services available to offer support, answer questions, and help lessen your burden.";
 "Tip: Write your questions down..." = "Tip: Write your questions down. If after you receive information and you realize you need additional explanations do not hesitate to ask. You are an important member of your baby's health team.";
 
+/* NECHowView */
+"Although experts don’t agree..." = "Although experts don’t agree entirely on what causes NEC, it is clear that many factors play a role. These factors include:";
+
 /* RecognitionView */
 "Timely Recognition" = "Timely Recognition";
 "It is important that healthcare providers caring for neonates..." = "It is important that healthcare providers caring for neonates know how to recognize signs and symptoms of NEC. Timely recognition of NEC can lead to earlier diagnosis and treatment, and potential prevention of serious complications such as surgical intervention and death.";

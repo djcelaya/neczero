@@ -25,6 +25,7 @@
 		9E665146257AF85700EF2FAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E665145257AF85700EF2FAA /* Preview Assets.xcassets */; };
 		9E665151257AF85700EF2FAA /* NEC_ZeroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E665150257AF85700EF2FAA /* NEC_ZeroTests.swift */; };
 		9E66515C257AF85800EF2FAA /* NEC_ZeroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66515B257AF85800EF2FAA /* NEC_ZeroUITests.swift */; };
+		9E866F1E265C015800D58E44 /* NECHowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E866F1D265C015800D58E44 /* NECHowView.swift */; };
 		9EB3795425DC1D4B00393C91 /* GutCheckNECLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB3795325DC1D4B00393C91 /* GutCheckNECLanding.swift */; };
 		9EB759FD25C2FECE00153E15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EB759FF25C2FECE00153E15 /* Localizable.strings */; };
 		9EBC5BA925A61885009854E4 /* FocusedGCNViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC5BA825A61885009854E4 /* FocusedGCNViewModel.swift */; };
@@ -80,6 +81,7 @@
 		9E665157257AF85800EF2FAA /* NEC-ZeroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NEC-ZeroUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E66515B257AF85800EF2FAA /* NEC_ZeroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEC_ZeroUITests.swift; sourceTree = "<group>"; };
 		9E66515D257AF85800EF2FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E866F1D265C015800D58E44 /* NECHowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NECHowView.swift; sourceTree = "<group>"; };
 		9EB3795325DC1D4B00393C91 /* GutCheckNECLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutCheckNECLanding.swift; sourceTree = "<group>"; };
 		9EB759FE25C2FECE00153E15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EB75A0025C2FED800153E15 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				9EF97A8325C06BAF009DD543 /* NECView.swift */,
 				9E2144BF25C8A48C00C010FE /* RecognitionView.swift */,
 				9EC7152925D1C409008E2138 /* PamphletView.swift */,
+				9E866F1D265C015800D58E44 /* NECHowView.swift */,
 			);
 			name = Articles;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				9EC7152A25D1C409008E2138 /* PamphletView.swift in Sources */,
 				9EBC5BAE25A619E1009854E4 /* FocusedGCNCondensedForm.swift in Sources */,
 				9E2144C025C8A48C00C010FE /* RecognitionView.swift in Sources */,
+				9E866F1E265C015800D58E44 /* NECHowView.swift in Sources */,
 				9EF97A8425C06BAF009DD543 /* NECView.swift in Sources */,
 				9EF2E5B82601225900095CE6 /* FocusedGCNResultsCard.swift in Sources */,
 				9E2144B525C8A42400C010FE /* ParentsRoleView.swift in Sources */,
