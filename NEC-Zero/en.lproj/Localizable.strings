@@ -50,6 +50,11 @@
 
 /* NECHowView */
 "Although experts don’t agree..." = "Although experts don’t agree entirely on what causes NEC, it is clear that many factors play a role. These factors include:";
+"An immature immune system that responds..." = "An immature immune system that responds in a way that is not helpful to bacteria";
+"A lack of good bacteria in..." = "A lack of good bacteria in the intestine to outweigh the effects of bad bacteria. A mix (i.e. diversity) of bacteria in the bowel helps the baby to best respond to infections.";
+"A vulnerable or weak intestine (because of immaturity)" = "A vulnerable or weak intestine (because of immaturity)";
+"The use of formula instead of breast milk..." = "The use of formula instead of breast milk; breast milk provides essential benefits to help the baby develop healthy bacteria in the intestine, makes the layers in the intestine strong and benefits the immune system.";
+"Lack of oxygen (seen in difficult deliveries or in babies with heart problems)" = "Lack of oxygen (seen in difficult deliveries or in babies with heart problems)";
 
 /* RecognitionView */
 "Timely Recognition" = "Timely Recognition";

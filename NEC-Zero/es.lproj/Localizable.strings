@@ -48,6 +48,14 @@
 "Parents you have an important role..." = "Parents you have an important role in your baby's care needs. As you learn more about NEC you most likely will have questions and will be scared. Please know there are resources and services available to offer support, answer questions, and help lessen your burden.";
 "Tip: Write your questions down..." = "Tip: Write your questions down. If after you receive information and you realize you need additional explanations do not hesitate to ask. You are an important member of your baby's health team.";
 
+/* NECHowView */
+"Although experts don’t agree..." = "Aunque los expertos no están totalmente de acuerdo en lo que causa NEC, es evidente que muchos factores juegan un papel. Estos factores incluyen:";
+"An immature immune system that responds..." = "Un sistema inmunológico inmaduro que responde de una manera que no es útil para bacteria.";
+"A lack of good bacteria in..." = "La falta de Buena bacteria en el intestino para contrarrestar los efectos de bacteria mala. Una mezcla (diversidad) de las bacterias en el intestino ayuda al bebé a responder mejor a las infecciones.";
+"A vulnerable or weak intestine (because of immaturity)" = "Un intestino débil o vulnerable (debido a la inmadurez)";
+"The use of formula instead of breast milk..." = "El uso de formula en lugar de leche materna; la leche materna produce beneficios esenciales para bebé a desarrollar bacterias saludables en el intestino, hace que las capas en el intestino sean fuertes y beneficia al sistema inmunológico.";
+"Lack of oxygen (seen in difficult deliveries or in babies with heart problems)" = "Falta de oxígeno (visto en partos difíciles o en bebés con problemas al corazón)";
+
 /* RecognitionView */
 "Timely Recognition" = "Timely Recognition";
 "It is important that healthcare providers caring for neonates..." = "It is important that healthcare providers caring for neonates know how to recognize signs and symptoms of NEC. Timely recognition of NEC can lead to earlier diagnosis and treatment, and potential prevention of serious complications such as surgical intervention and death.";
