@@ -10,11 +10,30 @@
 import SwiftUI
 
 struct NECHowView: View {
+
+    let columns = [
+        GridItem(.fixed(20), alignment: .topLeading),
+        GridItem(.flexible(), alignment: .topLeading)
+    ]
+
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading) {
                 Text("Although experts don’t agree...")
-            }.padding([.leading, .trailing])
+                    .padding([.leading, .trailing])
+                LazyVGrid(columns: columns) {
+                    Text("•")
+                    Text("An immature immune system that responds in a way that is not helpful to bacteria")
+                    Text("•")
+                    Text("A lack of good bacteria in the intestine to outweigh the effects of bad bacteria. A mix (i.e. diversity) of bacteria in the bowel helps the baby to best respond to infections.")
+                    Text("•")
+                    Text("A vulnerable or weak intestine (because of immaturity)")
+                    Text("•")
+                    Text("The use of formula instead of breast milk; breast milk provides essential benefits to help the baby develop healthy bacteria in the intestine, makes the layers in the intestine strong and benefits the immune system.")
+                    Text("•")
+                    Text("Lack of oxygen (seen in difficult deliveries or in babies with heart problems)")
+                }.padding([.leading, .trailing, .bottom])
+            }//.padding([.leading, .trailing])
         }.navigationTitle("How does NEC happen?")
     }
 }
