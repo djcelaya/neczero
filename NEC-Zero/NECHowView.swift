@@ -20,7 +20,7 @@ struct NECHowView: View {
         ScrollView {
             LazyVStack(alignment: .leading) {
                 Text("Although experts don’t agree...")
-                    .padding([.leading, .trailing])
+                    .padding([.leading, .top, .trailing])
                 LazyVGrid(columns: columns) {
                     Text("•")
                     Text("An immature immune system that responds...")
@@ -34,7 +34,7 @@ struct NECHowView: View {
                     Text("Lack of oxygen (seen in difficult deliveries or in babies with heart problems)")
                 }.padding([.leading, .trailing, .bottom])
             }//.padding([.leading, .trailing])
-        }.navigationTitle("How does NEC happen?")
+        }.navigationBarTitle("How does NEC happen?", displayMode: .inline)
     }
 }
 

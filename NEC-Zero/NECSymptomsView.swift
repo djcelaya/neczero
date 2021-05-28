@@ -19,22 +19,49 @@ struct NECSymptomsView: View {
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading) {
-                Text("Although experts don’t agree...")
+                Text("The signs and symptoms of NEC can be...")
+                    .padding([.leading, .top, .trailing])
+                LazyVGrid(columns: columns) {
+                    Text("•")
+                    Text("Swollen, red, grey or tender belly (abdomen)")
+                    Text("•")
+                    Text("Difficulty feeding or digesting feeding")
+                    Text("•")
+                    Text("Showing less activity or energy than usual")
+                    Text("•")
+                    Text("Unstable body temperature (either cold or hot)")
+                    Text("•")
+                    Text("Diarrhea")
+                }.padding([.leading, .trailing])
+                LazyVGrid(columns: columns) {
+                    Text("•")
+                    Text("Bloody poop (stools)")
+                    Text("•")
+                    Text("Vomiting (possibly green in color)")
+                    Text("•")
+                    Text("More short periods without...")
+                }.padding([.leading, .trailing, .bottom])
+                Text("Things to watch for:")
                     .padding([.leading, .trailing])
                 LazyVGrid(columns: columns) {
                     Text("•")
-                    Text("An immature immune system that responds...")
+                    Text("Blood in dirty diaper")
                     Text("•")
-                    Text("A lack of good bacteria in...")
+                    Text("Stops breathing (apnea)")
                     Text("•")
-                    Text("A vulnerable or weak intestine (because of immaturity)")
+                    Text("Heartbeat slows down (bradycardia)")
                     Text("•")
-                    Text("The use of formula instead of breast milk...")
+                    Text("Body temperature too low or too high")
                     Text("•")
-                    Text("Lack of oxygen (seen in difficult deliveries or in babies with heart problems)")
+                    Text("Less active or change in behavior")
+
+                }.padding([.leading, .trailing])
+                LazyVGrid(columns: columns) {
+                    Text("•")
+                    Text("Not digesting feedings well")
                 }.padding([.leading, .trailing, .bottom])
             }//.padding([.leading, .trailing])
-        }.navigationTitle("What are the symptoms of NEC?")
+        }.navigationBarTitle("What are the symptoms of NEC?", displayMode: .inline)
     }
 }
 

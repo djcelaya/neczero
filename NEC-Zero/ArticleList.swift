@@ -43,7 +43,7 @@ struct ArticleList: View {
             case "How does NEC happen?":
                 NECHowView()
             case "What are the symptoms of NEC?":
-                Text("What are the symptoms of NEC?")
+                NECSymptomsView()
             case "Treatment of NEC":
                 Text("Treatment of NEC")
             case "Recovery":
