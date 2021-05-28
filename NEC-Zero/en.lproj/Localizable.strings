@@ -56,6 +56,26 @@
 "The use of formula instead of breast milk..." = "The use of formula instead of breast milk; breast milk provides essential benefits to help the baby develop healthy bacteria in the intestine, makes the layers in the intestine strong and benefits the immune system.";
 "Lack of oxygen (seen in difficult deliveries or in babies with heart problems)" = "Lack of oxygen (seen in difficult deliveries or in babies with heart problems)";
 
+/* NECSymptomsView */
+"What are the symptoms of NEC?" = "What are the symptoms of NEC?";
+"The signs and symptoms of NEC can be difficult to diagnose because NEC symptoms are similar to other medical problems that babies may have (like a widespread infection called sepsis). NEC symptoms can also differ in how severe the symptoms are. Some of them include:" = "The signs and symptoms of NEC can be difficult to diagnose because NEC symptoms are similar to other medical problems that babies may have (like a widespread infection called sepsis). NEC symptoms can also differ in how severe the symptoms are. Some of them include:";
+"Swollen, red, grey or tender belly (abdomen)" = "Swollen, red, grey or tender belly (abdomen)";
+"Difficulty feeding or digesting feeding" = "Difficulty feeding or digesting feeding";
+"Showing less activity or energy than usual" = "Showing less activity or energy than usual";
+"Unstable body temperature (either cold or hot)" = "Unstable body temperature (either cold or hot)";
+"Diarrhea" = "Diarrhea";
+"Bloody poop (stools)" = "Bloody poop (stools)";
+"Vomiting (possibly green in color)" = "Vomiting (possibly green in color)";
+"More short periods without breathing (apnea) or a decrease in heart rate (bradycardia)" = "More short periods without breathing (apnea) or a decrease in heart rate (bradycardia)";
+"Things to watch for:" = "Things to watch for:";
+"Blood in dirty diaper" = "Blood in dirty diaper";
+"Stops breathing (apnea)" = "Stops breathing (apnea)";
+"Heartbeat slows down (bradycardia)" = "Heartbeat slows down (bradycardia)";
+"Body temperature too low or too high" = "Body temperature too low or too high";
+"Less active or change in behavior" = "Less active or change in behavior";
+"Not digesting feedings well" = "Not digesting feedings well";
+
+
 /* RecognitionView */
 "Timely Recognition" = "Timely Recognition";
 "It is important that healthcare providers caring for neonates..." = "It is important that healthcare providers caring for neonates know how to recognize signs and symptoms of NEC. Timely recognition of NEC can lead to earlier diagnosis and treatment, and potential prevention of serious complications such as surgical intervention and death.";

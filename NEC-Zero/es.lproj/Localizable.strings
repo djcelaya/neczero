@@ -56,6 +56,8 @@
 "The use of formula instead of breast milk..." = "El uso de formula en lugar de leche materna; la leche materna produce beneficios esenciales para bebé a desarrollar bacterias saludables en el intestino, hace que las capas en el intestino sean fuertes y beneficia al sistema inmunológico.";
 "Lack of oxygen (seen in difficult deliveries or in babies with heart problems)" = "Falta de oxígeno (visto en partos difíciles o en bebés con problemas al corazón)";
 
+/* NECSymptomsView */
+
 /* RecognitionView */
 "Timely Recognition" = "Timely Recognition";
 "It is important that healthcare providers caring for neonates..." = "It is important that healthcare providers caring for neonates know how to recognize signs and symptoms of NEC. Timely recognition of NEC can lead to earlier diagnosis and treatment, and potential prevention of serious complications such as surgical intervention and death.";
