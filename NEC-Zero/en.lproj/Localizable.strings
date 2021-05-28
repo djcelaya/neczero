@@ -58,7 +58,7 @@
 
 /* NECSymptomsView */
 "What are the symptoms of NEC?" = "What are the symptoms of NEC?";
-"The signs and symptoms of NEC can be difficult to diagnose because NEC symptoms are similar to other medical problems that babies may have (like a widespread infection called sepsis). NEC symptoms can also differ in how severe the symptoms are. Some of them include:" = "The signs and symptoms of NEC can be difficult to diagnose because NEC symptoms are similar to other medical problems that babies may have (like a widespread infection called sepsis). NEC symptoms can also differ in how severe the symptoms are. Some of them include:";
+"The signs and symptoms of NEC can be..." = "The signs and symptoms of NEC can be difficult to diagnose because NEC symptoms are similar to other medical problems that babies may have (like a widespread infection called sepsis). NEC symptoms can also differ in how severe the symptoms are. Some of them include:";
 "Swollen, red, grey or tender belly (abdomen)" = "Swollen, red, grey or tender belly (abdomen)";
 "Difficulty feeding or digesting feeding" = "Difficulty feeding or digesting feeding";
 "Showing less activity or energy than usual" = "Showing less activity or energy than usual";
@@ -66,7 +66,7 @@
 "Diarrhea" = "Diarrhea";
 "Bloody poop (stools)" = "Bloody poop (stools)";
 "Vomiting (possibly green in color)" = "Vomiting (possibly green in color)";
-"More short periods without breathing (apnea) or a decrease in heart rate (bradycardia)" = "More short periods without breathing (apnea) or a decrease in heart rate (bradycardia)";
+"More short periods without..." = "More short periods without breathing (apnea) or a decrease in heart rate (bradycardia)";
 "Things to watch for:" = "Things to watch for:";
 "Blood in dirty diaper" = "Blood in dirty diaper";
 "Stops breathing (apnea)" = "Stops breathing (apnea)";

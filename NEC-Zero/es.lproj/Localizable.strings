@@ -57,6 +57,23 @@
 "Lack of oxygen (seen in difficult deliveries or in babies with heart problems)" = "Falta de oxígeno (visto en partos difíciles o en bebés con problemas al corazón)";
 
 /* NECSymptomsView */
+"What are the symptoms of NEC?" = "¿Cuáles son los síntomas de NEC?";
+"The signs and symptoms of NEC can be..." = "Las muestras y los síntomas de NEC pueden ser difíciles de diagnosticar porque los síntomas del NEC son similares a otros problemas médicos que los bebés pueden tener (como una infección extensa llamada sepsia). Los síntomas del NEC también pueden diferir en gravedad de los síntomas. Algunos de ellos incluyen:";
+"Swollen, red, grey or tender belly (abdomen)" = "Vientre inflamado, rojo, gris o blando (el abdomen)";
+"Difficulty feeding or digesting feeding" = "Dificultad para alimentar o digerir la comida";
+"Showing less activity or energy than usual" = "Mostrando menos actividad o energía de lo usual";
+"Unstable body temperature (either cold or hot)" = "Temperatura inestable del cuerpo (frío o caliente)";
+"Diarrhea" = "Diarrea";
+"Bloody poop (stools)" = "La popo sangrienta (heces)";
+"Vomiting (possibly green in color)" = "Vómitos (posiblemente verde en color)";
+"More short periods without..." = "Períodos más cortos sin respirar (apnea) o una disminución de la frecuencia cardíaca (bradicardia)";
+"Things to watch for:" = "Cosas para vigilar:";
+"Blood in dirty diaper" = "Sangre en el pañal sucio";
+"Stops breathing (apnea)" = "Deja de respirar (apnea)";
+"Heartbeat slows down (bradycardia)" = "Latido del corazón disminuye (bradicardia)";
+"Body temperature too low or too high" = "Temperatura del cuerpo es demasiado baja o alta";
+"Less active or change in behavior" = "Menos activos o cambios en comportamiento";
+"Not digesting feedings well" = "No digerir bien las alimentaciones";
 
 /* RecognitionView */
 "Timely Recognition" = "Timely Recognition";
