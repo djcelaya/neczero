@@ -75,6 +75,18 @@
 "Less active or change in behavior" = "Menos activos o cambios en comportamiento";
 "Not digesting feedings well" = "No digerir bien las alimentaciones";
 
+/* NECTreatmentView */
+"All infants with NEC need..." = "Todos los bebés con NEC necesitan ser tratados rápidamente. Aproximadamente un tercio de los bebés diagnosticados con NEC requerirá cirugía para reparar el intestino. El tratamiento incluye:";
+"Stopping all feedings..." = "Detener toda alimentación (el tiempo que se detiene varía)";
+"Removing the air and fluid..." = "Extracción del aire y líquido de los intestinos usando un tubo (tubo nasogástrica) conectado a una máquina de aspiración";
+"Intravenous (IV) fluids and antibiotics" = "Líquidos y antibióticos intravenosos (IV)";
+"X-rays of the abdomen and frequent examinations" = "Rayos X del abdomen y exámenes frecuentes";
+"If needed, a pediatric surgeon consultation to discuss surgery" = "Si es necesario, una consulta de cirujano pediátrico para discutir cirugía";
+"The baby's belly size..." = "El tamaño del vientre del bebé (la circunferencia abdominal) será revisado regularmente y la heces del bebé (la popo) también será vigilada para señales de sangre.";
+"If the baby develops a hole inside..." = "Si el bebé desarrolla una perforación dentro de su estómago (conocido como perforación intestinal) o si hay una infección en el estómago del bebé, a veces el vientre del bebé se hinchará (dilatan). A veces, cuando esto ocurre, hace que sea difícil para su bebé a respirar. Para ayudar a su bebé respirar, oxígeno adicional o un respirador (ventilador) puede ser necesario. También, espere que su bebé tenga muestras de sangre tomadas. Estos exámenes de sangre ayudan a identificar si hay una infección, la capacidad de coagulación de la sangre y la severidad de la respuesta del bebé a la infección.";
+"Parents, it is important that you understand..." = "Padres, es importante que usted entienda los procedimientos y las opciones de cirugía. Asegúrese de hacer preguntas hasta que entienda lo que su bebé necesita.";
+"NEC and Surgery – Sometimes babies whose..." = "NEC y Cirugía – a veces los bebés cuya condiciones empeora o que tienen una perforación en el intestino necesitarán una cirugía exploratoria. Algunos doctores pondrán un dren para quitar el líquido adicional en el estómago. Durante la cirugía, el cirujano examinará el interior del estómago del bebé (la cavidad abdominal) para buscar un orificio en el intestino y eliminar cualquier tejido intestinal muerto o moribundo. En algunos casos, su bebé puede requerir procedimientos adicionales o cirugías. Un ejemplo de una cirugía adicional es coser el intestino sano junto otra vece, o a veces un bebé puede requerir una ileostomía. Una ileostomía es donde el cirujano hace una incisión en el vientre y saca y conecta el intestino a una abertura en el abdomen (estoma) de modo que las heces puedan salir del cuerpo con seguridad.";
+
 /* RecognitionView */
 "Timely Recognition" = "Timely Recognition";
 "It is important that healthcare providers caring for neonates..." = "It is important that healthcare providers caring for neonates know how to recognize signs and symptoms of NEC. Timely recognition of NEC can lead to earlier diagnosis and treatment, and potential prevention of serious complications such as surgical intervention and death.";
