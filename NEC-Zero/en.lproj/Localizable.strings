@@ -75,6 +75,17 @@
 "Less active or change in behavior" = "Less active or change in behavior";
 "Not digesting feedings well" = "Not digesting feedings well";
 
+/* NECTreatmentView */
+"All infants with NEC need..." = "All infants with NEC need to be treated quickly. About one-third of babies diagnosed with NEC will require surgery to repair their intestine. Treatment includes:";
+"Stopping all feedings..." = "Stopping all feedings (how long they are stopped varies)";
+"Removing the air and fluid..." = "Removing the air and fluid from the intestines using a tube (nasogastric tube) that is connected to a suction machine";
+"Intravenous (IV) fluids and antibiotics" = "Intravenous (IV) fluids and antibiotics";
+"X-rays of the abdomen and frequent examinations" = "X-rays of the abdomen and frequent examinations";
+"If needed, a pediatric surgeon consultation to discuss surgery" = "If needed, a pediatric surgeon consultation to discuss surgery";
+"The baby's belly size..." = "The baby's belly size (aka abdominal girth) will be checked regularly and the baby's stool (poop) will also be watched for blood.";
+"If the baby develops a hole inside..." = "If the baby develops a hole inside of their stomach (aka intestine perforates) or if there is an infection in the baby’s stomach, sometimes the baby’s belly will swell (distend). Sometimes when this occurs, it makes it difficult for your baby to breathe. To help your baby breathe, extra oxygen or a breathing machine (ventilator) may be necessary. Also, expect your baby to have blood samples taken. These blood tests help identify if there is an infection, blood clotting ability and the severity of the baby’s response to the infection.";
+"Parents, it is important that you understand..." = "Parents, it is important that you understand the procedures and surgery options. Be sure to ask questions until you understand what your baby needs.";
+"NEC and Surgery – Sometimes babies whose..." = "NEC and Surgery – Sometimes babies whose condition worsens or who have a perforation in the intestine will need exploratory surgery. Some doctors will put in a drain to remove the extra fluid in the stomach. During surgery, the surgeon will examine the inside of the baby's stomach (aka abdominal cavity) to look for a hole in the intestine and remove any dead or dying intestinal tissue. In some cases, your baby may require additional procedures or surgeries.  An example of an additional surgery is sewing the healthy intestine back together, or sometimes a baby may require an ostomy.  An ostomy is where the surgeon makes an incision in the belly and brings out and connects the intestine to an opening on the abdomen (stoma) so that stool can safely exit the body.";
 
 /* RecognitionView */
 "Timely Recognition" = "Timely Recognition";

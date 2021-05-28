@@ -45,7 +45,7 @@ struct ArticleList: View {
             case "What are the symptoms of NEC?":
                 NECSymptomsView()
             case "Treatment of NEC":
-                Text("Treatment of NEC")
+                NECTreatmentView()
             case "Recovery":
                 Text("Recovery")
             case "Additional Resources & Support Groups for Parents":
