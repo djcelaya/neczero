@@ -19,22 +19,40 @@ struct RecoveryView: View {
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading) {
-                Text("Although experts don’t agree...")
+                Text("Babies recover differently from NEC...")
+                    .padding([.leading, .top, .trailing])
+                Text("Nutrition and fluids are given...")
+                    .padding([.leading, .top, .trailing])
+                Image("NICU 4")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                Text("Breast milk is recommended...")
                     .padding([.leading, .top, .trailing])
                 LazyVGrid(columns: columns) {
                     Text("•")
-                    Text("An immature immune system that responds...")
+                    Text("being high in immune properties...")
                     Text("•")
-                    Text("A lack of good bacteria in...")
+                    Text("promoting healthy bacteria in the gut...")
                     Text("•")
-                    Text("A vulnerable or weak intestine (because of immaturity)")
+                    Text("supporting eye and brain growth...")
+                }.padding([.leading, .trailing])
+                Text("Sometimes there are circumstances...")
+                    .padding([.leading, .top, .trailing])
+                Text("Many babies will recover fully from NEC...")
+                    .padding([.leading, .top, .trailing])
+                Text("For more information about NEC:")
+                    .fontWeight(.bold)
+                    .padding([.leading, .top, .trailing])
+                LazyVGrid(columns: columns) {
                     Text("•")
-                    Text("The use of formula instead of breast milk...")
+                    Link("Medline Plus – Health Topic - Necrotizing Enterocolitis",
+                         destination: URL(string: "https://medlineplus.gov/ency/article/001148.htm")!)
                     Text("•")
-                    Text("Lack of oxygen (seen in difficult deliveries or in babies with heart problems)")
+                    Link("KidsHealth from Nemours - About Necrotizing Enterocolitis",
+                         destination: URL(string: "https://kidshealth.org/en/parents/nec.html")!)
                 }.padding([.leading, .trailing, .bottom])
-            }//.padding([.leading, .trailing])
-        }.navigationBarTitle("How does NEC happen?", displayMode: .inline)    }
+            }
+        }.navigationBarTitle("Recovery", displayMode: .inline)    }
 }
 
 struct RecoveryView_Previews: PreviewProvider {
