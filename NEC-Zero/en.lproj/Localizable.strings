@@ -130,6 +130,41 @@
 "Gephart, S. M., Wetzel, C.,..." = "Gephart, S. M., Wetzel, C., & Krisman, B. (2014). Prevention and early recognition of necrotizing enterocolitis: a tale of 2 tools--eNEC and GutCheckNEC. Adv Neonatal Care, 14(3), 201-210; quiz 211-202. doi:10.1097/anc.0000000000000063";
 "Gregory, K. E., Deforge, C. E.,..." = "Gregory, K. E., Deforge, C. E., Natale, K. M., Phillips, M., & Van Marter, L. J. (2011). Necrotizing enterocolitis in the premature infant: neonatal nursing assessment, disease pathogenesis, and clinical presentation. Adv Neonatal Care, 11(3), 155-164; quiz 165-156. doi:10.1097/ANC.0b013e31821baaf4";
 
+/* HospitalView */
+"Most health professionals working in the NICU..." = "Most health professionals working in the NICU are aware of NEC, but do you know enough to prevent NEC and diagnose more cases earlier in the disease progression? Here are some helpful tips for those caring for babies in the NICU.";
+"Know the Risk Factors" = "Know the Risk Factors";
+"Gestational age – infants born at..." = "Gestational age – infants born at an earlier gestational age have a higher risk for NEC, but all premature babies are susceptible";
+"Medical history – increased risk..." = "Medical history – increased risk for NEC has been demonstrated for babies who have had hypotension treated with inotropes like dopamine and dobutamine, recent blood transfusions, metabolic acidosis, and sepsis";
+"Race – babies born to parents of..." = "Race – babies born to parents of Hispanic ethnicity or of black race have a higher risk for NEC";
+"NICU-specific – know the NEC rate..." = "NICU-specific – know the NEC rate in your NICU – the higher this rate, the higher your patients’ risk for NEC";
+"Know the Protective Factors" = "Know the Protective Factors";
+"Mother’s own milk (MOM) – a babies exposure..." = "Mother’s own milk (MOM) – a babies exposure to their mothers’ breast milk is one of the greatest protective factors against NEC; in addition to feedings of MOM, colostrum can also be administered oropharyngeally to help stimulate the baby’s immune system";
+"Standardized feeding protocols – following a standard..." = "Standardized feeding protocols – following a standard protocol for initiating and increasing feedings has been shown to decrease NEC risk";
+"Know the Warning Signs" = "Know the Warning Signs";
+"Abdominal assessment – Most clinicians use..." = "Abdominal assessment – Most clinicians use the abdominal assessment as a key tool in identifying whether a baby should be tested for NEC. Some common abdominal assessment findings associated with NEC diagnosis are:";
+"Firm or rigid abdomen*" = "Firm or rigid abdomen*";
+"Dusky colored abdomen*" = "Dusky colored abdomen*";
+"Distended abdomen" = "Distended abdomen";
+"Significant change in abdominal girth" = "Significant change in abdominal girth";
+"Absent bowel sounds" = "Absent bowel sounds";
+"*most concerning signs" = "*most concerning signs";
+"Feeding Intolerance" = "Feeding Intolerance";
+"Some degree of feeding intolerance..." = "Some degree of feeding intolerance is common in many premature babies, particularly since feedings are being established. However, some signs can be associated with NEC, and should not be overlooked, especially:";
+"Bloody stool*" = "Bloody stool*";
+"Bloody, coffee ground..." = "Bloody, coffee ground, or dark bilious gastric aspirate";
+"Multiple emesis..." = "Multiple emesis, especially if bloody or bilious and large volume";
+"Other Signs" = "Other Signs";
+"Some signs of NEC can be easily..." = "Some signs of NEC can be easily confused with blood sepsis or consequences of prematurity, and the disease may present differently in different babies. The following are some systemic signs that have been associated with NEC diagnosis:";
+"Unexplained tachycardia" = "Unexplained tachycardia";
+"Increased need for respiratory support" = "Increased need for respiratory support";
+"Increased apnea/bradycardia episodes" = "Increased apnea/bradycardia episodes";
+"Temperature instability" = "Temperature instability";
+"Change in level of consciousness..." = "Change in level of consciousness (usually increased irritability or lethargy)";
+"Change in skin color..." = "Change in skin color towards pale, mottled, and/or dusky tone";
+"Hypotension (usually a late sign)" = "Hypotension (usually a late sign)";
+"Parental Concern" = "Parental Concern";
+"It is easy to be caught up..." = "It is easy to be caught up in the moment, however, DO NOT dismiss a parent’s concerns about their baby. They are often more familiar with their baby’s usual temperament, appearance, and history of feeding tolerance than many caregivers, and can detect slight changes even without medical training. Please take the time to investigate a parent’s concern and ask them if there are specific things they are seeing or if they just feel something is different. If they have specific concerns, a focused assessment may be beneficial, and their concern is more intuitive they may be sensing a change in vital signs or level of consciousness that is subtler, but no less important. Following up with these concerns may lead to early diagnosis and intervention, potentially saving a baby’s life, and at the very least will demonstrate your respect for the parent’s unique knowledge about their baby and their role as a true care partner.";
+
 /* GutCheckNECLanding */
 "GutCheckNEC is a risk measurement tool..." = "GutCheckNEC is a risk measurement tool for infants at risk for necrotizing enterocolitis. Two versions are available:";
 

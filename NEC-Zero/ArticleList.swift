@@ -53,7 +53,7 @@ struct ArticleList: View {
             case "Timely Recognition":
                 RecognitionView()
             case "Caring for Babies with NEC in the Hospital":
-                Text("Caring for Babies with NEC in the Hospital")
+                HospitalView()
             case "Breastfeeding":
                 Text("Breastfeeding")
             case "Additional Resources for Health Professionals":
