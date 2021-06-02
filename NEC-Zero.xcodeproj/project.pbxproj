@@ -40,6 +40,7 @@
 		9EF64AD225ACA61F0080B074 /* FocusedGutCheckNECTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF64AD125ACA61F0080B074 /* FocusedGutCheckNECTests.swift */; };
 		9EF97A8425C06BAF009DD543 /* NECView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF97A8325C06BAF009DD543 /* NECView.swift */; };
 		9EF97A8C25C06BE3009DD543 /* NECZeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF97A8B25C06BE3009DD543 /* NECZeroView.swift */; };
+		9EFD0AE426669166005EE8B9 /* ParentResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD0AE326669166005EE8B9 /* ParentResourcesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		9EF64AD125ACA61F0080B074 /* FocusedGutCheckNECTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedGutCheckNECTests.swift; sourceTree = "<group>"; };
 		9EF97A8325C06BAF009DD543 /* NECView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NECView.swift; sourceTree = "<group>"; };
 		9EF97A8B25C06BE3009DD543 /* NECZeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NECZeroView.swift; sourceTree = "<group>"; };
+		9EFD0AE326669166005EE8B9 /* ParentResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentResourcesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				9E30D2F32661305E00EA0396 /* NECSymptomsView.swift */,
 				9E30D2F52661870300EA0396 /* NECTreatmentView.swift */,
 				9E30D2F726618C9C00EA0396 /* RecoveryView.swift */,
+				9EFD0AE326669166005EE8B9 /* ParentResourcesView.swift */,
 				9E2144BF25C8A48C00C010FE /* RecognitionView.swift */,
 				9EC7152925D1C409008E2138 /* PamphletView.swift */,
 			);
@@ -387,6 +390,7 @@
 				9EEF8FF8261BD7D100DE175E /* BroadGCN.swift in Sources */,
 				9EC7152A25D1C409008E2138 /* PamphletView.swift in Sources */,
 				9EBC5BAE25A619E1009854E4 /* FocusedGCNCondensedForm.swift in Sources */,
+				9EFD0AE426669166005EE8B9 /* ParentResourcesView.swift in Sources */,
 				9E2144C025C8A48C00C010FE /* RecognitionView.swift in Sources */,
 				9E30D2F826618C9C00EA0396 /* RecoveryView.swift in Sources */,
 				9E866F1E265C015800D58E44 /* NECHowView.swift in Sources */,

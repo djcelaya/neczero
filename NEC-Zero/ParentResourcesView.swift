@@ -1,15 +1,15 @@
 //
-//  RecoveryView.swift
+//  ParentResourcesView.swift
 //  NEC-Zero
 //
-//  Corresponding webpage: https://neczero.nursing.arizona.edu/recovery
+//  Corresponding webpage: https://neczero.nursing.arizona.edu/parent-resources
 //
-//  Created by David Celaya-Gonzalez on 5/28/21.
+//  Created by David Celaya-Gonzalez on 6/1/21.
 //
 
 import SwiftUI
 
-struct RecoveryView: View {
+struct ParentResourcesView: View {
 
     let columns = [
         GridItem(.fixed(20), alignment: .topLeading),
@@ -19,7 +19,7 @@ struct RecoveryView: View {
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading) {
-                Text("Babies recover differently from NEC...")
+                Text("Caring for a preemie...")
                     .padding([.leading, .top, .trailing])
                 Text("Nutrition and fluids are given...")
                     .padding([.leading, .top, .trailing])
@@ -52,16 +52,16 @@ struct RecoveryView: View {
                          destination: URL(string: "https://kidshealth.org/en/parents/nec.html")!)
                 }.padding([.leading, .trailing, .bottom])
             }
-        }.navigationBarTitle("Recovery", displayMode: .inline)
+        }.navigationBarTitle("Resources & Support Groups", displayMode: .inline)
     }
 }
 
-struct RecoveryView_Previews: PreviewProvider {
+struct ParentResources_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(["en", "es"], id: \.self) { id in
             TabView {
                 NavigationView() {
-                    RecoveryView()
+                    ParentResourcesView()
                 }
             }.environment(\.locale, .init(identifier: id))
         }

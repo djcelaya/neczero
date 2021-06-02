@@ -49,7 +49,7 @@ struct ArticleList: View {
             case "Recovery":
                 RecoveryView()
             case "Additional Resources & Support Groups for Parents":
-                Text("Additional Resources & Support Groups for Parents")
+                ParentResourcesView()
             case "Timely Recognition":
                 RecognitionView()
             case "Caring for Babies with NEC in the Hospital":

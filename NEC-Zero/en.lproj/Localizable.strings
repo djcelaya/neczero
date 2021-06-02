@@ -98,6 +98,21 @@
 "Many babies will recover fully from NEC..." = "Many babies will recover fully from NEC and not have further feeding problems. However, sometimes babies with NEC may have complications such as a scarred or narrowed bowel or intestinal blockage. If so, more surgery is needed. Because of the impact on the intestine, the baby’s ability to absorb food can be disrupted. Many babies receive nutrition intravenously for a long time while their bowel is resting. When feedings are restarted, the bowel sometimes has trouble absorbing nutrients (malabsorption). Babies who have had part of their intestine removed are more prone to this. A baby with malabsorption may need nutrition delivered directly into a vein until the intestine heals enough to tolerate normal feeding. This can lead to long-term complications including something called “short gut syndrome.” Losing so much bowel can also cause long-term health problems like allergies and organ failure among others.";
 "For more information about NEC:" = "For more information about NEC:";
 
+/*  ParentsResourcesView */
+"Caring for a preemie..." = "Caring for a preemie who has NEC can be difficult. It is important that you know you are not alone.  There are resources available to assist you. Below are resources that may offer support and knowledge.";
+"Support:" = "Support:";
+"Apps:" = "Apps:";
+"An app designed for parents of preemies..." = "An app designed for parents of preemies during their NICU experience.";
+"Organizations that offer education..." = "Organizations that offer education, support and resources about NEC:";
+"A non-profit organization dedicated to..." = "A non-profit organization dedicated to protecting premature infants from necrotizing enterocolitis and reducing the occurrence. They provide up-to-date information on NEC-related issues and offer many resources for those impacted by NEC.";
+"​A NEC-specific, non-profit organization..." = "​A NEC-specific, non-profit organization that is focused on increasing research and public awareness.";
+"Raise awareness and find cures..." = "Raise awareness and find cures for diseases that impact newborns and preemies including NEC.";
+"Organizations that offer advice..." = "Organizations that offer advice to assist parents and families of premature infants:";
+"An organization committed to the support..." = "An organization committed to the support of preemie parents. This site provides resources and support programs to parents of preemies, babies born with special health-care needs and those who have experienced loss due to these or other complications.";
+"A Parent Organization for Fragile Babies" = "A Parent Organization for Fragile Babies";
+"Supporting preemies through advocation and research." = "Supporting preemies through advocation and research.";
+"Information designed for clinicians..." = "Information designed for clinicians and for parents of preemies during the NICU experience.";
+"Online Support Groups" = "Online Support Groups";
 
 /* RecognitionView */
 "Timely Recognition" = "Timely Recognition";
