@@ -22,6 +22,7 @@
 		9E30D2F826618C9C00EA0396 /* RecoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E30D2F726618C9C00EA0396 /* RecoveryView.swift */; };
 		9E339D4B261B5CE20062F8EB /* FocusedGCNViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E339D4A261B5CE20062F8EB /* FocusedGCNViewModelTests.swift */; };
 		9E342DE02667D451006169A9 /* HospitalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E342DDF2667D451006169A9 /* HospitalView.swift */; };
+		9E342DE22667F933006169A9 /* BreastfeedingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E342DE12667F933006169A9 /* BreastfeedingView.swift */; };
 		9E476F93262DD944001E9CB8 /* ProtectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E476F92262DD944001E9CB8 /* ProtectedView.swift */; };
 		9E4A0CC925C9CAA2003B36F9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4A0CC825C9CAA2003B36F9 /* HomeView.swift */; };
 		9E66513F257AF85600EF2FAA /* NECZeroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66513E257AF85600EF2FAA /* NECZeroApp.swift */; };
@@ -77,6 +78,7 @@
 		9E30D2F726618C9C00EA0396 /* RecoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryView.swift; sourceTree = "<group>"; };
 		9E339D4A261B5CE20062F8EB /* FocusedGCNViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedGCNViewModelTests.swift; sourceTree = "<group>"; };
 		9E342DDF2667D451006169A9 /* HospitalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalView.swift; sourceTree = "<group>"; };
+		9E342DE12667F933006169A9 /* BreastfeedingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreastfeedingView.swift; sourceTree = "<group>"; };
 		9E476F92262DD944001E9CB8 /* ProtectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectedView.swift; sourceTree = "<group>"; };
 		9E4A0CC825C9CAA2003B36F9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9E66513B257AF85600EF2FAA /* NEC-Zero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NEC-Zero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +174,7 @@
 				9EFD0AE326669166005EE8B9 /* ParentResourcesView.swift */,
 				9E2144BF25C8A48C00C010FE /* RecognitionView.swift */,
 				9E342DDF2667D451006169A9 /* HospitalView.swift */,
+				9E342DE12667F933006169A9 /* BreastfeedingView.swift */,
 				9EC7152925D1C409008E2138 /* PamphletView.swift */,
 			);
 			name = Articles;
@@ -374,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E206E0825F044680020812C /* FocusedGCNFormContainer.swift in Sources */,
+				9E342DE22667F933006169A9 /* BreastfeedingView.swift in Sources */,
 				9EB3795425DC1D4B00393C91 /* GutCheckNECLanding.swift in Sources */,
 				9E03F87026126F06006A9FBF /* DisclaimerView.swift in Sources */,
 				9E21449525C8517100C010FE /* MoreView.swift in Sources */,

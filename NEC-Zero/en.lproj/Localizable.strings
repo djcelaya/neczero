@@ -165,6 +165,21 @@
 "Parental Concern" = "Parental Concern";
 "It is easy to be caught up..." = "It is easy to be caught up in the moment, however, DO NOT dismiss a parent’s concerns about their baby. They are often more familiar with their baby’s usual temperament, appearance, and history of feeding tolerance than many caregivers, and can detect slight changes even without medical training. Please take the time to investigate a parent’s concern and ask them if there are specific things they are seeing or if they just feel something is different. If they have specific concerns, a focused assessment may be beneficial, and their concern is more intuitive they may be sensing a change in vital signs or level of consciousness that is subtler, but no less important. Following up with these concerns may lead to early diagnosis and intervention, potentially saving a baby’s life, and at the very least will demonstrate your respect for the parent’s unique knowledge about their baby and their role as a true care partner.";
 
+/* BreastfeedingView */
+"There are many reasons feeding..." = "There are many reasons feeding babies human milk is really important. This recommendation is supported by a lot of research that proves human milk makes a difference in the lives of babies, especially premature babies. Below are a few of the many benefits of human milk (aka breast milk or human donor milk):";
+"Feeding breast milk to a premature baby helps" = "Feeding breast milk to a premature baby helps";
+"lower the chances of developing NEC" = "lower the chances of developing NEC";
+"protect the baby from infection" = "protect the baby from infection";
+"control the baby's inflammatory response" = "control the baby's inflammatory response";
+"mature the premature gut" = "mature the premature gut";
+"feedings be tolerated" = "feedings be tolerated";
+"The importance of colostrum..." = "The importance of colostrum. Colostrum is the first milk mothers produce and it contains vital immune stimulating components that premature infants lack. Colostrum can be used before your baby is taking feedings by swabbing the inside of the mouth with drops of colostrum. Watch this nifty video by Dr. Gephart explaining the benefits and demonstrating how it is performed.";
+"Breastfeeding and the Workplace" = "Breastfeeding and the Workplace";
+"Increasingly employers are supporting breastfeeding..." = "Increasingly employers are supporting breastfeeding in the workplace. They should because it is the law.";
+"In 2010, the Patient Protection..." = "In 2010, the Patient Protection and Affordable Care Act (PPACA) provided standards for break time for Nursing Mothers under the FLSA.";
+"Information about federal breastfeeding..." = "Information about federal breastfeeding laws is provided by United States Breastfeeding Committee which is an organization that supports breastfeeding initiatives.";
+"Breastfeeding Resources" = "Breastfeeding Resources";
+
 /* GutCheckNECLanding */
 "GutCheckNEC is a risk measurement tool..." = "GutCheckNEC is a risk measurement tool for infants at risk for necrotizing enterocolitis. Two versions are available:";
 

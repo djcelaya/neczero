@@ -55,7 +55,7 @@ struct ArticleList: View {
             case "Caring for Babies with NEC in the Hospital":
                 HospitalView()
             case "Breastfeeding":
-                Text("Breastfeeding")
+                BreastfeedingView()
             case "Additional Resources for Health Professionals":
                 Text("Additional Resources for Health Professionals")
             case "Prevention Strategies":
