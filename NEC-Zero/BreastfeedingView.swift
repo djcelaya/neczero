@@ -20,6 +20,7 @@ struct BreastfeedingView: View {
         ScrollView(.vertical) {
             intro
             workplace
+            breastfeedingResources
         }.navigationBarTitle("Breastfeeding")
     }
 
@@ -50,6 +51,33 @@ struct BreastfeedingView: View {
             Text("Increasingly employers are supporting breastfeeding...")
             Text("In 2010, the Patient Protection...")
         }.padding([.leading, .trailing])
+    }
+
+    var breastfeedingResources: some View {
+        LazyVStack(alignment: .leading) {
+            Text("Breastfeeding Resources")
+                .font(.title2)
+                .padding([.leading, .trailing])
+            Divider()
+            Link(destination: URL(string: "https://www.llli.org")!) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("La Leche League")
+                        .font(.title3)
+                    Text("Offers multi-language breastfeeding...")
+                        .foregroundColor(.black)
+                }.padding([.leading, .trailing])
+                Spacer()
+            }
+            Divider()
+            Text("test")
+                .padding([.leading, .trailing])
+            Divider()
+            Text("test")
+                .padding([.leading, .trailing])
+            Divider()
+            Text("test")
+                .padding([.leading, .trailing])
+        }
     }
 }
 
