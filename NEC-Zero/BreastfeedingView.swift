@@ -11,6 +11,14 @@ import SwiftUI
 
 struct BreastfeedingView: View {
 
+    let benefits = [
+        "lower the chances of developing NEC",
+        "protect the baby from infection",
+        "control the baby's inflammatory response",
+        "mature the premature gut",
+        "feedings be tolerated"
+    ]
+
     let columns = [
         GridItem(.fixed(20), alignment: .topLeading),
         GridItem(.flexible(), alignment: .topLeading)
@@ -22,6 +30,11 @@ struct BreastfeedingView: View {
             workplace
             breastfeedingResources
         }.navigationBarTitle("Breastfeeding")
+//        List {
+//            Text("lower the chances of developing NEC")
+//            Text("protect the baby from infection")
+//            Text("control the baby's inflammatory response")
+//        }.listStyle(InsetGroupedListStyle())
     }
 
     var intro: some View {
@@ -38,8 +51,13 @@ struct BreastfeedingView: View {
                 Text("•")
                 Text("mature the premature gut")
                 Text("•")
-                Text("feedings be tolerated" )
+                Text("feedings be tolerated")
             }
+            List {
+                Text("lower the chances of developing NEC")
+                Text("protect the baby from infection")
+                Text("control the baby's inflammatory response")
+            }.listStyle(InsetGroupedListStyle())
             Text("The importance of colostrum...")
         }.padding([.leading, .trailing])
     }
