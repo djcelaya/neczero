@@ -19,6 +19,18 @@ struct BreastfeedingView: View {
         "feedings be tolerated"
     ]
 
+    static let breastfeedingResources = [
+        WebLink(title: "La Leche League",
+            url: "https://www.llli.org",
+            description: "Offers multi-language breastfeeding..."),
+        WebLink(title: "MedlinePlus",
+            url: "https://medlineplus.gov/breastfeeding.html",
+            description: "Offers breastfeeding information in many..."),
+        WebLink(title: "Womenshealth.gov",
+            url: "https://www.womenshealth.gov/itsonlynatural/planning-ahead/benefits-of-breastfeeding.html",
+            description: "offers videos and support resources...")
+    ]
+
     let columns = [
         GridItem(.fixed(20), alignment: .topLeading),
         GridItem(.flexible(), alignment: .topLeading)
@@ -28,7 +40,8 @@ struct BreastfeedingView: View {
         ScrollView(.vertical) {
             intro
             workplace
-            breastfeedingResources
+//            breastfeedingResources
+            LinkList(title: "Breastfeeding Resources", links: BreastfeedingView.breastfeedingResources)
         }.navigationBarTitle("Breastfeeding")
 //        List {
 //            Text("lower the chances of developing NEC")

@@ -10,12 +10,17 @@
 
 import SwiftUI
 
+struct WebLink: Identifiable {
+    let title: String
+    let url: String
+    var description: LocalizedStringKey?
+    var id: String { title }
+}
+
 struct LinkList: View {
 
     var title: String?
-//    let link1: () -> NECResourceLink
-//    var link2: (() -> NECResourceLink)?
-    var links2: (() -> TupleView<(NECResourceLink, NECResourceLink)>)?
+    let links: [WebLink]
 
     var body: some View {
         LazyVStack(alignment: .leading) {
@@ -25,60 +30,27 @@ struct LinkList: View {
                     .padding([.leading, .trailing])
             }
             Divider()
-//            link1()
-            Divider()
-        }
-    }
-
-//    init(title: String?, _ link: @escaping () -> NECResourceLink) {
-//        self.title = title
-//        link1 = link
-//    }
-
-    init(title: String?, _ links: @escaping () -> TupleView<(NECResourceLink, NECResourceLink)>) {
-//        self.init(title: title, link)
-//        self.link2 = link2
-        self.title = title
-        self.links2 = links
-    }
-
-}
-
-struct NECResourceLink: View {
-
-    let title: String
-    let url: String
-    var description: String?
-
-    var body: some View {
-        Link(destination: URL(string: url)!) {
-            VStack(alignment: .leading, spacing: 4) {
-                Text(title)
-                    .font(.title3)
-                if let _description = description {
-                    Text(_description)
-                        .foregroundColor(.black)
+            ForEach(links) { link in
+                Link(destination: URL(string: link.url)!) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(link.title)
+                            .font(.title3)
+                        if let _description = link.description {
+                            Text(_description)
+                                .foregroundColor(.black)
+                        }
+                    }.padding([.leading, .trailing])
+                    Spacer()
                 }
-            }.padding([.leading, .trailing])
-            Spacer()
+                Divider()
+            }
+
         }
     }
 }
 
 struct LinkList_Previews: PreviewProvider {
     static var previews: some View {
-        LinkList(title: "Breastfeeding Resources") {
-            NECResourceLink(
-                title: "La Leche League",
-                url: "https://www.llli.org",
-                description: "Offers multi-language breastfeeding..."
-            )
-            NECResourceLink(
-                title: "MedlinePlus",
-                url: "https://medlineplus.gov/breastfeeding.html",
-                description: "Offers breastfeeding information in many...")
-//            Text("MedlinePLue")
-//            Text("Womenshealth.gov")
-        }
+        LinkList(title: "Breastfeeding Resources", links: BreastfeedingView.breastfeedingResources)
     }
 }
