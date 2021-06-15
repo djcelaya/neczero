@@ -185,6 +185,9 @@
 "Provides many topics that are..." = "Provides many topics that are available in both English and Spanish including six pages of topics related to breastfeeding and preemie topics.";
 "A database on drugs and lactation..." = "A database on drugs and lactation. Part of the U.S. National Library of Medicine's database (TOXNET), the target audience is nursing mothers and healthcare practitioners. Over 450 medications and chemicals are included.";
 
+/* Webinars */
+"Disseminate consumer level information..." = "Disseminate consumer level information about necrotizing enterocolitis (NEC), NEC prevention, and educational resources available to help parents and healthcare providers of infants at risk of necrotizing enterocolitis (NEC).";
+
 /* GutCheckNECLanding */
 "GutCheckNEC is a risk measurement tool..." = "GutCheckNEC is a risk measurement tool for infants at risk for necrotizing enterocolitis. Two versions are available:";
 

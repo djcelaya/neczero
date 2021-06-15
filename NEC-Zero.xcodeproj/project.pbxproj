@@ -32,6 +32,9 @@
 		9E665151257AF85700EF2FAA /* NEC_ZeroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E665150257AF85700EF2FAA /* NEC_ZeroTests.swift */; };
 		9E66515C257AF85800EF2FAA /* NEC_ZeroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66515B257AF85800EF2FAA /* NEC_ZeroUITests.swift */; };
 		9E866F1E265C015800D58E44 /* NECHowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E866F1D265C015800D58E44 /* NECHowView.swift */; };
+		9E93700026790958000D1CA0 /* WebinarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E936FFF26790958000D1CA0 /* WebinarList.swift */; };
+		9E937002267909FF000D1CA0 /* WebinarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E937001267909FF000D1CA0 /* WebinarView.swift */; };
+		9E93700426790B66000D1CA0 /* Webinars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E93700326790B66000D1CA0 /* Webinars.swift */; };
 		9EB3795425DC1D4B00393C91 /* GutCheckNECLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB3795325DC1D4B00393C91 /* GutCheckNECLanding.swift */; };
 		9EB759FD25C2FECE00153E15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EB759FF25C2FECE00153E15 /* Localizable.strings */; };
 		9EBC5BA925A61885009854E4 /* FocusedGCNViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC5BA825A61885009854E4 /* FocusedGCNViewModel.swift */; };
@@ -95,6 +98,9 @@
 		9E66515B257AF85800EF2FAA /* NEC_ZeroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEC_ZeroUITests.swift; sourceTree = "<group>"; };
 		9E66515D257AF85800EF2FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E866F1D265C015800D58E44 /* NECHowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NECHowView.swift; sourceTree = "<group>"; };
+		9E936FFF26790958000D1CA0 /* WebinarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebinarList.swift; sourceTree = "<group>"; };
+		9E937001267909FF000D1CA0 /* WebinarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebinarView.swift; sourceTree = "<group>"; };
+		9E93700326790B66000D1CA0 /* Webinars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webinars.swift; sourceTree = "<group>"; };
 		9EB3795325DC1D4B00393C91 /* GutCheckNECLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutCheckNECLanding.swift; sourceTree = "<group>"; };
 		9EB759FE25C2FECE00153E15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EB75A0025C2FED800153E15 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -177,6 +183,9 @@
 				9E2144BF25C8A48C00C010FE /* RecognitionView.swift */,
 				9E342DDF2667D451006169A9 /* HospitalView.swift */,
 				9E342DE12667F933006169A9 /* BreastfeedingView.swift */,
+				9E93700326790B66000D1CA0 /* Webinars.swift */,
+				9E936FFF26790958000D1CA0 /* WebinarList.swift */,
+				9E937001267909FF000D1CA0 /* WebinarView.swift */,
 				9EC7152925D1C409008E2138 /* PamphletView.swift */,
 			);
 			name = Articles;
@@ -208,6 +217,7 @@
 				9E66513E257AF85600EF2FAA /* NECZeroApp.swift */,
 				9E4A0CC825C9CAA2003B36F9 /* HomeView.swift */,
 				9E476F92262DD944001E9CB8 /* ProtectedView.swift */,
+				9E527169267297DB00CE72FB /* LinkList.swift */,
 				9E0D8B0E25DEF99B00B5DA44 /* Articles */,
 				9E0D8B0A25DEF49F00B5DA44 /* GutCheckNEC */,
 				9E03F86E26126EDA006A9FBF /* More */,
@@ -215,7 +225,6 @@
 				9E665142257AF85700EF2FAA /* Assets.xcassets */,
 				9E665147257AF85700EF2FAA /* Info.plist */,
 				9E665144257AF85700EF2FAA /* Preview Content */,
-				9E527169267297DB00CE72FB /* LinkList.swift */,
 			);
 			path = "NEC-Zero";
 			sourceTree = "<group>";
@@ -381,6 +390,7 @@
 			files = (
 				9E206E0825F044680020812C /* FocusedGCNFormContainer.swift in Sources */,
 				9E342DE22667F933006169A9 /* BreastfeedingView.swift in Sources */,
+				9E93700426790B66000D1CA0 /* Webinars.swift in Sources */,
 				9EB3795425DC1D4B00393C91 /* GutCheckNECLanding.swift in Sources */,
 				9E03F87026126F06006A9FBF /* DisclaimerView.swift in Sources */,
 				9E21449525C8517100C010FE /* MoreView.swift in Sources */,
@@ -394,6 +404,7 @@
 				9EEF9008261CE21700DE175E /* BroadGCNForm.swift in Sources */,
 				9EBC5BA925A61885009854E4 /* FocusedGCNViewModel.swift in Sources */,
 				9E342DE02667D451006169A9 /* HospitalView.swift in Sources */,
+				9E937002267909FF000D1CA0 /* WebinarView.swift in Sources */,
 				9E66513F257AF85600EF2FAA /* NECZeroApp.swift in Sources */,
 				9E206E0325F043CF0020812C /* FocusedGCNGuidedForm.swift in Sources */,
 				9EF97A8C25C06BE3009DD543 /* NECZeroView.swift in Sources */,
@@ -405,6 +416,7 @@
 				9EFD0AE426669166005EE8B9 /* ParentResourcesView.swift in Sources */,
 				9E2144C025C8A48C00C010FE /* RecognitionView.swift in Sources */,
 				9E30D2F826618C9C00EA0396 /* RecoveryView.swift in Sources */,
+				9E93700026790958000D1CA0 /* WebinarList.swift in Sources */,
 				9E866F1E265C015800D58E44 /* NECHowView.swift in Sources */,
 				9EF97A8425C06BAF009DD543 /* NECView.swift in Sources */,
 				9EF2E5B82601225900095CE6 /* FocusedGCNResultsCard.swift in Sources */,
