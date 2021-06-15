@@ -27,7 +27,7 @@ struct LinkList: View {
             if let _title = title {
                 Text(_title)
                     .font(.title2)
-                    .padding([.leading, .trailing])
+                    .padding([.leading, .trailing, .top])
             }
             Divider()
             ForEach(links) { link in

@@ -20,15 +20,55 @@ struct BreastfeedingView: View {
     ]
 
     static let breastfeedingResources = [
-        WebLink(title: "La Leche League",
+        WebLink(
+            title: "La Leche League",
             url: "https://www.llli.org",
             description: "Offers multi-language breastfeeding..."),
-        WebLink(title: "MedlinePlus",
+        WebLink(
+            title: "MedlinePlus",
             url: "https://medlineplus.gov/breastfeeding.html",
             description: "Offers breastfeeding information in many..."),
-        WebLink(title: "Womenshealth.gov",
+        WebLink(
+            title: "Womenshealth.gov",
             url: "https://www.womenshealth.gov/itsonlynatural/planning-ahead/benefits-of-breastfeeding.html",
             description: "offers videos and support resources...")
+    ]
+
+    static let familyResources = [
+        WebLink(
+            title: "Healthychildren.org",
+            url: "https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/default.aspx",
+            description: "Provides many topics that are..."),
+        WebLink(
+            title: "LactMed",
+            url: "https://www.ncbi.nlm.nih.gov/books/NBK501922/",
+            description: "A database on drugs and lactation...")
+    ]
+
+    static let breastfeedingExamples = [
+        WebLink(
+            title: "A Breastfeeding Checklist: Are You Nursing Correctly?",
+            url: "https://www.healthychildren.org/english/ages-stages/baby/breastfeeding/pages/a-breastfeeding-checklist-are-you-nursing-correctly.aspx",
+            description: "(English and Spanish including audio)"),
+        WebLink(
+            title: "Benefits of Breastfeeding for Mom",
+            url: "https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/Benefits-of-Breastfeeding-for-Mom.aspx",
+            description: "(English and Spanish including audio)"),
+        WebLink(
+            title: "Colostrum: Your Baby’s First Meal",
+            url: "https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/Colostrum-Your-Babys-First-Meal.aspx",
+            description: "(English and Spanish including audio)")
+    ]
+
+    static let preemieExamples = [
+        WebLink(
+            title: "About Skin-to-Skin Care",
+            url: "https://www.healthychildren.org/english/ages-stages/baby/preemie/pages/about-skin-to-skin-care.aspx",
+            description: "(English and Spanish including audio)"),
+        WebLink(
+            title: "Watching for Complications",
+            url: "https://www.healthychildren.org/English/ages-stages/baby/preemie/Pages/Watching-for-Complications.aspx",
+            description: "(English and Spanish including audio)")
     ]
 
     let columns = [
@@ -40,14 +80,11 @@ struct BreastfeedingView: View {
         ScrollView(.vertical) {
             intro
             workplace
-//            breastfeedingResources
             LinkList(title: "Breastfeeding Resources", links: BreastfeedingView.breastfeedingResources)
+            LinkList(title: "Family Resources", links: BreastfeedingView.familyResources)
+            LinkList(title: "Breastfeeding Topic Examples", links: BreastfeedingView.breastfeedingExamples)
+            LinkList(title: "Preemie Topic Examples", links: BreastfeedingView.preemieExamples)
         }.navigationBarTitle("Breastfeeding")
-//        List {
-//            Text("lower the chances of developing NEC")
-//            Text("protect the baby from infection")
-//            Text("control the baby's inflammatory response")
-//        }.listStyle(InsetGroupedListStyle())
     }
 
     var intro: some View {
@@ -82,33 +119,6 @@ struct BreastfeedingView: View {
             Text("Increasingly employers are supporting breastfeeding...")
             Text("In 2010, the Patient Protection...")
         }.padding([.leading, .trailing])
-    }
-
-    var breastfeedingResources: some View {
-        LazyVStack(alignment: .leading) {
-            Text("Breastfeeding Resources")
-                .font(.title2)
-                .padding([.leading, .trailing])
-            Divider()
-            Link(destination: URL(string: "https://www.llli.org")!) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("La Leche League")
-                        .font(.title3)
-                    Text("Offers multi-language breastfeeding...")
-                        .foregroundColor(.black)
-                }.padding([.leading, .trailing])
-                Spacer()
-            }
-            Divider()
-            Text("test")
-                .padding([.leading, .trailing])
-            Divider()
-            Text("test")
-                .padding([.leading, .trailing])
-            Divider()
-            Text("test")
-                .padding([.leading, .trailing])
-        }
     }
 }
 
