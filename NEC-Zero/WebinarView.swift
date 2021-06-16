@@ -11,12 +11,25 @@ import SwiftUI
 
 struct WebinarView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack {
+
+            }
+        }.navigationBarTitle("Test")
     }
 }
 
 struct WebinarView_Previews: PreviewProvider {
     static var previews: some View {
-        WebinarView()
+        TabView {
+            NavigationView() {
+                WebinarView()
+            }.tabItem {
+                VStack {
+                    Image(systemName: "book")
+                    Text("Resources")
+                }
+            }
+        }
     }
 }
