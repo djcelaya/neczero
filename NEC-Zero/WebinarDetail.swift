@@ -1,5 +1,5 @@
 //
-//  WebinarView.swift
+//  WebinarDetail.swift
 //  NEC-Zero
 //
 //  Corresponding webpage: https://neczero.nursing.arizona.edu/health-professional-resources
@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-struct WebinarView: View {
+struct WebinarDetail: View {
     var body: some View {
         ScrollView {
             VStack {
@@ -23,7 +23,7 @@ struct WebinarView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
             NavigationView() {
-                WebinarView()
+                WebinarDetail()
             }.tabItem {
                 VStack {
                     Image(systemName: "book")

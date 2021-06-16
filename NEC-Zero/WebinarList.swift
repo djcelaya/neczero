@@ -10,13 +10,24 @@
 import SwiftUI
 
 struct WebinarList: View {
+
+    @ObservedObject var webinars: Webinars = Webinars()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(webinars.webinars) { webinar in
+                NavigationLink(destination: WebinarDetail()) {
+                    WebinarRow(webinar: webinar)
+                }
+            }
+        }.navigationTitle("Webinars")
     }
 }
 
 struct WebinarList_Previews: PreviewProvider {
     static var previews: some View {
-        WebinarList()
+        NavigationView {
+            WebinarList()
+        }
     }
 }
