@@ -16,8 +16,10 @@ struct WebinarList: View {
     var body: some View {
         List {
             ForEach(webinars.webinars) { webinar in
-                NavigationLink(destination: WebinarDetail()) {
+                NavigationLink(destination: WebinarDetail(webinar)) {
                     WebinarRow(webinar: webinar)
+//                        .navigationBarTitle("")
+//                        .navigationBarHidden(true)
                 }
             }
         }.navigationTitle("Webinars")

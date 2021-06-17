@@ -38,7 +38,7 @@ final class Webinars: ObservableObject {
 
 struct Webinar: Identifiable {
     let title: String
-    let purpose: String
+    let purpose: LocalizedStringKey
     var id: String { title }
     let url: URL
     let thumbnailURL: URL
