@@ -59,7 +59,7 @@ struct ArticleList: View {
             case "Additional Resources for Health Professionals":
                 WebinarList()
             case "Prevention Strategies":
-                Text("Prevention Strategies")
+                PreventionStrategiesView()
             case "Importance of Breastfeeding":
                 Text("Importance of Breastfeeding")
             default:

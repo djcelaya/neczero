@@ -37,6 +37,7 @@
 		9E937002267909FF000D1CA0 /* WebinarDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E937001267909FF000D1CA0 /* WebinarDetail.swift */; };
 		9E93700426790B66000D1CA0 /* Webinars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E93700326790B66000D1CA0 /* Webinars.swift */; };
 		9EB3795425DC1D4B00393C91 /* GutCheckNECLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB3795325DC1D4B00393C91 /* GutCheckNECLanding.swift */; };
+		9EB5A606267BB54100D62795 /* PreventionStrategiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB5A605267BB54100D62795 /* PreventionStrategiesView.swift */; };
 		9EB759FD25C2FECE00153E15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EB759FF25C2FECE00153E15 /* Localizable.strings */; };
 		9EBC5BA925A61885009854E4 /* FocusedGCNViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC5BA825A61885009854E4 /* FocusedGCNViewModel.swift */; };
 		9EBC5BAE25A619E1009854E4 /* FocusedGCNCondensedForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC5BAD25A619E1009854E4 /* FocusedGCNCondensedForm.swift */; };
@@ -104,6 +105,7 @@
 		9E937001267909FF000D1CA0 /* WebinarDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebinarDetail.swift; sourceTree = "<group>"; };
 		9E93700326790B66000D1CA0 /* Webinars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webinars.swift; sourceTree = "<group>"; };
 		9EB3795325DC1D4B00393C91 /* GutCheckNECLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutCheckNECLanding.swift; sourceTree = "<group>"; };
+		9EB5A605267BB54100D62795 /* PreventionStrategiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventionStrategiesView.swift; sourceTree = "<group>"; };
 		9EB759FE25C2FECE00153E15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EB75A0025C2FED800153E15 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EBC5BA825A61885009854E4 /* FocusedGCNViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedGCNViewModel.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				9E936FFF26790958000D1CA0 /* WebinarList.swift */,
 				9E7D32D1267A62D6008A9BDD /* WebinarRow.swift */,
 				9E937001267909FF000D1CA0 /* WebinarDetail.swift */,
+				9EB5A605267BB54100D62795 /* PreventionStrategiesView.swift */,
 				9EC7152925D1C409008E2138 /* PamphletView.swift */,
 			);
 			name = Articles;
@@ -406,6 +409,7 @@
 				9E476F93262DD944001E9CB8 /* ProtectedView.swift in Sources */,
 				9E7D32D2267A62D6008A9BDD /* WebinarRow.swift in Sources */,
 				9EEF9008261CE21700DE175E /* BroadGCNForm.swift in Sources */,
+				9EB5A606267BB54100D62795 /* PreventionStrategiesView.swift in Sources */,
 				9EBC5BA925A61885009854E4 /* FocusedGCNViewModel.swift in Sources */,
 				9E342DE02667D451006169A9 /* HospitalView.swift in Sources */,
 				9E937002267909FF000D1CA0 /* WebinarDetail.swift in Sources */,
