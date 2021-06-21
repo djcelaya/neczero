@@ -19,32 +19,30 @@ struct NECView: View {
 
     var body: some View {
         ScrollView {
-            VStack {
-                VStack(alignment: .leading) {
-                    Text("Necrotizing enterocolitis (nek-roh-TIE-zing en-ter-oh-coh-LIE-tis)...")
-                        .padding(.top, 8)
-                        .padding([.leading, .trailing])
-                    VideoPlayer(player: player)
-                        .aspectRatio(16.0 / 9.0, contentMode: .fit)
-                        .onDisappear() {
-                            player.pause()
-                        }
-                    Text("This infection can cause damage to the bowel over time...")
-                        .padding(.top, 8)
-                        .padding([.leading, .trailing])
-                    Text("Often NEC impacts babies who are born very early and very small...")
-                        .padding(.top, 8)
-                        .padding([.leading, .trailing])
-                    Image("Kangaroo Care")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                    Text("The chance of your baby developing NEC is low...")
-                        .padding(.top, 8)
-                        .padding([.leading, .trailing])
-                    Text("Sometimes parents and family members...")
-                        .padding(.top, 8)
-                        .padding([.leading, .trailing, .bottom])
-                }
+            VStack(alignment: .leading) {
+                Text("Necrotizing enterocolitis (nek-roh-TIE-zing en-ter-oh-coh-LIE-tis)...")
+                    .padding(.top, 8)
+                    .padding([.leading, .trailing])
+                VideoPlayer(player: player)
+                    .aspectRatio(16.0 / 9.0, contentMode: .fit)
+                    .onDisappear() {
+                        player.pause()
+                    }
+                Text("This infection can cause damage to the bowel over time...")
+                    .padding(.top, 8)
+                    .padding([.leading, .trailing])
+                Text("Often NEC impacts babies who are born very early and very small...")
+                    .padding(.top, 8)
+                    .padding([.leading, .trailing])
+                Image("Kangaroo Care")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                Text("The chance of your baby developing NEC is low...")
+                    .padding(.top, 8)
+                    .padding([.leading, .trailing])
+                Text("Sometimes parents and family members...")
+                    .padding(.top, 8)
+                    .padding([.leading, .trailing, .bottom])
             }
         }.navigationBarTitle("What is NEC?")
     }

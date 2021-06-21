@@ -189,6 +189,15 @@
 "Disseminate consumer level information..." = "Disseminate consumer level information about necrotizing enterocolitis (NEC), NEC prevention, and educational resources available to help parents and healthcare providers of infants at risk of necrotizing enterocolitis (NEC).";
 "Disseminate clinical information about..." = "Disseminate clinical information about necrotizing enterocolitis (NEC), NEC prevention, and educational resources available to implement best practices and help parents and healthcare providers of infants at high risk of NEC.";
 
+/* Prevention Strategies */
+"Why some babies get NEC while..." = "Why some babies get NEC while others do not is not known, but preemies are most likely impacted because they have an immature immune system. However, there are things we can do to decrease NEC from occurring and include:";
+"Swabbing the inside cheeks..." = "Swabbing the inside cheeks of the baby with colostrum after the baby is born";
+"Feeding human milk to babies" = "Feeding human milk to babies";
+"Limiting the length of time babies are given antibiotics" = "Limiting the length of time babies are given antibiotics";
+"Following feeding protocols" = "Following feeding protocols";
+"Communicating and including parents in the care process" = "Communicating and including parents in the care process";
+"Using tools that help recognize signs and symptoms of NEC" = "Using tools that help recognize signs and symptoms of NEC";
+
 /* GutCheckNECLanding */
 "GutCheckNEC is a risk measurement tool..." = "GutCheckNEC is a risk measurement tool for infants at risk for necrotizing enterocolitis. Two versions are available:";
 
