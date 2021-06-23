@@ -17,7 +17,7 @@ struct PreventionStrategiesView: View {
 
     let player: AVPlayer
 
-    let strategies = [
+    static let strategies = [
         "Swabbing the inside cheeks...",
         "Feeding human milk to babies",
         "Limiting the length of time babies are given antibiotics",
