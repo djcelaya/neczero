@@ -17,11 +17,30 @@ struct TextList: View {
         case Unordered
     }
 
+    let columns = [
+        GridItem(.fixed(20), alignment: .topLeading),
+        GridItem(.flexible(), alignment: .topLeading)
+    ]
+
     var title: String?
-    let listItems: [String]
+    let listItems: [String] // this should be StringProtocol - either String or LocalizedStringKey depending on use
+    let style: Style = .Unordered
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        LazyVStack(alignment: .leading) {
+            if let _title = title {
+                Text(_title)
+                    .font(.title2)
+                    .padding([.leading, .trailing, .top])
+            }
+//            Divider()
+            LazyVGrid(columns: columns) {
+                ForEach(listItems, id: \.self) { item in
+                    Text("•")
+                    Text(item)
+                }
+            }
+        }
     }
 
     init(title: String?, items: [String]) {
@@ -39,5 +58,6 @@ struct TextList: View {
 struct TextList_Previews: PreviewProvider {
     static var previews: some View {
         TextList(items: PreventionStrategiesView.strategies)
+            .padding([.leading, .trailing])
     }
 }

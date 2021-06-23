@@ -37,6 +37,8 @@ struct PreventionStrategiesView: View {
                 Text("Why some babies get NEC while...")
                     .padding(.top, 8)
                     .padding([.leading, .trailing])
+                TextList(items: PreventionStrategiesView.strategies)
+                    .padding([.leading, .trailing])
             }
         }.navigationBarTitle("Prevention Strategies")
     }
