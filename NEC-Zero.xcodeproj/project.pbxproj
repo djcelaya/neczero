@@ -40,6 +40,7 @@
 		9EB3795425DC1D4B00393C91 /* GutCheckNECLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB3795325DC1D4B00393C91 /* GutCheckNECLanding.swift */; };
 		9EB5A606267BB54100D62795 /* PreventionStrategiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB5A605267BB54100D62795 /* PreventionStrategiesView.swift */; };
 		9EB759FD25C2FECE00153E15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EB759FF25C2FECE00153E15 /* Localizable.strings */; };
+		9EBC401A26853BDD007E80D0 /* BreastfeedingImportanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC401926853BDD007E80D0 /* BreastfeedingImportanceView.swift */; };
 		9EBC5BA925A61885009854E4 /* FocusedGCNViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC5BA825A61885009854E4 /* FocusedGCNViewModel.swift */; };
 		9EBC5BAE25A619E1009854E4 /* FocusedGCNCondensedForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC5BAD25A619E1009854E4 /* FocusedGCNCondensedForm.swift */; };
 		9EC7152A25D1C409008E2138 /* PamphletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC7152925D1C409008E2138 /* PamphletView.swift */; };
@@ -110,6 +111,7 @@
 		9EB5A605267BB54100D62795 /* PreventionStrategiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventionStrategiesView.swift; sourceTree = "<group>"; };
 		9EB759FE25C2FECE00153E15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EB75A0025C2FED800153E15 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9EBC401926853BDD007E80D0 /* BreastfeedingImportanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreastfeedingImportanceView.swift; sourceTree = "<group>"; };
 		9EBC5BA825A61885009854E4 /* FocusedGCNViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedGCNViewModel.swift; sourceTree = "<group>"; };
 		9EBC5BAD25A619E1009854E4 /* FocusedGCNCondensedForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedGCNCondensedForm.swift; sourceTree = "<group>"; };
 		9EC7152925D1C409008E2138 /* PamphletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PamphletView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				9E7D32D1267A62D6008A9BDD /* WebinarRow.swift */,
 				9E937001267909FF000D1CA0 /* WebinarDetail.swift */,
 				9EB5A605267BB54100D62795 /* PreventionStrategiesView.swift */,
+				9EBC401926853BDD007E80D0 /* BreastfeedingImportanceView.swift */,
 				9EC7152925D1C409008E2138 /* PamphletView.swift */,
 			);
 			name = Articles;
@@ -398,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E206E0825F044680020812C /* FocusedGCNFormContainer.swift in Sources */,
+				9EBC401A26853BDD007E80D0 /* BreastfeedingImportanceView.swift in Sources */,
 				9E342DE22667F933006169A9 /* BreastfeedingView.swift in Sources */,
 				9E93700426790B66000D1CA0 /* Webinars.swift in Sources */,
 				9EB3795425DC1D4B00393C91 /* GutCheckNECLanding.swift in Sources */,
