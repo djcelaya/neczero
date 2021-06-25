@@ -198,6 +198,10 @@
 "Communicating and including parents in the care process" = "Communicating and including parents in the care process";
 "Using tools that help recognize signs and symptoms of NEC" = "Using tools that help recognize signs and symptoms of NEC";
 
+/* Importance of Breastfeeding */
+"Many consider breast milk to be the ideal..." = "Many consider breast milk to be the ideal form of nutrition for babies. It is recommended that infants be fed breast milk for at least six months. However, feeding an infant breast milk for over a year can be valuable. Breast milk contains a wide variety of nutrients and immune benefits that are beneficial for infant nutrition. These substances help to protect the infant from an assortment of illnesses and conditions.";
+"Studies also show that many components..." = "Studies also show that many components of breast milk are protective against necrotizing enterocolitis.";
+
 /* GutCheckNECLanding */
 "GutCheckNEC is a risk measurement tool..." = "GutCheckNEC is a risk measurement tool for infants at risk for necrotizing enterocolitis. Two versions are available:";
 

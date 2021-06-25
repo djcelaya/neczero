@@ -61,7 +61,7 @@ struct ArticleList: View {
             case "Prevention Strategies":
                 PreventionStrategiesView()
             case "Importance of Breastfeeding":
-                Text("Importance of Breastfeeding")
+                BreastfeedingImportanceView()
             default:
                 Text("Invalid String Key")
         }
