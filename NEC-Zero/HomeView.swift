@@ -67,8 +67,7 @@ struct HomeView: View {
                         }
                         HStack(spacing: buttonSpacing) {
                             Button(action: {
-                                selectedFilter = .Parents
-                                selectedTab = "Resources"
+                                goToProtected(tab: "Resources", withFilter: .Parents)
                             }) {
                                 VStack {
                                     Text("Resources")
@@ -82,8 +81,7 @@ struct HomeView: View {
                                 .cornerRadius(15)
                             }
                             Button(action: {
-                                selectedFilter = .Professionals
-                                selectedTab = "Resources"
+                                goToProtected(tab: "Resources", withFilter: .Professionals)
                             }) {
                                 VStack {
                                     Text("Resources")
@@ -107,8 +105,9 @@ struct HomeView: View {
         }
     }
 
-    func goToProtected(tab: String) {
+    func goToProtected(tab: String, withFilter filter: Articles.Filters = .All) {
         requestedTab = tab
+        selectedFilter = filter
         if hasAcceptedDisclaimer {
             selectedTab = tab
         } else {
