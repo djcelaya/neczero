@@ -15,6 +15,12 @@ struct HomeView: View {
     var hasAcceptedDisclaimer: Bool { UserDefaults.standard.bool(forKey: "Disclaimer") }
     @State var isPresentingDisclaimer = false
     @State var requestedTab: String?
+    @State var requestedNEC: Bool
+    @State var displayingNECView: Bool
+
+//    var necButton: some View {
+//
+//    }
 
     var body: some View {
         NavigationView() {
@@ -36,24 +42,35 @@ struct HomeView: View {
                     let buttonSize = geometry.size.width/2 - buttonSpacing/2
                     VStack(spacing: buttonSpacing) {
                         HStack(spacing: buttonSpacing) {
-                            Button(action: {
-//                                if hasAcceptedDisclaimer {
-//                                    selectedTab = "GutCheckNEC"
-//                                } else {
-//                                    isPresentingDisclaimer = true
-//                                }
-//                                goToProtected(tab: "NEC-Zero")
-                            }) {
-                                VStack {
-                                    Text("What is")
-                                    Text("NEC?")
+                            // FIX - this does not work the first time accepting the disclaimer
+                            if hasAcceptedDisclaimer {
+                                NavigationLink(destination: NECView(), isActive: $displayingNECView) {
+                                    VStack {
+                                        Text("What is")
+                                        Text("NEC?")
+                                    }
                                 }
+                                .frame(width: buttonSize, height: buttonSize, alignment: .center)
+                                .background(Color("PrimaryColor"))
+                                .foregroundColor(.white)
+                                .font(.title2)
+                                .cornerRadius(15)
+                            } else {
+                                Button(action: {
+                                    requestedNEC = true
+                                    isPresentingDisclaimer = true
+                                }) {
+                                    VStack {
+                                        Text("What is")
+                                        Text("NEC?")
+                                    }
+                                }
+                                .frame(width: buttonSize, height: buttonSize, alignment: .center)
+                                .background(Color("PrimaryColor"))
+                                .foregroundColor(.white)
+                                .font(.title2)
+                                .cornerRadius(15)
                             }
-                            .frame(width: buttonSize, height: buttonSize, alignment: .center)
-                            .background(Color("PrimaryColor"))
-                            .foregroundColor(.white)
-                            .font(.title2)
-                            .cornerRadius(15)
                             Button(action: {
                                 goToProtected(tab: "GutCheckNEC")
                             }) {
@@ -94,7 +111,6 @@ struct HomeView: View {
                         }
                     }
                 }
-//                .background(Color(.green))
                 .padding()
                 Spacer()
             }
@@ -115,18 +131,24 @@ struct HomeView: View {
         }
     }
 
-//    func goToProtected(view: View) {
-//
-//    }
-
-
     func didDismiss() {
         if hasAcceptedDisclaimer {
             if let _requestedTab = requestedTab {
                 selectedTab = _requestedTab
                 requestedTab = nil
             }
+            if requestedNEC {
+                displayingNECView = true
+            }
         }
+    }
+
+    init(selectedTab: Binding<String>, selectedFilter: Binding<Articles.Filters>) {
+        _selectedTab = selectedTab
+//        self.selectedFilter = selectedFilter
+        _selectedFilter = selectedFilter
+        _displayingNECView = State(initialValue: false)
+        _requestedNEC = State(initialValue: false)
     }
 }
 

@@ -13,9 +13,22 @@ struct DisclaimerView: View {
     @State private var dateAccepted: Date?
     @Binding var isPresented: Bool
 
+//    var disclaimerContent: some View {
+//
+//    }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
+                if isPresented {
+                    Text("Please read and accept the disclaimer below to continue.")
+                        .font(.callout)
+                        .padding()
+                    Text("Disclaimer")
+                        .font(.title)
+                        .bold()
+                        .padding([.leading, .trailing])
+                }
                 Text("The material provided in this mobile application is for...")
                     .padding()
                 Button(action: {
