@@ -14,6 +14,7 @@ struct HomeView: View {
     var buttonSpacing: CGFloat = 15
     var hasAcceptedDisclaimer: Bool { UserDefaults.standard.bool(forKey: "Disclaimer") }
     @State var isPresentingDisclaimer = false
+    @State var requestedTab: String?
 
     var body: some View {
         NavigationView() {
@@ -35,7 +36,14 @@ struct HomeView: View {
                     let buttonSize = geometry.size.width/2 - buttonSpacing/2
                     VStack(spacing: buttonSpacing) {
                         HStack(spacing: buttonSpacing) {
-                            NavigationLink(destination: NECView()) {
+                            Button(action: {
+//                                if hasAcceptedDisclaimer {
+//                                    selectedTab = "GutCheckNEC"
+//                                } else {
+//                                    isPresentingDisclaimer = true
+//                                }
+//                                goToProtected(tab: "NEC-Zero")
+                            }) {
                                 VStack {
                                     Text("What is")
                                     Text("NEC?")
@@ -47,11 +55,7 @@ struct HomeView: View {
                             .font(.title2)
                             .cornerRadius(15)
                             Button(action: {
-                                if hasAcceptedDisclaimer {
-                                    selectedTab = "GutCheckNEC"
-                                } else {
-                                    isPresentingDisclaimer = true
-                                }
+                                goToProtected(tab: "GutCheckNEC")
                             }) {
                                 Text("GutCheckNEC")
                                     .frame(width: buttonSize, height: buttonSize, alignment: .center)
@@ -97,9 +101,32 @@ struct HomeView: View {
                 Spacer()
             }
             .navigationBarHidden(true)
-            .sheet(isPresented: $isPresentingDisclaimer, content: {
+            .sheet(isPresented: $isPresentingDisclaimer, onDismiss: didDismiss) {
                 DisclaimerView($isPresentingDisclaimer)
-            })
+            }
+        }
+    }
+
+    func goToProtected(tab: String) {
+        requestedTab = tab
+        if hasAcceptedDisclaimer {
+            selectedTab = tab
+        } else {
+            isPresentingDisclaimer = true
+        }
+    }
+
+//    func goToProtected(view: View) {
+//
+//    }
+
+
+    func didDismiss() {
+        if hasAcceptedDisclaimer {
+            if let _requestedTab = requestedTab {
+                selectedTab = _requestedTab
+                requestedTab = nil
+            }
         }
     }
 }

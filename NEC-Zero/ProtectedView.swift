@@ -42,7 +42,17 @@ import SwiftUI
 //}
 
 struct Protected: ViewModifier {
+    var hasAcceptedDisclaimer: Bool { UserDefaults.standard.bool(forKey: "Disclaimer") }
+    @State var isPresentingDisclaimer = false
     func body(content: Content) -> some View {
         content
     }
 }
+
+//protocol Protected {
+//
+//}
+
+//extension NavigationLink {
+//    
+//}
