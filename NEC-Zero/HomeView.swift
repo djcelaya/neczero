@@ -18,10 +18,6 @@ struct HomeView: View {
     @State var requestedNEC: Bool
     @State var displayingNECView: Bool
 
-//    var necButton: some View {
-//
-//    }
-
     var body: some View {
         NavigationView() {
             VStack {
@@ -145,7 +141,6 @@ struct HomeView: View {
 
     init(selectedTab: Binding<String>, selectedFilter: Binding<Articles.Filters>) {
         _selectedTab = selectedTab
-//        self.selectedFilter = selectedFilter
         _selectedFilter = selectedFilter
         _displayingNECView = State(initialValue: false)
         _requestedNEC = State(initialValue: false)

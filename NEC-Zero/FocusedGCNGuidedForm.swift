@@ -15,6 +15,12 @@ struct FocusedGCNGuidedForm: View {
     @State private var questionIndex: Int
     private let backgroundGradient = Color("PrimaryColor")
 
+    var gutcheckNECText: Text {
+        Text("GutCheck") +
+        Text("NEC")
+            .baselineOffset(10.0)
+    }
+
     var body: some View {
         TabView(selection: $questionIndex) {
             QuestionCards()
@@ -26,6 +32,7 @@ struct FocusedGCNGuidedForm: View {
         .background(backgroundGradient)
         .tabViewStyle(PageTabViewStyle())
         .animation(.easeInOut)
+        .navigationTitle(gutcheckNECText)
     }
 
     @ViewBuilder func QuestionCards() -> some View {

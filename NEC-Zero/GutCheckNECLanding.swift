@@ -19,7 +19,8 @@ struct GutCheckNECLanding: View {
                     .padding(.horizontal)
                     .padding(.bottom)
                 VStack(spacing: 16) {
-                    NavigationLink(destination: FocusedGCNFormContainer(displayingCondensedForm: true)) {
+//                    NavigationLink(destination: FocusedGCNFormContainer(displayingCondensedForm: true)) {
+                    NavigationLink(destination: FocusedGCNGuidedForm()) {
                         HStack {
                             Spacer()
                             VStack(alignment: .center) {

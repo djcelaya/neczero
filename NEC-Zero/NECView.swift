@@ -14,7 +14,7 @@ import AVKit
 struct NECView: View {
 
 //    var hasAcceptedDisclaimer: Bool { UserDefaults.standard.bool(forKey: "Disclaimer") }
-//    @State var isPresentingDisclaimer = false
+//    @State var isPresentingDisclaimer: Bool = true
 
     let videoURL = URL(string: "https://player.vimeo.com/external/210346530.hd.mp4" +
                         "?s=df32aae873983d6fd0d36b993ba7cef345eefef0&profile_id=119")
@@ -52,10 +52,17 @@ struct NECView: View {
 //        .sheet(isPresented: $isPresentingDisclaimer, content: {
 //            DisclaimerView($isPresentingDisclaimer)
 //        })
+//        .fullScreenCover(isPresented: /*@START_MENU_TOKEN@*/.constant(true)/*@END_MENU_TOKEN@*/, content: {
+//            DisclaimerView(.constant(true))
+//        })
+//        .sheet(isPresented: .constant(true), content: {
+//            DisclaimerView(.constant(true))
+//        })
     }
 
     init() {
         player = AVPlayer(url: videoURL!)
+//        _isPresentingDisclaimer = State(initialValue: true)
     }
 }
 
