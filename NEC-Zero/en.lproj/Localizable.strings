@@ -204,6 +204,9 @@
 
 /* GutCheckNECLanding */
 "GutCheckNEC is a risk measurement tool..." = "GutCheckNEC is a risk measurement tool for infants at risk for necrotizing enterocolitis. Two versions are available:";
+"A 10 question form that produces a score and associated risk level." = "A 10 question form that produces a score and associated risk level.";
+"You may use GutCheckNEC for research..." = "You may use GutCheckNEC for research, quality improvement or clinical projects provided it is not changed in any way and you acknowledge the authors in all published reports or presentations. If you wish to change GutCheckNEC, please contact Dr. Sheila Gephart with an explanation of how you would like to modify it.";
+"A 32 question form that summarizes..." = "A 32 question form that summarizes the number of risk factors to enhance risk awareness.";
 
 /* FocusedGCN Forms */
 "Gestational age (weeks)" = "Gestational age (weeks)";
@@ -224,6 +227,7 @@
 "If hypotension is severe..." = "If hypotension is severe and medications such as dopamine, dobutamine or milrinone are given to treat it, regardless of dose, frequency or duration of treatment. Once this is “yes” it stays “yes”.";
 "Metabolic Acidosis" = "Metabolic Acidosis";
 "After the 1st 12 hours of life..." = "After the 1st 12 hours of life, if the infant experiences metabolic acidosis score “yes.” This is defined as low pH associated with low serum bicarbonate (HCO3 < 17) but normal or near normal pCO2 (pH< 7.30) or lactate > 6.1 mmol/L. If ordering clinician (physician, NNP, PA-C) documents \"metabolic acidosis\" code as \"yes.\" Consider new metabolic acidosis (especially if platelets are low) in an infant with non-specific abdominal signs as concerning. It has been associated with most severe NEC forms.";
+
 
 /* Disclaimer View */
 "The material provided in this mobile application is for..." = "The material provided in this mobile application is for informational purposes. The information is not intended or implied to be a substitute for medical advice, treatment, or diagnosis and should not be used to make a diagnosis or to replace or overrule a qualified health care provider’s judgment. The contents of this mobile application are based on information obtained from sources which are believed to be reliable, however, it has not been independently verified and no warranties or assumes any legal liability or responsibility for the up-to-date accuracy, completeness, or usefulness or any information, apparatus, product, or process disclosed within this site.";

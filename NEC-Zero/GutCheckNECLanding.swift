@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct GutCheckNECLanding: View {
+
+    let broadGCNURL = "https://neczero.nursing.arizona.edu" +
+        "/sites/default/files/GutCheckNEC%20with%20SBAR%20all%20infants%202019.pdf"
+    let backgroundStartColor = Color.white
+    let backgroundEndColor = Color("GutCheck Light")
+
     var body: some View {
         NavigationView {
             VStack(alignment: .center, spacing: 0) {
@@ -36,7 +42,8 @@ struct GutCheckNECLanding: View {
                             Spacer()
                         }
                     }.actionButtonStyle()
-                    NavigationLink(destination: BroadGCNForm()) {
+//                    NavigationLink(destination: BroadGCNForm()) {
+                    Link(destination: URL(string: broadGCNURL)!) {
                         HStack {
                             Spacer()
                             VStack(alignment: .center) {
@@ -45,7 +52,7 @@ struct GutCheckNECLanding: View {
                                 Text("for neonates < 2500 grams")
                                     .font(.body)
                                     .padding(.bottom, 1)
-                                Text("A 32 question form that summarizes the number of risk factors to enhance risk awareness.")
+                                Text("A 32 question form that summarizes...")
                                     .font(.body)
                                     .multilineTextAlignment(.center)
                             }
@@ -53,8 +60,18 @@ struct GutCheckNECLanding: View {
                             Spacer()
                     }.actionButtonStyle()
                 }
+//                Text("You may use GutCheckNEC for research...")
+//                    .padding()
                 Spacer()
             }
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [backgroundStartColor, backgroundEndColor]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
+
             .navigationBarHidden(true)
         }
     }
