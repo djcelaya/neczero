@@ -17,6 +17,14 @@ struct NECZeroApp: App {
     @State private var selectedTab = "NEC"
     @State private var selectedFilter: Articles.Filters = .All
 
+    var tabAccentColor: Color {
+        if selectedTab == "GutCheckNEC" {
+            return Color("GutCheck Medium")
+        } else {
+            return Color("AccentColor")
+        }
+    }
+
     var body: some Scene {
         WindowGroup {
             TabView(selection: $selectedTab) {
@@ -40,19 +48,17 @@ struct NECZeroApp: App {
                             Image(systemName: "heart.text.square")
                             Text("GutCheckNEC")
                         }
-                    }.tag("GutCheckNEC")
+                    }
+                    .tag("GutCheckNEC")
+
                 MoreView()
                     .tabItem {
                         VStack {
-//                            Image(systemName: "line.horizontal.3")
-//                            Spacer()
-//                            Image(systemName: "ellipsis")
-//                            Image(systemName: "gearshape")
                             Image(systemName: "list.bullet")
                             Text("More")
                         }
                     }.tag("More")
-            }
+            }.accentColor(tabAccentColor)
         }
     }
 

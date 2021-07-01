@@ -17,6 +17,8 @@ struct HomeView: View {
     @State var requestedTab: String?
     @State var requestedNEC: Bool
     @State var displayingNECView: Bool
+    let backgroundStartColor = Color.white
+    let backgroundEndColor = Color("SecondaryColor")
 
     var body: some View {
         NavigationView() {
@@ -110,6 +112,13 @@ struct HomeView: View {
                 .padding()
                 Spacer()
             }
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [backgroundStartColor, backgroundEndColor]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
             .navigationBarHidden(true)
             .sheet(isPresented: $isPresentingDisclaimer, onDismiss: didDismiss) {
                 DisclaimerView($isPresentingDisclaimer)

@@ -71,7 +71,6 @@ struct GutCheckNECLanding: View {
                     endPoint: .bottom
                 )
             )
-
             .navigationBarHidden(true)
         }
     }
