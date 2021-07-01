@@ -18,7 +18,7 @@ struct HomeView: View {
     @State var requestedNEC: Bool
     @State var displayingNECView: Bool
     let backgroundStartColor = Color.white
-    let backgroundEndColor = Color("SecondaryColor")
+    let backgroundEndColor = Color("AccentColor")
 
     var body: some View {
         NavigationView() {
