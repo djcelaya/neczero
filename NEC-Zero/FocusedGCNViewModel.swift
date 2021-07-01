@@ -381,6 +381,10 @@ class FocusedGCNViewModel: ObservableObject {
 //        points = model.points
     }
 
+    func reset() {
+        model = FocusedGutCheckNEC()
+    }
+
     init(with model: FocusedGutCheckNEC = FocusedGutCheckNEC()) {
         self.model = model
     }

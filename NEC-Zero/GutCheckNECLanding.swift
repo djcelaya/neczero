@@ -72,6 +72,7 @@ struct GutCheckNECLanding: View {
                 )
             )
             .navigationBarHidden(true)
+//            .navigationTitle
         }
     }
 }
@@ -107,6 +108,6 @@ struct GutCheckNECLanding_Previews: PreviewProvider {
                 }
             }
 //            .preferredColorScheme(.dark)
-        }
+        }.accentColor(Color("GutCheck Medium"))
     }
 }

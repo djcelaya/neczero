@@ -13,26 +13,37 @@ struct FocusedGCNGuidedForm: View {
 
     @ObservedObject var viewModel: FocusedGCNViewModel
     @State private var questionIndex: Int
-    private let backgroundGradient = Color("PrimaryColor")
+    let backgroundStartColor = Color("GutCheck Light")
+    let backgroundEndColor = Color("GutCheck Medium")
 
-    var gutcheckNECText: Text {
-        Text("GutCheck") +
-        Text("NEC")
-            .baselineOffset(10.0)
+    var resetButton: some View {
+        Button(action: {
+            viewModel.reset()
+            questionIndex = 0
+        }, label: {
+            Text("Reset")
+                .font(.body)
+        })
     }
 
     var body: some View {
-        TabView(selection: $questionIndex) {
-            QuestionCards()
-//            if viewModel.points != nil {
-            FocusedGCNResultsCard(with: viewModel).tag(10)
-//                FocusedGCNResultsCard().tag(10)
-//            }
+        VStack(alignment: .center, spacing: 0) {
+            TabView(selection: $questionIndex) {
+                QuestionCards()
+                FocusedGCNResultsCard(with: viewModel).tag(10)
+            }
+            .tabViewStyle(PageTabViewStyle())
+            Spacer()
         }
-        .background(backgroundGradient)
-        .tabViewStyle(PageTabViewStyle())
-        .animation(.easeInOut)
-        .navigationTitle(gutcheckNECText)
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [backgroundStartColor, backgroundEndColor]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+        )
+        .navigationBarTitle(Text("GutCheckNEC"), displayMode: .inline)
+        .navigationBarItems(trailing: resetButton)
     }
 
     @ViewBuilder func QuestionCards() -> some View {
@@ -241,6 +252,6 @@ struct FocusedGCNGuidedForm_Previews: PreviewProvider {
                     Text("GutCheckNEC")
                 }
             }
-        }
+        }.accentColor(Color("GutCheck Medium"))
     }
 }
