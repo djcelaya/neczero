@@ -381,6 +381,20 @@ class FocusedGCNViewModel: ObservableObject {
 //        points = model.points
     }
 
+    func isCompleted() -> Bool {
+        guard
+            gestationalAge != nil,
+            race != nil
+        else {
+            return false
+        }
+        return true
+    }
+
+    func incompleteQuestionIndices() -> [Int] {
+        return [0]
+    }
+
     func reset() {
         model = FocusedGutCheckNEC()
     }

@@ -33,6 +33,8 @@ struct FocusedGCNGuidedForm: View {
                 FocusedGCNResultsCard(with: viewModel).tag(10)
             }
             .tabViewStyle(PageTabViewStyle())
+            .animation(.easeInOut) // FIX - causes strange stuttering slide in on appear
+            .transition(.slide)
             Spacer()
         }
         .background(
@@ -209,7 +211,7 @@ struct FocusedGCNGuidedForm: View {
 
     init(with viewModel: FocusedGCNViewModel = FocusedGCNViewModel()) {
         self.viewModel = viewModel
-        _questionIndex = State(initialValue: 0)
+        _questionIndex = State(initialValue: 10)
     }
 }
 

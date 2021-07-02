@@ -14,7 +14,8 @@ struct FocusedGCNResultsCard: View {
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
             VStack(spacing: 10) {
-                if let points = viewModel.points {
+//                if let points = viewModel.points {
+                if viewModel.isCompleted(), let points = viewModel.points {
                     Text("\(points)")
                         .padding(.top)
                         .font(.system(size: 52, weight: .bold, design: .rounded))
