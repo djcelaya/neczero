@@ -403,3 +403,20 @@ class FocusedGCNViewModel: ObservableObject {
         self.model = model
     }
 }
+
+extension FocusedGCNViewModel {
+
+    private static let lowRiskModel = FocusedGutCheckNEC(
+        age: 27.0,
+        race: .other,
+        outborn: false,
+        necRate: 1.0,
+        humanMilkFeeding: true,
+        probiotics: true, infections: 0,
+        prbcTransfusion: false,
+        hypotension: false,
+        metabolicAcidosis: false
+    )
+
+    static let lowRiskTestData = FocusedGCNViewModel(with: lowRiskModel)
+}

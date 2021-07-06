@@ -244,16 +244,29 @@ private extension View {
 
 struct FocusedGCNGuidedForm_Previews: PreviewProvider {
     static var previews: some View {
-        TabView {
-            NavigationView {
-                FocusedGCNGuidedForm()
-                    .navigationBarTitle("GutCheckNEC")
-            }.tabItem {
-                VStack {
-                    Image(systemName: "heart.text.square")
-                    Text("GutCheckNEC")
+        Group {
+            TabView {
+                NavigationView {
+                    FocusedGCNGuidedForm(with: FocusedGCNViewModel.lowRiskTestData)
+                        .navigationBarTitle("GutCheckNEC")
+                }.tabItem {
+                    VStack {
+                        Image(systemName: "heart.text.square")
+                        Text("GutCheckNEC")
+                    }
                 }
-            }
-        }.accentColor(Color("GutCheck Medium"))
+            }.accentColor(Color("GutCheck Medium"))
+            TabView {
+                NavigationView {
+                    FocusedGCNGuidedForm()
+                        .navigationBarTitle("GutCheckNEC")
+                }.tabItem {
+                    VStack {
+                        Image(systemName: "heart.text.square")
+                        Text("GutCheckNEC")
+                    }
+                }
+            }.accentColor(Color("GutCheck Medium"))
+        }
     }
 }
