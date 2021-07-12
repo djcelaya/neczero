@@ -391,8 +391,45 @@ class FocusedGCNViewModel: ObservableObject {
         return true
     }
 
-    func incompleteQuestionIndices() -> [Int] {
-        return [0]
+    /* Creates an area of question indices for the questions which have not been answered. Returns nil if all
+       all questions have been answered. */
+    func incompleteQuestionIndices() -> [Int]? {
+        var indices: [Int] = []
+        if gestationalAge == nil {
+            indices.append(0)   // TODO :- remove magic numbers!!!!
+        }
+        if race == nil {
+            indices.append(1)
+        }
+        if outborn == nil {
+            indices.append(2)
+        }
+        if necRate == nil {
+            indices.append(3)
+        }
+        if milk == nil {
+            indices.append(4)
+        }
+        if probiotics == nil {
+            indices.append(5)
+        }
+        if infections == nil {
+            indices.append(6)
+        }
+        if transfusion == nil {
+            indices.append(7)
+        }
+        if hypotension == nil {
+            indices.append(8)
+        }
+        if acidosis == nil {
+            indices.append(9)
+        }
+        if indices.isEmpty {
+            return nil
+        } else {
+            return indices
+        }
     }
 
     func reset() {
