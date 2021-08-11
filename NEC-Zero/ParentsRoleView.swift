@@ -4,6 +4,7 @@
 //
 //  Correpsonding webpage: https://neczero.nursing.arizona.edu/parent-role
 //  Video: https://vimeo.com/210346764/27ade0d432
+//  Thumbnail: https://i.vimeocdn.com/video/626109615_1920
 //
 //  Created by David Celaya on 2/1/21.
 //
@@ -23,11 +24,20 @@ struct ParentsRoleView: View {
                 Text("Parents you have an important role...")
                     .padding(.top, 8)
                     .padding([.leading, .trailing])
-                VideoPlayer(player: player)
-                    .aspectRatio(16.0 / 9.0, contentMode: .fit)
-                    .onDisappear() {
-                        player.pause()
-                    }
+                // idea conditionally switch between an ZStack image/symbol (thumbnail) and the player
+                VideoPlayer(player: player) {
+//                    Image("Parents Role Video Thumbnail")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+                }
+                .aspectRatio(16.0 / 9.0, contentMode: .fit)
+                .onDisappear() {
+                    player.pause()
+                }
+                .background(Image("Parents Role Video Thumbnail")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                )
                 Text("Tip: Write your questions down...")
                     .padding(.top, 8)
                     .padding([.leading, .trailing, .bottom])

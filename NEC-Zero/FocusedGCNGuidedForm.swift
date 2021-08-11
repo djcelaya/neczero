@@ -211,7 +211,8 @@ struct FocusedGCNGuidedForm: View {
 
     init(with viewModel: FocusedGCNViewModel = FocusedGCNViewModel()) {
         self.viewModel = viewModel
-        _questionIndex = State(initialValue: 10)
+//        _questionIndex = State(initialValue: 10)
+        _questionIndex = State(initialValue: 0)
     }
 }
 
