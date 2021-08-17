@@ -10,18 +10,43 @@ export default class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      points: null
+      gestationAgePoints: null,
+      racePoints: null,
+      outbornPoints: null,
+      // totalPoints: null
     }
+  }
+
+  handleGestationAgeResponse(points) {
+    this.setState({gestationAgePoints: points});
+  }
+
+  handleRaceResponse(points) {
+    this.setState({racePoints: points});
+  }
+
+  handleOutbornResponse(points) {
+    this.setState({outbornPoints: points});
+  }
+
+  calculateTotalPoints() {
+    return (
+      this.state.gestationAgePoints +
+      this.state.racePoints +
+      this.state.outbornPoints
+    );
   }
 
   render() {
     return (
       <div className="container border">
         <FormHeader />
-        <GestationalAgeQuestion />
+        <GestationalAgeQuestion
+          points={this.state.gestationAgePoints}
+          handler={(points) => this.handleGestationAgeResponse(points)} />
         <RaceQuestion />
         <OutbornQuestion />
-        <FormFooter points={this.state.points} />
+        <FormFooter points={this.calculateTotalPoints()} />
       </div>
     );
   }

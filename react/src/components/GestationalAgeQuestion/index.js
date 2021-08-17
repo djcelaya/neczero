@@ -1,24 +1,27 @@
 import React from 'react';
 
-export default class GestationalAge extends React.Component {
+export default class GestationalAgeQuestion extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      points: null
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     points: null
+  //   }
+  // }
 
   handleOption1Click() {
-    this.setState({points: 9});
+    // this.setState({points: 9});
+    this.props.handler(9);
   }
 
   handleOption2Click() {
-    this.setState({points: 8});
+    // this.setState({points: 8});
+    this.props.handler(8);
   }
 
   handleOption3Click() {
-    this.setState({points: 0});
+    // this.setState({points: 0});
+    this.props.handler(0);
   }
 
   render() {
@@ -41,7 +44,7 @@ export default class GestationalAge extends React.Component {
           <p>0 points</p>
         </button>
         <div className="col-1 border">
-          <p>{this.state.points}</p>
+          <p>{this.props.points}</p>
         </div>
       </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class GestationalAge extends React.Component {
+export default class RaceQuestion extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
