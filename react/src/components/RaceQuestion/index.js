@@ -1,23 +1,26 @@
 import React from 'react';
 
 export default class RaceQuestion extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      points: null
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     points: null
+  //   }
+  // }
 
   handleOption1Click() {
-    this.setState({points: 2});
+    // this.setState({points: 2});
+    this.props.handler(2);
   }
 
   handleOption2Click() {
-    this.setState({points: 2});
+    // this.setState({points: 2});
+    this.props.handler(2);
   }
 
   handleOption3Click() {
-    this.setState({points: 0});
+    // this.setState({points: 0});
+    this.props.handler(0);
   }
 
   render() {
@@ -40,7 +43,7 @@ export default class RaceQuestion extends React.Component {
           <p>0 points</p>
         </button>
         <div className="col-1 border">
-          <p>{this.state.points}</p>
+          <p>{this.props.points}</p>
         </div>
       </div>
     );

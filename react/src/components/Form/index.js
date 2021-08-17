@@ -44,8 +44,12 @@ export default class Form extends React.Component {
         <GestationalAgeQuestion
           points={this.state.gestationAgePoints}
           handler={(points) => this.handleGestationAgeResponse(points)} />
-        <RaceQuestion />
-        <OutbornQuestion />
+        <RaceQuestion
+          points={this.state.racePoints}
+          handler={(points) => this.handleRaceResponse(points)} />
+        <OutbornQuestion
+          points={this.state.outbornPoints}
+          handler={(points) => this.handleOutbornResponse(points)} />
         <FormFooter points={this.calculateTotalPoints()} />
       </div>
     );
