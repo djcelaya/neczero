@@ -2,6 +2,7 @@ import React from 'react';
 import ResponseButton from '../ResponseButton';
 
 export default class OutbornQuestion extends React.Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -33,7 +34,7 @@ export default class OutbornQuestion extends React.Component {
     return (
       <div className="row">
         <div className="col-9 border">
-          <p>Outborn (3 max)</p>
+          <h6>Outborn (3 max)</h6>
           <p>If the infant is transferred into this center from another hospital at any time after birth, assign 3 points.</p>
         </div>
         <ResponseButton
