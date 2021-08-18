@@ -1,38 +1,27 @@
 import React from 'react';
 import FormHeader from '../FormHeader';
 import Question from '../Question';
-import RaceQuestion from '../RaceQuestion';
-import OutbornQuestion from '../OutbornQuestion';
 import FormFooter from '../FormFooter';
 import data from '../../data.json';
 
 export default class Form extends React.Component {
-  
+
   questions = data;
 
   constructor(props) {
     super(props);
     this.state = {
-      racePoints: null,
-      outbornPoints: null,
       gestationalAgeResponseID: null,
-      raceResponseID: null
+      raceResponseID: null,
+      outbornResponseID: null,
     }
-  }
-
-  handleRaceResponse(points) {
-    this.setState({racePoints: points});
-  }
-
-  handleOutbornResponse(points) {
-    this.setState({outbornPoints: points});
   }
 
   calculateTotalPoints() {
     return (
       this.pointsForQuestionResponse('gestationalAge', this.state.gestationalAgeResponseID) +
-      this.state.racePoints +
-      this.state.outbornPoints
+      this.pointsForQuestionResponse('race', this.state.raceResponseID) +
+      this.pointsForQuestionResponse('outborn', this.state.outbornResponseID)
     );
   }
 
@@ -43,6 +32,9 @@ export default class Form extends React.Component {
         break;
       case 'race':
         this.setState({raceResponseID: responseID});
+        break;
+      case 'outborn':
+        this.setState({outbornResponseID: responseID});
         break;
       default:
         console.log('Unknown questionID encountered when attempting to respond to question.');
@@ -55,6 +47,8 @@ export default class Form extends React.Component {
         return this.state.gestationalAgeResponseID === responseID;
       case 'race':
         return this.state.raceResponseID === responseID;
+      case 'outborn':
+        return this.state.outbornResponseID === responseID;
       default:
         console.log('Unknown questionID encountered when checking response selection.');
     }
@@ -80,12 +74,21 @@ export default class Form extends React.Component {
           handleResponse={(questionID, responseID) => this.handleResponseToQuestion(questionID, responseID)}
           isSelected={(questionID, responseID) => this.isResponseSelectedForQuestion(questionID, responseID)}
         />
-        <RaceQuestion
-          points={this.state.racePoints}
-          handler={(points) => this.handleRaceResponse(points)} />
-        <OutbornQuestion
+        <Question
+          points={this.pointsForQuestionResponse('race', this.state.raceResponseID)}
+          data={this.questions['race']}
+          handleResponse={(questionID, responseID) => this.handleResponseToQuestion(questionID, responseID)}
+          isSelected={(questionID, responseID) => this.isResponseSelectedForQuestion(questionID, responseID)}
+        />
+        <Question
+          points={this.pointsForQuestionResponse('outborn', this.state.outbornResponseID)}
+          data={this.questions['outborn']}
+          handleResponse={(questionID, responseID) => this.handleResponseToQuestion(questionID, responseID)}
+          isSelected={(questionID, responseID) => this.isResponseSelectedForQuestion(questionID, responseID)}
+        />
+        {/* <OutbornQuestion
           points={this.state.outbornPoints}
-          handler={(points) => this.handleOutbornResponse(points)} />
+          handler={(points) => this.handleOutbornResponse(points)} /> */}
         <FormFooter points={this.calculateTotalPoints()} />
       </div>
     );

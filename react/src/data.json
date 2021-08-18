@@ -18,5 +18,41 @@
         "points": 0
       }
     }
+  },
+  "race": {
+    "id": "race",
+    "title": "Race",
+    "subtitle": "(2 max)",
+    "body": "If the infant is either Black or Hispanic race assign 2 points. If both, assign only 2 points. If not Black or hispanic, assign 0 points.",
+    "responses": {
+      "race1": {
+        "text": "Black",
+        "points": 2
+      },
+      "race2": {
+        "text": "Hispanic",
+        "points": 2
+      },
+      "race3": {
+        "text": "Other races",
+        "points": 0
+      }
+    }
+  },
+  "outborn": {
+    "id": "outborn",
+    "title": "Outborn",
+    "subtitle": "(3 max)",
+    "body": "If the infant is transferred into this center from another hospital at any time after birth, assign 3 points.",
+    "responses": {
+      "outborn1": {
+        "text": "Yes",
+        "points": 3
+      },
+      "outborn2": {
+        "text": "No",
+        "points": 0
+      }
+    }
   }
 }
