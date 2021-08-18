@@ -1,16 +1,14 @@
 import React from 'react';
 
-export default class ResponseButton extends React.Component {
-  render() {
+export default function ResponseButton(props) {
     let className = "col-1 border";
-    if (this.props.selected) {
+    if (props.selected) {
       className += " bg-info"
     }
     return (
-      <button className={className} onClick={() => this.props.handleClick()}>
-        <p dangerouslySetInnerHTML={{__html: this.props.text}}></p>
-        <p>{this.props.points} points</p>
+      <button className={className} onClick={() => props.handleClick()}>
+        <p dangerouslySetInnerHTML={{__html: props.text}}></p>
+        <p>{props.points} points</p>
       </button>
     );
   }
-}

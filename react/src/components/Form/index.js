@@ -4,34 +4,11 @@ import Question from '../Question';
 import RaceQuestion from '../RaceQuestion';
 import OutbornQuestion from '../OutbornQuestion';
 import FormFooter from '../FormFooter';
+import data from '../../data.json';
 
 export default class Form extends React.Component {
-
-  questions = {
-    'gestationalAge': {
-      id: 'gestationalAge',
-      title: 'Gestational age (weeks)',
-      subtitle: '(9 max)',
-      body: 'Calculate GA in weeks at birth based preferably on due date determined by 1<sup>st</sup> trimester ultrasound. If that is unavailable, use the gestational age assessment at delivery (Ballard or Dubowitz)',
-      responses: {
-        'gestationalAge1': {
-          id: 'gestationalAge1',
-          text: '<28',
-          points: 9
-        },
-        'gestationalAge2': {
-          id: 'gestationalAge2',
-          text: '28-31 6/7',
-          points: 8
-        },
-        'gestationalAge3': {
-          id: 'gestationalAge3',
-          text: '&#8805; 32',
-          points: 0
-        }
-      }
-    },
-  };
+  
+  questions = data;
 
   constructor(props) {
     super(props);
@@ -58,10 +35,6 @@ export default class Form extends React.Component {
       this.state.outbornPoints
     );
   }
-
-  // getQuestion(questionID) {
-  //   return 
-  // }
 
   handleResponseToQuestion(questionID, responseID) {
     switch(questionID) {
