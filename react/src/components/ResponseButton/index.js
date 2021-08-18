@@ -8,8 +8,8 @@ export default class ResponseButton extends React.Component {
     }
     return (
       <button className={className} onClick={() => this.props.handleClick()}>
-        <p>{this.props.text}</p>
-        <p>{this.props.points}</p>
+        <p dangerouslySetInnerHTML={{__html: this.props.text}}></p>
+        <p>{this.props.points} points</p>
       </button>
     );
   }
