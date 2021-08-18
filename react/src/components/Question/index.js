@@ -11,8 +11,8 @@ export default function Question(props) {
         key={responseID}
         text={response.text}
         points={response.points}
-        handleClick={() => props.handleResponse(props.data.id, responseID)}
-        selected={props.isSelected(props.data.id, responseID)}
+        handleClick={() => props.handleResponse(responseID)}
+        selected={props.isSelected(responseID)}
       />
     );
   });
