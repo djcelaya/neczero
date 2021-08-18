@@ -8,11 +8,11 @@ export default function Question(props) {
     let response = question.responses[responseID];
     return (
       <ResponseButton
-        key={response.id}
+        key={responseID}
         text={response.text}
         points={response.points}
-        handleClick={() => props.handleResponse(props.data.id, response.id)}
-        selected={props.isSelected(props.data.id, response.id)}
+        handleClick={() => props.handleResponse(props.data.id, responseID)}
+        selected={props.isSelected(props.data.id, responseID)}
       />
     );
   });
