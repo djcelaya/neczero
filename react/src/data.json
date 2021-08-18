@@ -1,6 +1,5 @@
 {
   "gestationalAge": {
-    "id": "gestationalAge",
     "title": "Gestational age (weeks)",
     "subtitle": "(9 max)",
     "body": "Calculate GA in weeks at birth based preferably on due date determined by 1<sup>st</sup> trimester ultrasound. If that is unavailable, use the gestational age assessment at delivery (Ballard or Dubowitz)",
@@ -20,7 +19,6 @@
     }
   },
   "race": {
-    "id": "race",
     "title": "Race",
     "subtitle": "(2 max)",
     "body": "If the infant is either Black or Hispanic race assign 2 points. If both, assign only 2 points. If not Black or hispanic, assign 0 points.",
@@ -40,7 +38,6 @@
     }
   },
   "outborn": {
-    "id": "outborn",
     "title": "Outborn",
     "subtitle": "(3 max)",
     "body": "If the infant is transferred into this center from another hospital at any time after birth, assign 3 points.",
@@ -50,6 +47,123 @@
         "points": 3
       },
       "outborn2": {
+        "text": "No",
+        "points": 0
+      }
+    }
+  },
+  "necRate": {
+    "title": "NICU NEC rate",
+    "subtitle": "(23 max)",
+    "body": "This is the annual calculated NEC rate for infants weighing less than 1500 grams at delivery. If < 2%, assign 0 points. If you do not know your rate, assume 16 points.",
+    "responses": {
+      "necRate1": {
+        "text": "2-4.99%",
+        "points": 9
+      },
+      "necRate2": {
+        "text": "5-7.99%",
+        "points": 16
+      },
+      "necRate3": {
+        "text": "8-11.99%",
+        "points": 19
+      },
+      "necRate4": {
+        "text": "> 12 %",
+        "points": 23
+      }
+    }
+  },
+  "milk": {
+    "title": "Exclusive human milk feeding",
+    "subtitle": "(0 max)",
+    "body": "Defined as human milk fed at both day 7 and day 14 of life. Volume of human milk fed is not defined. If any milk is fed at both day 7 and day 14, subtract 3 points from the total score. Points cannot be subtracted until day of life 14.",
+    "responses": {
+      "milk1": {
+        "text": "Yes",
+        "points": -3
+      },
+      "milk2": {
+        "text": "No",
+        "points": 0
+      }
+    }
+  },
+  "probiotics": {
+    "title": "Probiotics",
+    "subtitle": "(0 max)",
+    "body": "If any probiotic preparation has been given at any dose or any volume, subtract 5 points from the total score.",
+    "responses": {
+      "probiotics1": {
+        "text": "Yes",
+        "points": -5
+      },
+      "probiotics2": {
+        "text": "No",
+        "points": 0
+      }
+    }
+  },
+  "infections": {
+    "title": "How many culture-proven infections has the infant had since One Two None day 3 of life?",
+    "subtitle": "(6 points max)",
+    "body": "",
+    "responses": {
+      "infections1": {
+        "text": "One",
+        "points": 4
+      },
+      "infections2": {
+        "text": "Two",
+        "points": 6
+      },
+      "infections3": {
+        "text": "None",
+        "points": 0
+      }
+    }
+  },
+  "transfusion": {
+    "title": "Packed Red Blood Cell transfusion history",
+    "subtitle": "(8 max)",
+    "body": "If any PRBC transfusion has been given, regardless of feeding status or volume given. Once the infant receives a transfusion, from that time on it is scored “yes.” Highest risk for NEC is associated within 48 hours of the transfusion. Be especially aware if HgB < 8.",
+    "responses": {
+      "transfusion1": {
+        "text": "Yes",
+        "points": 8
+      },
+      "transfusion2": {
+        "text": "No",
+        "points": 0
+      }
+    }
+  },
+  "hypotension": {
+    "title": "Hypotension treated with Inotropic Medication",
+    "subtitle": "(4 max)",
+    "body": "If hypotension is severe and medications such as dopamine, dobutamine or milrinone are given to treat it, regardless of dose, frequency or duration of treatment. Once this is “yes” it stays “yes”.",
+    "responses": {
+      "hypotension1": {
+        "text": "Yes",
+        "points": 4
+      },
+      "hypotension2": {
+        "text": "No",
+        "points": 0
+      }
+    }
+  },
+  "metabolicAcidosis": {
+    "title": "Metabolic Acidosis",
+    "subtitle": "(3 max)",
+    "body": "After the 1<sup>st</sup> 12 hours of life, if the infant experiences metabolic acidosis score “yes.” This is defined as low pH associated with low serum bicarbonate (HCO<sub>3</sub> < 17) but normal or near normal pCO2 (pH< 7.30) or lactate > 6.1 mmol/L. If ordering clinician (physician, NNP, PA-C) documents \"metabolic acidosis\" code as \"yes.\" Consider new metabolic acidosis (especially if platelets are low) in an infant with non-specific abdominal signs as concerning. It has been associated with most severe NEC forms.",
+    "responses": {
+      "metabolicAcidosis1": {
+        "text": "Yes",
+        "points": 3
+      },
+      "metabolicAcidosis2": {
         "text": "No",
         "points": 0
       }
