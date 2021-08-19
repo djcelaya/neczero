@@ -4,10 +4,10 @@ export default class FormHeader extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col-11 border">
+        <div className="col border">
           <h1>GutCheck<sup>NEC</sup></h1>
         </div>
-        <div className="col-1 border">
+        <div className="d-none d-md-block col-md-1 border">
           <b>Points</b>
         </div>
       </div>

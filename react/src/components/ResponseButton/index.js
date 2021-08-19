@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function ResponseButton(props) {
-  let className = "col-1 border";
+  let className="col col-sm col-md-auto col-lg-auto border";
   if (props.selected) {
     className += " bg-info"
   }

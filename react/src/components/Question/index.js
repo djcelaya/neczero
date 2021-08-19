@@ -16,16 +16,14 @@ export default function Question(props) {
       />
     );
   });
-  let numResponses = Object.keys(responses).length;
-  let questionColumnWidth = 12 - 1 - numResponses;
   return (
     <div className="row">
-      <div className={"col-" + questionColumnWidth + " border"}>
+      <div className="col-xs-12 col-sm-12 col-md border">
         <h6>{props.data.title + ' ' + props.data.subtitle}</h6>
         <p dangerouslySetInnerHTML={{__html: props.data.body}}></p>
       </div>
       {responseButtons}
-      <div className="col-1 border">
+      <div className="d-none d-md-block col-md-1 border">
         <p>{props.points}</p>
       </div>
     </div>
