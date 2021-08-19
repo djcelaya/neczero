@@ -63,7 +63,7 @@ export default class Form extends React.Component {
       );
     });
     return (
-      <div className="container border">
+      <div className="container-xl border">
         <FormHeader />
         {questionRows}
         <FormFooter points={this.calculateTotalPoints()} />

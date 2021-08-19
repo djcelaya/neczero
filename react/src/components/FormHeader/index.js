@@ -7,7 +7,7 @@ export default class FormHeader extends React.Component {
         <div className="col border">
           <h1>GutCheck<sup>NEC</sup></h1>
         </div>
-        <div className="d-none d-md-block col-md-1 border">
+        <div className="d-none d-md-block col-md-auto col-lg-1 border">
           <b>Points</b>
         </div>
       </div>
