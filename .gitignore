@@ -142,6 +142,7 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
+react-native/ios
 
 # Android/IntelliJ
 #
@@ -151,6 +152,7 @@ build/
 local.properties
 *.iml
 *.hprof
+react-native/android
 
 # node.js
 #
@@ -168,7 +170,7 @@ buck-out/
 *.jsbundle
 
 # CocoaPods
-/ios/Pods/
+react-native/ios/Pods/
 
 # Expo
 .expo/
